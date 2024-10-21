@@ -1,0 +1,2 @@
+export const NO_INTERNET_CONNECTION_ERROR = 1501;
+export const AUTHENTICATE_ERROR = 401;

@@ -1,0 +1,21 @@
+﻿{
+  "profiles": {
+    "Plat4Me.Core.DialRuleEngine": {
+      "commandName": "Project",
+      "dotnetRunMessages": true,
+      "launchBrowser": false,
+      "applicationUrl": "https://localhost:7151/;http://localhost:5152/",
+      "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT": "Development",
+
+        "CLIENTS:SQL:HOST": "localhost",
+        "CLIENTS:SQL:PORT": "3306",
+        "CLIENTS:SQL:USER": "root",
+        "CLIENTS:SQL:PASS": "masterkey",
+
+        "CLIENTS:NATS:HOST": "localhost",
+        "CLIENTS:NATS:PORT": "4222"
+      }
+    }
+  }
+}

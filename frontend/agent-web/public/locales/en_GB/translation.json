@@ -1,0 +1,12 @@
+{
+  "greeting": "Hello",
+  "routeLabels": {
+    "new_leads": "New Leads Rules",
+    "main": "Main Rules",
+    "lead_scoring": "Lead Scoring Rules",
+    "agent_scoring": "Agents Scoring Rules",
+    "status": "Status Rules",
+    "leads_preview": "Leads Preview Rules",
+    "brand": "Brand Rules "
+  }
+}

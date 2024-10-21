@@ -1,0 +1,68 @@
+const mockData = [
+  {
+    id: 1,
+    firstName: "Armani",
+    lastName: "Bell",
+    country: "Canada",
+    phone: "+1234567",
+    activity: "Last call 12/11/2022 12:29 ( 6 hours ago )",
+  },
+  {
+    id: 2,
+    firstName: "Armani",
+    lastName: "Bell",
+    country: "Canada",
+    phone: "+1234567",
+    activity: "Last call 12/11/2022 12:29 ( 6 hours ago )",
+  },
+  {
+    id: 3,
+    firstName: "Armani",
+    lastName: "Bell",
+    country: "Canada",
+    phone: "+1234567",
+    activity: "Last call 12/11/2022 12:29 ( 6 hours ago )",
+  },
+  {
+    id: 4,
+    firstName: "Armani",
+    lastName: "Bell",
+    country: "Canada",
+    phone: "+1234567",
+    activity: "Last call 12/11/2022 12:29 ( 6 hours ago )",
+  },
+  {
+    id: 5,
+    firstName: "Armani",
+    lastName: "Bell",
+    country: "Canada",
+    phone: "+1234567",
+    activity: "Last call 12/11/2022 12:29 ( 6 hours ago )",
+  },
+  {
+    id: 6,
+    firstName: "Armani",
+    lastName: "Bell",
+    country: "Canada",
+    phone: "+1234567",
+    activity: "Last call 12/11/2022 12:29 ( 6 hours ago )",
+  },
+  {
+    id: 7,
+    firstName: "Armani",
+    lastName: "Bell",
+    country: "Canada",
+    phone: "+1234567",
+    activity: "Last call 12/11/2022 12:29 ( 6 hours ago )",
+  },
+  {
+    id: 8,
+    firstName: "Armani",
+    lastName: "Bell",
+    country: "Canada",
+    phone: "+1234567",
+    activity: "Last call 12/11/2022 12:29 ( 6 hours ago )",
+  },
+];
+
+export default mockData;

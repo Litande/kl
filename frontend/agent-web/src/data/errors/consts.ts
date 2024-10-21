@@ -1,0 +1,1 @@
+export const MANUAL_CALL_UNAVAILABLE = "1001";

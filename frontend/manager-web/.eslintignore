@@ -1,0 +1,8 @@
+.husky/*
+.vscode/*
+build/*
+node_modules/*
+mock-server/*
+public/*
+src/icons/icomoon/demo.html
+src/icons/icomoon/style.css

@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="styles.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/microsoft-signalr/6.0.1/signalr.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.min.js"
+        integrity="sha512-pumBsjNRGGqkPzKHndZMaAG+bir374sORyzM3uulLV14lN5LyykqNk8eEeUlUkB3U0M4FApyaHraT65ihJhDpQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script type="text/javascript">
+
+        var user_token = localStorage.getItem("token") ?? '';
+        const STUN_URL = ["stun:stun.l.google.com:19302", "stun:stun1.l.google.com:19302"];
+        var pc, ws, audio, localStream;
+
+
+
+
+        function ajaxRequest(url, onSuccess, type = "GET", data = undefined, processData = true, headers) {
+            $.ajax({
+                type: type,
+                url: url,
+                headers: headers,
+                processData: processData,
+                contentType: "application/json; charset=utf-8",
+                data: data,
+            }).done((resp) => {
+                onSuccess(resp);
+            }).fail((resp) => {
+                console.log('Error', resp.responseJSON);
+            });
+        }
+
+        async function startCall() {
+            if (pc || ws)
+                return;
+            var stuns = [];
+            let stun1 = document.querySelector('#stun1');
+            if (stun1 != undefined && stun1.value.length > 0) {
+                stuns.push("stun:" + stun1.value);
+            }
+            let stun2 = document.querySelector('#stun2');
+            if (stun2 != undefined && stun2.value.length > 0) {
+                stuns.push("stun:" + stun2.value);
+            }
+            if (stuns.length == 0)
+                stuns = STUN_URL;
+
+            pc = new RTCPeerConnection({ iceServers: [{ urls: stuns }] });
+
+            // Add an audio source to the peer connection.
+            localStream = await navigator.mediaDevices.getUserMedia({ video: false, audio: true });
+            localStream.getTracks().forEach(track => pc.addTrack(track, localStream));
+            pc.ontrack = evt => {
+                audio.srcObject = evt.streams[0];
+            }
+            pc.onicecandidate = evt => evt.candidate && ws.send(JSON.stringify(evt.candidate));
+            audio = document.querySelector('#audioCtl');
+
+            pc.onconnectionstatechange = async (ev) => {
+                console.log("onconnectionstatechange: " + pc.connectionState);
+                switch (pc.connectionState) {
+                    //case "disconnected":
+                    case "closed":
+                    case "failed":
+                        await closePeer();
+                }
+            }
+            ws = new WebSocket(document.querySelector('#rawurl').value + "&token=" + user_token, []);
+            ws.onmessage = async function (evt) {
+                if (evt.data.size == 0) { console.log("Empty"); return; }
+                if (/^[\{"'\s]*candidate/.test(evt.data)) {
+                    pc.addIceCandidate(JSON.parse(evt.data));
+                }
+                else {
+                    await pc.setRemoteDescription(new RTCSessionDescription(JSON.parse(evt.data)));
+                    console.log(evt.data);
+                    pc.createAnswer()
+                        .then((answer) => pc.setLocalDescription(answer))
+                        .then(() => ws.send(JSON.stringify(pc.localDescription)));
+                }
+            };
+            ws.onclose = async function () {
+                console.log("ws closed");
+                await closePeer();
+            }
+        };
+
+        async function closePeer() {
+            await pc?.close();
+            await ws?.close();
+            if (audio) {
+                let stream = audio.srcObject;
+                if (stream) {
+                    const tracks = stream.getTracks();
+                    tracks.forEach((track) => {
+                        track.stop();
+                    });
+                }
+                audio.srcObject = null;
+                stream = null;
+            }
+
+            if (localStream) {
+                localStream.getTracks().forEach(track => track.stop());
+            }
+            pc = null;
+            ws = null;
+            audio = null;
+            localStream = null;
+        };
+
+
+        function hangupCall() {
+            var msg = { command: "hangupCall", params: {} };
+            var reason = document.querySelector('#reason').value;
+            var comment = document.querySelector('#comment').value;
+            if (reason)
+                msg.params['hangupReason'] = reason;
+            if (comment)
+                msg.params['comment'] = comment;
+            ws.send(JSON.stringify(msg));
+        }
+
+        function dropAgent() {
+            var msg = { command: "dropAgent", params: {} };
+            var comment = document.querySelector('#comment').value;
+            if (comment)
+                msg.params['comment'] = comment;
+            ws.send(JSON.stringify(msg));
+        }
+
+        function muteMic() {
+            localStream.getTracks()[0].enabled = !(localStream.getTracks()[0].enabled);
+        }
+
+        function modeListenOnly() {
+            var msg = { command: "setManagerMode", params: { mode: "ListenOnly" } };
+            ws.send(JSON.stringify(msg));
+        }
+
+        function modeAgentOnly() {
+            var msg = { command: "setManagerMode", params: { mode: "AgentOnly" } };
+            ws.send(JSON.stringify(msg));
+        }
+
+        function modeBothDirections() {
+            var msg = { command: "setManagerMode", params: { mode: "BothDirections" } };
+            ws.send(JSON.stringify(msg));
+        }
+
+
+
+        var signalRConn;
+        var currentCallInfo;
+        placeholder = "agentApi"
+        function startSinglar() {
+            if (signalRConn)
+                connection.stop();
+            signalRConn = new signalR.HubConnectionBuilder()
+                .withUrl("https://" + document.querySelector('#agentApi').value + "/agent", { accessTokenFactory: () => user_token })
+                .build();
+
+            async function start() {
+                try {
+                    await signalRConn.start();
+                    console.log("SignalR Connected.");
+                } catch (err) {
+                    console.log(err);
+                    setTimeout(start, 5000);
+                }
+            };
+
+            signalRConn.onclose(async () => {
+                await start();
+            });
+
+            signalRConn.on("CurrentStatus", function (status) {
+                console.log("Current Status " + status);
+                if (status == "WaitingForTheCall" || status == "Offline")
+                    currentCallInfo = null;
+            });
+
+            signalRConn.on("CallInfo", async function (callInfo) {
+                console.log("CallInfo", callInfo);
+                if (currentCallInfo && pc) {
+                    console.log("Ignore callinfo");
+                    return;
+                }
+                if (callInfo) {
+                    currentCallInfo = callInfo;
+                    if (callInfo.agentRtcUrl) {
+                        document.querySelector('#rawurl').value = callInfo.agentRtcUrl;
+                        await startCall();
+                    }
+                }
+            });
+
+            // Start the connection.
+            start();
+        }
+
+        function manualCall() {
+            var phone = document.querySelector('#phone').value;
+            signalRConn.invoke("ManualCall", phone).catch(function (err) {
+                return console.error(err.toString());
+            });
+        }
+
+        function StatusWaithingForCall() {
+            signalRConn.invoke("ChangeStatus", "WaitingForTheCall").catch(function (err) {
+                return console.error(err.toString());
+            });
+        }
+
+        function StatusOffline() {
+            signalRConn.invoke("ChangeStatus", "Offline").catch(function (err) {
+                return console.error(err.toString());
+            });
+        }
+
+        function StatusInBreak() {
+            signalRConn.invoke("ChangeStatus", "InBreak").catch(function (err) {
+                return console.error(err.toString());
+            });
+        }
+
+        function callAgain()
+        {
+            signalRConn.invoke("CallAgain", "").catch(function (err) {
+                return console.error(err.toString());
+            });
+        }
+
+        function fillFeedback() {
+            ajaxRequest("https://" + document.querySelector('#agentApi').value + '/agents/filledcall', (resp) => { console.log(resp); }, "POST",
+                JSON.stringify({
+                    sessionId: currentCallInfo.sessionId,
+                    leadStatus: 19//new lead
+                }),
+                true,
+                {
+                    "Authorization": "Bearer " + user_token
+                }
+            );
+            currentCallInfo = null;
+        }
+
+        function login() {
+            ajaxRequest("https://" + document.querySelector('#agentApi').value + '/user/login', (resp) => { user_token = resp; localStorage.setItem('token', resp); console.log(resp); }, "POST",
+                JSON.stringify({
+                    email: document.querySelector('#login').value,
+                    password: document.querySelector('#pass').value
+                })
+            );
+        }
+
+        async function fakeCall() {
+            await closePeer();
+            var url = window.location + 'calltolead?leadid=' + document.querySelector('#fakeleadid').value
+                + '&agentid=' + document.querySelector('#fakeagentid').value
+                + '&phonenum=' + document.querySelector('#fakephone').value;
+            if (document.querySelector('#fakeistest').checked)
+                url += "&istest=true";
+            if (document.querySelector('#fakemanual').checked)
+                url += "&manual=true";
+            console.log(url);
+            ajaxRequest(url, async (resp) => { if (resp) { document.querySelector('#rawurl').value = resp; await startCall() } }, "GET");
+        }
+
+    </script>
+</head>
+
+<body>
+
+    <div class="softphone">
+        <div>
+            <audio controls autoplay="autoplay" id="audioCtl" />
+        </div>
+
+        <div>
+            <button type="button" class="btn" onclick="hangupCall();">Close</button>
+            <button type="button" class="btn" onclick="closePeer();">ClosePeer</button>
+            <br />
+            <button type="button" class="btn" onclick="muteMic();">Mute</button>
+            <br />
+            <input type="text" id="rawurl" value='' placeholder="rawurl" /> <button type="button" class="btn"
+                onclick="startCall();">Start</button><br>
+            <input type="text" id="stun1" value='' placeholder="stun1" />
+            <input type="text" id="stun2" value='' placeholder="stun2" />
+        </div>
+    </div>
+
+    <div class="agentCl">
+        <div>
+            <!-- <input type="text" id="agentApi" value='qa.agent.api.aorta.ai' placeholder="agentApi" /> -->
+            <input type="text" id="agentApi" value='localhost:7186' placeholder="agentApi" />
+        </div>
+        <div>
+            <input type="text" id="login" value='' placeholder="login" />
+            <input type="password" id="pass" value='gkHe1GJn' placeholder="pass" />
+            <button type="button" class="btn" onclick="login();">Login</button>
+            <button type="button" class="btn" onclick="startSinglar();">startSinglar</button>
+        </div>
+        <div>
+            <input type="text" id="phone" value='' placeholder="phone" />
+            <button type="button" class="btn" onclick="manualCall();">ManualCall</button>
+            <button type="button" class="btn" onclick="callAgain();">CallAgain</button>
+        </div>
+        <div>
+            <button type="button" class="btn" onclick="StatusWaithingForCall();">WaithinForTheCall</button>
+            <button type="button" class="btn" onclick="StatusOffline();">Offline</button>
+            <button type="button" class="btn" onclick="StatusInBreak();">InBreak</button>
+            <button type="button" class="btn" onclick="fillFeedback();">FillFeedback</button>
+        </div>
+    </div>
+
+    <div class="fakeCl">
+        <input type="text" id="fakeleadid" value='1' placeholder="leadid" />
+        <input type="text" id="fakephone" value='1000' placeholder="phone" />
+        <input type="text" id="fakeagentid" value='1' placeholder="agentid" />
+        <label><input type="checkbox" checked id="fakeistest"> isTest</label>
+        <label><input type="checkbox" id="fakemanual">manual</label>
+        <button type="button" class="btn" onclick="fakeCall();">FakeCall</button>
+    </div>
+
+    <div class="agent_cmds">
+        <input type="text" id="reason" value='' placeholder="reason" />
+        <input type="text" id="comment" value='' placeholder="comment" />
+        <button type="button" class="btn" onclick="hangupCall();">HangupCall</button>
+    </div>
+
+    <div class="manager_cmds">
+        <br>
+        <br>
+        <button type="button" class="btn" onclick="dropAgent();">DropAgent</button>
+        <br />
+        <button type="button" class="btn" onclick="modeListenOnly();">ListenOnly</button>
+        <button type="button" class="btn" onclick="modeAgentOnly();">AgentOnly</button>
+        <button type="button" class="btn" onclick="modeBothDirections();">BothDirections</button>
+    </div>
+
+</body>
+
+</html>

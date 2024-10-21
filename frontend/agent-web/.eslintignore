@@ -1,0 +1,6 @@
+.husky/*
+.vscode/*
+build/*
+node_modules/*
+mock-server/*
+public/*

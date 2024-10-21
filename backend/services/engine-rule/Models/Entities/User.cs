@@ -1,0 +1,13 @@
+﻿using Plat4Me.DialRuleEngine.Application.Enums;
+
+namespace Plat4Me.DialRuleEngine.Application.Models.Entities;
+
+public class User
+{
+    public long UserId { get; set; }
+    public long ClientId { get; set; }
+    public RoleTypes RoleType { get; set; } = RoleTypes.Agent;
+    public string FirstName { get; set; } = null!;
+    public string LastName { get; set; } = null!;
+    public DateTimeOffset? OfflineSince { get; set; }
+}

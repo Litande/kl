@@ -1,0 +1,3 @@
+interface ILeadAssignment {
+  permanentAssignExpirationDaysIsAgentOffline: number;
+}

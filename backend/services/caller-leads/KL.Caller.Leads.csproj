@@ -1,0 +1,31 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+    <PropertyGroup>
+        <TargetFramework>net6.0</TargetFramework>
+        <Nullable>enable</Nullable>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <InternalsVisibleTo Include="Plat4Me.DialLeadCaller.Tests"/>
+    </ItemGroup>
+
+    <ItemGroup>
+        <PackageReference Include="Plat4Me.Core.HealthCheck" Version="1.0.2"/>
+        <PackageReference Include="prometheus-net.AspNetCore" Version="6.0.0"/>
+        <PackageReference Include="prometheus-net.AspNetCore.HealthChecks" Version="6.0.0"/>
+        <PackageReference Include="Serilog" Version="2.11.0"/>
+        <PackageReference Include="Serilog.Extensions.Hosting" Version="4.2.0"/>
+        <PackageReference Include="Serilog.Settings.Configuration" Version="3.3.0"/>
+        <PackageReference Include="Serilog.Sinks.Console" Version="4.0.1"/>
+        <PackageReference Include="Serilog.Sinks.Http" Version="8.0.0"/>
+        <PackageReference Include="Swashbuckle.AspNetCore" Version="6.4.0" />
+    </ItemGroup>
+
+    <ItemGroup>
+        <ProjectReference Include="..\Plat4Me.DialLeadCaller.Application\Plat4Me.DialLeadCaller.Application.csproj"/>
+        <ProjectReference Include="..\Plat4Me.DialLeadCaller.Infrastructure\Plat4Me.DialLeadCaller.Infrastructure.csproj"/>
+    </ItemGroup>
+
+</Project>

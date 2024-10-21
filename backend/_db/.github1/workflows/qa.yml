@@ -1,0 +1,110 @@
+name: KL Liquibase - QA
+on:
+  workflow_dispatch:
+
+env:
+  PROJECT_ID: kl-dial
+  GKE_CLUSTER: kl-qa-k8s
+  GKE_ZONE: europe-west1-d
+  IMAGE_TAG: qa
+  IMAGE_NAME: gcr.io/kl-manage/kl-db-liquibase
+
+jobs:
+  dirty_hack:
+    steps:
+      - run: |
+          echo ""
+    runs-on: arc-runner-set
+    outputs:
+      IMAGE: ${{env.IMAGE_NAME}}
+      KUBE_FILTER: "app=${{env.SERVICE_NAME}}"
+      DOCKER_FILE: ${{env.TARGET_DOCKERFILE}}
+      PROJECT_ID: ${{env.PROJECT_ID}}
+      GKE_CLUSTER: ${{env.GKE_CLUSTER}}
+      GKE_ZONE: ${{env.GKE_ZONE}}
+      TAG: ${{env.IMAGE_TAG}}
+
+  build_and_deploy_app:
+    needs: dirty_hack
+    name: build & deploy app with share wf
+    permissions:
+      contents: "read"
+      id-token: "write"
+
+    uses: Plat4Me/shared_workflows/.github/workflows/build_app.yaml@main
+    with:
+      image_name: ${{ needs.dirty_hack.outputs.IMAGE}}
+      docker_file: ${{ needs.dirty_hack.outputs.DOCKER_FILE }}
+      build_context: "."
+      tag: ${{ needs.dirty_hack.outputs.TAG}}
+      BUILD_ARGS: |
+        GITHUB_SHA=${{ github.sha }}
+        GITHUB_REF=${{ github.ref }}
+      deploy: false
+      KUBECTL_FILTER: ${{ needs.dirty_hack.outputs.KUBE_FILTER }}
+      GKE_CLUSTER: ${{ needs.dirty_hack.outputs.GKE_CLUSTER}}
+      GKE_ZONE: ${{ needs.dirty_hack.outputs.GKE_ZONE }}
+      PROJECT_ID: ${{ needs.dirty_hack.outputs.PROJECT_ID }}
+    secrets: inherit
+
+  build:
+    needs: build_and_deploy_app
+    name: Setup, Build, Deploy
+    runs-on: arc-runner-set
+    environment: production
+
+    permissions:
+      contents: "read"
+      id-token: "write"
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      #
+      #      - name: GCP auth
+      #        id: auth
+      #        uses: google-github-actions/auth@v0
+      #        with:
+      #          credentials_json: "${{ secrets.GCP_CREDENTIALS }}"
+      #
+      #      - name: Docker configuration
+      #        run: |-
+      #          docker login -u _json_key --password-stdin https://gcr.io < $GOOGLE_APPLICATION_CREDENTIALS
+      #
+      #      - name: Set up GKE credentials
+      #        uses: google-github-actions/get-gke-credentials@v0
+      #        with:
+      #          cluster_name: ${{ env.GKE_CLUSTER }}
+      #          location: ${{ env.GKE_ZONE }}
+      #          project_id: ${{ env.PROJECT_ID }}
+      #
+      #      - name: Build Application
+      #        run: |-
+      #          docker build -f ./Dockerfile \
+      #            -t "$IMAGE_NAME:$IMAGE_TAG" \
+      #            --build-arg IMAGE_TAG="$IMAGE_TAG" \
+      #            --build-arg GITHUB_SHA="$GITHUB_SHA" \
+      #            --build-arg GITHUB_REF="$GITHUB_REF" \
+      #            .
+      #
+      #      - name: Publish
+      #        run: |-
+      #          docker push "$IMAGE_NAME:$IMAGE_TAG"
+      - name: Install kubectl
+        run: |-
+          sudo install -o root -g root -m 0755 /app/kubectl /usr/local/bin/kubectl
+
+      # Deploy the Docker image to the GKE cluster
+      - name: Deploy
+        run: |-
+          kubectl config set-context --current --namespace=default
+          kubectl apply  -f .github/workflows/k8s/qa.yaml
+          kubectl wait --for=condition=complete --timeout=3600s job/kl-liquibase & completion_pid=$!
+          kubectl wait --for=condition=failed --timeout=3600s job/kl-liquibase && exit 1 & failure_pid=$!
+          wait -n $completion_pid $failure_pid
+      - name: Cleanup
+        if: ${{ always() }}
+        run: |-
+          kubectl config set-context --current --namespace=default
+          kubectl get pods -l job-name=kl-liquibase -o name --no-headers | xargs -I{} sh -c 'kubectl logs {}'
+          kubectl delete -f .github/workflows/k8s/qa.yaml

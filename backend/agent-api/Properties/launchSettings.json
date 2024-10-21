@@ -1,0 +1,15 @@
+﻿{
+  "profiles": {
+    "Plat4Me.Core.DialAgentApi": {
+      "commandName": "Project",
+      "dotnetRunMessages": true,
+      "launchBrowser": false,
+      "applicationUrl": "https://localhost:7186/;http://localhost:5186/",
+      "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT": "Development",
+        "CLIENTS:NATS:HOST": "localhost",
+        "CLIENTS:NATS:PORT": "4222"
+      }
+    }
+  }
+}

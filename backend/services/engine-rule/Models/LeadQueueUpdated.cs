@@ -1,0 +1,8 @@
+﻿namespace Plat4Me.DialRuleEngine.Application.Models;
+
+public record QueuesUpdatedMessage(
+    long ClientId,
+    IReadOnlyCollection<long>? QueueIds = null)
+{
+    public string Initiator => nameof(DialRuleEngine);
+}

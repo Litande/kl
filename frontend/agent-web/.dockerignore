@@ -1,0 +1,7 @@
+/.github/
+/.idea/
+/.dockerignore
+/.gitignore
+/.prettierignore
+/.husky/
+/.env.production

@@ -1,0 +1,36 @@
+{
+    "compilerOptions": {
+        "module": "commonjs",
+        "outDir": "./build",
+        "moduleResolution": "node",
+        "target": "es6",
+        "removeComments": true,
+        "allowSyntheticDefaultImports": true,
+        "jsx": "react-jsx",
+        "allowJs": true,
+        "baseUrl": "src",
+        "esModuleInterop": true,
+        "resolveJsonModule": true,
+        "downlevelIteration": true,
+        "paths": {
+            "src/*": [
+                "./src/*"
+            ]
+        },
+        "sourceMap": true,
+        "noImplicitAny": false
+    },
+    "exclude": [
+        "node_modules",
+        "build"
+    ],
+    "include": [
+        "src",
+        "webpack.config.ts",
+        "./**/*.ts", "./**/*.tsx",
+        "images.d.ts",
+        "fonts.d.ts",
+        "src/localization/types.d.ts",
+        ".eslintrc.js"
+    ]
+}

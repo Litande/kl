@@ -1,0 +1,15 @@
+{
+  "greeting": "Hello",
+  "routeLabels": {
+    "new_leads": "New Leads Rules",
+    "main": "Main Rules",
+    "lead_scoring": "Lead Scoring Rules",
+    "agent_scoring": "Agents Scoring Rules",
+    "status": "Status Rules",
+    "api_rules": "Api Rules",
+    "brand": "Brand Rules "
+  },
+  "dashboard": {
+    "useEscToCollapse": "Use ESC key to return from full screen mode"
+  }
+}

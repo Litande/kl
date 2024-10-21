@@ -1,0 +1,32 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: dlr-liquibase
+spec:
+  parallelism: 1
+  completions: 1
+  activeDeadlineSeconds: 600
+  backoffLimit: 2
+  template:
+    metadata:
+      name: dlr-liquibase
+    spec:
+      imagePullSecrets:
+        - name: registry-ro-secret
+      containers:
+        - name: dlr-liquibase
+          image: gcr.io/kl-manage/dlr-db-liquibase:production
+          imagePullPolicy: "Always"
+          envFrom:
+            - secretRef:
+                name: db
+                optional: false
+          command:
+            - liquibase
+            - --headless=true
+            - --url=jdbc:mysql://$(DB_HOST)/liquibase
+            - --changeLogFile=changelog/db.changelog-master.xml
+            - --username=$(DB_USER)
+            - --password=$(DB_PASS)
+            - update
+      restartPolicy: Never

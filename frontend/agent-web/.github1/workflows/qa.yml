@@ -1,0 +1,124 @@
+# This workflow will build a docker container, publish it to Google Container Registry, and deploy it to GKE when there is a push to the main branch.
+#
+# To configure this workflow:
+#
+# 1. Ensure that your repository contains the necessary configuration for your Google Kubernetes Engine cluster, including deployment.yml, kustomization.yml, service.yml, etc.
+#
+# 2. Create and configure a Workload Identity Provider for GitHub (https://github.com/google-github-actions/auth#setting-up-workload-identity-federation)
+#
+# 3. Change the values for the GAR_LOCATION, GKE_ZONE, GKE_CLUSTER, IMAGE, REPOSITORY and DEPLOYMENT_NAME environment variables (below).
+#
+# For more support on how to run the workflow, please visit https://github.com/google-github-actions/setup-gcloud/tree/master/example-workflows/gke-kustomize
+
+name: Deploy kl-agent-web - QA
+on:
+  workflow_dispatch:
+
+env:
+  PROJECT_ID: plat4me-dial
+  GKE_CLUSTER: kl-qa-k8s
+  GKE_ZONE: europe-west1-d
+  DEPLOYMENT_NAME: kl-agent-web
+  IMAGE: gcr.io/kl-manage/kl-agent-web
+  IMAGE_CACHE: europe-west1-docker.pkg.dev/kl-manage/qa-test/kl-agent-web
+
+jobs:
+  dirty_hack:
+    steps:
+      - run: |
+          echo ""
+    runs-on: arc-runner-set
+    outputs:
+      IMAGE: ${{env.IMAGE}}
+      KUBE_FILTER: "app=${{env.DEPLOYMENT_NAME}}"
+      DOCKER_FILE: ${{env.TARGET_DOCKERFILE}}
+      PROJECT_ID: ${{env.PROJECT_ID}}
+      GKE_CLUSTER: ${{env.GKE_CLUSTER}}
+      GKE_ZONE: ${{env.GKE_ZONE}}
+      TAG: ${{env.TAG}}
+
+  build_and_deploy_app:
+    needs: dirty_hack
+    name: build & deploy app with share wf
+    permissions:
+      contents: 'read'
+      id-token: 'write'
+
+    uses: Plat4Me/shared_workflows/.github/workflows/build_app.yaml@main
+    with:
+      image_name: ${{ needs.dirty_hack.outputs.IMAGE}}
+      docker_file: ${{ needs.dirty_hack.outputs.DOCKER_FILE }}
+      build_context: "."
+      tag: ${{ needs.dirty_hack.outputs.TAG}}
+      BUILD_ARGS: |
+        GITHUB_SHA=${{ github.sha }}
+        GITHUB_REF=${{ github.ref }}
+      deploy: true
+      KUBECTL_FILTER: ${{ needs.dirty_hack.outputs.KUBE_FILTER }}
+      GKE_CLUSTER: ${{ needs.dirty_hack.outputs.GKE_CLUSTER}}
+      GKE_ZONE: ${{ needs.dirty_hack.outputs.GKE_ZONE }}
+      PROJECT_ID: ${{ needs.dirty_hack.outputs.PROJECT_ID }}
+    secrets: inherit
+
+#  setup-build-publish-deploy:
+#    name: Setup, Build, Publish, and Deploy
+#    runs-on: [ self-hosted, node ]
+#    environment: production
+#
+#    permissions:
+#      contents: 'read'
+#      id-token: 'write'
+#
+#    steps:
+#      - name: Checkout
+#        uses: actions/checkout@v3
+#
+#      # Alternative option - authentication via credentials json
+#      - id: 'auth'
+#        uses: 'google-github-actions/auth@v0'
+#        with:
+#          credentials_json: '${{ secrets.GCP_CREDENTIALS }}'
+#
+#      - uses: 'docker/login-action@v1'
+#        with:
+#          registry: 'europe-west1-docker.pkg.dev' # or REGION-docker.pkg.dev
+#          username: _json_key
+#          password: "${{ secrets.GCP_CREDENTIALS }}"
+#
+#      - uses: 'docker/login-action@v1'
+#        with:
+#          registry: 'gcr.io' # or REGION-docker.pkg.dev
+#          username: _json_key
+#          password: "${{ secrets.GCP_CREDENTIALS }}"
+#
+#      # Get the GKE credentials so we can deploy to the cluster
+#      - name: Set up GKE credentials
+#        uses: google-github-actions/get-gke-credentials@v0
+#        with:
+#          cluster_name: ${{ env.GKE_CLUSTER }}
+#          location: ${{ env.GKE_ZONE }}
+#          project_id: ${{ env.PROJECT_ID }}
+#
+#
+#      - name: Set up Docker Buildx
+#        uses: docker/setup-buildx-action@v2
+#
+#      # Build and Push the Docker image
+#      - name: Build and Push
+#        uses: docker/build-push-action@v3
+#        with:
+#          context: .
+#          push: true
+#          #          cache-from: type=registry,ref=${{ env.IMAGE_CACHE }}:buildcache
+#          #          cache-to: type=registry,ref=${{ env.IMAGE_CACHE }}:buildcache,mode=max
+#          tags: |
+#            ${{ env.IMAGE }}:${{github.sha}}
+#            ${{ env.IMAGE }}:qa
+#          build-args: |
+#            BRANCH_NAME="${{github.ref_name}}"
+#            GITHUB_TOKEN="${{ secrets.NPM_TOKEN }}"
+#
+#      # Deploy the Docker image to the GKE cluster
+#      - name: Deploy
+#        run: |-
+#          kubectl rollout restart deployment/$DEPLOYMENT_NAME

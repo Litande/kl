@@ -1,0 +1,21 @@
+﻿{
+  "profiles": {
+    "Plat4Me.Core.DialLeadCaller": {
+      "commandName": "Project",
+      "dotnetRunMessages": true,
+      "launchBrowser": true,
+      "applicationUrl": "https://localhost:7126/;http://localhost:5126/",
+      "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT": "Development",
+
+        "CLIENTS:MYSQL:HOST": "localhost",
+        "CLIENTS:MYSQL:PORT": "3306",
+        "CLIENTS:MYSQL:USER": "root",
+        "CLIENTS:MYSQL:PASS": "masterkey",
+
+        "CLIENTS:NATS:HOST": "localhost",
+        "CLIENTS:NATS:PORT": "4222"
+      }
+    }
+  }
+}
