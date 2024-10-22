@@ -1,6 +1,6 @@
 ﻿using System.Collections.Concurrent;
 
-namespace Plat4Me.Dial.Statistic.Api.Application.Common.Extensions;
+namespace KL.Statistics.Application.Common.Extensions;
 
 public static class QueueExtensions
 {

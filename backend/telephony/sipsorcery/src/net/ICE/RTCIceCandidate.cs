@@ -19,11 +19,9 @@
 //-----------------------------------------------------------------------------
 
 using System;
-using System.Linq;
 using System.Net;
-using SIPSorcery.Sys;
 
-namespace SIPSorcery.Net
+namespace SIPSorcery.net.ICE
 {
     public class RTCIceCandidate : IRTCIceCandidate
     {

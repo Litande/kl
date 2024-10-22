@@ -21,9 +21,10 @@ using System.Collections.Concurrent;
 using Microsoft.Extensions.Logging;
 using Org.BouncyCastle.Crypto.Tls;
 using Org.BouncyCastle.Security;
-using SIPSorcery.Sys;
+using SIPSorcery.net.DtlsSrtp.Transform;
+using SIPSorcery.sys;
 
-namespace SIPSorcery.Net
+namespace SIPSorcery.net.DtlsSrtp
 {
     public class DtlsSrtpTransport : DatagramTransport, IDisposable
     {

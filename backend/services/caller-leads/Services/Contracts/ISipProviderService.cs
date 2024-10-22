@@ -1,6 +1,6 @@
-using Plat4Me.DialLeadCaller.Application.Models.Entities;
+using KL.Caller.Leads.Models.Entities;
 
-namespace Plat4Me.DialLeadCaller.Application.Services.Contracts;
+namespace KL.Caller.Leads.Services.Contracts;
 
 public interface ISipProviderService
 {

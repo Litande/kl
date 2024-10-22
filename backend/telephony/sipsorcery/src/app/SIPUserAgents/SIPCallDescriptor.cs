@@ -21,10 +21,13 @@ using System.Net;
 using System.Text.RegularExpressions;
 using System.Threading;
 using Microsoft.Extensions.Logging;
-using SIPSorcery.Net;
-using SIPSorcery.Sys;
+using SIPSorcery.core;
+using SIPSorcery.core.SIP;
+using SIPSorcery.core.SIPCDR;
+using SIPSorcery.net.SDP;
+using SIPSorcery.sys;
 
-namespace SIPSorcery.SIP.App
+namespace SIPSorcery.app.SIPUserAgents
 {
     public enum SIPCallRedirectModesEnum
     {
@@ -113,7 +116,7 @@ namespace SIPSorcery.SIP.App
         //rj2
         /// <summary>
         /// A string representing the Call Identifier
-        /// defaults to <see cref="CallProperties.CreateNewCallId()"/> if not set
+        /// defaults to <see cref="CallProperties.CreateNewCallId"/> if not set
         /// 
         /// CallId MUST be unique between different calls
         /// </summary>

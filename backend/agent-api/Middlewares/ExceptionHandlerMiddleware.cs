@@ -1,7 +1,7 @@
 ﻿using System.Net;
 using System.Text.Json;
 
-namespace Plat4Me.DialAgentApi.Middlewares;
+namespace KL.Agent.API.Middlewares;
 
 public class ExceptionHandlerMiddleware
 {

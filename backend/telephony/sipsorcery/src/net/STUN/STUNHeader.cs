@@ -73,9 +73,9 @@
 
 using System;
 using System.Text;
-using SIPSorcery.Sys;
+using SIPSorcery.sys.Net;
 
-namespace SIPSorcery.Net
+namespace SIPSorcery.net.STUN
 {
     public enum STUNMessageTypesEnum : ushort
     {

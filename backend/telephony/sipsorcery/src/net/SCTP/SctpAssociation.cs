@@ -14,14 +14,15 @@
 //-----------------------------------------------------------------------------
 
 using System;
-using System.Linq;
 using System.Net;
 using System.Text;
 using System.Threading;
 using Microsoft.Extensions.Logging;
-using SIPSorcery.Sys;
+using SIPSorcery.net.SCTP.Chunks;
+using SIPSorcery.sys.Crypto;
+using SIPSorcery.sys.Net;
 
-namespace SIPSorcery.Net
+namespace SIPSorcery.net.SCTP
 {
     public enum SctpAssociationState
     {

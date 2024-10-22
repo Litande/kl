@@ -19,9 +19,9 @@ using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
 using Microsoft.Extensions.Logging;
-using SIPSorcery.Sys;
+using SIPSorcery.sys;
 
-namespace SIPSorcery.Net
+namespace SIPSorcery.net.RTSP
 {
     public enum RTSPHeaderParserError
     {

@@ -1,17 +1,13 @@
-﻿using Microsoft.EntityFrameworkCore;
-using Plat4Me.DialRuleEngine.Application.Common.Extensions;
-using Plat4Me.DialRuleEngine.Application.Enums;
-using Plat4Me.DialRuleEngine.Application.Models;
-using Plat4Me.DialRuleEngine.Application.Models.Entities;
-using Plat4Me.DialRuleEngine.Application.Repositories;
+﻿using KL.Engine.Rule.Enums;
+using KL.Engine.Rule.Models;
 
-namespace Plat4Me.DialRuleEngine.Infrastructure.Repositories;
+namespace KL.Engine.Rule.Repositories;
 
 public class RuleRepository : IRuleRepository
 {
     private readonly DialDbContext _context;
 
-    private IQueryable<Rule> ActiveRules => _context.Rules
+    private IQueryable<Models.Entities.Rule> ActiveRules => _context.Rules
         .Where(x => x.Status == RuleStatusTypes.Enable
                     && x.RuleGroup.Status == RuleGroupStatusTypes.Enable);
 

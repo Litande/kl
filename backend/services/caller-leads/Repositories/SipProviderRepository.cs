@@ -1,9 +1,7 @@
-﻿using Microsoft.EntityFrameworkCore;
-using Plat4Me.DialLeadCaller.Application.Enums;
-using Plat4Me.DialLeadCaller.Application.Models.Entities;
-using Plat4Me.DialLeadCaller.Application.Repositories;
+﻿using KL.Caller.Leads.Enums;
+using KL.Caller.Leads.Models.Entities;
 
-namespace Plat4Me.DialLeadCaller.Infrastructure.Repositories;
+namespace KL.Caller.Leads.Repositories;
 
 public class SipProviderRepository : ISipProviderRepository
 {

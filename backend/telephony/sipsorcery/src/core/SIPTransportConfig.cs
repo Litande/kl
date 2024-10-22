@@ -20,9 +20,13 @@ using System.Net;
 using System.Security.Cryptography.X509Certificates;
 using System.Xml;
 using Microsoft.Extensions.Logging;
-using SIPSorcery.Sys;
+using SIPSorcery.core.SIP;
+using SIPSorcery.core.SIP.Channels;
+using SIPSorcery.sys;
+using SIPSorcery.sys.Crypto;
+using SIPSorcery.sys.Net;
 
-namespace SIPSorcery.SIP
+namespace SIPSorcery.core
 {
     public static class SIPTransportConfig
     {

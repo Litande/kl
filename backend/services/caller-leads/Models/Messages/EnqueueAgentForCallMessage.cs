@@ -1,5 +1,6 @@
-﻿using Plat4Me.DialLeadCaller.Application.Enums;
-namespace Plat4Me.DialLeadCaller.Application.Models.Messages;
+﻿using KL.Caller.Leads.Enums;
+
+namespace KL.Caller.Leads.Models.Messages;
 
 public record EnqueueAgentForCallMessage(
     long ClientId,

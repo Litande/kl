@@ -1,7 +1,7 @@
-﻿using Microsoft.AspNetCore.Identity;
-using Plat4Me.DialClientApi.Application.Enums;
+﻿using KL.Manager.API.Application.Enums;
+using Microsoft.AspNetCore.Identity;
 
-namespace Plat4Me.DialClientApi.Persistent.Seed;
+namespace KL.Manager.API.Persistent.Seed;
 
 public class SeedRoles
 {

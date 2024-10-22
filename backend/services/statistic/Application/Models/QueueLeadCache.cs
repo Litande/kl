@@ -1,7 +1,7 @@
-﻿using Plat4Me.Dial.Statistic.Api.Application.Common.Enums;
+﻿using KL.Statistics.Application.Common.Enums;
 using Redis.OM.Modeling;
 
-namespace Plat4Me.Dial.Statistic.Api.Application.Models;
+namespace KL.Statistics.Application.Models;
 
 [Document(StorageType = StorageType.Json, Prefixes = new[] { "QueueLead" })]
 public class QueueLeadCache

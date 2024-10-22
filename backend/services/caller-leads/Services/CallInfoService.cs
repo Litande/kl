@@ -1,13 +1,11 @@
-using Microsoft.Extensions.Logging;
-using Plat4Me.DialLeadCaller.Application.Models;
-using Plat4Me.DialLeadCaller.Application.Enums;
-using Plat4Me.DialLeadCaller.Application.Extensions;
-using Plat4Me.DialLeadCaller.Application.Models.Messages;
-using Plat4Me.DialLeadCaller.Application.Repositories;
-using Plat4Me.DialLeadCaller.Application.Services.Contracts;
-using Medallion.Threading;
+using KL.Caller.Leads.Enums;
+using KL.Caller.Leads.Extensions;
+using KL.Caller.Leads.Models;
+using KL.Caller.Leads.Models.Messages;
+using KL.Caller.Leads.Repositories;
+using KL.Caller.Leads.Services.Contracts;
 
-namespace Plat4Me.DialLeadCaller.Application.Services;
+namespace KL.Caller.Leads.Services;
 
 public class CallInfoService : ICallInfoService
 {

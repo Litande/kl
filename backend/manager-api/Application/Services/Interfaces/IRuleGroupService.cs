@@ -1,8 +1,8 @@
-﻿using Plat4Me.DialClientApi.Application.Enums;
-using Plat4Me.DialClientApi.Application.Models.Requests.RuleGroups;
-using Plat4Me.DialClientApi.Application.Models.Responses.RuleGroups;
+﻿using KL.Manager.API.Application.Enums;
+using KL.Manager.API.Application.Models.Requests.RuleGroups;
+using KL.Manager.API.Application.Models.Responses.RuleGroups;
 
-namespace Plat4Me.DialClientApi.Application.Services.Interfaces;
+namespace KL.Manager.API.Application.Services.Interfaces;
 
 public interface IRuleGroupService
 {

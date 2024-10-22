@@ -16,7 +16,7 @@
 using System.Net;
 using System.Net.Sockets;
 
-namespace SIPSorcery.Net
+namespace SIPSorcery.net.SDP
 {
     public class SDPConnectionInformation
     {

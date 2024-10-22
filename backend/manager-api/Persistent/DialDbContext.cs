@@ -1,8 +1,8 @@
-﻿using Microsoft.EntityFrameworkCore;
-using Plat4Me.DialClientApi.Persistent.Entities;
-using Plat4Me.DialClientApi.Persistent.EntityConfigurations;
+﻿using KL.Manager.API.Persistent.Entities;
+using KL.Manager.API.Persistent.EntityConfigurations;
+using Microsoft.EntityFrameworkCore;
 
-namespace Plat4Me.DialClientApi.Persistent;
+namespace KL.Manager.API.Persistent;
 
 public class DialDbContext : DbContext
 {

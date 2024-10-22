@@ -1,6 +1,6 @@
-﻿using Plat4Me.DialLeadProvider.Application.Models;
+﻿using KL.Provider.Leads.Application.Models;
 
-namespace Plat4Me.DialLeadProvider.Persistent.LeadCallbackHttpClient;
+namespace KL.Provider.Leads.Persistent.LeadCallbackHttpClient;
 
 public interface ILeadCallbackClient
 {

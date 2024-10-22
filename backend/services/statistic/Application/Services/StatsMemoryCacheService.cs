@@ -1,13 +1,13 @@
-﻿using Microsoft.Extensions.Caching.Memory;
-using Plat4Me.Dial.Statistic.Api.Application.Cache;
-using Plat4Me.Dial.Statistic.Api.Application.Common;
-using Plat4Me.Dial.Statistic.Api.Application.Common.Enums;
-using Plat4Me.Dial.Statistic.Api.Application.Common.Extensions;
-using Plat4Me.Dial.Statistic.Api.Application.Models.Messages;
-using Plat4Me.Dial.Statistic.Api.Application.Models.StatisticCache;
-using Plat4Me.Dial.Statistic.Api.DAL.Repositories;
+﻿using KL.Statistics.Application.Cache;
+using KL.Statistics.Application.Common;
+using KL.Statistics.Application.Common.Enums;
+using KL.Statistics.Application.Common.Extensions;
+using KL.Statistics.Application.Models.Messages;
+using KL.Statistics.Application.Models.StatisticCache;
+using KL.Statistics.DAL.Repositories;
+using Microsoft.Extensions.Caching.Memory;
 
-namespace Plat4Me.Dial.Statistic.Api.Application.Services;
+namespace KL.Statistics.Application.Services;
 
 public class StatsMemoryCacheService : MemoryCacheService<CdrStatisticCache>, IStatsMemoryCacheService
 {

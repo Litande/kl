@@ -1,6 +1,6 @@
-﻿using Plat4Me.DialClientApi.Application.Models.Responses.Team;
+﻿using KL.Manager.API.Application.Models.Responses.Team;
 
-namespace Plat4Me.DialClientApi.Persistent.Repositories.Interfaces;
+namespace KL.Manager.API.Persistent.Repositories.Interfaces;
 
 public interface ITeamRepository
 {

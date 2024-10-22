@@ -23,11 +23,13 @@ using System.Linq;
 using System.Net;
 using System.Threading.Tasks;
 using Microsoft.Extensions.Logging;
-using SIPSorcery.Net;
-using SIPSorcery.SIP.App;
+using SIPSorcery.app.Media.Sources;
+using SIPSorcery.net.RTP;
+using SIPSorcery.net.SDP;
+using SIPSorcery.sys;
 using SIPSorceryMedia.Abstractions;
 
-namespace SIPSorcery.Media
+namespace SIPSorcery.app.Media
 {
     /// <summary>
     /// This class serves as a bridge, or mapping, between the media end points, typically 
@@ -48,7 +50,7 @@ namespace SIPSorcery.Media
         private const int TEST_PATTERN_FPS = 30;
         private const int TEST_PATTERN_ONHOLD_FPS = 3;
 
-        private static ILogger logger = SIPSorcery.Sys.Log.Logger;
+        private static ILogger logger = Log.Logger;
 
         private VideoTestPatternSource _videoTestPatternSource;
         private AudioExtrasSource _audioExtrasSource;

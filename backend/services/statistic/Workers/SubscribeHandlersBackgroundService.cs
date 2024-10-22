@@ -1,13 +1,13 @@
-﻿using Microsoft.Extensions.Options;
+﻿using System.Text.Json;
+using KL.Statistics.Application.Handlers;
+using KL.Statistics.Application.Handlers.Agent;
+using KL.Statistics.Application.Handlers.LeadStatistics;
+using KL.Statistics.Application.Models.Messages;
+using KL.Statistics.Configurations;
+using Microsoft.Extensions.Options;
 using Plat4me.Core.Nats;
-using Plat4Me.Dial.Statistic.Api.Application.Handlers;
-using Plat4Me.Dial.Statistic.Api.Application.Handlers.Agent;
-using Plat4Me.Dial.Statistic.Api.Application.Handlers.LeadStatistics;
-using Plat4Me.Dial.Statistic.Api.Application.Models.Messages;
-using Plat4Me.Dial.Statistic.Api.Configurations;
-using System.Text.Json;
 
-namespace Plat4Me.Dial.Statistic.Api.Workers;
+namespace KL.Statistics.Workers;
 
 public class SubscribeHandlersBackgroundService : BackgroundService
 {

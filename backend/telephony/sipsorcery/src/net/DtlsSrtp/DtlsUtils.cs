@@ -63,9 +63,10 @@ using Org.BouncyCastle.Security;
 using Org.BouncyCastle.Utilities;
 using Org.BouncyCastle.Utilities.IO.Pem;
 using Org.BouncyCastle.X509;
-using SIPSorcery.Sys;
+using SIPSorcery.net.WebRTC;
+using SIPSorcery.sys;
 
-namespace SIPSorcery.Net
+namespace SIPSorcery.net.DtlsSrtp
 {
     public class DtlsUtils
     {
@@ -74,7 +75,7 @@ namespace SIPSorcery.Net
         /// </summary>
         public const int DEFAULT_KEY_SIZE = 2048;
 
-        private static ILogger logger = SIPSorcery.Sys.Log.Logger;
+        private static ILogger logger = Log.Logger;
 
         public static RTCDtlsFingerprint Fingerprint(string hashAlgorithm, X509Certificate2 certificate)
         {

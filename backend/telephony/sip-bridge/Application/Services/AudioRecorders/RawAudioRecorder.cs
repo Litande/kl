@@ -1,8 +1,4 @@
-using SIPSorcery.Net;
-using System.Collections.Concurrent;
-using Microsoft.Extensions.Logging;
-
-namespace Plat4Me.DialSipBridge.Application.Services.AudioRecorders;
+namespace KL.SIP.Bridge.Application.Services.AudioRecorders;
 
 public class RawAudioRecorder : AudioRecorder
 {

@@ -1,4 +1,4 @@
-﻿namespace Plat4Me.DialClientApi.Application.Models.Requests.UserFilter;
+﻿namespace KL.Manager.API.Application.Models.Requests.UserFilter;
 
 public class UpdateUserFilterRequest
 {

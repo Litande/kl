@@ -1,7 +1,7 @@
-﻿using Plat4Me.DialRuleEngine.Application.Handlers.Contracts;
-using Plat4Me.DialRuleEngine.Application.Models.Messages;
+﻿using KL.Engine.Rule.Handlers.Contracts;
+using KL.Engine.Rule.Models.Messages;
 
-namespace Plat4Me.DialRuleEngine.Application.Handlers;
+namespace KL.Engine.Rule.Handlers;
 
 public class LeadFeedbackCallFailedHandler : ILeadFeedbackCallFailedHandler
 {

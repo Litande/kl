@@ -1,14 +1,10 @@
-﻿using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.Hosting;
-using Microsoft.Extensions.Logging;
+﻿using System.Text.Json;
+using KL.Engine.Rule.App;
+using KL.Engine.Rule.Handlers.Contracts;
+using KL.Engine.Rule.Models.Messages;
 using Microsoft.Extensions.Options;
-using Plat4me.Core.Nats;
-using Plat4Me.DialRuleEngine.Application.App;
-using Plat4Me.DialRuleEngine.Application.Handlers.Contracts;
-using Plat4Me.DialRuleEngine.Application.Models.Messages;
-using System.Text.Json;
 
-namespace Plat4Me.DialRuleEngine.Infrastructure;
+namespace KL.Engine.Rule;
 
 public class SubscribeHandlersBackgroundService : BackgroundService
 {

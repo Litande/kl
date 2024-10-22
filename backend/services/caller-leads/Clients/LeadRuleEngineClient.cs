@@ -1,13 +1,11 @@
-﻿using Microsoft.Extensions.Options;
-using Plat4Me.DialLeadCaller.Application.Clients;
-using Plat4Me.DialLeadCaller.Application.Extensions;
-using Plat4Me.DialLeadCaller.Application.Models.Requests;
-using Plat4Me.DialLeadCaller.Application.Models.Responses;
-using Plat4Me.DialLeadCaller.Infrastructure.App;
-using System.Net.Http.Json;
-using System.Text.Json;
+﻿using System.Text.Json;
+using KL.Caller.Leads.App;
+using KL.Caller.Leads.Extensions;
+using KL.Caller.Leads.Models.Requests;
+using KL.Caller.Leads.Models.Responses;
+using Microsoft.Extensions.Options;
 
-namespace Plat4Me.DialLeadCaller.Infrastructure.Clients;
+namespace KL.Caller.Leads.Clients;
 
 public class LeadRuleEngineClient : ILeadRuleEngineClient
 {

@@ -1,7 +1,7 @@
-﻿using Plat4Me.DialClientApi.Application.Enums;
-using Plat4Me.DialClientApi.Persistent.Entities.Projections;
+﻿using KL.Manager.API.Application.Enums;
+using KL.Manager.API.Persistent.Entities.Projections;
 
-namespace Plat4Me.DialClientApi.Application.Models.Requests;
+namespace KL.Manager.API.Application.Models.Requests;
 
 public class PaginationRequest
 {

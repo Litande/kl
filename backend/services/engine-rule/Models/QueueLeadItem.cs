@@ -1,4 +1,4 @@
-﻿namespace Plat4Me.DialRuleEngine.Application.Models;
+﻿namespace KL.Engine.Rule.Models;
 
 public record QueueLeadItem(
     long LeadId,

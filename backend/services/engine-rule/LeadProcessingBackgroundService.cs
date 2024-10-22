@@ -1,15 +1,10 @@
-﻿using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.Hosting;
-using Microsoft.Extensions.Logging;
+﻿using KL.Engine.Rule.App;
+using KL.Engine.Rule.Models.Messages;
+using KL.Engine.Rule.Repositories;
+using KL.Engine.Rule.Services.Contracts;
 using Microsoft.Extensions.Options;
-using Plat4me.Core.Nats;
-using Plat4Me.DialRuleEngine.Application.App;
-using Plat4Me.DialRuleEngine.Application.Models.Messages;
-using Plat4Me.DialRuleEngine.Application.Services.Contracts;
-using Plat4Me.DialRuleEngine.Infrastructure.App;
-using Plat4Me.DialRuleEngine.Application.Repositories;
 
-namespace Plat4Me.DialRuleEngine.Infrastructure;
+namespace KL.Engine.Rule;
 
 public class LeadProcessingBackgroundService : BackgroundService
 {

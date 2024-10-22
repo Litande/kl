@@ -1,6 +1,6 @@
-﻿using Plat4Me.DialClientApi.Application.Models.Responses.LeadGroups;
+﻿using KL.Manager.API.Application.Models.Responses.LeadGroups;
 
-namespace Plat4Me.DialClientApi.Application.Handlers.LeadGroups;
+namespace KL.Manager.API.Application.Handlers.LeadGroups;
 
 public interface IStatusQueryHandler
 {

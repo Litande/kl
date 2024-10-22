@@ -32,10 +32,12 @@ using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
 using Microsoft.Extensions.Logging;
+using SIPSorcery.net.ICE;
 using SIPSorcery.net.RTP;
+using SIPSorcery.sys;
 using SIPSorceryMedia.Abstractions;
 
-namespace SIPSorcery.Net
+namespace SIPSorcery.net.SDP
 {
     /// <summary>
     /// An attribute used to defined additional properties about
@@ -84,7 +86,7 @@ namespace SIPSorcery.Net
 
         public const string m_CRLF = "\r\n";
 
-        private static ILogger logger = SIPSorcery.Sys.Log.Logger;
+        private static ILogger logger = Log.Logger;
 
         public SDPConnectionInformation Connection;
 

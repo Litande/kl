@@ -1,8 +1,8 @@
 ﻿using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
-using Plat4Me.DialClientApi.Application.Enums;
+using KL.Manager.API.Application.Enums;
 
-namespace Plat4Me.DialClientApi.Application.Extensions;
+namespace KL.Manager.API.Application.Extensions;
 
 public static class EnumExtensions
 {

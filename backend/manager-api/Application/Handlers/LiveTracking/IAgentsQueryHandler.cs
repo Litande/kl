@@ -1,6 +1,6 @@
-﻿using Plat4Me.DialClientApi.Application.Models.Responses.AgentTrackings;
+﻿using KL.Manager.API.Application.Models.Responses.AgentTrackings;
 
-namespace Plat4Me.DialClientApi.Application.Handlers.LiveTracking;
+namespace KL.Manager.API.Application.Handlers.LiveTracking;
 
 public interface IAgentsQueryHandler
 {

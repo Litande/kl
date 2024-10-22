@@ -1,10 +1,10 @@
-﻿using Plat4Me.DialClientApi.Application.Enums;
-using Plat4Me.DialClientApi.Application.Models;
-using Plat4Me.DialClientApi.Application.Models.Requests.Rule;
-using Plat4Me.DialClientApi.Application.Models.Responses.Rule;
-using Plat4Me.DialClientApi.Persistent.Entities.Projections;
+﻿using KL.Manager.API.Application.Enums;
+using KL.Manager.API.Application.Models;
+using KL.Manager.API.Application.Models.Requests.Rule;
+using KL.Manager.API.Application.Models.Responses.Rule;
+using KL.Manager.API.Persistent.Entities.Projections;
 
-namespace Plat4Me.DialClientApi.Application.Services.Interfaces;
+namespace KL.Manager.API.Application.Services.Interfaces;
 
 public interface IRuleService
 {

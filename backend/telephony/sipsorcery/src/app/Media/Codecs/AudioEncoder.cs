@@ -18,7 +18,7 @@ using System.Collections.Generic;
 using System.Linq;
 using SIPSorceryMedia.Abstractions;
 
-namespace SIPSorcery.Media
+namespace SIPSorcery.app.Media.Codecs
 {
     public class AudioEncoder : IAudioEncoder
     {

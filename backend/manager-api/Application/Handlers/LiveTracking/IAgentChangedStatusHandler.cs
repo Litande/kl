@@ -1,6 +1,6 @@
-﻿using Plat4Me.DialClientApi.Application.Models.Messages.Agents;
+﻿using KL.Manager.API.Application.Models.Messages.Agents;
 
-namespace Plat4Me.DialClientApi.Application.Handlers.LiveTracking;
+namespace KL.Manager.API.Application.Handlers.LiveTracking;
 
 public interface IAgentChangedStatusHandler : ISubHandler<AgentChangedStatusMessage>
 {

@@ -1,17 +1,17 @@
-﻿using Microsoft.Extensions.Options;
+﻿using System.Text.Json;
+using KL.Provider.Leads.Application.Configurations;
+using KL.Provider.Leads.Application.Enums;
+using KL.Provider.Leads.Application.Extensions;
+using KL.Provider.Leads.Application.Models;
+using KL.Provider.Leads.Application.Models.Messages;
+using KL.Provider.Leads.Application.Services.Interfaces;
+using KL.Provider.Leads.Persistent.Entities;
+using KL.Provider.Leads.Persistent.LeadProviderHttpClient;
+using KL.Provider.Leads.Persistent.Repositories.Interfaces;
+using Microsoft.Extensions.Options;
 using Plat4me.Core.Nats;
-using Plat4Me.DialLeadProvider.Application.Enums;
-using Plat4Me.DialLeadProvider.Application.Extensions;
-using Plat4Me.DialLeadProvider.Application.Models;
-using Plat4Me.DialLeadProvider.Application.Models.Messages;
-using System.Text.Json;
-using Plat4Me.DialLeadProvider.Application.Configurations;
-using Plat4Me.DialLeadProvider.Application.Services.Interfaces;
-using Plat4Me.DialLeadProvider.Persistent.Entities;
-using Plat4Me.DialLeadProvider.Persistent.LeadProviderHttpClient;
-using Plat4Me.DialLeadProvider.Persistent.Repositories.Interfaces;
 
-namespace Plat4Me.DialLeadProvider.Application.Services;
+namespace KL.Provider.Leads.Application.Services;
 
 public class LeadsDataSourceSync : ILeadsDataSourceSync
 {

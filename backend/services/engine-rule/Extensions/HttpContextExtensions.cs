@@ -1,6 +1,4 @@
-﻿using Microsoft.AspNetCore.Http;
-
-namespace Plat4Me.DialRuleEngine.Application.Extensions;
+﻿namespace KL.Engine.Rule.Extensions;
 
 public static class HttpContextExtensions
 {

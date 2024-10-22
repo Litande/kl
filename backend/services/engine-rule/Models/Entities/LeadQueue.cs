@@ -1,6 +1,6 @@
-﻿using Plat4Me.DialRuleEngine.Application.Enums;
+﻿using KL.Engine.Rule.Enums;
 
-namespace Plat4Me.DialRuleEngine.Application.Models.Entities;
+namespace KL.Engine.Rule.Models.Entities;
 
 public class LeadQueue
 {

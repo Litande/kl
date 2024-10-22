@@ -22,9 +22,10 @@ using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 using Microsoft.Extensions.Logging;
-using SIPSorcery.Sys;
+using SIPSorcery.sys;
+using SIPSorcery.sys.Net;
 
-namespace SIPSorcery.SIP
+namespace SIPSorcery.core.SIP.Channels
 {
     /// <summary>
     /// Represents a message received on a SIP channel prior to any attempt to identify

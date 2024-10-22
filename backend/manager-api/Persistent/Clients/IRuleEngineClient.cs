@@ -1,7 +1,7 @@
-﻿using Plat4Me.DialClientApi.Application.Enums;
-using Plat4Me.DialClientApi.Application.Models;
+﻿using KL.Manager.API.Application.Enums;
+using KL.Manager.API.Application.Models;
 
-namespace Plat4Me.DialClientApi.Persistent.Clients;
+namespace KL.Manager.API.Persistent.Clients;
 
 public interface IRuleEngineClient
 {

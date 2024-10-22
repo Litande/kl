@@ -1,24 +1,12 @@
-﻿using Microsoft.Extensions.Logging;
-using Moq;
-using Plat4Me.DialLeadCaller.Application.Clients;
-using Plat4Me.DialLeadCaller.Application.Enums;
-using Plat4Me.DialLeadCaller.Application.Handlers.Contracts;
-using Plat4Me.DialLeadCaller.Application.Models;
-using Plat4Me.DialLeadCaller.Application.Models.Entities;
-using Plat4Me.DialLeadCaller.Application.Models.Entities.Settings;
-using Plat4Me.DialLeadCaller.Application.Models.Messages;
-using Plat4Me.DialLeadCaller.Application.Models.Requests;
-using Plat4Me.DialLeadCaller.Application.Models.Responses;
-using Plat4Me.DialLeadCaller.Application.Repositories;
-using Plat4Me.DialLeadCaller.Application.Services;
-using Plat4Me.DialLeadCaller.Application.Services.Contracts;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
+using Microsoft.Extensions.Logging;
+using Moq;
 
-namespace Plat4Me.DialLeadCaller.Tests;
+namespace KL.Caller.Leads.Tests;
 
 public class CallServiceTestsFixture
 {

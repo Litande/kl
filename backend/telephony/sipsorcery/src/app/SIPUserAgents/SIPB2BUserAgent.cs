@@ -15,9 +15,11 @@
 //-----------------------------------------------------------------------------
 
 using Microsoft.Extensions.Logging;
-using SIPSorcery.Sys;
+using SIPSorcery.core.SIP;
+using SIPSorcery.core.SIPTransactions;
+using SIPSorcery.sys;
 
-namespace SIPSorcery.SIP.App
+namespace SIPSorcery.app.SIPUserAgents
 {
     /// <summary>
     /// This class represents a back-to-back (B2B) user agent (UA) that is used 

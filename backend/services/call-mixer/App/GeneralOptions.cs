@@ -1,4 +1,4 @@
-namespace Plat4Me.DialCallRecordMixer.App;
+namespace KL.Call.Mixer.App;
 
 public class GeneralOptions
 {

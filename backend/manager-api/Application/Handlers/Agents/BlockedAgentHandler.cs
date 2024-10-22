@@ -1,12 +1,12 @@
-﻿using Microsoft.AspNetCore.Identity;
+﻿using KL.Manager.API.Application.Configurations;
+using KL.Manager.API.Application.Enums;
+using KL.Manager.API.Application.Models.Messages.Agents;
+using KL.Manager.API.Persistent.Repositories.Interfaces;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.Extensions.Options;
 using Plat4me.Core.Nats;
-using Plat4Me.DialClientApi.Application.Configurations;
-using Plat4Me.DialClientApi.Application.Enums;
-using Plat4Me.DialClientApi.Application.Models.Messages.Agents;
-using Plat4Me.DialClientApi.Persistent.Repositories.Interfaces;
 
-namespace Plat4Me.DialClientApi.Application.Handlers.Agents;
+namespace KL.Manager.API.Application.Handlers.Agents;
 
 public class BlockedAgentHandler : IBlockedAgentHandler
 {

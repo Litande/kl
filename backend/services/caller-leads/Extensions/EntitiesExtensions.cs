@@ -1,6 +1,6 @@
-﻿using Plat4Me.DialLeadCaller.Application.Models.Entities;
+﻿using KL.Caller.Leads.Models.Entities;
 
-namespace Plat4Me.DialLeadCaller.Application.Extensions;
+namespace KL.Caller.Leads.Extensions;
 
 public static class EntitiesExtensions
 {

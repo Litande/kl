@@ -1,4 +1,4 @@
-﻿namespace Plat4Me.DialLeadCaller.Infrastructure.App;
+﻿namespace KL.Caller.Leads.App;
 
 public class CallPublishBackgroundOptions
 {

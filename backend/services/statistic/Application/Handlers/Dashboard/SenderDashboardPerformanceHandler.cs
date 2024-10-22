@@ -1,8 +1,8 @@
-﻿using Plat4Me.Dial.Statistic.Api.Application.Models;
-using Plat4Me.Dial.Statistic.Api.Application.SignalR;
-using System.Collections.Concurrent;
+﻿using System.Collections.Concurrent;
+using KL.Statistics.Application.Models;
+using KL.Statistics.Application.SignalR;
 
-namespace Plat4Me.Dial.Statistic.Api.Application.Handlers.Dashboard;
+namespace KL.Statistics.Application.Handlers.Dashboard;
 
 public class SenderDashboardPerformanceHandler : ISenderDashboardPerformanceHandler
 {

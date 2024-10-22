@@ -1,9 +1,9 @@
 ﻿using System.Net;
+using KL.Manager.API.Persistent.Clients;
+using KL.Manager.API.Persistent.Repositories;
+using KL.Manager.API.Persistent.Repositories.Interfaces;
+using KL.Manager.API.Persistent.Seed;
 using Microsoft.EntityFrameworkCore;
-using Plat4Me.DialClientApi.Persistent.Clients;
-using Plat4Me.DialClientApi.Persistent.Repositories;
-using Plat4Me.DialClientApi.Persistent.Repositories.Interfaces;
-using Plat4Me.DialClientApi.Persistent.Seed;
 using Polly;
 using Polly.Caching;
 using Polly.Caching.Memory;
@@ -12,7 +12,7 @@ using Polly.Extensions.Http;
 using Redis.OM;
 using StackExchange.Redis;
 
-namespace Plat4Me.DialClientApi.Persistent.Configurations;
+namespace KL.Manager.API.Persistent.Configurations;
 
 public static class ServiceCollectionExtensions
 {

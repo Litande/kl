@@ -1,13 +1,13 @@
-﻿using Plat4Me.DialClientApi.Application.Enums;
-using Plat4Me.DialClientApi.Application.Models.Requests;
-using Plat4Me.DialClientApi.Application.Models.Responses;
-using Plat4Me.DialClientApi.Application.Models.Responses.LeadGroups;
-using Plat4Me.DialClientApi.Application.Models.Responses.LeadQueues;
-using Plat4Me.DialClientApi.Application.Models.Responses.Leads;
-using Plat4Me.DialClientApi.Persistent.Entities;
-using Plat4Me.DialClientApi.Persistent.Entities.Cache;
+﻿using KL.Manager.API.Application.Enums;
+using KL.Manager.API.Application.Models.Requests;
+using KL.Manager.API.Application.Models.Responses;
+using KL.Manager.API.Application.Models.Responses.LeadGroups;
+using KL.Manager.API.Application.Models.Responses.LeadQueues;
+using KL.Manager.API.Application.Models.Responses.Leads;
+using KL.Manager.API.Persistent.Entities;
+using KL.Manager.API.Persistent.Entities.Cache;
 
-namespace Plat4Me.DialClientApi.Application.Extensions;
+namespace KL.Manager.API.Application.Extensions;
 
 public static class LeadQueueExtensions
 {

@@ -1,12 +1,12 @@
 using System.Collections.Concurrent;
+using KL.Agent.API.Application.Common;
+using KL.Agent.API.Application.Enums;
+using KL.Agent.API.Application.Handlers;
+using KL.Agent.API.Application.Models.Responses;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.SignalR;
-using Plat4Me.DialAgentApi.Application.Common;
-using Plat4Me.DialAgentApi.Application.Enums;
-using Plat4Me.DialAgentApi.Application.Handlers;
-using Plat4Me.DialAgentApi.Application.Models.Responses;
 
-namespace Plat4Me.DialAgentApi.SignalR;
+namespace KL.Agent.API.SignalR;
 
 [Authorize(Roles = "Agent")]
 public class AgentHub : Hub<IBaseClient>

@@ -1,4 +1,4 @@
-﻿namespace Plat4Me.DialClientApi.Configurations;
+﻿namespace KL.Manager.API.Configurations;
 
 public class DashboardPerformanceOptions
 {

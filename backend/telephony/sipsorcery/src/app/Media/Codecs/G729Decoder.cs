@@ -44,9 +44,9 @@ Sherbrooke.  All rights reserved.
 
 using System;
 using System.IO;
-using SIPSorcery.Media.G729Codec;
+using SIPSorcery.app.Media.Codecs.G729Codec;
 
-namespace SIPSorcery.Media
+namespace SIPSorcery.app.Media.Codecs
 {
     public class G729Decoder : Ld8k
     {

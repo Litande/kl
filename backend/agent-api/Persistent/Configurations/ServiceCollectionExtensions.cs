@@ -1,17 +1,17 @@
-﻿using Microsoft.EntityFrameworkCore;
-using Plat4Me.DialAgentApi.Persistent.Repositories;
-using Plat4Me.DialAgentApi.Persistent.Repositories.Interfaces;
-using Plat4Me.DialAgentApi.Persistent.Seed;
+﻿using KL.Agent.API.Persistent.Repositories;
+using KL.Agent.API.Persistent.Repositories.Interfaces;
+using KL.Agent.API.Persistent.Seed;
+using Medallion.Threading;
+using Medallion.Threading.Redis;
+using Microsoft.EntityFrameworkCore;
 using Polly;
 using Polly.Caching;
 using Polly.Caching.Memory;
 using Polly.Contrib.DuplicateRequestCollapser;
 using Redis.OM;
 using StackExchange.Redis;
-using Medallion.Threading;
-using Medallion.Threading.Redis;
 
-namespace Plat4Me.DialAgentApi.Persistent.Configurations;
+namespace KL.Agent.API.Persistent.Configurations;
 
 public static class ServiceCollectionExtensions
 {

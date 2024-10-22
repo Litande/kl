@@ -1,7 +1,7 @@
-﻿using Plat4Me.DialAgentApi.Application.Models.Responses;
-using Plat4Me.DialAgentApi.Persistent.Entities;
+﻿using KL.Agent.API.Application.Models.Responses;
+using KL.Agent.API.Persistent.Entities;
 
-namespace Plat4Me.DialAgentApi.Application.Extensions;
+namespace KL.Agent.API.Application.Extensions;
 
 public static class UserExtensions
 {

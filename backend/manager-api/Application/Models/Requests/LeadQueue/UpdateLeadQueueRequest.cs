@@ -1,4 +1,4 @@
-﻿namespace Plat4Me.DialClientApi.Application.Models.Requests.LeadQueue;
+﻿namespace KL.Manager.API.Application.Models.Requests.LeadQueue;
 
 public class UpdateLeadQueueRequest
 {

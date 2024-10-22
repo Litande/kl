@@ -15,7 +15,7 @@
 
 using System;
 
-namespace SIPSorcery.Net
+namespace SIPSorcery.net.STUN.STUNAttributes
 {
     public class STUNChangeRequestAttribute : STUNAttribute
     {

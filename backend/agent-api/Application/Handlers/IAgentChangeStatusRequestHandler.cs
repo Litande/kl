@@ -1,7 +1,7 @@
-using Plat4Me.DialAgentApi.Application.Enums;
-using Plat4Me.DialAgentApi.Application.Models.Responses;
+using KL.Agent.API.Application.Enums;
+using KL.Agent.API.Application.Models.Responses;
 
-namespace Plat4Me.DialAgentApi.Application.Handlers;
+namespace KL.Agent.API.Application.Handlers;
 
 public interface IAgentChangeStatusRequestHandler
 {

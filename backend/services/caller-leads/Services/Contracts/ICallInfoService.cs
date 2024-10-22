@@ -1,7 +1,7 @@
-using Plat4Me.DialLeadCaller.Application.Models.Messages;
-using Plat4Me.DialLeadCaller.Application.Models;
+using KL.Caller.Leads.Models;
+using KL.Caller.Leads.Models.Messages;
 
-namespace Plat4Me.DialLeadCaller.Application.Services.Contracts;
+namespace KL.Caller.Leads.Services.Contracts;
 
 public interface ICallInfoService
 {

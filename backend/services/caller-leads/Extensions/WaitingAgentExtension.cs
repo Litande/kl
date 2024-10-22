@@ -1,6 +1,6 @@
-﻿using Plat4Me.DialLeadCaller.Application.Models;
+﻿using KL.Caller.Leads.Models;
 
-namespace Plat4Me.DialLeadCaller.Application.Extensions;
+namespace KL.Caller.Leads.Extensions;
 
 public static class WaitingAgentExtension
 {

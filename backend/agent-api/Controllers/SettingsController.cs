@@ -1,8 +1,8 @@
-﻿using Microsoft.AspNetCore.Mvc;
-using Plat4Me.DialAgentApi.Persistent.Configurations;
-using Plat4Me.DialAgentApi.Persistent.Repositories.Interfaces;
+﻿using KL.Agent.API.Persistent.Configurations;
+using KL.Agent.API.Persistent.Repositories.Interfaces;
+using Microsoft.AspNetCore.Mvc;
 
-namespace Plat4Me.DialAgentApi.Controllers;
+namespace KL.Agent.API.Controllers;
 
 [Route("settings")]
 public class SettingsController : ApiAuthorizeBase

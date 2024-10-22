@@ -1,6 +1,6 @@
-﻿using Plat4Me.DialClientApi.Application.Enums;
+﻿using KL.Manager.API.Application.Enums;
 
-namespace Plat4Me.DialClientApi.Persistent.Entities;
+namespace KL.Manager.API.Persistent.Entities;
 
 public class LeadQueue
 {

@@ -1,4 +1,4 @@
-﻿namespace Plat4Me.DialLeadCaller.Application.Clients;
+﻿namespace KL.Caller.Leads.Clients;
 
 public interface IBridgeClient
 {

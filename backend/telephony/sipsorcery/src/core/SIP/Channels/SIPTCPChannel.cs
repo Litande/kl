@@ -52,9 +52,9 @@ using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 using Microsoft.Extensions.Logging;
-using SIPSorcery.Sys;
+using SIPSorcery.sys.Net;
 
-namespace SIPSorcery.SIP
+namespace SIPSorcery.core.SIP.Channels
 {
     /// <summary>
     /// SIP transport for TCP. Note this is also the base class for the SIPTLSChannel.

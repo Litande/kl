@@ -1,10 +1,9 @@
-using Microsoft.Extensions.Logging;
+using KL.SIP.Bridge.Application.Configurations;
+using KL.SIP.Bridge.Application.Connections;
 using Microsoft.Extensions.Options;
-using Plat4Me.DialSipBridge.Application.Configurations;
 using SIPSorcery.SIP;
-using Plat4Me.DialSipBridge.Application.Connections;
 
-namespace Plat4Me.DialSipBridge.Application.Session
+namespace KL.SIP.Bridge.Application.Session
 {
     public class LeadConnectionFactory : ILeadConnectionFactory
     {

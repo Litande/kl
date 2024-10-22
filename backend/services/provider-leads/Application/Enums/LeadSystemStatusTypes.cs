@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel;
 
-namespace Plat4Me.DialLeadProvider.Application.Enums;
+namespace KL.Provider.Leads.Application.Enums;
 
 public enum LeadSystemStatusTypes
 {

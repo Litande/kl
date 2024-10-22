@@ -1,6 +1,6 @@
 using System.Text.Json.Serialization;
 
-namespace Plat4Me.DialRuleEngine.Infrastructure.App;
+namespace KL.Engine.Rule.App;
 
 public class MysqlOptions
 {

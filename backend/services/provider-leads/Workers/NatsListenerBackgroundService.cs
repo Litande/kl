@@ -1,11 +1,11 @@
-﻿using Microsoft.Extensions.Options;
+﻿using System.Text.Json;
+using KL.Provider.Leads.Application.Configurations;
+using KL.Provider.Leads.Application.Handlers.Interfaces;
+using KL.Provider.Leads.Application.Models.Messages;
+using Microsoft.Extensions.Options;
 using Plat4me.Core.Nats;
-using Plat4Me.DialLeadProvider.Application.Configurations;
-using Plat4Me.DialLeadProvider.Application.Handlers.Interfaces;
-using Plat4Me.DialLeadProvider.Application.Models.Messages;
-using System.Text.Json;
 
-namespace Plat4Me.DialLeadProvider.Workers;
+namespace KL.Provider.Leads.Workers;
 
 public class NatsListenerBackgroundService : BackgroundService
 {

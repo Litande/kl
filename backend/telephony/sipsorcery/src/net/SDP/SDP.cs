@@ -108,10 +108,11 @@ using System.Net;
 using System.Net.Sockets;
 using System.Text.RegularExpressions;
 using Microsoft.Extensions.Logging;
+using SIPSorcery.net.ICE;
 using SIPSorcery.net.RTP;
-using SIPSorcery.Sys;
+using SIPSorcery.sys;
 
-namespace SIPSorcery.Net
+namespace SIPSorcery.net.SDP
 {
     public class SDP
     {

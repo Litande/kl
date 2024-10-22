@@ -16,7 +16,7 @@
 
 using System;
 
-namespace SIPSorcery.Net
+namespace SIPSorcery.net.STUN
 {
     public class Utility
     {

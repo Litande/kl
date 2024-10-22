@@ -1,8 +1,8 @@
-﻿using Microsoft.AspNetCore.Mvc;
-using Plat4Me.DialClientApi.Application.Handlers.Leads;
-using Plat4Me.DialClientApi.Application.Models.Requests;
+﻿using KL.Manager.API.Application.Handlers.Leads;
+using KL.Manager.API.Application.Models.Requests;
+using Microsoft.AspNetCore.Mvc;
 
-namespace Plat4Me.DialClientApi.Controllers;
+namespace KL.Manager.API.Controllers;
 
 [Route("queues")]
 public class QueueController : ApiAuthorizeBase

@@ -1,4 +1,4 @@
-﻿namespace Plat4Me.DialLeadCaller.Application.Models.Entities;
+﻿namespace KL.Caller.Leads.Models.Entities;
 
 public class UserLeadQueue
 {

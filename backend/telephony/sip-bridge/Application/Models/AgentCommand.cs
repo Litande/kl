@@ -1,7 +1,7 @@
 using System.Text.Json.Serialization;
-using Plat4Me.DialSipBridge.Application.Enums;
+using KL.SIP.Bridge.Application.Enums;
 
-namespace Plat4Me.DialSipBridge.Application.Models;
+namespace KL.SIP.Bridge.Application.Models;
 
 public record AgentCommand
 {

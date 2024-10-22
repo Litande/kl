@@ -1,6 +1,6 @@
-﻿using Plat4Me.DialAgentApi.Application.Models.Messages;
+﻿using KL.Agent.API.Application.Models.Messages;
 
-namespace Plat4Me.DialAgentApi.Application.Handlers;
+namespace KL.Agent.API.Application.Handlers;
 
 public interface ICallMessagesHandler : 
     ISubHandler<InviteAgentMessage>,

@@ -1,14 +1,12 @@
-﻿using Microsoft.Extensions.Logging;
+﻿using KL.Engine.Rule.App;
+using KL.Engine.Rule.Handlers.Contracts;
+using KL.Engine.Rule.Models.Entities;
+using KL.Engine.Rule.Models.Messages;
+using KL.Engine.Rule.Repositories;
+using KL.Engine.Rule.Services.Contracts;
 using Microsoft.Extensions.Options;
-using Plat4me.Core.Nats;
-using Plat4Me.DialRuleEngine.Application.App;
-using Plat4Me.DialRuleEngine.Application.Handlers.Contracts;
-using Plat4Me.DialRuleEngine.Application.Models.Entities;
-using Plat4Me.DialRuleEngine.Application.Models.Messages;
-using Plat4Me.DialRuleEngine.Application.Repositories;
-using Plat4Me.DialRuleEngine.Application.Services.Contracts;
 
-namespace Plat4Me.DialRuleEngine.Application.Handlers;
+namespace KL.Engine.Rule.Handlers;
 
 public class LeadFeedbackFilledHandler : ILeadFeedbackFilledHandler
 {

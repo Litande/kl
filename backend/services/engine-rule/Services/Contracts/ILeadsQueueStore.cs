@@ -1,6 +1,6 @@
-﻿using Plat4Me.DialRuleEngine.Application.Models;
+﻿using KL.Engine.Rule.Models;
 
-namespace Plat4Me.DialRuleEngine.Application.Services.Contracts;
+namespace KL.Engine.Rule.Services.Contracts;
 
 public interface ILeadsQueueStore
 {

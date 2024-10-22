@@ -20,11 +20,14 @@ using System.Net.Sockets;
 using System.Runtime.CompilerServices;
 using System.Text;
 using Microsoft.Extensions.Logging;
-using SIPSorcery.Sys;
+using SIPSorcery.net.STUN;
+using SIPSorcery.net.STUN.STUNAttributes;
+using SIPSorcery.sys;
+using SIPSorcery.sys.Crypto;
 
-[assembly: InternalsVisibleToAttribute("SIPSorcery.UnitTests")]
+[assembly: InternalsVisibleTo("SIPSorcery.UnitTests")]
 
-namespace SIPSorcery.Net
+namespace SIPSorcery.net.ICE
 {
     /// <summary>
     /// If ICE servers (STUN or TURN) are being used with the session this class is used to track

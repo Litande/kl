@@ -15,7 +15,7 @@
 
 using System;
 
-namespace SIPSorcery.Net
+namespace SIPSorcery.net.RTSP
 {
     public class RTSPConstants
     {

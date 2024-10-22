@@ -1,4 +1,4 @@
-﻿namespace Plat4Me.DialClientApi.Application.Common;
+﻿namespace KL.Manager.API.Application.Common;
 
 public static class CustomClaimTypes
 {

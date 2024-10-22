@@ -20,8 +20,9 @@ using System.Linq;
 using System.Net;
 using System.Net.Sockets;
 using Microsoft.Extensions.Logging;
-using SIPSorcery.Net;
-using SIPSorcery.Sys;
+using SIPSorcery.net.RTP.Packetisation;
+using SIPSorcery.net.SDP;
+using SIPSorcery.sys;
 using SIPSorceryMedia.Abstractions;
 
 namespace SIPSorcery.net.RTP

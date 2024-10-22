@@ -1,4 +1,4 @@
-﻿namespace Plat4Me.DialClientApi.Application.Models.Responses;
+﻿namespace KL.Manager.API.Application.Models.Responses;
 
 public record MeResponse(
     long UserId,

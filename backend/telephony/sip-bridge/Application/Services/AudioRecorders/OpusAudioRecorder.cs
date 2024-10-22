@@ -2,9 +2,8 @@ using Concentus.Enums;
 using Concentus.Oggfile;
 using Concentus.Structs;
 using SIPSorcery.Media;
-using Microsoft.Extensions.Logging;
 
-namespace Plat4Me.DialSipBridge.Application.Services.AudioRecorders;
+namespace KL.SIP.Bridge.Application.Services.AudioRecorders;
 
 public class OpusAudioRecorder : AudioRecorder
 {

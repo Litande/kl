@@ -1,4 +1,4 @@
-﻿namespace Plat4Me.DialAgentApi.Persistent.Entities.Settings;
+﻿namespace KL.Agent.API.Persistent.Entities.Settings;
 
 public class RTCConfigurationSettings
 {

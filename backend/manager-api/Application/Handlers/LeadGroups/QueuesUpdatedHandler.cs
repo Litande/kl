@@ -1,12 +1,11 @@
-﻿using Microsoft.Extensions.Logging;
-using Plat4Me.DialClientApi.Application.Extensions;
-using Plat4Me.DialClientApi.Application.Models.Messages.LeadGroups;
-using Plat4Me.DialClientApi.Application.Services.Interfaces;
-using Plat4Me.DialClientApi.Persistent.Entities;
-using Plat4Me.DialClientApi.Persistent.Entities.Cache;
-using Plat4Me.DialClientApi.Persistent.Repositories.Interfaces;
+﻿using KL.Manager.API.Application.Extensions;
+using KL.Manager.API.Application.Models.Messages.LeadGroups;
+using KL.Manager.API.Application.Services.Interfaces;
+using KL.Manager.API.Persistent.Entities;
+using KL.Manager.API.Persistent.Entities.Cache;
+using KL.Manager.API.Persistent.Repositories.Interfaces;
 
-namespace Plat4Me.DialClientApi.Application.Handlers.LeadGroups;
+namespace KL.Manager.API.Application.Handlers.LeadGroups;
 
 public class QueuesUpdatedHandler : IQueuesUpdatedHandler
 {

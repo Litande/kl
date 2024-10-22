@@ -1,8 +1,8 @@
-﻿using Plat4Me.Dial.Statistic.Api.Application.Models.Messages;
-using Plat4Me.Dial.Statistic.Api.Application.SignalR;
-using Plat4Me.Dial.Statistic.Api.DAL.Repositories;
+﻿using KL.Statistics.Application.Models.Messages;
+using KL.Statistics.Application.SignalR;
+using KL.Statistics.DAL.Repositories;
 
-namespace Plat4Me.Dial.Statistic.Api.Application.Handlers.LeadStatistics;
+namespace KL.Statistics.Application.Handlers.LeadStatistics;
 
 public class LeadStatisticsChangeHandler : ILeadStatisticsChangeHandler
 {

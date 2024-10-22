@@ -16,7 +16,7 @@
 using System;
 using System.Linq;
 
-namespace SIPSorcery.Sys
+namespace SIPSorcery.sys.Net
 {
     public class NetConvert
     {

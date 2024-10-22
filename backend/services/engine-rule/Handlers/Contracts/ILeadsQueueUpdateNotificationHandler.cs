@@ -1,4 +1,4 @@
-﻿namespace Plat4Me.DialRuleEngine.Application.Handlers.Contracts;
+﻿namespace KL.Engine.Rule.Handlers.Contracts;
 
 public interface ILeadsQueueUpdateNotificationHandler
 {

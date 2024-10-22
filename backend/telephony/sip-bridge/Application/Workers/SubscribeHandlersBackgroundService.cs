@@ -1,11 +1,11 @@
-﻿using Microsoft.Extensions.Options;
+﻿using System.Text.Json;
+using KL.SIP.Bridge.Application.Configurations;
+using KL.SIP.Bridge.Application.Handlers;
+using KL.SIP.Bridge.Application.Models.Messages;
+using Microsoft.Extensions.Options;
 using Plat4me.Core.Nats;
-using Plat4Me.DialSipBridge.Application.Configurations;
-using Plat4Me.DialSipBridge.Application.Models.Messages;
-using System.Text.Json;
-using Plat4Me.DialSipBridge.Application.Handlers;
 
-namespace Plat4Me.DialSipBridge.Application.Workers;
+namespace KL.SIP.Bridge.Application.Workers;
 
 public class SubscribeHandlersBackgroundService : BackgroundService
 {

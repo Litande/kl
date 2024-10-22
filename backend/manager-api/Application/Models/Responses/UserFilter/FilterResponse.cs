@@ -1,4 +1,4 @@
-﻿namespace Plat4Me.DialClientApi.Application.Models.Responses.UserFilter;
+﻿namespace KL.Manager.API.Application.Models.Responses.UserFilter;
 
 public class FilterResponse
 {

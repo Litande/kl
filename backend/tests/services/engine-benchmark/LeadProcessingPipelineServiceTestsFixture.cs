@@ -1,16 +1,8 @@
-﻿using Microsoft.Extensions.Logging;
+﻿using System.Text.Json;
+using Microsoft.Extensions.Logging;
 using Moq;
-using Plat4Me.DialRuleEngine.Application.Enums;
-using Plat4Me.DialRuleEngine.Application.Models;
-using Plat4Me.DialRuleEngine.Application.RuleEngine;
-using Plat4Me.DialRuleEngine.Application.RuleEngine.Enums;
-using Plat4Me.DialRuleEngine.Application.Services.Contracts;
-using RulesEngine.Models;
-using System.Text.Json;
-using Plat4Me.DialRuleEngine.Application.RuleEngine.Contracts;
-using Plat4Me.DialRuleEngine.Application.RuleEngine.MicrosoftEngine;
 
-namespace Plat4Me.DialRuleEngine.BenchmarkTests;
+namespace KL.Engine.Benchmark.Tests;
 
 public class LeadProcessingPipelineServiceTestsFixture
 {

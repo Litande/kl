@@ -17,8 +17,11 @@
 using System.Net;
 using System.Net.Sockets;
 using System.Threading.Tasks;
+using SIPSorcery.core.SIP;
+using SIPSorcery.core.SIP.Channels;
+using SIPSorcery.core.SIPTransactions;
 
-namespace SIPSorcery.SIP
+namespace SIPSorcery.core
 {
     // SIP Channel delegates.
     public delegate Task SIPMessageSentAsyncDelegate(SIPChannel sipChannel, SIPEndPoint remoteEndPoint, byte[] buffer);

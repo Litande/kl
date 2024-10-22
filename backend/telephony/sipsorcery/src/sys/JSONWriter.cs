@@ -21,7 +21,7 @@ using System.Reflection;
 using System.Runtime.Serialization;
 using System.Text;
 
-namespace TinyJson
+namespace SIPSorcery.sys
 {
     //Really simple JSON writer
     //- Outputs JSON structures from an object

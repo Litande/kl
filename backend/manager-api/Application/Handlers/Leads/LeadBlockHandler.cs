@@ -1,10 +1,10 @@
-﻿using Microsoft.Extensions.Options;
+﻿using KL.Manager.API.Application.Configurations;
+using KL.Manager.API.Application.Models.Messages.Lead;
+using KL.Manager.API.Persistent.Repositories.Interfaces;
+using Microsoft.Extensions.Options;
 using Plat4me.Core.Nats;
-using Plat4Me.DialClientApi.Application.Configurations;
-using Plat4Me.DialClientApi.Application.Models.Messages.Lead;
-using Plat4Me.DialClientApi.Persistent.Repositories.Interfaces;
 
-namespace Plat4Me.DialClientApi.Application.Handlers.Leads;
+namespace KL.Manager.API.Application.Handlers.Leads;
 
 public class LeadBlockHandler : IBlockLeadHandler
 {

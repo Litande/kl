@@ -1,4 +1,4 @@
-﻿namespace Plat4Me.DialAgentApi.Application.Models.Responses;
+﻿namespace KL.Agent.API.Application.Models.Responses;
 
 public class PaginatedResponse<T>
 {

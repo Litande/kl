@@ -1,8 +1,8 @@
-﻿using Microsoft.EntityFrameworkCore;
-using Plat4Me.DialAgentApi.Persistent.Entities;
-using Plat4Me.DialAgentApi.Persistent.Repositories.Interfaces;
+﻿using KL.Agent.API.Persistent.Entities;
+using KL.Agent.API.Persistent.Repositories.Interfaces;
+using Microsoft.EntityFrameworkCore;
 
-namespace Plat4Me.DialAgentApi.Persistent.Repositories;
+namespace KL.Agent.API.Persistent.Repositories;
 
 public class UserRepository : RepositoryBase, IUserRepository
 {

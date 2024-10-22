@@ -23,9 +23,4 @@
         <InternalsVisibleTo Include="Plat4Me.DialRuleEngine.Tests" />
     </ItemGroup>
 
-    <ItemGroup>
-        <ProjectReference Include="..\Plat4Me.DialRuleEngine.Application\Plat4Me.DialRuleEngine.Application.csproj" />
-        <ProjectReference Include="..\Plat4Me.DialRuleEngine.Infrastructure\Plat4Me.DialRuleEngine.Infrastructure.csproj" />
-    </ItemGroup>
-
 </Project>

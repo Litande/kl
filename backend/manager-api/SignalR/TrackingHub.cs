@@ -1,11 +1,11 @@
 ﻿using System.Collections.Concurrent;
+using KL.Manager.API.Application.Common;
+using KL.Manager.API.Application.Models;
+using KL.Manager.API.Application.Models.Requests.Dashboard;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.SignalR;
-using Plat4Me.DialClientApi.Application.Common;
-using Plat4Me.DialClientApi.Application.Models;
-using Plat4Me.DialClientApi.Application.Models.Requests.Dashboard;
 
-namespace Plat4Me.DialClientApi.SignalR;
+namespace KL.Manager.API.SignalR;
 
 [Authorize(Roles = "Manager")]
 public class TrackingHub : Hub

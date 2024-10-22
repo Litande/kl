@@ -23,16 +23,18 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net;
-using System.Net.Sockets;
 using System.Threading;
 using System.Threading.Tasks;
 using Microsoft.Extensions.Logging;
-using SIPSorcery.net.RTP;
-using SIPSorcery.SIP.App;
-using SIPSorcery.Sys;
+using SIPSorcery.app.Media;
+using SIPSorcery.net.RTCP;
+using SIPSorcery.net.SDP;
+using SIPSorcery.sys;
+using SIPSorcery.sys.Crypto;
+using SIPSorcery.sys.Net;
 using SIPSorceryMedia.Abstractions;
 
-namespace SIPSorcery.Net
+namespace SIPSorcery.net.RTP
 {
     public delegate int ProtectRtpPacket(byte[] payload, int length, out int outputBufferLength);
 
@@ -301,7 +303,7 @@ namespace SIPSorcery.Net
         /// <summary>
         /// The SDP offered by the remote call party for this session.
         /// </summary>
-        public SDP RemoteDescription { get; protected set; }
+        public SDP.SDP RemoteDescription { get; protected set; }
 
         /// <summary>
         /// If this session is using a secure context this flag MUST be set to indicate
@@ -771,7 +773,7 @@ namespace SIPSorcery.Net
         /// for Internet access. Any and IPv6Any are special cases. If they are set the respective
         /// Internet facing IPv4 or IPv6 address will be used.</param>
         /// <returns>A task that when complete contains the SDP offer.</returns>
-        public virtual SDP CreateOffer(IPAddress connectionAddress)
+        public virtual SDP.SDP CreateOffer(IPAddress connectionAddress)
         {
             if (((AudioStream == null) || (AudioStream.LocalTrack == null)) && ((VideoStream == null) || (VideoStream.LocalTrack == null)))
             {
@@ -810,7 +812,7 @@ namespace SIPSorcery.Net
         ///   offered stream, the answerer MUST reject that media stream by setting
         ///   the port to zero."
         /// </remarks>
-        public virtual SDP CreateAnswer(IPAddress connectionAddress)
+        public virtual SDP.SDP CreateAnswer(IPAddress connectionAddress)
         {
             if (RemoteDescription == null)
             {
@@ -903,7 +905,7 @@ namespace SIPSorcery.Net
         /// <param name="sdpType">Whether the remote SDP is an offer or answer.</param>
         /// <param name="sessionDescription">The SDP that will be set as the remote description.</param>
         /// <returns>If successful an OK enum result. If not an enum result indicating the failure cause.</returns>
-        public virtual SetDescriptionResultEnum SetRemoteDescription(SdpType sdpType, SDP sessionDescription)
+        public virtual SetDescriptionResultEnum SetRemoteDescription(SdpType sdpType, SDP.SDP sessionDescription)
         {
             if (sessionDescription == null)
             {
@@ -1045,13 +1047,13 @@ namespace SIPSorcery.Net
                             remoteRtcpEP = (rtpSessionConfig.IsRtcpMultiplexed) ? remoteRtpEP : new IPEndPoint(remoteRtpEP.Address, remoteRtpEP.Port + 1);
                         }
 
-                        currentMediaStream.DestinationEndPoint = (remoteRtpEP != null && remoteRtpEP.Port != SDP.IGNORE_RTP_PORT_NUMBER) ? remoteRtpEP : currentMediaStream.DestinationEndPoint;
-                        currentMediaStream.ControlDestinationEndPoint = (remoteRtcpEP != null && remoteRtcpEP.Port != SDP.IGNORE_RTP_PORT_NUMBER) ? remoteRtcpEP : currentMediaStream.ControlDestinationEndPoint;
+                        currentMediaStream.DestinationEndPoint = (remoteRtpEP != null && remoteRtpEP.Port != SDP.SDP.IGNORE_RTP_PORT_NUMBER) ? remoteRtpEP : currentMediaStream.DestinationEndPoint;
+                        currentMediaStream.ControlDestinationEndPoint = (remoteRtcpEP != null && remoteRtcpEP.Port != SDP.SDP.IGNORE_RTP_PORT_NUMBER) ? remoteRtcpEP : currentMediaStream.ControlDestinationEndPoint;
                     }
 
                     if (currentMediaStream.MediaType == SDPMediaTypesEnum.audio)
                     {
-                        if (capabilities?.Where(x => x.Name().ToLower() != SDP.TELEPHONE_EVENT_ATTRIBUTE).Count() == 0)
+                        if (capabilities?.Where(x => x.Name().ToLower() != SDP.SDP.TELEPHONE_EVENT_ATTRIBUTE).Count() == 0)
                         {
                             return SetDescriptionResultEnum.AudioIncompatible;
                         }
@@ -1145,7 +1147,7 @@ namespace SIPSorcery.Net
 
                     // Set the remote port number to "9" which means ignore and wait for it be set some other way
                     // such as when a remote RTP packet or arrives or ICE negotiation completes.
-                    rtpEndPoint = new IPEndPoint(remoteAddr, SDP.IGNORE_RTP_PORT_NUMBER);
+                    rtpEndPoint = new IPEndPoint(remoteAddr, SDP.SDP.IGNORE_RTP_PORT_NUMBER);
                 }
                 else
                 {
@@ -1565,7 +1567,7 @@ namespace SIPSorcery.Net
                         // if a special port number is used (defined as "9") which indicates that the media announcement is not 
                         // responsible for setting the remote end point for the audio stream. Instead it's most likely being set 
                         // using ICE.
-                        if (remoteRTPEndPoint.Port != SDP.IGNORE_RTP_PORT_NUMBER)
+                        if (remoteRTPEndPoint.Port != SDP.SDP.IGNORE_RTP_PORT_NUMBER)
                         {
                             localTrack.StreamStatus = MediaStreamStatusEnum.Inactive;
                         }
@@ -1587,7 +1589,7 @@ namespace SIPSorcery.Net
         /// be used. IPAddress.Any and IPAddress. Any and IPv6Any are special cases. If they are set the respective
         /// Internet facing IPv4 or IPv6 address will be used.</param>
         /// <returns>A session description payload.</returns>
-        private SDP GetSessionDescription(List<MediaStream> mediaStreamList, IPAddress connectionAddress)
+        private SDP.SDP GetSessionDescription(List<MediaStream> mediaStreamList, IPAddress connectionAddress)
         {
             IPAddress localAddress = connectionAddress;
 
@@ -1650,7 +1652,7 @@ namespace SIPSorcery.Net
                 }
             }
 
-            SDP sdp = new SDP(IPAddress.Loopback);
+            SDP.SDP sdp = new SDP.SDP(IPAddress.Loopback);
             sdp.SessionId = m_sdpSessionID;
             sdp.AnnouncementVersion = m_sdpAnnouncementVersion;
 

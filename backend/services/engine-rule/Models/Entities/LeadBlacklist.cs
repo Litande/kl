@@ -1,4 +1,4 @@
-﻿namespace Plat4Me.DialRuleEngine.Application.Models.Entities;
+﻿namespace KL.Engine.Rule.Models.Entities;
 
 public class LeadBlacklist
 {

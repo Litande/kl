@@ -1,6 +1,6 @@
-﻿using Plat4Me.DialClientApi.Application.Enums;
+﻿using KL.Manager.API.Application.Enums;
 
-namespace Plat4Me.DialClientApi.Persistent.Repositories.Interfaces;
+namespace KL.Manager.API.Persistent.Repositories.Interfaces;
 
 public interface IRuleEngineCacheRepository
 {

@@ -1,9 +1,9 @@
-﻿using Plat4Me.DialClientApi.Application.Extensions;
-using Plat4Me.DialClientApi.Application.Models.Responses.Leads;
-using Plat4Me.DialClientApi.Persistent.Entities;
-using Plat4Me.DialClientApi.Persistent.Repositories.Interfaces;
+﻿using KL.Manager.API.Application.Extensions;
+using KL.Manager.API.Application.Models.Responses.Leads;
+using KL.Manager.API.Persistent.Entities;
+using KL.Manager.API.Persistent.Repositories.Interfaces;
 
-namespace Plat4Me.DialClientApi.Application.Handlers.Leads;
+namespace KL.Manager.API.Application.Handlers.Leads;
 
 public class LeadInfoQueryHandler : ILeadInfoQueryHandler
 {

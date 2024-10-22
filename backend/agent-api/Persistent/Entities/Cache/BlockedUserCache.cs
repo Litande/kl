@@ -1,6 +1,6 @@
 ﻿using Redis.OM.Modeling;
 
-namespace Plat4Me.DialAgentApi.Persistent.Entities.Cache;
+namespace KL.Agent.API.Persistent.Entities.Cache;
 
 [Document(StorageType = StorageType.Json, Prefixes = new[] { "BlockedUserCache" })]
 public class BlockedUserCache

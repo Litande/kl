@@ -14,13 +14,13 @@
 //-----------------------------------------------------------------------------
 
 using System;
-using System.Collections.Generic;
 using System.Net;
 using System.Threading;
 using System.Threading.Tasks;
-using SIPSorcery.Net;
+using SIPSorcery.net.RTP;
+using SIPSorcery.net.SDP;
 
-namespace SIPSorcery.SIP.App
+namespace SIPSorcery.app.Media
 {
     /// <summary>
     /// The type of the SDP packet being set.

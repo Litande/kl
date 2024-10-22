@@ -36,7 +36,7 @@ using Microsoft.Extensions.Logging;
 using WebSocketSharp;
 using WebSocketSharp.Server;
 
-namespace SIPSorcery.SIP
+namespace SIPSorcery.core.SIP.Channels
 {
     /// <summary>
     ///  A SIP transport Channel for transmitting SIP over a Web Socket communications layer as per RFC7118.

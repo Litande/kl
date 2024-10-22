@@ -1,10 +1,10 @@
-﻿using Microsoft.AspNetCore.Mvc;
-using Plat4Me.DialClientApi.Application.Enums;
-using Plat4Me.DialClientApi.Application.Models.Requests.Tags;
-using Plat4Me.DialClientApi.Application.Models.Responses.Tags;
-using Plat4Me.DialClientApi.Persistent.Repositories.Interfaces;
+﻿using KL.Manager.API.Application.Enums;
+using KL.Manager.API.Application.Models.Requests.Tags;
+using KL.Manager.API.Application.Models.Responses.Tags;
+using KL.Manager.API.Persistent.Repositories.Interfaces;
+using Microsoft.AspNetCore.Mvc;
 
-namespace Plat4Me.DialClientApi.Controllers;
+namespace KL.Manager.API.Controllers;
 
 [Route("tags")]
 public class TagController : ApiAuthorizeBase

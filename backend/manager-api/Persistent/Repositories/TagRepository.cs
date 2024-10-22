@@ -1,11 +1,11 @@
-﻿using Microsoft.EntityFrameworkCore;
-using Plat4Me.DialClientApi.Application.Enums;
-using Plat4Me.DialClientApi.Application.Extensions;
-using Plat4Me.DialClientApi.Application.Models.Requests.Tags;
-using Plat4Me.DialClientApi.Application.Models.Responses.Tags;
-using Plat4Me.DialClientApi.Persistent.Repositories.Interfaces;
+﻿using KL.Manager.API.Application.Enums;
+using KL.Manager.API.Application.Extensions;
+using KL.Manager.API.Application.Models.Requests.Tags;
+using KL.Manager.API.Application.Models.Responses.Tags;
+using KL.Manager.API.Persistent.Repositories.Interfaces;
+using Microsoft.EntityFrameworkCore;
 
-namespace Plat4Me.DialClientApi.Persistent.Repositories;
+namespace KL.Manager.API.Persistent.Repositories;
 
 public class TagRepository : ITagRepository
 {

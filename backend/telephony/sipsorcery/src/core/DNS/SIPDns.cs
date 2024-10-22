@@ -24,11 +24,12 @@ using System.Threading.Tasks;
 using DnsClient;
 using DnsClient.Protocol;
 using Microsoft.Extensions.Logging;
-using SIPSorcery.Sys;
+using SIPSorcery.core.SIP;
+using SIPSorcery.sys;
 
-[assembly: InternalsVisibleToAttribute("SIPSorcery.IntegrationTests")]
+[assembly: InternalsVisibleTo("SIPSorcery.IntegrationTests")]
 
-namespace SIPSorcery.SIP
+namespace SIPSorcery.core.DNS
 {
     /// <summary>
     /// SIP specific DNS resolution.

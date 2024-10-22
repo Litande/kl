@@ -1,13 +1,11 @@
-using Microsoft.Extensions.Logging;
+using KL.SIP.Bridge.Application.Configurations;
+using KL.SIP.Bridge.Application.Enums;
+using KL.SIP.Bridge.Application.Models.Messages;
 using Microsoft.Extensions.Options;
-using Plat4Me.DialSipBridge.Application.Configurations;
-using SIPSorcery.SIP;
 using Plat4me.Core.Nats;
-using Microsoft.Extensions.DependencyInjection;
-using Plat4Me.DialSipBridge.Application.Enums;
-using Plat4Me.DialSipBridge.Application.Models.Messages;
+using SIPSorcery.SIP;
 
-namespace Plat4Me.DialSipBridge.Application.Session;
+namespace KL.SIP.Bridge.Application.Session;
 
 public class PredictiveCallSession : CallSessionBase
 {

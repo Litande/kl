@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Plat4Me.DialRuleEngine.Tests.IntegrationTests;
+namespace KL.Engine.Rule.Tests.IntegrationTests;
 
 public class LeadProcessingBackgroundServiceTestsFixture
 {

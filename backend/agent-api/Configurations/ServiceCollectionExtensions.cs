@@ -1,10 +1,8 @@
-﻿using Microsoft.OpenApi.Models;
-using Plat4Me.DialAgentApi.Application.Services;
-using Plat4Me.DialAgentApi.SignalR;
-using Plat4Me.DialAgentApi.Workers;
-using System.Text.Json.Serialization;
+﻿using System.Text.Json.Serialization;
+using KL.Agent.API.Workers;
+using Microsoft.OpenApi.Models;
 
-namespace Plat4Me.DialAgentApi.Configurations;
+namespace KL.Agent.API.Configurations;
 
 public static class ServiceCollectionExtensions
 {

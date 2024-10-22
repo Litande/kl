@@ -1,8 +1,8 @@
+using KL.Manager.API.Application.Enums;
+using KL.Manager.API.Persistent.Entities;
 using Microsoft.AspNetCore.Identity;
-using Plat4Me.DialClientApi.Application.Enums;
-using Plat4Me.DialClientApi.Persistent.Entities;
 
-namespace Plat4Me.DialClientApi.Persistent.Seed.Authentication;
+namespace KL.Manager.API.Persistent.Seed.Authentication;
 
 public static class AdminRegistration
 {

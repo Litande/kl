@@ -1,11 +1,11 @@
+using KL.Call.Mixer.App;
+using KL.Call.Mixer.Models;
+using KL.Call.Mixer.Services;
 using Microsoft.Extensions.Options;
 using Plat4me.Core.Nats;
 using Plat4Me.Core.Storage;
-using Plat4Me.DialCallRecordMixer.App;
-using Plat4Me.DialCallRecordMixer.Models;
-using Plat4Me.DialCallRecordMixer.Services;
 
-namespace Plat4Me.DialCallRecordMixer.Workers;
+namespace KL.Call.Mixer;
 
 public class MixingBackgroundService : BackgroundService
 {

@@ -21,9 +21,10 @@ using System.Reflection;
 using System.Threading;
 using System.Threading.Tasks;
 using Microsoft.Extensions.Logging;
+using SIPSorcery.sys;
 using SIPSorceryMedia.Abstractions;
 
-namespace SIPSorcery.Media
+namespace SIPSorcery.app.Media.Sources
 {
     public class VideoTestPatternSource : IVideoSource, IDisposable
     {
@@ -41,7 +42,7 @@ namespace SIPSorcery.Media
         private const int VP8_SUGGESTED_FORMAT_ID = 96;
         private const int H264_SUGGESTED_FORMAT_ID = 100;
 
-        public static ILogger logger = Sys.Log.Logger;
+        public static ILogger logger = Log.Logger;
 
         public static readonly List<VideoFormat> SupportedFormats = new List<VideoFormat>
         {

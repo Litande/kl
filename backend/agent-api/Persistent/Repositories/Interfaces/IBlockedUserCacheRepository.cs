@@ -1,4 +1,4 @@
-﻿namespace Plat4Me.DialAgentApi.Persistent.Repositories.Interfaces;
+﻿namespace KL.Agent.API.Persistent.Repositories.Interfaces;
 
 public interface IBlockedUserCacheRepository
 {

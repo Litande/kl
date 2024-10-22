@@ -1,6 +1,6 @@
-﻿using Plat4Me.Dial.Statistic.Api.Application.Common.Enums;
+﻿using KL.Statistics.Application.Common.Enums;
 
-namespace Plat4Me.Dial.Statistic.Api.Application.Models.Responses;
+namespace KL.Statistics.Application.Models.Responses;
 
 public record PerformancePlotData(
     PerformanceTypes Type,

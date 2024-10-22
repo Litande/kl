@@ -1,8 +1,6 @@
-using Plat4Me.DialLeadCaller.Application.Models;
-using Microsoft.Extensions.Hosting;
-using Redis.OM;
+using KL.Caller.Leads.Models;
 
-namespace Plat4Me.DialLeadCaller.Infrastructure;
+namespace KL.Caller.Leads;
 
 public class RedisIndexCreationService : IHostedService
 {

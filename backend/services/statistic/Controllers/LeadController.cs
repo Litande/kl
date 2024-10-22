@@ -1,8 +1,7 @@
-﻿using Microsoft.AspNetCore.Mvc;
-using Plat4Me.Dial.Statistic.Api.Application.Handlers;
-using Plat4Me.Dial.Statistic.Api.Application.Handlers.LeadStatistics;
+﻿using KL.Statistics.Application.Handlers.LeadStatistics;
+using Microsoft.AspNetCore.Mvc;
 
-namespace Plat4Me.Dial.Statistic.Api.Controllers;
+namespace KL.Statistics.Controllers;
 
 [Route("lead")]
 public class LeadController : ApiAuthorizeBase

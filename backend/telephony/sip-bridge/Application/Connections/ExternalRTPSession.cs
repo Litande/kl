@@ -1,7 +1,7 @@
-using SIPSorcery.Net;
 using System.Net;
+using SIPSorcery.Net;
 
-namespace Plat4Me.DialSipBridge.Application.Connections;
+namespace KL.SIP.Bridge.Application.Connections;
 
 public class ExternalRTPSession : RTPSession
 {

@@ -1,6 +1,6 @@
-﻿using Plat4Me.DialLeadProvider.Application.Models.Messages;
+﻿using KL.Provider.Leads.Application.Models.Messages;
 
-namespace Plat4Me.DialLeadProvider.Application.Handlers.Interfaces;
+namespace KL.Provider.Leads.Application.Handlers.Interfaces;
 
 public interface ILeadFeedbackProcessedHandler : ISubHandler<LeadFeedbackProcessedMessage>
 {

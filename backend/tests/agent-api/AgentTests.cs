@@ -1,12 +1,9 @@
 ﻿using System;
 using System.Threading.Tasks;
 using Moq;
-using Plat4Me.DialAgentApi.Application.Enums;
-using Plat4Me.DialAgentApi.Application.Models.Messages;
-using Plat4Me.DialAgentApi.Persistent.Entities.Cache;
 using Xunit;
 
-namespace Plat4Me.DialAgentApi.Tests;
+namespace KL.Agent.API.Tests;
 
 public class AgentTests : AgentTestsFixture
 {

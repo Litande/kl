@@ -1,11 +1,11 @@
-﻿using Microsoft.Extensions.Options;
+﻿using System.Text.Json;
+using KL.Agent.API.Application.Configurations;
+using KL.Agent.API.Application.Handlers;
+using KL.Agent.API.Application.Models.Messages;
+using Microsoft.Extensions.Options;
 using Plat4me.Core.Nats;
-using Plat4Me.DialAgentApi.Application.Configurations;
-using Plat4Me.DialAgentApi.Application.Models.Messages;
-using System.Text.Json;
-using Plat4Me.DialAgentApi.Application.Handlers;
 
-namespace Plat4Me.DialAgentApi.Workers;
+namespace KL.Agent.API.Workers;
 
 public class SubscribeHandlersBackgroundService : BackgroundService
 {

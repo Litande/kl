@@ -20,15 +20,16 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading;
 using Microsoft.Extensions.Logging;
-using SIPSorcery.net.RTP;
-using SIPSorcery.Sys;
+using SIPSorcery.net.SDP;
+using SIPSorcery.sys;
+using SIPSorcery.sys.Crypto;
 using SIPSorceryMedia.Abstractions;
 
-namespace SIPSorcery.Net
+namespace SIPSorcery.net.RTP
 {
     public class MediaStreamTrack
     {
-        private static ILogger logger = SIPSorcery.Sys.Log.Logger;
+        private static ILogger logger = Log.Logger;
 
         /// <summary>
         /// The type of media stream represented by this track. Must be audio or video.

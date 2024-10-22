@@ -1,4 +1,4 @@
-﻿namespace Plat4Me.DialRuleEngine.Application.App;
+﻿namespace KL.Engine.Rule.App;
 
 public class PubSubjects
 {

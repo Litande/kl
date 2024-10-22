@@ -21,7 +21,7 @@ using System.Linq;
 using System.Text;
 using Microsoft.Extensions.Logging;
 
-namespace SIPSorcery.SIP
+namespace SIPSorcery.core.SIP
 {
     /// <summary>
     /// Represents a SIP Request.

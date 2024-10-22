@@ -1,8 +1,7 @@
-using Microsoft.EntityFrameworkCore;
-using Plat4Me.DialRuleEngine.Application.Models.Entities;
-using Plat4Me.DialRuleEngine.Infrastructure.EntityConfigurations;
+using KL.Engine.Rule.EntityConfigurations;
+using KL.Engine.Rule.Models.Entities;
 
-namespace Plat4Me.DialRuleEngine.Infrastructure;
+namespace KL.Engine.Rule;
 
 public class DialDbContext : DbContext
 {
@@ -19,7 +18,7 @@ public class DialDbContext : DbContext
     public virtual DbSet<Lead> Leads { get; set; } = null!;
     public virtual DbSet<LeadQueue> LeadQueues { get; set; } = null!;
     public virtual DbSet<LeadHistory> LeadHistory { get; set; } = null!;
-    public virtual DbSet<Rule> Rules { get; set; } = null!;
+    public virtual DbSet<Models.Entities.Rule> Rules { get; set; } = null!;
    public virtual DbSet<StatusDataSourceMap> StatusDataSources { get; set; } = null!;
     public virtual DbSet<DataSource> DataSources { get; set; } = null!;
     public virtual DbSet<User> Users { get; set; } = null!;

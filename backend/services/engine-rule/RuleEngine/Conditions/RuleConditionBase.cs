@@ -1,13 +1,12 @@
-﻿using Plat4Me.DialRuleEngine.Application.Enums;
-using Plat4Me.DialRuleEngine.Application.Extensions;
-using Plat4Me.DialRuleEngine.Application.RuleEngine.Contracts;
-using Plat4Me.DialRuleEngine.Application.RuleEngine.Enums;
-using Plat4Me.DialRuleEngine.Application.Models;
-using System.Globalization;
-using RulesEngine.Models;
-using Plat4Me.DialRuleEngine.Application.RuleEngine.MicrosoftEngine;
+﻿using System.Globalization;
+using KL.Engine.Rule.Enums;
+using KL.Engine.Rule.Extensions;
+using KL.Engine.Rule.Models;
+using KL.Engine.Rule.RuleEngine.Contracts;
+using KL.Engine.Rule.RuleEngine.Enums;
+using KL.Engine.Rule.RuleEngine.MicrosoftEngine;
 
-namespace Plat4Me.DialRuleEngine.Application.RuleEngine.Conditions;
+namespace KL.Engine.Rule.RuleEngine.Conditions;
 
 [AttributeUsage(AttributeTargets.Class)]
 public class GenericCondition : Attribute

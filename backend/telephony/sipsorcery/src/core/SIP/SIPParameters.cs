@@ -18,9 +18,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Runtime.Serialization;
 using Microsoft.Extensions.Logging;
-using SIPSorcery.Sys;
+using SIPSorcery.sys;
 
-namespace SIPSorcery.SIP
+namespace SIPSorcery.core.SIP
 {
     /// <summary>
     /// Represents a series of name value pairs that are optionally included in SIP URIs and also as an additional

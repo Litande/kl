@@ -1,12 +1,9 @@
-﻿using Microsoft.Extensions.Configuration;
-using Microsoft.Extensions.DependencyInjection;
-using Plat4me.Core.Nats;
-using Plat4Me.DialLeadCaller.Application.Handlers;
-using Plat4Me.DialLeadCaller.Application.Handlers.Contracts;
-using Plat4Me.DialLeadCaller.Application.Services;
-using Plat4Me.DialLeadCaller.Application.Services.Contracts;
+﻿using KL.Caller.Leads.Handlers;
+using KL.Caller.Leads.Handlers.Contracts;
+using KL.Caller.Leads.Services;
+using KL.Caller.Leads.Services.Contracts;
 
-namespace Plat4Me.DialLeadCaller.Application.App;
+namespace KL.Caller.Leads.App;
 
 public static class AppRegistrations
 {

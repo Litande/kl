@@ -1,8 +1,8 @@
+using KL.Agent.API.Persistent.Entities;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
-using Plat4Me.DialAgentApi.Persistent.Entities;
 
-namespace Plat4Me.DialAgentApi.Persistent.EntityConfigurations;
+namespace KL.Agent.API.Persistent.EntityConfigurations;
 
 public class DataSourceEntityConfiguration : IEntityTypeConfiguration<DataSource>
 {

@@ -33,9 +33,9 @@
 //-----------------------------------------------------------------------------
 
 using System;
-using SIPSorcery.Sys;
+using SIPSorcery.sys.Net;
 
-namespace SIPSorcery.Net
+namespace SIPSorcery.net.RTCP
 {
     /// <summary>
     /// The different types of RTCP packets as defined in RFC3550.

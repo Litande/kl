@@ -52,9 +52,9 @@
 
 using System;
 using System.Text;
-using SIPSorcery.Sys;
+using SIPSorcery.sys.Net;
 
-namespace SIPSorcery.Net
+namespace SIPSorcery.net.RTCP
 {
     /// <summary>
     /// RTCP Source Description (SDES) report as defined in RFC3550.

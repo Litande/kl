@@ -1,8 +1,8 @@
-﻿using Plat4Me.Dial.Statistic.Api.Application.Models.StatisticCache;
+﻿using KL.Statistics.Application.Models.StatisticCache;
 using Redis.OM;
 using Redis.OM.Searching;
 
-namespace Plat4Me.Dial.Statistic.Api.DAL.Repositories;
+namespace KL.Statistics.DAL.Repositories;
 
 public class LeadStatisticCacheRepository : ILeadStatisticCacheRepository
 {

@@ -23,9 +23,10 @@ using System.Net.Sockets;
 using System.Threading;
 using System.Threading.Tasks;
 using Microsoft.Extensions.Logging;
-using SIPSorcery.Sys;
+using SIPSorcery.core.SIP;
+using SIPSorcery.sys;
 
-namespace SIPSorcery.SIP
+namespace SIPSorcery.core.SIPTransactions
 {
     internal class SIPTransactionEngine : IDisposable
     {

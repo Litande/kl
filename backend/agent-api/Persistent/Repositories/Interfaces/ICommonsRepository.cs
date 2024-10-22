@@ -1,6 +1,6 @@
-﻿using Plat4Me.DialAgentApi.Application.Models.Responses.Common;
+﻿using KL.Agent.API.Application.Models.Responses.Common;
 
-namespace Plat4Me.DialAgentApi.Persistent.Repositories.Interfaces;
+namespace KL.Agent.API.Persistent.Repositories.Interfaces;
 
 public interface ICommonsRepository
 {

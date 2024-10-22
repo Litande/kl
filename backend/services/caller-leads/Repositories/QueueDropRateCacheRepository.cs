@@ -1,10 +1,6 @@
-﻿using Microsoft.EntityFrameworkCore;
-using Plat4Me.DialLeadCaller.Application.Models;
-using Plat4Me.DialLeadCaller.Application.Repositories;
-using Redis.OM;
-using Redis.OM.Searching;
+﻿using KL.Caller.Leads.Models;
 
-namespace Plat4Me.DialLeadCaller.Infrastructure.Repositories;
+namespace KL.Caller.Leads.Repositories;
 
 public class QueueDropRateCacheRepository : IQueueDropRateCacheRepository
 {

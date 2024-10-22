@@ -15,9 +15,9 @@
 
 using System;
 using System.Net;
-using SIPSorcery.Sys;
+using SIPSorcery.sys.Net;
 
-namespace SIPSorcery.Net
+namespace SIPSorcery.net.STUN.STUNAttributes
 {
     /// <summary>
     /// This attribute is the same as the mapped address attribute except the address details are XOR'ed with the STUN magic cookie. 

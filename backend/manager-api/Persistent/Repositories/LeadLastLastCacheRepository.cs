@@ -1,9 +1,9 @@
-﻿using Plat4Me.DialClientApi.Persistent.Entities.Cache;
-using Plat4Me.DialClientApi.Persistent.Repositories.Interfaces;
+﻿using KL.Manager.API.Persistent.Entities.Cache;
+using KL.Manager.API.Persistent.Repositories.Interfaces;
 using Redis.OM;
 using Redis.OM.Searching;
 
-namespace Plat4Me.DialClientApi.Persistent.Repositories;
+namespace KL.Manager.API.Persistent.Repositories;
 
 public class LeadLastLastCacheRepository : ILeadLastCacheRepository
 {

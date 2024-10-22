@@ -1,8 +1,6 @@
-﻿using Microsoft.EntityFrameworkCore;
-using Plat4Me.DialRuleEngine.Application.Enums;
-using Plat4Me.DialRuleEngine.Application.Repositories;
+﻿using KL.Engine.Rule.Enums;
 
-namespace Plat4Me.DialRuleEngine.Infrastructure.Repositories;
+namespace KL.Engine.Rule.Repositories;
 
 public class SettingsRepository : ISettingsRepository
 {

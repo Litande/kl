@@ -1,4 +1,4 @@
-﻿namespace Plat4Me.DialClientApi.Application.Models.Messages.LeadQueue;
+﻿namespace KL.Manager.API.Application.Models.Messages.LeadQueue;
 
 public record RatioChangedMessage(
     long ClientId,

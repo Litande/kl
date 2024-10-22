@@ -1,12 +1,12 @@
+using KL.Agent.API.Application.Configurations;
+using KL.Agent.API.Configurations;
+using KL.Agent.API.Middlewares;
+using KL.Agent.API.Persistent.Configurations;
+using KL.Agent.API.Persistent.Seed.Authentication;
+using KL.Agent.API.SignalR;
 using Microsoft.AspNetCore.Identity;
 using Plat4Me.Authentication.Configurations;
 using Plat4Me.Core.HealthCheck;
-using Plat4Me.DialAgentApi.Application.Configurations;
-using Plat4Me.DialAgentApi.Configurations;
-using Plat4Me.DialAgentApi.Middlewares;
-using Plat4Me.DialAgentApi.Persistent.Configurations;
-using Plat4Me.DialAgentApi.Persistent.Seed.Authentication;
-using Plat4Me.DialAgentApi.SignalR;
 using Prometheus;
 using Serilog;
 

@@ -15,13 +15,12 @@
 //-----------------------------------------------------------------------------
 
 using System;
-using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
-using SIPSorcery.net.RTP;
-using SIPSorcery.Sys;
+using SIPSorcery.sys.Crypto;
+using SIPSorcery.sys.Net;
 
-namespace SIPSorcery.Net
+namespace SIPSorcery.net.RTP
 {
     public class RTPHeader
     {

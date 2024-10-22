@@ -19,9 +19,9 @@
 using System;
 using System.Runtime.Serialization;
 using Microsoft.Extensions.Logging;
-using SIPSorcery.Sys;
+using SIPSorcery.sys;
 
-namespace SIPSorcery.SIP
+namespace SIPSorcery.core.SIP
 {
     /// <summary>
     /// Encapsulates the format for the SIP Contact, From, PAI and To headers.

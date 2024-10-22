@@ -1,16 +1,15 @@
-using Microsoft.Extensions.Logging;
-using Plat4Me.DialSipBridge.Application.Configurations;
+using System.Collections.Concurrent;
+using System.Net;
+using KL.SIP.Bridge.Application.Configurations;
+using KL.SIP.Bridge.Application.Enums;
+using KL.SIP.Bridge.Application.Models;
 using SIPSorcery.Media;
 using SIPSorcery.Net;
 using SIPSorcery.SIP;
 using SIPSorcery.SIP.App;
 using SIPSorceryMedia.Abstractions;
-using System.Collections.Concurrent;
-using System.Net;
-using Plat4Me.DialSipBridge.Application.Enums;
-using Plat4Me.DialSipBridge.Application.Models;
 
-namespace Plat4Me.DialSipBridge.Application.Connections;
+namespace KL.SIP.Bridge.Application.Connections;
 
 public class LeadSIPConnection : IConnection
 {

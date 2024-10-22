@@ -1,15 +1,13 @@
-﻿using Microsoft.Extensions.Logging;
-using Plat4Me.DialAgentApi.Application.Models.Messages;
+﻿using System.Text.Json;
 using System.Text.RegularExpressions;
-using System.Text.Json;
-using Plat4Me.DialAgentApi.Application.Enums;
-using Plat4Me.DialAgentApi.Application.Models;
-using Plat4Me.DialAgentApi.Application.Extensions;
-using Plat4Me.DialAgentApi.Application.Services;
-using Plat4Me.DialAgentApi.Persistent.Entities;
-using Plat4Me.DialAgentApi.Persistent.Repositories.Interfaces;
+using KL.Agent.API.Application.Enums;
+using KL.Agent.API.Application.Extensions;
+using KL.Agent.API.Application.Models;
+using KL.Agent.API.Application.Services;
+using KL.Agent.API.Persistent.Entities;
+using KL.Agent.API.Persistent.Repositories.Interfaces;
 
-namespace Plat4Me.DialAgentApi.Application.Handlers;
+namespace KL.Agent.API.Application.Handlers;
 
 public class CallInfoHandler : ICallInfoHandler
 {

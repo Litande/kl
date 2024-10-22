@@ -19,8 +19,10 @@ using System;
 using System.Net.Sockets;
 using System.Threading.Tasks;
 using Microsoft.Extensions.Logging;
+using SIPSorcery.core.SIP;
+using SIPSorcery.core.SIPCDR;
 
-namespace SIPSorcery.SIP
+namespace SIPSorcery.core.SIPTransactions
 {
     /// <summary>
     /// The server transaction for an INVITE request. This transaction processes incoming calls RECEIVED by the application.
@@ -73,7 +75,7 @@ namespace SIPSorcery.SIP
 
             if (!noCDR)
             {
-                CDR = new SIPCDR(SIPCallDirection.In, sipRequest.URI, sipRequest.Header.From, sipRequest.Header.CallId, localEP, remoteEP);
+                CDR = new SIPCDR.SIPCDR(SIPCallDirection.In, sipRequest.URI, sipRequest.Header.From, sipRequest.Header.CallId, localEP, remoteEP);
             }
 
             TransactionInformationResponseReceived += UASInviteTransaction_TransactionResponseReceived;

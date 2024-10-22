@@ -1,7 +1,7 @@
-﻿using Plat4Me.DialAgentApi.Application.Enums;
-using Plat4Me.DialAgentApi.Application.Models.SignalR;
+﻿using KL.Agent.API.Application.Enums;
+using KL.Agent.API.Application.Models.SignalR;
 
-namespace Plat4Me.DialAgentApi.Application.Services;
+namespace KL.Agent.API.Application.Services;
 
 public interface IHubSender
 {

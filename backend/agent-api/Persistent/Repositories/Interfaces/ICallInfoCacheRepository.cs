@@ -1,6 +1,6 @@
-﻿using Plat4Me.DialAgentApi.Persistent.Entities.Cache;
+﻿using KL.Agent.API.Persistent.Entities.Cache;
 
-namespace Plat4Me.DialAgentApi.Persistent.Repositories.Interfaces;
+namespace KL.Agent.API.Persistent.Repositories.Interfaces;
 
 public interface ICallInfoCacheRepository
 {

@@ -1,6 +1,6 @@
-using Plat4Me.DialClientApi.Application.Enums;
+using KL.Manager.API.Application.Enums;
 
-namespace Plat4Me.DialClientApi.Application.Models.Messages.Agents;
+namespace KL.Manager.API.Application.Models.Messages.Agents;
 
 public record AgentChangedStatusMessage(
     long ClientId,

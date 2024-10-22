@@ -1,13 +1,10 @@
-﻿using Microsoft.EntityFrameworkCore;
-using Microsoft.EntityFrameworkCore.Metadata.Builders;
-using Plat4Me.DialRuleEngine.Application.Enums;
-using Plat4Me.DialRuleEngine.Application.Models.Entities;
+﻿using KL.Engine.Rule.Enums;
 
-namespace Plat4Me.DialRuleEngine.Infrastructure.EntityConfigurations;
+namespace KL.Engine.Rule.EntityConfigurations;
 
-public class RuleEntityConfiguration : IEntityTypeConfiguration<Rule>
+public class RuleEntityConfiguration : IEntityTypeConfiguration<Models.Entities.Rule>
 {
-    public void Configure(EntityTypeBuilder<Rule> builder)
+    public void Configure(EntityTypeBuilder<Models.Entities.Rule> builder)
     {
         builder.ToTable("rule");
         builder.Property(e => e.Id).HasColumnName("id");

@@ -1,10 +1,9 @@
-﻿using Microsoft.Extensions.Options;
-using Plat4me.Core.Nats;
-using Plat4Me.DialRuleEngine.Application.App;
-using Plat4Me.DialRuleEngine.Application.Handlers.Contracts;
-using Plat4Me.DialRuleEngine.Application.Models;
+﻿using KL.Engine.Rule.App;
+using KL.Engine.Rule.Handlers.Contracts;
+using KL.Engine.Rule.Models;
+using Microsoft.Extensions.Options;
 
-namespace Plat4Me.DialRuleEngine.Application.Handlers;
+namespace KL.Engine.Rule.Handlers;
 
 public class LeadsQueueUpdateNotificationHandler : ILeadsQueueUpdateNotificationHandler
 {

@@ -1,6 +1,6 @@
-﻿using Plat4Me.DialClientApi.Application.Models.Responses.Leads;
+﻿using KL.Manager.API.Application.Models.Responses.Leads;
 
-namespace Plat4Me.DialClientApi.Application.Handlers.Leads;
+namespace KL.Manager.API.Application.Handlers.Leads;
 
 public interface ILeadInfoQueryHandler
 {

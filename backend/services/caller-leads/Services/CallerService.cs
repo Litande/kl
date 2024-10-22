@@ -1,16 +1,15 @@
-﻿using Microsoft.Extensions.Logging;
-using Plat4Me.DialLeadCaller.Application.Clients;
-using Plat4Me.DialLeadCaller.Application.Enums;
-using Plat4Me.DialLeadCaller.Application.Extensions;
-using Plat4Me.DialLeadCaller.Application.Handlers.Contracts;
-using Plat4Me.DialLeadCaller.Application.Models;
-using Plat4Me.DialLeadCaller.Application.Models.Messages;
-using Plat4Me.DialLeadCaller.Application.Models.Requests;
-using Plat4Me.DialLeadCaller.Application.Models.Responses;
-using Plat4Me.DialLeadCaller.Application.Repositories;
-using Plat4Me.DialLeadCaller.Application.Services.Contracts;
+﻿using KL.Caller.Leads.Clients;
+using KL.Caller.Leads.Enums;
+using KL.Caller.Leads.Extensions;
+using KL.Caller.Leads.Handlers.Contracts;
+using KL.Caller.Leads.Models;
+using KL.Caller.Leads.Models.Messages;
+using KL.Caller.Leads.Models.Requests;
+using KL.Caller.Leads.Models.Responses;
+using KL.Caller.Leads.Repositories;
+using KL.Caller.Leads.Services.Contracts;
 
-namespace Plat4Me.DialLeadCaller.Application.Services;
+namespace KL.Caller.Leads.Services;
 
 public class CallerService : ICallerService
 {

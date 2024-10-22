@@ -1,7 +1,7 @@
-﻿using Plat4Me.DialClientApi.Application.Enums;
-using Plat4Me.DialClientApi.Application.Models.Responses.Dashboard;
+﻿using KL.Manager.API.Application.Enums;
+using KL.Manager.API.Application.Models.Responses.Dashboard;
 
-namespace Plat4Me.DialClientApi.Application.Services.Interfaces;
+namespace KL.Manager.API.Application.Services.Interfaces;
 
 public interface IDashboardService
 {

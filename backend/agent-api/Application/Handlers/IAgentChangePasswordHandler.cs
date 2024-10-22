@@ -1,6 +1,6 @@
-using Plat4Me.DialAgentApi.Application.Models.Requests;
+using KL.Agent.API.Application.Models.Requests;
 
-namespace Plat4Me.DialAgentApi.Application.Handlers;
+namespace KL.Agent.API.Application.Handlers;
 
 public interface IAgentChangePasswordHandler
 {

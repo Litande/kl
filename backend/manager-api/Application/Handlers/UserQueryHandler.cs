@@ -1,12 +1,11 @@
-﻿using Microsoft.Extensions.Logging;
-using Plat4Me.DialClientApi.Application.Common;
-using Plat4Me.DialClientApi.Application.Enums;
-using Plat4Me.DialClientApi.Application.Extensions;
-using Plat4Me.DialClientApi.Application.Models.Responses;
-using Plat4Me.DialClientApi.Persistent.Entities.Settings;
-using Plat4Me.DialClientApi.Persistent.Repositories.Interfaces;
+﻿using KL.Manager.API.Application.Common;
+using KL.Manager.API.Application.Enums;
+using KL.Manager.API.Application.Extensions;
+using KL.Manager.API.Application.Models.Responses;
+using KL.Manager.API.Persistent.Entities.Settings;
+using KL.Manager.API.Persistent.Repositories.Interfaces;
 
-namespace Plat4Me.DialClientApi.Application.Handlers;
+namespace KL.Manager.API.Application.Handlers;
 
 public class UserQueryHandler : IUserQueryHandler
 {

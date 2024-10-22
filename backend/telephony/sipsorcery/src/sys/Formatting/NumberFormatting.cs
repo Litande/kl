@@ -16,7 +16,7 @@
 
 using System;
 
-namespace SIPSorcery.Sys
+namespace SIPSorcery.sys.Formatting
 {
     public class NumberFormatter
     {

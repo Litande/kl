@@ -1,6 +1,6 @@
-﻿using Plat4Me.Dial.Statistic.Api.Application.Models.Messages;
+﻿using KL.Statistics.Application.Models.Messages;
 
-namespace Plat4Me.Dial.Statistic.Api.Application.Handlers.LeadStatistics;
+namespace KL.Statistics.Application.Handlers.LeadStatistics;
 
 public interface ILeadStatisticsChangeHandler : ISubHandler<LeadsStatisticUpdateMessage>
 {

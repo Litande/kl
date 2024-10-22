@@ -15,9 +15,9 @@
 
 using System;
 using Microsoft.Extensions.Logging;
-using SIPSorcery.Sys;
+using SIPSorcery.sys;
 
-namespace SIPSorcery.Net
+namespace SIPSorcery.net.RTSP
 {
     /// <summary>
     /// RFC2326 3.2:

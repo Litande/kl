@@ -1,11 +1,11 @@
-using Plat4Me.DialAgentApi.Application.Extensions;
-using Plat4Me.DialAgentApi.Application.Models.Requests;
-using Plat4Me.DialAgentApi.Application.Models.Responses;
-using Plat4Me.DialAgentApi.Persistent.Entities;
-using Plat4Me.DialAgentApi.Persistent.Entities.Projections;
-using Plat4Me.DialAgentApi.Persistent.Repositories.Interfaces;
+using KL.Agent.API.Application.Extensions;
+using KL.Agent.API.Application.Models.Requests;
+using KL.Agent.API.Application.Models.Responses;
+using KL.Agent.API.Persistent.Entities;
+using KL.Agent.API.Persistent.Entities.Projections;
+using KL.Agent.API.Persistent.Repositories.Interfaces;
 
-namespace Plat4Me.DialAgentApi.Persistent.Repositories;
+namespace KL.Agent.API.Persistent.Repositories;
 
 public class LeadCommentRepository : RepositoryBase, ILeadCommentRepository
 {

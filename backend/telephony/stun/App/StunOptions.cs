@@ -1,4 +1,4 @@
-namespace Plat4Me.DialStun.App;
+namespace KL.Stun.App;
 
 public class StunOptions
 {

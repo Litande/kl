@@ -17,9 +17,9 @@ using System;
 using System.Net;
 using System.Text;
 using Microsoft.Extensions.Logging;
-using SIPSorcery.Sys;
+using SIPSorcery.sys;
 
-namespace SIPSorcery.Net
+namespace SIPSorcery.net.RTSP
 {
     public class RTSPMessage
     {

@@ -1,7 +1,7 @@
-using Plat4Me.DialAgentApi.Application.Enums;
-using Plat4Me.DialAgentApi.Application.Models.Messages;
+using KL.Agent.API.Application.Enums;
+using KL.Agent.API.Application.Models.Messages;
 
-namespace Plat4Me.DialAgentApi.Application.Services;
+namespace KL.Agent.API.Application.Services;
 
 public interface IAgentStateService 
 {

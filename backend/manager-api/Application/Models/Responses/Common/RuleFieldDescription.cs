@@ -1,4 +1,4 @@
-namespace Plat4Me.DialClientApi.Application.Models.Responses.Common;
+namespace KL.Manager.API.Application.Models.Responses.Common;
 
 public record RuleFieldDescription(
     int FieldId,

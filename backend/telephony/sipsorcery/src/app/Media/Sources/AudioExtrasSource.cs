@@ -28,9 +28,10 @@ using System.Reflection;
 using System.Threading;
 using System.Threading.Tasks;
 using Microsoft.Extensions.Logging;
+using SIPSorcery.app.Media.Codecs;
 using SIPSorceryMedia.Abstractions;
 
-namespace SIPSorcery.Media
+namespace SIPSorcery.app.Media.Sources
 {
     public enum AudioSourcesEnum
     {
@@ -101,7 +102,7 @@ namespace SIPSorcery.Media
         private const string MUSIC_RESOURCE_PATH = "SIPSorcery.media.Macroform_-_Simplicity.raw";
         private static float LINEAR_MAXIMUM = 32767f;
 
-        private static ILogger Log = SIPSorcery.Sys.Log.Logger;
+        private static ILogger Log = sys.Log.Logger;
 
         private MediaFormatManager<AudioFormat> _audioFormatManager;
         private BinaryReader _musicStreamReader;

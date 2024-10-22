@@ -1,8 +1,8 @@
-﻿using Plat4Me.DialRuleEngine.Application.Handlers.Contracts;
-using Plat4Me.DialRuleEngine.Application.Models.Messages;
-using Plat4Me.DialRuleEngine.Application.Services.Contracts;
+﻿using KL.Engine.Rule.Handlers.Contracts;
+using KL.Engine.Rule.Models.Messages;
+using KL.Engine.Rule.Services.Contracts;
 
-namespace Plat4Me.DialRuleEngine.Application.Handlers;
+namespace KL.Engine.Rule.Handlers;
 
 public class LeadsImportedHandler : ILeadsImportedHandler
 {

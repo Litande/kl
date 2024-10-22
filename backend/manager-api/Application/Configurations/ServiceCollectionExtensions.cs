@@ -1,17 +1,17 @@
-﻿using Microsoft.Extensions.DependencyInjection.Extensions;
+﻿using KL.Manager.API.Application.Handlers;
+using KL.Manager.API.Application.Handlers.Agents;
+using KL.Manager.API.Application.Handlers.LeadGroups;
+using KL.Manager.API.Application.Handlers.Leads;
+using KL.Manager.API.Application.Handlers.LiveTracking;
+using KL.Manager.API.Application.Services;
+using KL.Manager.API.Application.Services.Interfaces;
+using KL.Manager.API.SignalR;
+using Microsoft.Extensions.DependencyInjection.Extensions;
 using Microsoft.Extensions.Internal;
 using Plat4me.Core.Nats;
 using Plat4Me.Core.Storage.Configuration;
-using Plat4Me.DialClientApi.Application.Handlers;
-using Plat4Me.DialClientApi.Application.Handlers.Agents;
-using Plat4Me.DialClientApi.Application.Handlers.LeadGroups;
-using Plat4Me.DialClientApi.Application.Handlers.Leads;
-using Plat4Me.DialClientApi.Application.Handlers.LiveTracking;
-using Plat4Me.DialClientApi.Application.Services;
-using Plat4Me.DialClientApi.Application.Services.Interfaces;
-using Plat4Me.DialClientApi.SignalR;
 
-namespace Plat4Me.DialClientApi.Application.Configurations;
+namespace KL.Manager.API.Application.Configurations;
 
 public static class ServiceCollectionExtensions
 {

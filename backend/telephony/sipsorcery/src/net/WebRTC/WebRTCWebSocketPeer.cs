@@ -18,10 +18,12 @@
 using System;
 using System.Threading.Tasks;
 using Microsoft.Extensions.Logging;
+using SIPSorcery.net.ICE;
+using SIPSorcery.net.RTP;
 using WebSocketSharp;
 using WebSocketSharp.Server;
 
-namespace SIPSorcery.Net
+namespace SIPSorcery.net.WebRTC
 {
     /// <summary>
     /// This class is NOT a required component for using WebRTC. It is a convenience
@@ -30,7 +32,7 @@ namespace SIPSorcery.Net
     /// </summary>
     public class WebRTCWebSocketPeer : WebSocketBehavior
     {
-        private ILogger logger = SIPSorcery.Sys.Log.Logger;
+        private ILogger logger = sys.Log.Logger;
 
         private RTCPeerConnection _pc;
         public RTCPeerConnection RTCPeerConnection => _pc;

@@ -1,14 +1,12 @@
-﻿using Microsoft.Extensions.Logging;
+﻿using KL.Agent.API.Application.Configurations;
+using KL.Agent.API.Application.Enums;
+using KL.Agent.API.Application.Models.Messages;
+using KL.Agent.API.Application.Models.Responses;
+using KL.Agent.API.Application.Services;
 using Microsoft.Extensions.Options;
 using Plat4me.Core.Nats;
-using Plat4Me.DialAgentApi.Application.Configurations;
-using Plat4Me.DialAgentApi.Application.Models.Messages;
-using Plat4Me.DialAgentApi.Application.Models.Responses;
-using Plat4Me.DialAgentApi.Application.Enums;
-using Plat4Me.DialAgentApi.Persistent.Repositories.Interfaces;
-using Plat4Me.DialAgentApi.Application.Services;
 
-namespace Plat4Me.DialAgentApi.Application.Handlers;
+namespace KL.Agent.API.Application.Handlers;
 
 public class ManualCallHandler : IManualCallHandler
 {

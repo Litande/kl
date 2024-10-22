@@ -1,11 +1,11 @@
-using Plat4Me.DialRuleEngine.Application.Enums;
-using Plat4Me.DialRuleEngine.Application.Extensions;
-using Plat4Me.DialRuleEngine.Application.Models;
-using Plat4Me.DialRuleEngine.Application.RuleEngine.Contracts;
-using Plat4Me.DialRuleEngine.Application.RuleEngine.Enums;
 using System.Reflection;
+using KL.Engine.Rule.Enums;
+using KL.Engine.Rule.Extensions;
+using KL.Engine.Rule.Models;
+using KL.Engine.Rule.RuleEngine.Contracts;
+using KL.Engine.Rule.RuleEngine.Enums;
 
-namespace Plat4Me.DialRuleEngine.Application.RuleEngine.Actions;
+namespace KL.Engine.Rule.RuleEngine.Actions;
 
 public class ChangeLeadFieldsValueAction : RuleActionBase
 {

@@ -1,13 +1,11 @@
-using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.Logging;
-using Plat4Me.DialAgentApi.Application.Enums;
-using Plat4Me.DialAgentApi.Application.Extensions;
-using Plat4Me.DialAgentApi.Application.Models.Requests;
-using Plat4Me.DialAgentApi.Application.Services;
-using Plat4Me.DialAgentApi.Persistent.Entities.Settings;
-using Plat4Me.DialAgentApi.Persistent.Repositories.Interfaces;
+using KL.Agent.API.Application.Enums;
+using KL.Agent.API.Application.Extensions;
+using KL.Agent.API.Application.Models.Requests;
+using KL.Agent.API.Application.Services;
+using KL.Agent.API.Persistent.Entities.Settings;
+using KL.Agent.API.Persistent.Repositories.Interfaces;
 
-namespace Plat4Me.DialAgentApi.Application.Handlers;
+namespace KL.Agent.API.Application.Handlers;
 
 public class FeedbackTimeoutHandler : IFeedbackTimeoutHandler
 {

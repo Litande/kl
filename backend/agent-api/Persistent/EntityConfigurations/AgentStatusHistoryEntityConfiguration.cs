@@ -1,9 +1,9 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using KL.Agent.API.Application.Enums;
+using KL.Agent.API.Persistent.Entities;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
-using Plat4Me.DialAgentApi.Application.Enums;
-using Plat4Me.DialAgentApi.Persistent.Entities;
 
-namespace Plat4Me.DialAgentApi.Persistent.EntityConfigurations;
+namespace KL.Agent.API.Persistent.EntityConfigurations;
 
 public class AgentStatusHistoryEntityConfiguration : IEntityTypeConfiguration<AgentStatusHistory>
 {

@@ -1,6 +1,4 @@
-﻿using Redis.OM.Modeling;
-
-namespace Plat4Me.DialRuleEngine.Application.Models;
+﻿namespace KL.Engine.Rule.Models;
 
 [Document(StorageType = StorageType.Json, Prefixes = new[] { "LeadTracking" })]
 public class LeadTrackingCache

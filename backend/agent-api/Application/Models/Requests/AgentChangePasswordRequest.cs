@@ -1,4 +1,4 @@
-﻿namespace Plat4Me.DialAgentApi.Application.Models.Requests;
+﻿namespace KL.Agent.API.Application.Models.Requests;
 
 public record AgentChangePasswordRequest(
     string CurrentPassword,

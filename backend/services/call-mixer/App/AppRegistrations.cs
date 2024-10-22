@@ -1,9 +1,8 @@
-﻿using Plat4Me.DialCallRecordMixer.Workers;
+﻿using KL.Call.Mixer.Services;
 using Plat4me.Core.Nats;
 using Plat4Me.Core.Storage.Configuration;
-using Plat4Me.DialCallRecordMixer.Services;
 
-namespace Plat4Me.DialCallRecordMixer.App;
+namespace KL.Call.Mixer.App;
 
 public static class AppRegistrations
 {

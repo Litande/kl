@@ -1,8 +1,8 @@
-﻿using Microsoft.Extensions.Options;
-using Plat4Me.DialLeadProvider.Application.Configurations;
-using Plat4Me.DialLeadProvider.Application.Services.Interfaces;
+﻿using KL.Provider.Leads.Application.Configurations;
+using KL.Provider.Leads.Application.Services.Interfaces;
+using Microsoft.Extensions.Options;
 
-namespace Plat4Me.DialLeadProvider.Workers;
+namespace KL.Provider.Leads.Workers;
 
 public class LeadProviderBackgroundService : BackgroundService
 {

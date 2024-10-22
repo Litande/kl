@@ -1,9 +1,9 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using KL.Provider.Leads.Application.Enums;
+using KL.Provider.Leads.Persistent.Entities;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
-using Plat4Me.DialLeadProvider.Application.Enums;
-using Plat4Me.DialLeadProvider.Persistent.Entities;
 
-namespace Plat4Me.DialLeadProvider.Persistent.EntityConfigurations;
+namespace KL.Provider.Leads.Persistent.EntityConfigurations;
 
 public class LeadEntityConfiguration : IEntityTypeConfiguration<Lead>
 {

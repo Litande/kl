@@ -1,7 +1,6 @@
 ﻿using System.Text.Json;
-using Microsoft.Extensions.Logging;
 
-namespace Plat4Me.DialLeadCaller.Application.Extensions;
+namespace KL.Caller.Leads.Extensions;
 
 public static class JsonHelper
 {

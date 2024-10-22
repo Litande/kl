@@ -1,16 +1,16 @@
-﻿using Microsoft.AspNetCore.Identity;
+﻿using KL.Manager.API.Application.Enums;
+using KL.Manager.API.Application.Extensions;
+using KL.Manager.API.Application.Models.Requests;
+using KL.Manager.API.Application.Models.Requests.Agents;
+using KL.Manager.API.Application.Models.Responses;
+using KL.Manager.API.Application.Models.Responses.Agents;
+using KL.Manager.API.Persistent.Entities;
+using KL.Manager.API.Persistent.Entities.Projections;
+using KL.Manager.API.Persistent.Repositories.Interfaces;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
-using Plat4Me.DialClientApi.Application.Enums;
-using Plat4Me.DialClientApi.Application.Extensions;
-using Plat4Me.DialClientApi.Application.Models.Requests;
-using Plat4Me.DialClientApi.Application.Models.Requests.Agents;
-using Plat4Me.DialClientApi.Application.Models.Responses;
-using Plat4Me.DialClientApi.Application.Models.Responses.Agents;
-using Plat4Me.DialClientApi.Persistent.Entities;
-using Plat4Me.DialClientApi.Persistent.Entities.Projections;
-using Plat4Me.DialClientApi.Persistent.Repositories.Interfaces;
 
-namespace Plat4Me.DialClientApi.Persistent.Repositories;
+namespace KL.Manager.API.Persistent.Repositories;
 
 public class UserRepository : RepositoryBase, IUserRepository
 {

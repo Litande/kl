@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace SIPSorcery.Media
+namespace SIPSorcery.app.Media.Codecs
 {
     /// <summary>
     /// SpanDSP - a series of DSP components for telephony

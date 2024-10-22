@@ -1,16 +1,13 @@
-﻿using Microsoft.Extensions.Logging;
-using Moq;
-using Plat4Me.DialLeadCaller.Application.Enums;
-using Plat4Me.DialLeadCaller.Application.Models.Messages;
-using Plat4Me.DialLeadCaller.Application.Models.Requests;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
+using Microsoft.Extensions.Logging;
+using Moq;
 using Xunit;
 
-namespace Plat4Me.DialLeadCaller.Tests;
+namespace KL.Caller.Leads.Tests;
 
 public class CallServiceTests : CallServiceTestsFixture
 {

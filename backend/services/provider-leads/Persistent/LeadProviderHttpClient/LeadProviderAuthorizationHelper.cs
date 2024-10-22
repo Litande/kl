@@ -1,6 +1,6 @@
-﻿using Plat4Me.DialLeadProvider.Persistent.Entities;
+﻿using KL.Provider.Leads.Persistent.Entities;
 
-namespace Plat4Me.DialLeadProvider.Persistent.LeadProviderHttpClient;
+namespace KL.Provider.Leads.Persistent.LeadProviderHttpClient;
 
 public static class LeadProviderAuthorizationHelper
 {

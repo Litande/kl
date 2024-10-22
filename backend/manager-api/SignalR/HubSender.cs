@@ -1,14 +1,14 @@
 ﻿using System.Collections.Concurrent;
+using KL.Manager.API.Application.Models;
+using KL.Manager.API.Application.Models.Responses.AgentTrackings;
+using KL.Manager.API.Application.Models.Responses.LeadGroups;
+using KL.Manager.API.Application.Models.Responses.Leads;
+using KL.Manager.API.Application.Services.Interfaces;
+using KL.Manager.API.Configurations;
 using Microsoft.AspNetCore.SignalR;
 using Microsoft.Extensions.Options;
-using Plat4Me.DialClientApi.Application.Models;
-using Plat4Me.DialClientApi.Application.Models.Responses.AgentTrackings;
-using Plat4Me.DialClientApi.Application.Models.Responses.LeadGroups;
-using Plat4Me.DialClientApi.Application.Models.Responses.Leads;
-using Plat4Me.DialClientApi.Application.Services.Interfaces;
-using Plat4Me.DialClientApi.Configurations;
 
-namespace Plat4Me.DialClientApi.SignalR;
+namespace KL.Manager.API.SignalR;
 
 public class HubSender : IHubSender
 {

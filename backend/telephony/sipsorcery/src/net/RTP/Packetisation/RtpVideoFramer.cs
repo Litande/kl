@@ -18,10 +18,11 @@
 using System;
 using System.Linq;
 using Microsoft.Extensions.Logging;
-using SIPSorcery.Sys;
+using SIPSorcery.sys;
+using SIPSorcery.sys.Net;
 using SIPSorceryMedia.Abstractions;
 
-namespace SIPSorcery.Net
+namespace SIPSorcery.net.RTP.Packetisation
 {
     public class RtpVideoFramer
     {

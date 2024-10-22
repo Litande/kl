@@ -1,11 +1,10 @@
-using Microsoft.Extensions.Logging;
-using Plat4Me.DialSipBridge.Application.Configurations;
+using System.Net;
+using KL.SIP.Bridge.Application.Configurations;
+using KL.SIP.Bridge.Application.Enums;
 using SIPSorcery.Net;
 using SIPSorceryMedia.Abstractions;
-using System.Net;
-using Plat4Me.DialSipBridge.Application.Enums;
 
-namespace Plat4Me.DialSipBridge.Application.Connections;
+namespace KL.SIP.Bridge.Application.Connections;
 
 public class RTCConnection : IConnection
 {

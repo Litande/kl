@@ -24,7 +24,7 @@ using System.Security.Cryptography.X509Certificates;
 using System.Threading.Tasks;
 using Microsoft.Extensions.Logging;
 
-namespace SIPSorcery.SIP
+namespace SIPSorcery.core.SIP.Channels
 {
     public class SIPTLSChannel : SIPTCPChannel
     {

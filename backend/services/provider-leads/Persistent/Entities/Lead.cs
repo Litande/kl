@@ -1,6 +1,6 @@
-﻿using Plat4Me.DialLeadProvider.Application.Enums;
+﻿using KL.Provider.Leads.Application.Enums;
 
-namespace Plat4Me.DialLeadProvider.Persistent.Entities;
+namespace KL.Provider.Leads.Persistent.Entities;
 
 public class Lead
 {

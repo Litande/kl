@@ -1,14 +1,11 @@
-using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.Logging;
+using KL.Agent.API.Application.Configurations;
+using KL.Agent.API.Application.Enums;
+using KL.Agent.API.Application.Services;
+using KL.Agent.API.Persistent.Repositories.Interfaces;
 using Microsoft.Extensions.Options;
 using Plat4me.Core.Nats;
-using Plat4Me.DialAgentApi.Application.Configurations;
-using Plat4Me.DialAgentApi.Application.Enums;
-using Plat4Me.DialAgentApi.Application.Models.Messages;
-using Plat4Me.DialAgentApi.Application.Services;
-using Plat4Me.DialAgentApi.Persistent.Repositories.Interfaces;
 
-namespace Plat4Me.DialAgentApi.Application.Handlers;
+namespace KL.Agent.API.Application.Handlers;
 
 public class AgentDisconnectedHandler : IAgentDisconnectedHandler
 {

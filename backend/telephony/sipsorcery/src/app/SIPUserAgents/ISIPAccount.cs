@@ -17,9 +17,7 @@
 // BSD 3-Clause "New" or "Revised" License, see included LICENSE.md file.
 // ============================================================================
 
-using System;
-
-namespace SIPSorcery.SIP.App
+namespace SIPSorcery.app.SIPUserAgents
 {
     /// <remarks>
     /// SIP account usernames can be treated by some SIP Sorcery server agents as domain name like structures where a username of

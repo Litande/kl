@@ -3,11 +3,13 @@ using System.Linq;
 using System.Net;
 using System.Threading.Tasks;
 using Microsoft.Extensions.Logging;
-using SIPSorcery.Net;
-using SIPSorcery.SIP.App;
+using SIPSorcery.app.Media.Codecs;
+using SIPSorcery.app.Media.Sources;
+using SIPSorcery.net.RTP;
+using SIPSorcery.sys;
 using SIPSorceryMedia.Abstractions;
 
-namespace SIPSorcery.Media
+namespace SIPSorcery.app.Media
 {
     /// <summary>
     /// A media session that will send a generated audio signal or silence to the remote party
@@ -15,7 +17,7 @@ namespace SIPSorcery.Media
     /// </summary>
     public class AudioSendOnlyMediaSession : RTPSession, IMediaSession
     {
-        private static ILogger logger = SIPSorcery.Sys.Log.Logger;
+        private static ILogger logger = Log.Logger;
 
         public AudioExtrasSource AudioExtrasSource { get; private set; }
 

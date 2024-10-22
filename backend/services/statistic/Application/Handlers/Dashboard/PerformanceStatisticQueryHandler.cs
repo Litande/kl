@@ -1,9 +1,9 @@
-﻿using Plat4Me.Dial.Statistic.Api.Application.Common.Enums;
-using Plat4Me.Dial.Statistic.Api.Application.Models.Messages;
-using Plat4Me.Dial.Statistic.Api.Application.Models.Responses;
-using Plat4Me.Dial.Statistic.Api.Application.Services;
+﻿using KL.Statistics.Application.Common.Enums;
+using KL.Statistics.Application.Models.Messages;
+using KL.Statistics.Application.Models.Responses;
+using KL.Statistics.Application.Services;
 
-namespace Plat4Me.Dial.Statistic.Api.Application.Handlers.Dashboard;
+namespace KL.Statistics.Application.Handlers.Dashboard;
 
 public class PerformanceStatisticQueryHandler : IPerformanceStatisticQueryHandler
 {

@@ -1,7 +1,7 @@
-﻿using Microsoft.AspNetCore.Mvc;
-using Plat4Me.DialRuleEngine.Application.Handlers.Contracts;
+﻿using KL.Engine.Rule.Handlers.Contracts;
+using Microsoft.AspNetCore.Mvc;
 
-namespace Plat4Me.DialRuleEngine.Controllers;
+namespace KL.Engine.Rule.Controllers;
 
 [Route("lead-queue")]
 public class LeadQueueController : BaseController

@@ -1,6 +1,6 @@
-﻿using Plat4Me.DialAgentApi.Application.Enums;
+﻿using KL.Agent.API.Application.Enums;
 
-namespace Plat4Me.DialAgentApi.Persistent.Entities.Settings;
+namespace KL.Agent.API.Persistent.Entities.Settings;
 
 public record FeedbackSettings(
     long PageTimeout,

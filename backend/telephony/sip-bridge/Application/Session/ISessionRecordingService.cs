@@ -1,6 +1,6 @@
-using  Plat4Me.DialSipBridge.Application.Services;
+using KL.SIP.Bridge.Application.Services;
 
-namespace Plat4Me.DialSipBridge.Application.Session;
+namespace KL.SIP.Bridge.Application.Session;
 
 public interface ISessionRecordingService
 {

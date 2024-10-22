@@ -1,9 +1,9 @@
-﻿using Plat4Me.Dial.Statistic.Api.Application.Models;
-using Plat4Me.Dial.Statistic.Api.Application.Models.Responses;
-using Plat4Me.Dial.Statistic.Api.Application.Models.StatisticCache;
-using System.Collections.Concurrent;
+﻿using System.Collections.Concurrent;
+using KL.Statistics.Application.Models;
+using KL.Statistics.Application.Models.Responses;
+using KL.Statistics.Application.Models.StatisticCache;
 
-namespace Plat4Me.Dial.Statistic.Api.Application.SignalR;
+namespace KL.Statistics.Application.SignalR;
 
 public interface IHubSender
 {

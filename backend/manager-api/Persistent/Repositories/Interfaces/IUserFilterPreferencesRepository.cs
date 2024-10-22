@@ -1,7 +1,7 @@
-﻿using Plat4Me.DialClientApi.Application.Models.Requests.UserFilter;
-using Plat4Me.DialClientApi.Application.Models.Responses.UserFilter;
+﻿using KL.Manager.API.Application.Models.Requests.UserFilter;
+using KL.Manager.API.Application.Models.Responses.UserFilter;
 
-namespace Plat4Me.DialClientApi.Persistent.Repositories.Interfaces;
+namespace KL.Manager.API.Persistent.Repositories.Interfaces;
 
 public interface IUserFilterPreferencesRepository
 {

@@ -1,6 +1,6 @@
 using System.Text.Json.Serialization;
 
-namespace Plat4Me.DialClientApi.Application.Models.Requests.Click2Call;
+namespace KL.Manager.API.Application.Models.Requests.Click2Call;
 
 public class SettingsValue<T>
 {

@@ -23,9 +23,12 @@ using System.Net;
 using System.Net.Sockets;
 using System.Threading.Tasks;
 using Microsoft.Extensions.Logging;
-using SIPSorcery.Sys;
+using SIPSorcery.core;
+using SIPSorcery.core.SIP;
+using SIPSorcery.core.SIPTransactions;
+using SIPSorcery.sys;
 
-namespace SIPSorcery.SIP.App
+namespace SIPSorcery.app.SIPUserAgents
 {
     public class SIPClientUserAgent : ISIPClientUserAgent
     {

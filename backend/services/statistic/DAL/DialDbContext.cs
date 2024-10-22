@@ -1,8 +1,8 @@
-﻿using Microsoft.EntityFrameworkCore;
-using Plat4Me.Dial.Statistic.Api.Application.Models.Entities;
-using Plat4Me.Dial.Statistic.Api.DAL.EntityConfigurations;
+﻿using KL.Statistics.Application.Models.Entities;
+using KL.Statistics.DAL.EntityConfigurations;
+using Microsoft.EntityFrameworkCore;
 
-namespace Plat4Me.Dial.Statistic.Api.DAL;
+namespace KL.Statistics.DAL;
 
 public class DialDbContext : DbContext
 {

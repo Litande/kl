@@ -1,6 +1,6 @@
-﻿using Plat4Me.DialClientApi.Application.Models.Responses;
+﻿using KL.Manager.API.Application.Models.Responses;
 
-namespace Plat4Me.DialClientApi.Application.Handlers;
+namespace KL.Manager.API.Application.Handlers;
 
 public interface IUserQueryHandler
 {

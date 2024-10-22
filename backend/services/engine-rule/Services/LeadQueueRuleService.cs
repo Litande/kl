@@ -1,13 +1,11 @@
-﻿using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.Logging;
-using Plat4Me.DialRuleEngine.Application.Enums;
-using Plat4Me.DialRuleEngine.Application.Models;
-using Plat4Me.DialRuleEngine.Application.Repositories;
-using Plat4Me.DialRuleEngine.Application.RuleEngine.Contracts;
-using Plat4Me.DialRuleEngine.Application.RuleEngine.MicrosoftEngine;
-using Plat4Me.DialRuleEngine.Application.Services.Contracts;
+﻿using KL.Engine.Rule.Enums;
+using KL.Engine.Rule.Models;
+using KL.Engine.Rule.Repositories;
+using KL.Engine.Rule.RuleEngine.Contracts;
+using KL.Engine.Rule.RuleEngine.MicrosoftEngine;
+using KL.Engine.Rule.Services.Contracts;
 
-namespace Plat4Me.DialRuleEngine.Application.Services;
+namespace KL.Engine.Rule.Services;
 
 public class LeadQueueRuleService : ILeadQueueRuleService
 {

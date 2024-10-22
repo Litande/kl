@@ -1,6 +1,6 @@
-﻿using Plat4Me.DialLeadCaller.Application.Models.LeadStatisticCache;
+﻿using KL.Caller.Leads.Models.LeadStatisticCache;
 
-namespace Plat4Me.DialLeadCaller.Application.Repositories;
+namespace KL.Caller.Leads.Repositories;
 
 public interface ILeadStatisticCacheRepository
 {

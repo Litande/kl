@@ -1,9 +1,9 @@
-﻿using Microsoft.AspNetCore.Authorization;
+﻿using System.Security.Claims;
+using KL.Statistics.Application.Common;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using Plat4Me.Dial.Statistic.Api.Application.Common;
-using System.Security.Claims;
 
-namespace Plat4Me.Dial.Statistic.Api.Controllers;
+namespace KL.Statistics.Controllers;
 
 [ApiController]
 [Authorize(Roles = "Manager")]

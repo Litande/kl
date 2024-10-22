@@ -1,19 +1,17 @@
 ﻿using System.Globalization;
 using System.Text.Json;
-using Microsoft.Extensions.Logging;
+using KL.Caller.Leads.App;
+using KL.Caller.Leads.Enums;
+using KL.Caller.Leads.Extensions;
+using KL.Caller.Leads.Models;
+using KL.Caller.Leads.Models.Entities;
+using KL.Caller.Leads.Models.LeadStatisticCache;
+using KL.Caller.Leads.Models.Messages;
+using KL.Caller.Leads.Repositories;
+using KL.Caller.Leads.Services.Contracts;
 using Microsoft.Extensions.Options;
-using Plat4me.Core.Nats;
-using Plat4Me.DialLeadCaller.Application.App;
-using Plat4Me.DialLeadCaller.Application.Enums;
-using Plat4Me.DialLeadCaller.Application.Extensions;
-using Plat4Me.DialLeadCaller.Application.Models;
-using Plat4Me.DialLeadCaller.Application.Models.Entities;
-using Plat4Me.DialLeadCaller.Application.Models.LeadStatisticCache;
-using Plat4Me.DialLeadCaller.Application.Models.Messages;
-using Plat4Me.DialLeadCaller.Application.Repositories;
-using Plat4Me.DialLeadCaller.Application.Services.Contracts;
 
-namespace Plat4Me.DialLeadCaller.Application.Services;
+namespace KL.Caller.Leads.Services;
 
 public class LeadStatisticProcessingService : ILeadStatisticProcessing
 {

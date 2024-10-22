@@ -1,6 +1,6 @@
-﻿using Plat4Me.DialClientApi.Application.Enums;
+﻿using KL.Manager.API.Application.Enums;
 
-namespace Plat4Me.DialClientApi.Application.Models.Responses.Tags;
+namespace KL.Manager.API.Application.Models.Responses.Tags;
 
 public record TagResponse(
     long Id,

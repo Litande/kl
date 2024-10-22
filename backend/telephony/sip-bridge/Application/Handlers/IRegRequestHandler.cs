@@ -1,6 +1,6 @@
-﻿using Plat4Me.DialSipBridge.Application.Models.Messages;
+﻿using KL.SIP.Bridge.Application.Models.Messages;
 
-namespace Plat4Me.DialSipBridge.Application.Handlers;
+namespace KL.SIP.Bridge.Application.Handlers;
 
 public interface IRegRequestHandler : ISubHandler<BridgeRegRequestMessage>
 {

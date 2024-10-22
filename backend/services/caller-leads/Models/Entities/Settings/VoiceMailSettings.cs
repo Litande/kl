@@ -1,6 +1,6 @@
-﻿using Plat4Me.DialLeadCaller.Application.Enums;
+﻿using KL.Caller.Leads.Enums;
 
-namespace Plat4Me.DialLeadCaller.Application.Models.Entities.Settings;
+namespace KL.Caller.Leads.Models.Entities.Settings;
 
 public record VoiceMailSettings(
     LeadStatusTypes PlayVoicemailPlayback,

@@ -1,4 +1,4 @@
-﻿namespace Plat4Me.DialClientApi.Application.Models.Messages.LeadGroups;
+﻿namespace KL.Manager.API.Application.Models.Messages.LeadGroups;
 
 public record QueuesUpdatedMessage(
     long ClientId,

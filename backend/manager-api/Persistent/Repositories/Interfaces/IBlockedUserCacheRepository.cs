@@ -1,6 +1,6 @@
-﻿using Plat4Me.DialClientApi.Persistent.Entities.Cache;
+﻿using KL.Manager.API.Persistent.Entities.Cache;
 
-namespace Plat4Me.DialClientApi.Persistent.Repositories.Interfaces;
+namespace KL.Manager.API.Persistent.Repositories.Interfaces;
 
 public interface IBlockedUserCacheRepository
 {

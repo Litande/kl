@@ -1,10 +1,10 @@
-﻿using Plat4Me.DialLeadProvider.Application.Enums;
-using Plat4Me.DialLeadProvider.Application.Models;
-using Plat4Me.DialLeadProvider.Application.Services.Interfaces;
-using Plat4Me.DialLeadProvider.Persistent.Entities;
-using System.Text.Json.Nodes;
+﻿using System.Text.Json.Nodes;
+using KL.Provider.Leads.Application.Enums;
+using KL.Provider.Leads.Application.Models;
+using KL.Provider.Leads.Application.Services.Interfaces;
+using KL.Provider.Leads.Persistent.Entities;
 
-namespace Plat4Me.DialLeadProvider.Application.Services;
+namespace KL.Provider.Leads.Application.Services;
 
 public class LeadDataMapperService : ILeadDataMapperService
 {

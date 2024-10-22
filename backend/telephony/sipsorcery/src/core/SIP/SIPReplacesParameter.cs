@@ -16,7 +16,7 @@
 
 using System.Text.RegularExpressions;
 
-namespace SIPSorcery.SIP
+namespace SIPSorcery.core.SIP
 {
     public class SIPReplacesParameter
     {

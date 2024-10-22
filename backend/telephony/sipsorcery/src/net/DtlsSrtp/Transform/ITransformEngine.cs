@@ -19,7 +19,7 @@
 // Original Source: AGPL-3.0 License
 //-----------------------------------------------------------------------------
 
-namespace SIPSorcery.Net
+namespace SIPSorcery.net.DtlsSrtp.Transform
 {
     public interface ITransformEngine
     {

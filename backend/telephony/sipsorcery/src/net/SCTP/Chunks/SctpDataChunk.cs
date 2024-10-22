@@ -18,9 +18,9 @@
 //-----------------------------------------------------------------------------
 
 using System;
-using SIPSorcery.Sys;
+using SIPSorcery.sys.Net;
 
-namespace SIPSorcery.Net
+namespace SIPSorcery.net.SCTP.Chunks
 {
     public class SctpDataChunk : SctpChunk
     {

@@ -1,20 +1,19 @@
 ﻿using System.Text.Json;
-using System.Text.Json.Nodes;
+using KL.Manager.API.Application.Common;
+using KL.Manager.API.Application.Enums;
+using KL.Manager.API.Application.Extensions;
+using KL.Manager.API.Application.Models;
+using KL.Manager.API.Application.Models.Requests;
+using KL.Manager.API.Application.Models.Requests.Leads;
+using KL.Manager.API.Application.Models.Responses;
+using KL.Manager.API.Application.Models.Responses.Leads;
+using KL.Manager.API.Application.Models.Responses.UserFilter;
+using KL.Manager.API.Persistent.Entities;
+using KL.Manager.API.Persistent.Entities.Projections;
+using KL.Manager.API.Persistent.Repositories.Interfaces;
 using Microsoft.EntityFrameworkCore;
-using Plat4Me.DialClientApi.Application.Common;
-using Plat4Me.DialClientApi.Application.Enums;
-using Plat4Me.DialClientApi.Application.Extensions;
-using Plat4Me.DialClientApi.Application.Models;
-using Plat4Me.DialClientApi.Application.Models.Requests;
-using Plat4Me.DialClientApi.Application.Models.Requests.Leads;
-using Plat4Me.DialClientApi.Application.Models.Responses;
-using Plat4Me.DialClientApi.Application.Models.Responses.Leads;
-using Plat4Me.DialClientApi.Application.Models.Responses.UserFilter;
-using Plat4Me.DialClientApi.Persistent.Entities;
-using Plat4Me.DialClientApi.Persistent.Entities.Projections;
-using Plat4Me.DialClientApi.Persistent.Repositories.Interfaces;
 
-namespace Plat4Me.DialClientApi.Persistent.Repositories;
+namespace KL.Manager.API.Persistent.Repositories;
 
 public class LeadRepository : RepositoryBase, ILeadRepository
 {

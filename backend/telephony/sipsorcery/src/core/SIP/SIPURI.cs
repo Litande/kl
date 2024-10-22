@@ -18,9 +18,10 @@ using System.Net;
 using System.Runtime.Serialization;
 using System.Text.RegularExpressions;
 using Microsoft.Extensions.Logging;
-using SIPSorcery.Sys;
+using SIPSorcery.sys;
+using SIPSorcery.sys.Net;
 
-namespace SIPSorcery.SIP
+namespace SIPSorcery.core.SIP
 {
     /// <summary>
     /// Implements the SIP URI concept from the SIP RFC3261.

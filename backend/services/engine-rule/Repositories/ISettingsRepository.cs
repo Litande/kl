@@ -1,6 +1,6 @@
-﻿using Plat4Me.DialRuleEngine.Application.Enums;
+﻿using KL.Engine.Rule.Enums;
 
-namespace Plat4Me.DialRuleEngine.Application.Repositories;
+namespace KL.Engine.Rule.Repositories;
 
 public interface ISettingsRepository
 {

@@ -24,16 +24,23 @@
 
 using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Net;
 using System.Net.Sockets;
 using System.Threading;
 using System.Threading.Tasks;
 using Microsoft.Extensions.Logging;
-using SIPSorcery.Net;
-using SIPSorcery.Sys;
+using SIPSorcery.app.Media;
+using SIPSorcery.core;
+using SIPSorcery.core.SIP;
+using SIPSorcery.core.SIP.Channels;
+using SIPSorcery.core.SIPCDR;
+using SIPSorcery.core.SIPTransactions;
+using SIPSorcery.net.RTP;
+using SIPSorcery.net.SDP;
+using SIPSorcery.sys;
+using SIPSorcery.sys.Net;
 
-namespace SIPSorcery.SIP.App
+namespace SIPSorcery.app.SIPUserAgents
 {
     /// <summary>
     /// A "full" SIP user agent that encompasses both client and server user agents.

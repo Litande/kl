@@ -1,8 +1,8 @@
-﻿using Plat4Me.DialAgentApi.Application.Common;
-using System.Text.Json;
-using Plat4Me.DialAgentApi.Persistent.Entities.Settings;
+﻿using System.Text.Json;
+using KL.Agent.API.Application.Common;
+using KL.Agent.API.Persistent.Entities.Settings;
 
-namespace Plat4Me.DialAgentApi.Application.Extensions;
+namespace KL.Agent.API.Application.Extensions;
 
 public static class StringExtensions
 {

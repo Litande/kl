@@ -1,13 +1,12 @@
-﻿using Microsoft.Extensions.Logging;
+﻿using KL.Caller.Leads.App;
+using KL.Caller.Leads.Enums;
+using KL.Caller.Leads.Handlers.Contracts;
+using KL.Caller.Leads.Models.Messages;
+using KL.Caller.Leads.Models.Requests;
+using KL.Caller.Leads.Repositories;
 using Microsoft.Extensions.Options;
-using Plat4me.Core.Nats;
-using Plat4Me.DialLeadCaller.Application.App;
-using Plat4Me.DialLeadCaller.Application.Enums;
-using Plat4Me.DialLeadCaller.Application.Models.Messages;
-using Plat4Me.DialLeadCaller.Application.Models.Requests;
-using Plat4Me.DialLeadCaller.Application.Repositories;
 
-namespace Plat4Me.DialLeadCaller.Application.Handlers;
+namespace KL.Caller.Leads.Handlers;
 
 public class AgentFilledCallInfoHandler : IAgentFilledCallInfoHandler
 {

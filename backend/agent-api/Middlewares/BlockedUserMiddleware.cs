@@ -1,9 +1,9 @@
 ﻿using System.Security.Claims;
+using KL.Agent.API.Persistent.Repositories.Interfaces;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Authorization.Policy;
-using Plat4Me.DialAgentApi.Persistent.Repositories.Interfaces;
 
-namespace Plat4Me.DialAgentApi.Middlewares;
+namespace KL.Agent.API.Middlewares;
 
 public class BlockedUserAuthorizationMiddlewareHandler : IAuthorizationMiddlewareResultHandler
 {

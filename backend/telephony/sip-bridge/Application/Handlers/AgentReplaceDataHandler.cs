@@ -1,7 +1,7 @@
-﻿using Plat4Me.DialSipBridge.Application.Models.Messages;
-using Plat4Me.DialSipBridge.Application.Services;
+﻿using KL.SIP.Bridge.Application.Models.Messages;
+using KL.SIP.Bridge.Application.Services;
 
-namespace Plat4Me.DialSipBridge.Application.Handlers;
+namespace KL.SIP.Bridge.Application.Handlers;
 
 public class AgentReplaceDataHandler : IAgentReplaceDataHandler
 {

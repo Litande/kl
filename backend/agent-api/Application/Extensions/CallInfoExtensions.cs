@@ -1,8 +1,8 @@
-﻿using Plat4Me.DialAgentApi.Application.Models;
-using Plat4Me.DialAgentApi.Application.Models.Messages;
-using Plat4Me.DialAgentApi.Persistent.Entities.Cache;
+﻿using KL.Agent.API.Application.Models;
+using KL.Agent.API.Application.Models.Messages;
+using KL.Agent.API.Persistent.Entities.Cache;
 
-namespace Plat4Me.DialAgentApi.Application.Extensions;
+namespace KL.Agent.API.Application.Extensions;
 
 public static class CallInfoExtensions
 {

@@ -15,8 +15,9 @@
 
 using System;
 using System.Xml.Linq;
+using SIPSorcery.core.SIP;
 
-namespace SIPSorcery.SIP
+namespace SIPSorcery.core.SIPEvents.Presence
 {
     public class SIPEventPresenceTuple
     {

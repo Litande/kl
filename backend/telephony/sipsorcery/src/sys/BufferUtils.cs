@@ -15,7 +15,7 @@
 
 using System.Text;
 
-namespace SIPSorcery.Sys
+namespace SIPSorcery.sys
 {
     public class BufferUtils
     {

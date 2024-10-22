@@ -1,10 +1,10 @@
-﻿using Plat4Me.DialClientApi.Application.Models.Responses.AgentTrackings;
-using Plat4Me.DialClientApi.Persistent.Entities;
-using Plat4Me.DialClientApi.Persistent.Entities.Cache;
-using Plat4Me.DialClientApi.Persistent.Entities.Projections;
-using Plat4Me.DialClientApi.Application.Enums;
+﻿using KL.Manager.API.Application.Enums;
+using KL.Manager.API.Application.Models.Responses.AgentTrackings;
+using KL.Manager.API.Persistent.Entities;
+using KL.Manager.API.Persistent.Entities.Cache;
+using KL.Manager.API.Persistent.Entities.Projections;
 
-namespace Plat4Me.DialClientApi.Application.Extensions;
+namespace KL.Manager.API.Application.Extensions;
 
 public static class AgentTrackingExtensions
 {

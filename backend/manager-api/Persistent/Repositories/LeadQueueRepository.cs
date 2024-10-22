@@ -1,12 +1,12 @@
-﻿using Microsoft.EntityFrameworkCore;
-using Plat4Me.DialClientApi.Application.Enums;
-using Plat4Me.DialClientApi.Application.Extensions;
-using Plat4Me.DialClientApi.Application.Models.Requests.LeadQueue;
-using Plat4Me.DialClientApi.Application.Models.Responses.LeadQueues;
-using Plat4Me.DialClientApi.Persistent.Entities;
-using Plat4Me.DialClientApi.Persistent.Repositories.Interfaces;
+﻿using KL.Manager.API.Application.Enums;
+using KL.Manager.API.Application.Extensions;
+using KL.Manager.API.Application.Models.Requests.LeadQueue;
+using KL.Manager.API.Application.Models.Responses.LeadQueues;
+using KL.Manager.API.Persistent.Entities;
+using KL.Manager.API.Persistent.Repositories.Interfaces;
+using Microsoft.EntityFrameworkCore;
 
-namespace Plat4Me.DialClientApi.Persistent.Repositories;
+namespace KL.Manager.API.Persistent.Repositories;
 
 public class LeadQueueRepository : ILeadQueueRepository
 {

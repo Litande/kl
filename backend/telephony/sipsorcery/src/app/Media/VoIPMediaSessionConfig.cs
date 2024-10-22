@@ -14,11 +14,12 @@
 //-----------------------------------------------------------------------------
 
 using System.Net;
-using SIPSorcery.Net;
-using SIPSorcery.Sys;
+using SIPSorcery.app.Media.Sources;
+using SIPSorcery.net.RTP;
+using SIPSorcery.sys.Net;
 using SIPSorceryMedia.Abstractions;
 
-namespace SIPSorcery.Media
+namespace SIPSorcery.app.Media
 {
     public sealed class VoIPMediaSessionConfig
     {

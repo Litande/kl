@@ -1,12 +1,12 @@
-﻿using Microsoft.Extensions.Options;
-using Plat4Me.DialRuleEngine.Application.App;
-using Plat4Me.DialRuleEngine.Application.Enums;
-using Plat4Me.DialRuleEngine.Application.Models;
-using Plat4Me.DialRuleEngine.Application.Models.Entities;
-using Plat4Me.DialRuleEngine.Application.Repositories;
-using Plat4Me.DialRuleEngine.Application.Services.Contracts;
+﻿using KL.Engine.Rule.App;
+using KL.Engine.Rule.Enums;
+using KL.Engine.Rule.Models;
+using KL.Engine.Rule.Models.Entities;
+using KL.Engine.Rule.Repositories;
+using KL.Engine.Rule.Services.Contracts;
+using Microsoft.Extensions.Options;
 
-namespace Plat4Me.DialRuleEngine.Application.Services;
+namespace KL.Engine.Rule.Services;
 
 public class LeadsQueueStore : ILeadsQueueStore
 {

@@ -1,9 +1,9 @@
+using KL.Provider.Leads.Persistent.Entities;
+using KL.Provider.Leads.Persistent.EntityConfigurations;
 using Microsoft.EntityFrameworkCore;
-using Plat4Me.DialLeadProvider.Persistent.Entities;
-using Plat4Me.DialLeadProvider.Persistent.EntityConfigurations;
-using TimeZone = Plat4Me.DialLeadProvider.Persistent.Entities.TimeZone;
+using TimeZone = KL.Provider.Leads.Persistent.Entities.TimeZone;
 
-namespace Plat4Me.DialLeadProvider.Persistent;
+namespace KL.Provider.Leads.Persistent;
 
 public class DialDbContext : DbContext
 {

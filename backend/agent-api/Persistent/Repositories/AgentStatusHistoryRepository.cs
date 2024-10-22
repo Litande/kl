@@ -1,8 +1,7 @@
-﻿using Plat4Me.DialAgentApi.Application.Enums;
-using Plat4Me.DialAgentApi.Persistent.Entities;
-using Plat4Me.DialAgentApi.Persistent.Repositories.Interfaces;
+﻿using KL.Agent.API.Persistent.Entities;
+using KL.Agent.API.Persistent.Repositories.Interfaces;
 
-namespace Plat4Me.DialAgentApi.Persistent.Repositories;
+namespace KL.Agent.API.Persistent.Repositories;
 
 public class AgentStatusHistoryRepository : IAgentStatusHistoryRepository
 {

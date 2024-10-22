@@ -1,4 +1,4 @@
-﻿namespace Plat4Me.DialLeadProvider.Application.Models.Requests;
+﻿namespace KL.Provider.Leads.Application.Models.Requests;
 
 public class LeadCreateRequest
 {

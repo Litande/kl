@@ -23,9 +23,11 @@ using System.Linq;
 using System.Net;
 using System.Net.Sockets;
 using Microsoft.Extensions.Logging;
-using SIPSorcery.Sys;
+using SIPSorcery.net.RTP;
+using SIPSorcery.net.SCTP.Chunks;
+using SIPSorcery.sys.Net;
 
-namespace SIPSorcery.Net
+namespace SIPSorcery.net.SCTP
 {
     /// <summary>
     /// Represents an SCTP transport that encapsulates SCTP packet in UDP.

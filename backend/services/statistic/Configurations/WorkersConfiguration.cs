@@ -1,7 +1,7 @@
-﻿using Plat4Me.Dial.Statistic.Api.DAL;
-using Plat4Me.Dial.Statistic.Api.Workers;
+﻿using KL.Statistics.DAL;
+using KL.Statistics.Workers;
 
-namespace Plat4Me.Dial.Statistic.Api.Configurations;
+namespace KL.Statistics.Configurations;
 
 public static class WorkersConfiguration
 {

@@ -1,4 +1,4 @@
-﻿namespace Plat4Me.DialClientApi.Application.Models.Responses.Audio;
+﻿namespace KL.Manager.API.Application.Models.Responses.Audio;
 
 public record AudioRecordResponse(AudioRecord? AudiRecord, bool IsModified);
 

@@ -1,6 +1,6 @@
-using Plat4Me.DialRuleEngine.Application.Models;
+using KL.Engine.Rule.Models;
 
-namespace Plat4Me.DialRuleEngine.Application.RuleEngine.Contracts;
+namespace KL.Engine.Rule.RuleEngine.Contracts;
 
 public record RuleActionDescription(
     string Name,

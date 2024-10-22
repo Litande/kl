@@ -1,7 +1,7 @@
-﻿using Plat4Me.DialClientApi.Application.Enums;
+﻿using KL.Manager.API.Application.Enums;
 using Redis.OM.Modeling;
 
-namespace Plat4Me.DialClientApi.Persistent.Entities.Cache;
+namespace KL.Manager.API.Persistent.Entities.Cache;
 
 
 [Document(StorageType = StorageType.Json, Prefixes = new[] { "AgentStateCache" })]

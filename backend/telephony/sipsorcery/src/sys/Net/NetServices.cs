@@ -25,7 +25,7 @@ using System.Net.Sockets;
 using System.Runtime.InteropServices;
 using Microsoft.Extensions.Logging;
 
-namespace SIPSorcery.Sys
+namespace SIPSorcery.sys.Net
 {
     /// <summary>
     /// Helper class to provide network services.

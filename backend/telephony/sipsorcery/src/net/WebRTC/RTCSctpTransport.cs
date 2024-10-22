@@ -21,9 +21,12 @@ using System.Net.Sockets;
 using System.Threading;
 using Microsoft.Extensions.Logging;
 using Org.BouncyCastle.Crypto.Tls;
-using SIPSorcery.Sys;
+using SIPSorcery.net.DtlsSrtp;
+using SIPSorcery.net.SCTP;
+using SIPSorcery.net.SCTP.Chunks;
+using SIPSorcery.sys;
 
-namespace SIPSorcery.Net
+namespace SIPSorcery.net.WebRTC
 {
     public enum RTCSctpTransportState
     {

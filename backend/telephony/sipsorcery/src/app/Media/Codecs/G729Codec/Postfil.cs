@@ -45,9 +45,10 @@
  *
  * @author Lubomir Marinov (translation of ITU-T C source code to Java)
  */
+
 using System;
 
-namespace SIPSorcery.Media.G729Codec
+namespace SIPSorcery.app.Media.Codecs.G729Codec
 {
     internal class Postfil : Ld8k
     {

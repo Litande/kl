@@ -19,7 +19,7 @@ using System;
 using System.Security.Cryptography;
 using System.Text;
 
-namespace SIPSorcery.Sys
+namespace SIPSorcery.sys.Crypto
 {
     // TODO: When .NET Standard and Framework support are deprecated this pragma can be removed.
 #pragma warning disable SYSLIB0023

@@ -17,9 +17,11 @@ using System;
 using System.Net;
 using System.Net.Sockets;
 using Microsoft.Extensions.Logging;
-using SIPSorcery.Sys;
+using SIPSorcery.net.STUN.STUNAttributes;
+using SIPSorcery.sys;
+using SIPSorcery.sys.Net;
 
-namespace SIPSorcery.Net
+namespace SIPSorcery.net.STUN
 {
     public delegate void STUNSendMessageDelegate(IPEndPoint dst, byte[] buffer);  // Used so the STUN server can operate in a multiplexed fashion with things like a SIP server.
 

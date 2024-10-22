@@ -1,11 +1,11 @@
 ﻿using System.Text.Json;
 using System.Text.Json.Serialization;
-using Plat4Me.DialLeadProvider.Application.Enums;
-using Plat4Me.DialLeadProvider.Application.Models;
-using Plat4Me.DialLeadProvider.Persistent.Entities;
-using Plat4Me.DialLeadProvider.Persistent.Repositories.Interfaces;
+using KL.Provider.Leads.Application.Enums;
+using KL.Provider.Leads.Application.Models;
+using KL.Provider.Leads.Persistent.Entities;
+using KL.Provider.Leads.Persistent.Repositories.Interfaces;
 
-namespace Plat4Me.DialLeadProvider.Persistent.Repositories;
+namespace KL.Provider.Leads.Persistent.Repositories;
 
 public class LeadHistoryRepository : ILeadHistoryRepository
 {

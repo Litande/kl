@@ -18,7 +18,7 @@
 
 using Microsoft.Extensions.Logging;
 
-namespace SIPSorcery.Sys
+namespace SIPSorcery.sys
 {
     internal class Log
     {

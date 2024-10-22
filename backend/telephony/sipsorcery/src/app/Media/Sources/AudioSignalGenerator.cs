@@ -17,7 +17,7 @@
 
 using System;
 
-namespace SIPSorcery.Media
+namespace SIPSorcery.app.Media.Sources
 {
     /// <summary>
     /// Signal Generator

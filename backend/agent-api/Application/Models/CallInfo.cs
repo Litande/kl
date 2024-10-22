@@ -1,6 +1,6 @@
-using Plat4Me.DialAgentApi.Application.Enums;
+using KL.Agent.API.Application.Enums;
 
-namespace Plat4Me.DialAgentApi.Application.Models;
+namespace KL.Agent.API.Application.Models;
 
 public record CallInfo(
     long ClientId,

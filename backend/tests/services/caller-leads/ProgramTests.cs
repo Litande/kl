@@ -4,7 +4,7 @@ using FluentAssertions;
 using Microsoft.AspNetCore.Mvc.Testing;
 using Xunit;
 
-namespace Plat4Me.DialLeadCaller.Tests;
+namespace KL.Caller.Leads.Tests;
 
 public class ProgramTests
 {

@@ -18,16 +18,16 @@
 //-----------------------------------------------------------------------------
 
 using System;
-using System.Collections.Generic;
 using System.Linq;
 using System.Net;
 using System.Security.Cryptography;
 using System.Text;
 using Microsoft.Extensions.Logging;
-using SIPSorcery.Sys;
-using TinyJson;
+using SIPSorcery.net.SCTP.Chunks;
+using SIPSorcery.sys;
+using SIPSorcery.sys.Crypto;
 
-namespace SIPSorcery.Net
+namespace SIPSorcery.net.SCTP
 {
     /// <summary>
     /// The opaque cookie structure that will be sent in response to an SCTP INIT

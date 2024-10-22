@@ -19,8 +19,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Net;
 using Microsoft.Extensions.Logging;
-using SIPSorcery.Net;
-using SIPSorcery.Sys;
+using SIPSorcery.net.DtlsSrtp;
+using SIPSorcery.net.RTCP;
+using SIPSorcery.net.SDP;
+using SIPSorcery.sys;
 
 namespace SIPSorcery.net.RTP
 {
@@ -172,7 +174,7 @@ namespace SIPSorcery.net.RTP
                             SDPAudioVideoMediaFormat rtpEventFormat = new SDPAudioVideoMediaFormat(
                                 SDPMediaTypesEnum.audio,
                                 RTPSession.DTMF_EVENT_PAYLOAD_ID,
-                                SDP.TELEPHONE_EVENT_ATTRIBUTE,
+                                SDP.SDP.TELEPHONE_EVENT_ATTRIBUTE,
                                 RTPSession.DEFAULT_AUDIO_CLOCK_RATE,
                                 SDPAudioVideoMediaFormat.DEFAULT_AUDIO_CHANNEL_COUNT,
                                 "0-16");

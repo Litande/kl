@@ -1,14 +1,12 @@
 using System.Collections.Concurrent;
-using Microsoft.Extensions.Options;
-using Microsoft.Extensions.Logging;
-using Microsoft.Extensions.DependencyInjection;
 using System.Net;
-using Plat4Me.DialSipBridge.Application.Configurations;
-using Plat4Me.DialSipBridge.Application.Enums;
-using Plat4Me.DialSipBridge.Application.Session;
+using KL.SIP.Bridge.Application.Configurations;
+using KL.SIP.Bridge.Application.Enums;
+using KL.SIP.Bridge.Application.Session;
+using Microsoft.Extensions.Options;
 using SIPSorcery.SIP;
 
-namespace Plat4Me.DialSipBridge.Application.Services;
+namespace KL.SIP.Bridge.Application.Services;
 
 public class CallService : ICallService, IDisposable
 {

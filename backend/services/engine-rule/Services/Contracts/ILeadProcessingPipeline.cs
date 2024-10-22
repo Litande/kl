@@ -1,4 +1,4 @@
-﻿namespace Plat4Me.DialRuleEngine.Application.Services.Contracts;
+﻿namespace KL.Engine.Rule.Services.Contracts;
 
 public interface ILeadProcessingPipeline
 {

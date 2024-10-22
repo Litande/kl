@@ -1,5 +1,5 @@
-﻿using Plat4Me.DialAgentApi.Application.Enums;
+﻿using KL.Agent.API.Application.Enums;
 
-namespace Plat4Me.DialAgentApi.Application.Models.Responses;
+namespace KL.Agent.API.Application.Models.Responses;
 
 public record HubError(string Message, HubErrorCode Code);

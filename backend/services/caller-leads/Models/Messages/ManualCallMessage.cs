@@ -1,4 +1,4 @@
-namespace Plat4Me.DialLeadCaller.Application.Models.Messages;
+namespace KL.Caller.Leads.Models.Messages;
 
 public record ManualCallMessage(
     long ClientId,

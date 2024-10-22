@@ -19,9 +19,12 @@ using System.Linq;
 using System.Net;
 using System.Text;
 using Microsoft.Extensions.Logging;
-using SIPSorcery.Sys;
+using SIPSorcery.net.STUN;
+using SIPSorcery.net.STUN.STUNAttributes;
+using SIPSorcery.sys;
+using SIPSorcery.sys.Crypto;
 
-namespace SIPSorcery.Net
+namespace SIPSorcery.net.ICE
 {
     /// <summary>
     /// List of state conditions for a check list entry as the connectivity checks are 

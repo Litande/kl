@@ -1,9 +1,9 @@
-using Plat4Me.DialLeadCaller.Application.Models.Entities;
-using Plat4Me.DialLeadCaller.Application.Models.Messages;
-using Plat4Me.DialLeadCaller.Application.Models;
-using Plat4Me.DialLeadCaller.Application.Enums;
+using KL.Caller.Leads.Enums;
+using KL.Caller.Leads.Models;
+using KL.Caller.Leads.Models.Entities;
+using KL.Caller.Leads.Models.Messages;
 
-namespace Plat4Me.DialLeadCaller.Application.Repositories;
+namespace KL.Caller.Leads.Repositories;
 
 public interface ICDRRepository
 {

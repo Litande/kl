@@ -21,9 +21,9 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
-using SIPSorcery.Sys;
+using SIPSorcery.sys.Net;
 
-namespace SIPSorcery.Net
+namespace SIPSorcery.net.SCTP.Chunks
 {
     /// <remarks>
     /// Defined in https://tools.ietf.org/html/rfc4960#section-3.3.10

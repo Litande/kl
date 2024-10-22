@@ -1,9 +1,9 @@
-﻿using Microsoft.Extensions.Internal;
-using Plat4Me.DialClientApi.Application.Enums;
-using Plat4Me.DialClientApi.Application.Models;
-using Plat4Me.DialClientApi.Application.Services.Interfaces;
+﻿using KL.Manager.API.Application.Enums;
+using KL.Manager.API.Application.Models;
+using KL.Manager.API.Application.Services.Interfaces;
+using Microsoft.Extensions.Internal;
 
-namespace Plat4Me.DialClientApi.Application.Services;
+namespace KL.Manager.API.Application.Services;
 
 public class StatisticPeriodService : IStatisticPeriodService
 {

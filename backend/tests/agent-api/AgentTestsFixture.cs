@@ -2,22 +2,12 @@
 using System.Collections.Generic;
 using System.Threading;
 using System.Threading.Tasks;
-using Medallion.Threading;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
 using Moq;
-using Plat4me.Core.Nats;
-using Plat4Me.DialAgentApi.Application.Configurations;
-using Plat4Me.DialAgentApi.Application.Handlers;
-using Plat4Me.DialAgentApi.Application.Services;
-using Plat4Me.DialAgentApi.Persistent;
-using Plat4Me.DialAgentApi.Persistent.Entities;
-using Plat4Me.DialAgentApi.Persistent.Entities.Cache;
-using Plat4Me.DialAgentApi.Persistent.Repositories;
-using Plat4Me.DialAgentApi.Persistent.Repositories.Interfaces;
 
-namespace Plat4Me.DialAgentApi.Tests;
+namespace KL.Agent.API.Tests;
 
 public class AgentTestsFixture
 {

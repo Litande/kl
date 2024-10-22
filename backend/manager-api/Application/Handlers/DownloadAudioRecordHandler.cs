@@ -1,10 +1,10 @@
-﻿using Plat4Me.Core.Storage;
-using Plat4Me.DialClientApi.Application.Configurations;
-using Plat4Me.DialClientApi.Application.Models.Responses.Audio;
-using Plat4Me.DialClientApi.Persistent.Repositories.Interfaces;
+﻿using KL.Manager.API.Application.Configurations;
+using KL.Manager.API.Application.Models.Responses.Audio;
+using KL.Manager.API.Persistent.Repositories.Interfaces;
 using Microsoft.Extensions.Options;
+using Plat4Me.Core.Storage;
 
-namespace Plat4Me.DialClientApi.Application.Handlers;
+namespace KL.Manager.API.Application.Handlers;
 
 public class DownloadAudioRecordHandler : IDownloadAudioRecordHandler
 {

@@ -1,8 +1,8 @@
-using Plat4Me.DialAgentApi.Application.Models.Requests;
-using Plat4Me.DialAgentApi.Application.Enums;
+using KL.Agent.API.Application.Enums;
+using KL.Agent.API.Application.Models.Requests;
 using Microsoft.AspNetCore.Identity;
 
-namespace Plat4Me.DialAgentApi.Application.Handlers;
+namespace KL.Agent.API.Application.Handlers;
 
 public class AgentChangePasswordHandler : IAgentChangePasswordHandler
 {

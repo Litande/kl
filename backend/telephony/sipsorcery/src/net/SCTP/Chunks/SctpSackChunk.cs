@@ -18,9 +18,9 @@
 //-----------------------------------------------------------------------------
 
 using System.Collections.Generic;
-using SIPSorcery.Sys;
+using SIPSorcery.sys.Net;
 
-namespace SIPSorcery.Net
+namespace SIPSorcery.net.SCTP.Chunks
 {
     /// <summary>
     /// This chunk is sent to the peer endpoint to acknowledge received DATA

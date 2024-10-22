@@ -1,6 +1,4 @@
-﻿using Redis.OM.Modeling;
-
-namespace Plat4Me.DialLeadCaller.Application.Models;
+﻿namespace KL.Caller.Leads.Models;
 
 [Document(StorageType = StorageType.Json, Prefixes = new[] { "QueueDropRate" })]
 public class QueueDropRateCache

@@ -1,4 +1,4 @@
-namespace Plat4Me.DialCallRecordMixer.Models;
+namespace KL.Call.Mixer.Models;
 
 public record MixedRecordReadyMessage(
     string SessionId,

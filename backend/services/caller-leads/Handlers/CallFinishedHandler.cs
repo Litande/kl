@@ -1,14 +1,13 @@
-﻿using Microsoft.Extensions.Logging;
-using Plat4Me.DialLeadCaller.Application.Enums;
-using Plat4Me.DialLeadCaller.Application.Extensions;
-using Plat4Me.DialLeadCaller.Application.Handlers.Contracts;
-using Plat4Me.DialLeadCaller.Application.Models.Messages;
-using Plat4Me.DialLeadCaller.Application.Repositories;
-using Plat4Me.DialLeadCaller.Application.Models.Entities.Settings;
-using Plat4Me.DialLeadCaller.Application.Services.Contracts;
-using Plat4Me.DialLeadCaller.Application.Models.Requests;
+﻿using KL.Caller.Leads.Enums;
+using KL.Caller.Leads.Extensions;
+using KL.Caller.Leads.Handlers.Contracts;
+using KL.Caller.Leads.Models.Entities.Settings;
+using KL.Caller.Leads.Models.Messages;
+using KL.Caller.Leads.Models.Requests;
+using KL.Caller.Leads.Repositories;
+using KL.Caller.Leads.Services.Contracts;
 
-namespace Plat4Me.DialLeadCaller.Application.Handlers;
+namespace KL.Caller.Leads.Handlers;
 
 public class CallFinishedHandler : ICallFinishedHandler
 {

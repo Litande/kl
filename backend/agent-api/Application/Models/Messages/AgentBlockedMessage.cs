@@ -1,3 +1,3 @@
-﻿namespace Plat4Me.DialAgentApi.Application.Models.Messages;
+﻿namespace KL.Agent.API.Application.Models.Messages;
 
 public record AgentBlockedMessage(long AgentId);

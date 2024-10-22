@@ -4,7 +4,7 @@ using System.Collections.Concurrent;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace SIPSorcery.Net
+namespace SIPSorcery.net.WebRTC
 {
     class RTCDataChannelCollection : IReadOnlyCollection<RTCDataChannel>
     {

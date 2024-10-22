@@ -1,7 +1,7 @@
-﻿using Plat4Me.DialClientApi.Application.Models.Messages.RuleEngine;
-using Plat4Me.DialClientApi.Persistent.Repositories.Interfaces;
+﻿using KL.Manager.API.Application.Models.Messages.RuleEngine;
+using KL.Manager.API.Persistent.Repositories.Interfaces;
 
-namespace Plat4Me.DialClientApi.Application.Handlers;
+namespace KL.Manager.API.Application.Handlers;
 
 public class RuleEngineRunHandler : IRuleEngineRunHandler
 {

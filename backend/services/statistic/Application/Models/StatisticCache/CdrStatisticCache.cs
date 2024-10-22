@@ -1,6 +1,6 @@
-﻿using Plat4Me.Dial.Statistic.Api.Application.Models.Messages;
+﻿using KL.Statistics.Application.Models.Messages;
 
-namespace Plat4Me.Dial.Statistic.Api.Application.Models.StatisticCache;
+namespace KL.Statistics.Application.Models.StatisticCache;
 
 public class CdrStatisticCache
 {

@@ -1,3 +1,3 @@
-﻿namespace Plat4Me.DialAgentApi.Application.Models.Responses.Common;
+﻿namespace KL.Agent.API.Application.Models.Responses.Common;
 
 public record LabelValue(string Label, string Value);

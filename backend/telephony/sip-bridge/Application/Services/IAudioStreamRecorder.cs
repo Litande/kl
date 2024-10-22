@@ -1,6 +1,6 @@
 using SIPSorcery.Net;
 
-namespace Plat4Me.DialSipBridge.Application.Services;
+namespace KL.SIP.Bridge.Application.Services;
 
 public interface IAudioStreamRecorder : IDisposable
 {

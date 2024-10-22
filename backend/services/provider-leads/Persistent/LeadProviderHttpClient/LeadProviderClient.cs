@@ -1,9 +1,9 @@
 ﻿using System.Text.Json;
 using System.Text.Json.Nodes;
+using KL.Provider.Leads.Persistent.Entities;
 using Microsoft.AspNetCore.WebUtilities;
-using Plat4Me.DialLeadProvider.Persistent.Entities;
 
-namespace Plat4Me.DialLeadProvider.Persistent.LeadProviderHttpClient;
+namespace KL.Provider.Leads.Persistent.LeadProviderHttpClient;
 
 public class LeadProviderClient : ILeadProviderClient
 {

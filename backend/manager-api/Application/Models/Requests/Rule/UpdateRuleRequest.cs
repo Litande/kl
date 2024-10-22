@@ -1,7 +1,7 @@
 ﻿using System.Text.Json.Nodes;
-using Plat4Me.DialClientApi.Application.Enums;
+using KL.Manager.API.Application.Enums;
 
-namespace Plat4Me.DialClientApi.Application.Models.Requests.Rule;
+namespace KL.Manager.API.Application.Models.Requests.Rule;
 
 public record UpdateRuleRequest(
     string Name,

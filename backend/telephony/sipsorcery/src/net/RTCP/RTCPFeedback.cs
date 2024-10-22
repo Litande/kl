@@ -28,9 +28,10 @@
 
 using System;
 using Microsoft.Extensions.Logging;
-using SIPSorcery.Sys;
+using SIPSorcery.sys;
+using SIPSorcery.sys.Net;
 
-namespace SIPSorcery.Net
+namespace SIPSorcery.net.RTCP
 {
     /// <summary>
     /// The different types of Feedback Message Types. (RFC4585)

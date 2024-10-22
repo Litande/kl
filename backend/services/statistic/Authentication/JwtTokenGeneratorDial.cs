@@ -1,12 +1,12 @@
 ﻿using System.Security.Claims;
+using KL.Statistics.Application.Common;
+using KL.Statistics.DAL;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Options;
 using Plat4Me.Authentication.Services.Identity;
-using Plat4Me.Dial.Statistic.Api.Application.Common;
-using Plat4Me.Dial.Statistic.Api.DAL;
 
-namespace Plat4Me.Dial.Statistic.Api.Authentication;
+namespace KL.Statistics.Authentication;
 
 public class JwtTokenGeneratorDial : JwtTokenGenerator<IdentityUser<long>, long>
 {

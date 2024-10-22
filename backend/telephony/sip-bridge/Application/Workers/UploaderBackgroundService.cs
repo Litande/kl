@@ -1,13 +1,13 @@
 using System.Collections.Concurrent;
+using KL.SIP.Bridge.Application.Configurations;
+using KL.SIP.Bridge.Application.Models;
+using KL.SIP.Bridge.Application.Models.Messages;
+using KL.SIP.Bridge.Application.Services;
 using Microsoft.Extensions.Options;
 using Plat4me.Core.Nats;
 using Plat4Me.Core.Storage;
-using Plat4Me.DialSipBridge.Application.Configurations;
-using Plat4Me.DialSipBridge.Application.Models;
-using Plat4Me.DialSipBridge.Application.Models.Messages;
-using Plat4Me.DialSipBridge.Application.Services;
 
-namespace Plat4Me.DialSipBridge.Application.Workers;
+namespace KL.SIP.Bridge.Application.Workers;
 
 public class UploaderBackgroundService : BackgroundService, IUploaderService
 {

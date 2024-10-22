@@ -1,10 +1,10 @@
-using FluentAssertions;
-using Microsoft.AspNetCore.Mvc.Testing;
 using System.Net;
 using System.Threading.Tasks;
+using FluentAssertions;
+using Microsoft.AspNetCore.Mvc.Testing;
 using Xunit;
 
-namespace Plat4Me.DialAgentApi.Tests;
+namespace KL.Agent.API.Tests;
 
 public class ProgramTests
 {

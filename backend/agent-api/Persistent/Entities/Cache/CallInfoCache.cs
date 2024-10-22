@@ -1,7 +1,7 @@
-﻿using Plat4Me.DialAgentApi.Application.Enums;
+﻿using KL.Agent.API.Application.Enums;
 using Redis.OM.Modeling;
 
-namespace Plat4Me.DialAgentApi.Persistent.Entities.Cache;
+namespace KL.Agent.API.Persistent.Entities.Cache;
 
 [Document(StorageType = StorageType.Json, Prefixes = new[] { "CallInfoCache" })]
 public class CallInfoCache

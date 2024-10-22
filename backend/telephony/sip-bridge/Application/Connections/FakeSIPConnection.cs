@@ -1,11 +1,11 @@
-using Plat4Me.DialSipBridge.Application.Configurations;
-using Plat4Me.DialSipBridge.Application.Services;
+using System.Collections.Concurrent;
+using KL.SIP.Bridge.Application.Configurations;
+using KL.SIP.Bridge.Application.Enums;
+using KL.SIP.Bridge.Application.Services;
 using SIPSorcery.Media;
 using SIPSorcery.Net;
-using System.Collections.Concurrent;
-using Plat4Me.DialSipBridge.Application.Enums;
 
-namespace Plat4Me.DialSipBridge.Application.Connections;
+namespace KL.SIP.Bridge.Application.Connections;
 
 public class FakeSIPConnection : IConnection
 {

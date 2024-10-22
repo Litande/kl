@@ -1,13 +1,10 @@
+using KL.Manager.API.Application.Handlers;
+using KL.Manager.API.Application.Models.Requests;
+using KL.Manager.API.Application.Models.Requests.CallRecords;
+using KL.Manager.API.Persistent.Repositories.Interfaces;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.Extensions.Options;
-using Plat4Me.DialClientApi.Application.Models.Requests;
-using Plat4Me.DialClientApi.Application.Models.Requests.CallRecords;
-using Plat4Me.Core.Storage;
-using Plat4Me.DialClientApi.Application.Configurations;
-using Plat4Me.DialClientApi.Persistent.Repositories.Interfaces;
-using Plat4Me.DialClientApi.Application.Handlers;
 
-namespace Plat4Me.DialClientApi.Controllers;
+namespace KL.Manager.API.Controllers;
 
 [Route("calls")]
 public class CallsController : ApiAuthorizeBase

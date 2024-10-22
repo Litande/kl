@@ -1,11 +1,11 @@
-﻿using Plat4me.Core.Nats;
+﻿using KL.SIP.Bridge.Application.Handlers;
+using KL.SIP.Bridge.Application.Services;
+using KL.SIP.Bridge.Application.Session;
+using KL.SIP.Bridge.Application.Workers;
+using Plat4me.Core.Nats;
 using Plat4Me.Core.Storage.Configuration;
-using Plat4Me.DialSipBridge.Application.Handlers;
-using Plat4Me.DialSipBridge.Application.Services;
-using Plat4Me.DialSipBridge.Application.Session;
-using Plat4Me.DialSipBridge.Application.Workers;
 
-namespace Plat4Me.DialSipBridge.Application.Configurations;
+namespace KL.SIP.Bridge.Application.Configurations;
 
 public static class ServiceCollectionExtensions
 {

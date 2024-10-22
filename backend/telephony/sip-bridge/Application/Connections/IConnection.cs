@@ -1,7 +1,7 @@
-using Plat4Me.DialSipBridge.Application.Enums;
+using KL.SIP.Bridge.Application.Enums;
 using SIPSorcery.Net;
 
-namespace Plat4Me.DialSipBridge.Application.Connections;
+namespace KL.SIP.Bridge.Application.Connections;
 
 public interface IConnection : IDisposable
 {

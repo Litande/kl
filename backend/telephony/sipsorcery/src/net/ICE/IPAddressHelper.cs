@@ -16,8 +16,7 @@
 using System;
 using System.Net;
 
-
-namespace SIPSorcery.Net
+namespace SIPSorcery.net.ICE
 {
     public static class IPAddressHelper
     {

@@ -11,8 +11,9 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using SIPSorcery.sys.Crypto;
 
-namespace SIPSorcery.Net
+namespace SIPSorcery.net.SDP
 {
     /// <summary>
     /// (SDP) Security Descriptions for Media Streams implementation as basically defined in RFC 4568.
@@ -234,7 +235,7 @@ namespace SIPSorcery.Net
                     }
                 }
             }
-            public KeyParameter() : this(Sys.Crypto.GetRandomString(128 / 8), Sys.Crypto.GetRandomString(112 / 8))
+            public KeyParameter() : this(Crypto.GetRandomString(128 / 8), Crypto.GetRandomString(112 / 8))
             {
 
             }
@@ -511,11 +512,11 @@ namespace SIPSorcery.Net
                     case CryptoSuites.F8_128_HMAC_SHA1_80:
                         if (string.IsNullOrWhiteSpace(key))
                         {
-                            key = Sys.Crypto.GetRandomString(128 / 8);
+                            key = Crypto.GetRandomString(128 / 8);
                         }
                         if (string.IsNullOrWhiteSpace(salt))
                         {
-                            salt = Sys.Crypto.GetRandomString(112 / 8);
+                            salt = Crypto.GetRandomString(112 / 8);
                         }
                         return new KeyParameter(key, salt);
                     case CryptoSuites.AES_192_CM_HMAC_SHA1_80:
@@ -524,31 +525,31 @@ namespace SIPSorcery.Net
                     case CryptoSuites.AES_CM_192_HMAC_SHA1_32:
                         if (string.IsNullOrWhiteSpace(key))
                         {
-                            key = Sys.Crypto.GetRandomString(192 / 8);
+                            key = Crypto.GetRandomString(192 / 8);
                         }
                         if (string.IsNullOrWhiteSpace(salt))
                         {
-                            salt = Sys.Crypto.GetRandomString(112 / 8);
+                            salt = Crypto.GetRandomString(112 / 8);
                         }
                         return new KeyParameter(key, salt);
                     case CryptoSuites.AEAD_AES_128_GCM:
                         if (string.IsNullOrWhiteSpace(key))
                         {
-                            key = Sys.Crypto.GetRandomString(128 / 8);
+                            key = Crypto.GetRandomString(128 / 8);
                         }
                         if (string.IsNullOrWhiteSpace(salt))
                         {
-                            salt = Sys.Crypto.GetRandomString(96 / 8);
+                            salt = Crypto.GetRandomString(96 / 8);
                         }
                         return new KeyParameter(key, salt);
                     case CryptoSuites.AEAD_AES_256_GCM:
                         if (string.IsNullOrWhiteSpace(key))
                         {
-                            key = Sys.Crypto.GetRandomString(256 / 8);
+                            key = Crypto.GetRandomString(256 / 8);
                         }
                         if (string.IsNullOrWhiteSpace(salt))
                         {
-                            salt = Sys.Crypto.GetRandomString(96 / 8);
+                            salt = Crypto.GetRandomString(96 / 8);
                         }
                         return new KeyParameter(key, salt);
                     case CryptoSuites.AES_256_CM_HMAC_SHA1_80:
@@ -557,11 +558,11 @@ namespace SIPSorcery.Net
                     case CryptoSuites.AES_CM_256_HMAC_SHA1_32:
                         if (string.IsNullOrWhiteSpace(key))
                         {
-                            key = Sys.Crypto.GetRandomString(256 / 8);
+                            key = Crypto.GetRandomString(256 / 8);
                         }
                         if (string.IsNullOrWhiteSpace(salt))
                         {
-                            salt = Sys.Crypto.GetRandomString(112 / 8);
+                            salt = Crypto.GetRandomString(112 / 8);
                         }
                         return new KeyParameter(key, salt);
 

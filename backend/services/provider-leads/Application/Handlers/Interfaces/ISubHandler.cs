@@ -1,4 +1,4 @@
-﻿namespace Plat4Me.DialLeadProvider.Application.Handlers.Interfaces;
+﻿namespace KL.Provider.Leads.Application.Handlers.Interfaces;
 
 public interface ISubHandler<in TMessage>
 {

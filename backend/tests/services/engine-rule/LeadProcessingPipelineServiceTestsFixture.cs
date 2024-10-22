@@ -1,23 +1,13 @@
-﻿using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.Logging;
-using Moq;
-using Plat4Me.DialRuleEngine.Application.Enums;
-using Plat4Me.DialRuleEngine.Application.Extensions;
-using Plat4Me.DialRuleEngine.Application.Models;
-using Plat4Me.DialRuleEngine.Application.Models.Entities;
-using Plat4Me.DialRuleEngine.Application.Repositories;
-using Plat4Me.DialRuleEngine.Application.RuleEngine.Contracts;
-using Plat4Me.DialRuleEngine.Application.RuleEngine.Enums;
-using Plat4Me.DialRuleEngine.Application.RuleEngine.MicrosoftEngine;
-using Plat4Me.DialRuleEngine.Infrastructure;
-using System;
+﻿using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Text.Json;
 using System.Text.Json.Serialization;
 using System.Threading.Tasks;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Logging;
+using Moq;
 
-namespace Plat4Me.DialRuleEngine.Tests;
+namespace KL.Engine.Rule.Tests;
 
 public class LeadProcessingPipelineServiceTestsFixture : TestBase
 {

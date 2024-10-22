@@ -1,17 +1,15 @@
 // using Prometheus;
 // using Plat4Me.Core.HealthCheck;
 using Serilog;
-
-using Plat4Me.DialSipBridge.Application.Configurations;
-using Plat4Me.DialSipBridge.Application.Services;
 using System.Text.Json.Serialization;
 using Microsoft.Extensions.Options;
-
-using Plat4Me.DialSipBridge.Application.Models.Messages;
-using Plat4Me.DialSipBridge.Application.Enums;
 using Plat4me.Core.Nats;
 using System.Web;
-using Plat4Me.DialSipBridge.Application.Models;
+using KL.SIP.Bridge.Application.Configurations;
+using KL.SIP.Bridge.Application.Enums;
+using KL.SIP.Bridge.Application.Models;
+using KL.SIP.Bridge.Application.Models.Messages;
+using KL.SIP.Bridge.Application.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 //Services

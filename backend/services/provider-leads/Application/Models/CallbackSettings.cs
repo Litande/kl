@@ -1,7 +1,6 @@
-﻿using Plat4Me.DialLeadProvider.Application.Enums;
-using System.Text.Json.Serialization;
+﻿using System.Text.Json.Serialization;
 
-namespace Plat4Me.DialLeadProvider.Application.Models;
+namespace KL.Provider.Leads.Application.Models;
 
 public class CallbackSettings
 {

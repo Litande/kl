@@ -27,9 +27,9 @@ using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 using Microsoft.Extensions.Logging;
-using SIPSorcery.Sys;
+using SIPSorcery.sys.Crypto;
 
-namespace SIPSorcery.SIP
+namespace SIPSorcery.core.SIP.Channels
 {
     /// <summary>
     ///  A SIP transport Channel for establishing an outbound connection  over a Web Socket communications layer as per RFC7118.

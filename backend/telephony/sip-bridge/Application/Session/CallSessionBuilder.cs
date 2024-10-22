@@ -1,10 +1,10 @@
-﻿using Microsoft.Extensions.Options;
+﻿using KL.SIP.Bridge.Application.Configurations;
+using KL.SIP.Bridge.Application.Enums;
+using Microsoft.Extensions.Options;
 using Plat4me.Core.Nats;
-using Plat4Me.DialSipBridge.Application.Configurations;
-using Plat4Me.DialSipBridge.Application.Enums;
 using SIPSorcery.SIP;
 
-namespace Plat4Me.DialSipBridge.Application.Session
+namespace KL.SIP.Bridge.Application.Session
 {
     public class CallSessionBuilder
     {

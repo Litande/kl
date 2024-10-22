@@ -20,9 +20,13 @@ using System.Net.Sockets;
 using System.Threading;
 using System.Threading.Tasks;
 using Microsoft.Extensions.Logging;
-using SIPSorcery.Sys;
+using SIPSorcery.core;
+using SIPSorcery.core.SIP;
+using SIPSorcery.core.SIPTransactions;
+using SIPSorcery.sys;
+using SIPSorcery.sys.Crypto;
 
-namespace SIPSorcery.SIP.App
+namespace SIPSorcery.app.SIPUserAgents
 {
     public class SIPNonInviteClientUserAgent
     {

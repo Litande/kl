@@ -1,12 +1,10 @@
 ﻿using System.Collections.Concurrent;
-using Plat4Me.DialClientApi.Application.Models;
-using Plat4Me.DialClientApi.Application.Models.Responses.AgentTrackings;
-using Plat4Me.DialClientApi.Application.Models.Responses.Dashboard;
-using Plat4Me.DialClientApi.Application.Models.Responses.LeadGroups;
-using Plat4Me.DialClientApi.Application.Models.Responses.Leads;
-using Plat4Me.DialClientApi.Persistent.Entities.Cache;
+using KL.Manager.API.Application.Models;
+using KL.Manager.API.Application.Models.Responses.AgentTrackings;
+using KL.Manager.API.Application.Models.Responses.LeadGroups;
+using KL.Manager.API.Application.Models.Responses.Leads;
 
-namespace Plat4Me.DialClientApi.Application.Services.Interfaces;
+namespace KL.Manager.API.Application.Services.Interfaces;
 
 public interface IHubSender
 {

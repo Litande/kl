@@ -17,7 +17,7 @@
 
 using System;
 
-namespace SIPSorcery.Net
+namespace SIPSorcery.net.RTP.Packetisation
 {
     /// <summary>
     /// Representation of the VP8 RTP header as specified in RFC7741

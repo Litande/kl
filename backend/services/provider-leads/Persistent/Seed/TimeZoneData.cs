@@ -1,6 +1,6 @@
 ﻿using System.Text.Json.Serialization;
 
-namespace Plat4Me.DialLeadProvider.Persistent.Seed;
+namespace KL.Provider.Leads.Persistent.Seed;
 
 public class TimeZoneData
 {

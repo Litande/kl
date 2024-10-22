@@ -17,7 +17,7 @@
 /**
  * @author Lubomir Marinov
  */
-namespace SIPSorcery.Media.G729Codec
+namespace SIPSorcery.app.Media.Codecs.G729Codec
 {
     internal class IntReference
     {

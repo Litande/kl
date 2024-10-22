@@ -1,6 +1,6 @@
-﻿using Plat4Me.DialAgentApi.Application.Enums;
+﻿using KL.Agent.API.Application.Enums;
 
-namespace Plat4Me.DialAgentApi.Persistent.Entities.Projections;
+namespace KL.Agent.API.Persistent.Entities.Projections;
 
 public class FutureCallBackProjection
 {

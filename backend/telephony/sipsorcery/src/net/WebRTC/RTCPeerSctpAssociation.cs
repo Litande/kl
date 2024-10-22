@@ -24,13 +24,11 @@
 //-----------------------------------------------------------------------------
 
 using System;
-using System.Net;
-using System.Net.Sockets;
-using System.Text;
 using Microsoft.Extensions.Logging;
-using SIPSorcery.Sys;
+using SIPSorcery.net.SCTP;
+using SIPSorcery.sys;
 
-namespace SIPSorcery.Net
+namespace SIPSorcery.net.WebRTC
 {
     public delegate void OnRTCDataChannelOpened(ushort streamID);
 

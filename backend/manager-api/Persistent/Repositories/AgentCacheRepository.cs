@@ -1,11 +1,11 @@
-﻿using Microsoft.EntityFrameworkCore;
-using Plat4Me.DialClientApi.Application.Enums;
-using Plat4Me.DialClientApi.Persistent.Entities.Cache;
-using Plat4Me.DialClientApi.Persistent.Repositories.Interfaces;
+﻿using KL.Manager.API.Application.Enums;
+using KL.Manager.API.Persistent.Entities.Cache;
+using KL.Manager.API.Persistent.Repositories.Interfaces;
+using Microsoft.EntityFrameworkCore;
 using Redis.OM;
 using Redis.OM.Searching;
 
-namespace Plat4Me.DialClientApi.Persistent.Repositories;
+namespace KL.Manager.API.Persistent.Repositories;
 
 public class AgentCacheRepository : IAgentCacheRepository
 {

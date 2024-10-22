@@ -1,4 +1,4 @@
-namespace Plat4Me.DialLeadCaller.Application.Models.Entities.Settings;
+namespace KL.Caller.Leads.Models.Entities.Settings;
 
 public class ProductiveDialerSettings
 {

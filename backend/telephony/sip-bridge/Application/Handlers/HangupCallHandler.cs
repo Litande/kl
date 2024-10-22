@@ -1,9 +1,9 @@
-﻿using Plat4Me.DialSipBridge.Application.Enums;
-using Plat4Me.DialSipBridge.Application.Models.Messages;
-using Plat4Me.DialSipBridge.Application.Services;
-using Plat4Me.DialSipBridge.Application.Session;
+﻿using KL.SIP.Bridge.Application.Enums;
+using KL.SIP.Bridge.Application.Models.Messages;
+using KL.SIP.Bridge.Application.Services;
+using KL.SIP.Bridge.Application.Session;
 
-namespace Plat4Me.DialSipBridge.Application.Handlers;
+namespace KL.SIP.Bridge.Application.Handlers;
 
 public class HangupCallHandler : IHangupCallHandler
 {

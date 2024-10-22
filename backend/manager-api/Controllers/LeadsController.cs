@@ -1,11 +1,11 @@
+using KL.Manager.API.Application.Enums;
+using KL.Manager.API.Application.Handlers.Leads;
+using KL.Manager.API.Application.Models.Requests;
+using KL.Manager.API.Application.Models.Requests.Leads;
+using KL.Manager.API.Persistent.Repositories.Interfaces;
 using Microsoft.AspNetCore.Mvc;
-using Plat4Me.DialClientApi.Application.Enums;
-using Plat4Me.DialClientApi.Application.Handlers.Leads;
-using Plat4Me.DialClientApi.Application.Models.Requests;
-using Plat4Me.DialClientApi.Application.Models.Requests.Leads;
-using Plat4Me.DialClientApi.Persistent.Repositories.Interfaces;
 
-namespace Plat4Me.DialClientApi.Controllers;
+namespace KL.Manager.API.Controllers;
 
 [Route("leads")]
 public class LeadsController : ApiAuthorizeBase

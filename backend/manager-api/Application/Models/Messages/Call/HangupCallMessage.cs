@@ -1,6 +1,6 @@
-﻿using Plat4Me.DialClientApi.Application.Enums;
+﻿using KL.Manager.API.Application.Enums;
 
-namespace Plat4Me.DialClientApi.Application.Models.Messages.Call;
+namespace KL.Manager.API.Application.Models.Messages.Call;
 
 public record HangupCallMessage(
     string SessionId,

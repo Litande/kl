@@ -17,9 +17,9 @@
 using System;
 using System.Runtime.Serialization;
 using Microsoft.Extensions.Logging;
-using SIPSorcery.Sys;
+using SIPSorcery.sys;
 
-namespace SIPSorcery.SIP
+namespace SIPSorcery.core.SIP
 {
     [DataContract]
     public class SIPParameterlessURI

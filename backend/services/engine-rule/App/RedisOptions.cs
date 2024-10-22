@@ -1,8 +1,6 @@
 ﻿using System.Text.Json.Serialization;
-using StackExchange.Redis;
 
-
-namespace Plat4Me.DialRuleEngine.Infrastructure.App;
+namespace KL.Engine.Rule.App;
 
 public class RedisOptions
 {

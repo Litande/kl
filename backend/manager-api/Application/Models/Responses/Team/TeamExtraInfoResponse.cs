@@ -1,4 +1,4 @@
-﻿namespace Plat4Me.DialClientApi.Application.Models.Responses.Team;
+﻿namespace KL.Manager.API.Application.Models.Responses.Team;
 
 public record TeamExtraInfoResponse(long TeamId,
     string Name,

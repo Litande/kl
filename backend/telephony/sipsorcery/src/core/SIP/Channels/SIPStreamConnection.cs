@@ -22,9 +22,9 @@ using System.Net;
 using System.Net.Security;
 using System.Net.Sockets;
 using System.Text;
-using SIPSorcery.Sys;
+using SIPSorcery.sys.Crypto;
 
-namespace SIPSorcery.SIP
+namespace SIPSorcery.core.SIP.Channels
 {
     /// <summary>
     /// Represents a reliable stream connection (e.g. TCP or TLS) between two end points. Stream connections have a more

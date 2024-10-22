@@ -1,8 +1,7 @@
+using KL.Caller.Leads;
+using KL.Caller.Leads.App;
+using KL.Caller.Leads.Seed;
 using Plat4Me.Core.HealthCheck;
-using Plat4Me.DialLeadCaller;
-using Plat4Me.DialLeadCaller.Application.App;
-using Plat4Me.DialLeadCaller.Infrastructure.App;
-using Plat4Me.DialLeadCaller.Seed;
 using Prometheus;
 using Serilog;
 

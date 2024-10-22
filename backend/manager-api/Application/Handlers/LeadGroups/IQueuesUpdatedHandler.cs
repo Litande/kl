@@ -1,6 +1,6 @@
-﻿using Plat4Me.DialClientApi.Application.Models.Messages.LeadGroups;
+﻿using KL.Manager.API.Application.Models.Messages.LeadGroups;
 
-namespace Plat4Me.DialClientApi.Application.Handlers.LeadGroups;
+namespace KL.Manager.API.Application.Handlers.LeadGroups;
 
 public interface IQueuesUpdatedHandler : ISubHandler<QueuesUpdatedMessage>
 {

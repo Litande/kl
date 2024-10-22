@@ -1,6 +1,6 @@
-﻿using Plat4Me.DialClientApi.Application.Enums;
+﻿using KL.Manager.API.Application.Enums;
 
-namespace Plat4Me.DialClientApi.Application.Models.Requests.Tags;
+namespace KL.Manager.API.Application.Models.Requests.Tags;
 
 public record UpdateTagRequest(
     TagStatusTypes Status,

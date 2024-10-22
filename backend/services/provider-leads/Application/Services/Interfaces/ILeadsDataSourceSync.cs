@@ -1,4 +1,4 @@
-﻿namespace Plat4Me.DialLeadProvider.Application.Services.Interfaces;
+﻿namespace KL.Provider.Leads.Application.Services.Interfaces;
 
 public interface ILeadsDataSourceSync
 {

@@ -1,10 +1,10 @@
-﻿using Microsoft.Extensions.Options;
+﻿using KL.Manager.API.Application.Configurations;
+using KL.Manager.API.Application.Enums;
+using KL.Manager.API.Application.Models.Messages.Call;
+using Microsoft.Extensions.Options;
 using Plat4me.Core.Nats;
-using Plat4Me.DialClientApi.Application.Configurations;
-using Plat4Me.DialClientApi.Application.Enums;
-using Plat4Me.DialClientApi.Application.Models.Messages.Call;
 
-namespace Plat4Me.DialClientApi.Application.Handlers;
+namespace KL.Manager.API.Application.Handlers;
 
 public class CallFinishByManagerHandler : ICallFinishByManagerHandler
 {

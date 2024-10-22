@@ -18,13 +18,11 @@
 //-----------------------------------------------------------------------------
 
 using System;
-using System.Linq;
-using System.Collections;
 using System.Collections.Generic;
 using Microsoft.Extensions.Logging;
-using SIPSorcery.Sys;
+using SIPSorcery.sys.Net;
 
-namespace SIPSorcery.Net
+namespace SIPSorcery.net.SCTP.Chunks
 {
     public static class SctpPadding
     {

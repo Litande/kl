@@ -1,7 +1,7 @@
 ﻿using System.Text.Json.Nodes;
-using Plat4Me.DialAgentApi.Application.Enums;
+using KL.Agent.API.Application.Enums;
 
-namespace Plat4Me.DialAgentApi.Persistent.Repositories.Interfaces;
+namespace KL.Agent.API.Persistent.Repositories.Interfaces;
 
 public interface ISettingsRepository
 {

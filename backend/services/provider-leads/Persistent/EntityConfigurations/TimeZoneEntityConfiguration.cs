@@ -1,8 +1,8 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
-using TimeZone = Plat4Me.DialLeadProvider.Persistent.Entities.TimeZone;
+using TimeZone = KL.Provider.Leads.Persistent.Entities.TimeZone;
 
-namespace Plat4Me.DialLeadProvider.Persistent.EntityConfigurations;
+namespace KL.Provider.Leads.Persistent.EntityConfigurations;
 
 public class TimeZoneEntityConfiguration : IEntityTypeConfiguration<Entities.TimeZone>
 {

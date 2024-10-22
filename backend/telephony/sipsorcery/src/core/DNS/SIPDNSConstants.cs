@@ -13,7 +13,9 @@
 // BSD 3-Clause "New" or "Revised" License, see included LICENSE.md file.
 //-----------------------------------------------------------------------------
 
-namespace SIPSorcery.SIP
+using SIPSorcery.core.SIP;
+
+namespace SIPSorcery.core.DNS
 {
     public class SIPDNSConstants
     {

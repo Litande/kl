@@ -1,4 +1,4 @@
-﻿namespace Plat4Me.Dial.Statistic.Api.Application.Models.Entities;
+﻿namespace KL.Statistics.Application.Models.Entities;
 
 public class Client
 {

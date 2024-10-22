@@ -1,8 +1,8 @@
-using Plat4Me.Dial.Statistic.Api.Application.Models;
-using Plat4Me.Dial.Statistic.Api.Application.Models.StatisticCache;
+using KL.Statistics.Application.Models;
+using KL.Statistics.Application.Models.StatisticCache;
 using Redis.OM;
 
-namespace Plat4Me.Dial.Statistic.Api.DAL;
+namespace KL.Statistics.DAL;
 
 public class RedisIndexCreationService : IHostedService
 {

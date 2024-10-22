@@ -1,9 +1,6 @@
-﻿using Plat4Me.DialRuleEngine.Application.Models;
-using Plat4Me.DialRuleEngine.Application.Repositories;
-using Redis.OM;
-using Redis.OM.Searching;
+﻿using KL.Engine.Rule.Models;
 
-namespace Plat4Me.DialRuleEngine.Infrastructure.Repositories;
+namespace KL.Engine.Rule.Repositories;
 
 public class LeadLastCacheRepository : ILeadLastCacheRepository
 {

@@ -1,6 +1,6 @@
-﻿using Plat4Me.DialLeadCaller.Application.Models;
+﻿using KL.Caller.Leads.Models;
 
-namespace Plat4Me.DialLeadCaller.Application.Handlers.Contracts;
+namespace KL.Caller.Leads.Handlers.Contracts;
 
 public interface IPublishForCallHandler
 {

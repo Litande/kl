@@ -18,9 +18,9 @@
 
 using System;
 using System.Net.Sockets;
-using SIPSorcery.Sys;
+using SIPSorcery.sys.Net;
 
-namespace SIPSorcery.Net
+namespace SIPSorcery.net.STUN
 {
     public class STUNConstants
     {

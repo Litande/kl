@@ -1,10 +1,10 @@
 ﻿using System.Reflection;
+using KL.Manager.API.Application.Enums;
+using KL.Manager.API.Application.Models.Requests;
+using KL.Manager.API.Application.Models.Responses;
 using Microsoft.EntityFrameworkCore;
-using Plat4Me.DialClientApi.Application.Enums;
-using Plat4Me.DialClientApi.Application.Models.Requests;
-using Plat4Me.DialClientApi.Application.Models.Responses;
 
-namespace Plat4Me.DialClientApi.Persistent.Repositories;
+namespace KL.Manager.API.Persistent.Repositories;
 
 public abstract class RepositoryBase
 {

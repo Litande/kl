@@ -1,7 +1,7 @@
-using Plat4Me.DialRuleEngine.Application.RuleEngine.Contracts;
-using Plat4Me.DialRuleEngine.Application.Enums;
+using KL.Engine.Rule.Enums;
+using KL.Engine.Rule.RuleEngine.Contracts;
 
-namespace Plat4Me.DialRuleEngine.Application.RuleEngine.Actions;
+namespace KL.Engine.Rule.RuleEngine.Actions;
 
 public interface IRuleActionExecutor
 {

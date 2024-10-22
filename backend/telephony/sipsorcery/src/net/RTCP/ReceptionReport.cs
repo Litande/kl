@@ -33,9 +33,9 @@
 //-----------------------------------------------------------------------------
 
 using System;
-using SIPSorcery.Sys;
+using SIPSorcery.sys.Net;
 
-namespace SIPSorcery.Net
+namespace SIPSorcery.net.RTCP
 {
     /// <summary>
     /// Represents a point in time sample for a reception report.

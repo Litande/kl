@@ -1,6 +1,4 @@
-﻿using Plat4Me.DialLeadCaller.Infrastructure;
-
-namespace Plat4Me.DialLeadCaller.Seed;
+﻿namespace KL.Caller.Leads.Seed;
 
 public static class DbDataInitializer
 {

@@ -1,4 +1,4 @@
-﻿namespace Plat4Me.Dial.Statistic.Api.Application.Models.Messages;
+﻿namespace KL.Statistics.Application.Models.Messages;
 
 public record LeadsStatisticUpdateMessage(
     long ClientId,

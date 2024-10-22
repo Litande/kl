@@ -1,13 +1,12 @@
 ﻿using System.Text.Json;
-using Microsoft.Extensions.Logging;
+using KL.Caller.Leads.App;
+using KL.Caller.Leads.Enums;
+using KL.Caller.Leads.Extensions;
+using KL.Caller.Leads.Models.Entities.Settings;
+using KL.Caller.Leads.Repositories;
 using Microsoft.Extensions.Options;
-using Plat4Me.DialLeadCaller.Application.App;
-using Plat4Me.DialLeadCaller.Application.Enums;
-using Plat4Me.DialLeadCaller.Application.Extensions;
-using Plat4Me.DialLeadCaller.Application.Models.Entities.Settings;
-using Plat4Me.DialLeadCaller.Application.Repositories;
 
-namespace Plat4Me.DialLeadCaller.Application.Services;
+namespace KL.Caller.Leads.Services;
 
 public class SettingsService : ISettingsService
 {

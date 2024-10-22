@@ -1,4 +1,4 @@
-﻿namespace Plat4Me.DialClientApi.Persistent.Entities.Cache;
+﻿namespace KL.Manager.API.Persistent.Entities.Cache;
 
 public class LeadCache
 {

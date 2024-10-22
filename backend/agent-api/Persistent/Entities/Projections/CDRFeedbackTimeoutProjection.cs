@@ -1,4 +1,4 @@
-﻿namespace Plat4Me.DialAgentApi.Persistent.Entities.Projections;
+﻿namespace KL.Agent.API.Persistent.Entities.Projections;
 
 public class CDRFeedbackTimeoutProjection
 {

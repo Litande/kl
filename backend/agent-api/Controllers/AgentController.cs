@@ -1,11 +1,11 @@
-﻿using Microsoft.AspNetCore.Mvc;
-using Plat4Me.DialAgentApi.Application.Models.Requests;
+﻿using KL.Agent.API.Application.Enums;
+using KL.Agent.API.Application.Handlers;
+using KL.Agent.API.Application.Models.Requests;
+using KL.Agent.API.Application.Services;
+using Microsoft.AspNetCore.Mvc;
 using Polly;
-using Plat4Me.DialAgentApi.Application.Enums;
-using Plat4Me.DialAgentApi.Application.Services;
-using Plat4Me.DialAgentApi.Application.Handlers;
 
-namespace Plat4Me.DialAgentApi.Controllers;
+namespace KL.Agent.API.Controllers;
 
 [Route("agents")]
 public class AgentController : ApiAuthorizeBase

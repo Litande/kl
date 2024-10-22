@@ -1,5 +1,5 @@
-using Plat4Me.DialClientApi.Application.Enums;
+using KL.Manager.API.Application.Enums;
 
-namespace Plat4Me.DialClientApi.Application.Models.Requests;
+namespace KL.Manager.API.Application.Models.Requests;
 
 public record FilterComparison<T>(FilterComparisonOperation Operation, T Value);

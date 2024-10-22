@@ -3,13 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text.Json;
 using Castle.Components.DictionaryAdapter;
-using Plat4Me.DialRuleEngine.Application.Enums;
-using Plat4Me.DialRuleEngine.Application.Extensions;
-using Plat4Me.DialRuleEngine.Application.Models;
-using Plat4Me.DialRuleEngine.Application.RuleEngine.Contracts;
-using Plat4Me.DialRuleEngine.Application.RuleEngine.Enums;
 
-namespace Plat4Me.DialRuleEngine.Tests;
+namespace KL.Engine.Rule.Tests;
 
 public class TestBase
 {

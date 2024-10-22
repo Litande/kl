@@ -1,7 +1,6 @@
-﻿using Plat4Me.DialLeadCaller.Application.Models.Entities;
-using Plat4Me.DialLeadCaller.Infrastructure;
+﻿using KL.Caller.Leads.Models.Entities;
 
-namespace Plat4Me.DialLeadCaller.Seed;
+namespace KL.Caller.Leads.Seed;
 
 public static class SeedClient
 {

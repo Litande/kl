@@ -1,11 +1,11 @@
-﻿using Microsoft.AspNetCore.Mvc;
-using Plat4Me.DialClientApi.Application.Enums;
-using Plat4Me.DialClientApi.Application.Extensions;
-using Plat4Me.DialClientApi.Application.Models.Requests.RuleGroups;
-using Plat4Me.DialClientApi.Application.Services.Interfaces;
-using Plat4Me.DialClientApi.Persistent.Repositories.Interfaces;
+﻿using KL.Manager.API.Application.Enums;
+using KL.Manager.API.Application.Extensions;
+using KL.Manager.API.Application.Models.Requests.RuleGroups;
+using KL.Manager.API.Application.Services.Interfaces;
+using KL.Manager.API.Persistent.Repositories.Interfaces;
+using Microsoft.AspNetCore.Mvc;
 
-namespace Plat4Me.DialClientApi.Controllers;
+namespace KL.Manager.API.Controllers;
 
 [Route("rules")]
 public class RuleGroupController : ApiAuthorizeBase

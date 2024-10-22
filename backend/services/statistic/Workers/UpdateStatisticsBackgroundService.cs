@@ -1,8 +1,8 @@
-﻿using Microsoft.Extensions.Options;
-using Plat4Me.Dial.Statistic.Api.Application.Handlers;
-using Plat4Me.Dial.Statistic.Api.Configurations;
+﻿using KL.Statistics.Application.Handlers;
+using KL.Statistics.Configurations;
+using Microsoft.Extensions.Options;
 
-namespace Plat4Me.Dial.Statistic.Api.Workers;
+namespace KL.Statistics.Workers;
 
 public class UpdateStatisticsBackgroundService : BackgroundService
 {

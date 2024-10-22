@@ -1,6 +1,6 @@
-﻿using Plat4Me.Dial.Statistic.Api.Application.Models.Messages;
+﻿using KL.Statistics.Application.Models.Messages;
 
-namespace Plat4Me.Dial.Statistic.Api.Application.Handlers.Agent;
+namespace KL.Statistics.Application.Handlers.Agent;
 
 public interface IAgentStatisticsChangeHandler : ISubHandler<AgentsChangedStatusMessage>
 {

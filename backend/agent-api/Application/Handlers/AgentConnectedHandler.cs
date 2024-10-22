@@ -1,12 +1,8 @@
-using Microsoft.Extensions.Logging;
-using Microsoft.Extensions.Options;
-using Plat4me.Core.Nats;
-using Plat4Me.DialAgentApi.Application.Configurations;
-using Plat4Me.DialAgentApi.Application.Enums;
-using Plat4Me.DialAgentApi.Application.Services;
-using Plat4Me.DialAgentApi.Persistent.Repositories.Interfaces;
+using KL.Agent.API.Application.Enums;
+using KL.Agent.API.Application.Services;
+using KL.Agent.API.Persistent.Repositories.Interfaces;
 
-namespace Plat4Me.DialAgentApi.Application.Handlers;
+namespace KL.Agent.API.Application.Handlers;
 
 public class AgentConnectedHandler : IAgentConnectedHandler
 {

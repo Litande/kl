@@ -1,7 +1,7 @@
-﻿using Plat4Me.DialSipBridge.Application.Enums;
-using Plat4Me.DialSipBridge.Application.Models;
+﻿using KL.SIP.Bridge.Application.Enums;
+using KL.SIP.Bridge.Application.Models;
 
-namespace Plat4Me.DialSipBridge.Application.Session;
+namespace KL.SIP.Bridge.Application.Session;
 
 public record InitCallData(
     long ClientId,

@@ -1,7 +1,7 @@
-﻿using Plat4Me.DialAgentApi.Application.Models.Messages;
-using Plat4Me.DialAgentApi.Application.Services;
+﻿using KL.Agent.API.Application.Models.Messages;
+using KL.Agent.API.Application.Services;
 
-namespace Plat4Me.DialAgentApi.Application.Handlers;
+namespace KL.Agent.API.Application.Handlers;
 
 public class CallMessagesHandler : ICallMessagesHandler
 {

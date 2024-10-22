@@ -1,14 +1,10 @@
-﻿using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.Hosting;
-using Microsoft.Extensions.Logging;
+﻿using System.Text.Json;
+using KL.Caller.Leads.App;
+using KL.Caller.Leads.Handlers.Contracts;
+using KL.Caller.Leads.Models.Messages;
 using Microsoft.Extensions.Options;
-using Plat4me.Core.Nats;
-using Plat4Me.DialLeadCaller.Application.App;
-using Plat4Me.DialLeadCaller.Application.Handlers.Contracts;
-using Plat4Me.DialLeadCaller.Application.Models.Messages;
-using System.Text.Json;
 
-namespace Plat4Me.DialLeadCaller.Infrastructure;
+namespace KL.Caller.Leads;
 
 public class SubscribeHandlersBackgroundService : BackgroundService
 {

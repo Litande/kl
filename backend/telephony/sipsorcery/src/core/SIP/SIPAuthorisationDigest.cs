@@ -18,9 +18,10 @@ using System.Security.Cryptography;
 using System.Text;
 using System.Text.RegularExpressions;
 using Microsoft.Extensions.Logging;
-using SIPSorcery.Sys;
+using SIPSorcery.sys;
+using SIPSorcery.sys.Crypto;
 
-namespace SIPSorcery.SIP
+namespace SIPSorcery.core.SIP
 {
     public enum SIPAuthorisationHeadersEnum
     {

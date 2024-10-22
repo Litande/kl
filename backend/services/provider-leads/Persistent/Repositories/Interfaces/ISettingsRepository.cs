@@ -1,6 +1,6 @@
-﻿using Plat4Me.DialLeadProvider.Application.Enums;
+﻿using KL.Provider.Leads.Application.Enums;
 
-namespace Plat4Me.DialLeadProvider.Persistent.Repositories.Interfaces;
+namespace KL.Provider.Leads.Persistent.Repositories.Interfaces;
 
 public interface ISettingsRepository
 {

@@ -1,6 +1,6 @@
-﻿using Plat4Me.DialAgentApi.Application.Handlers;
+﻿using KL.Agent.API.Application.Handlers;
 
-namespace Plat4Me.DialAgentApi.Workers;
+namespace KL.Agent.API.Workers;
 
 public class AgentBackgroundService : BackgroundService
 {

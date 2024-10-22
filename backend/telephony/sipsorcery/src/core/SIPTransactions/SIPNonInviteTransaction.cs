@@ -16,8 +16,9 @@
 
 using System.Net.Sockets;
 using System.Threading.Tasks;
+using SIPSorcery.core.SIP;
 
-namespace SIPSorcery.SIP
+namespace SIPSorcery.core.SIPTransactions
 {
     public class SIPNonInviteTransaction : SIPTransaction
     {

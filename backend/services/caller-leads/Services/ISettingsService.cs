@@ -1,6 +1,6 @@
-﻿using Plat4Me.DialLeadCaller.Application.Models.Entities.Settings;
+﻿using KL.Caller.Leads.Models.Entities.Settings;
 
-namespace Plat4Me.DialLeadCaller.Application.Services;
+namespace KL.Caller.Leads.Services;
 
 public interface ISettingsService
 {

@@ -1,4 +1,4 @@
-﻿namespace Plat4Me.DialLeadProvider.Application.Configurations;
+﻿namespace KL.Provider.Leads.Application.Configurations;
 
 public class SubSubjects
 {

@@ -1,8 +1,8 @@
-﻿using Plat4Me.DialClientApi.Application.Models.Requests.Tags;
-using Plat4Me.DialClientApi.Application.Models.Responses.Tags;
-using Plat4Me.DialClientApi.Persistent.Entities;
+﻿using KL.Manager.API.Application.Models.Requests.Tags;
+using KL.Manager.API.Application.Models.Responses.Tags;
+using KL.Manager.API.Persistent.Entities;
 
-namespace Plat4Me.DialClientApi.Application.Extensions;
+namespace KL.Manager.API.Application.Extensions;
 
 public static class TagExtensions
 {

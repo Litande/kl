@@ -1,6 +1,6 @@
-﻿using Plat4Me.Dial.Statistic.Api.Application.Models.StatisticCache;
+﻿using KL.Statistics.Application.Models.StatisticCache;
 
-namespace Plat4Me.Dial.Statistic.Api.DAL.Repositories;
+namespace KL.Statistics.DAL.Repositories;
 
 public interface ILeadStatisticCacheRepository
 {

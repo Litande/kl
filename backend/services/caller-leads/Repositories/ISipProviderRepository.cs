@@ -1,6 +1,6 @@
-﻿using Plat4Me.DialLeadCaller.Application.Models.Entities;
+﻿using KL.Caller.Leads.Models.Entities;
 
-namespace Plat4Me.DialLeadCaller.Application.Repositories;
+namespace KL.Caller.Leads.Repositories;
 
 public interface ISipProviderRepository
 {

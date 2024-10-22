@@ -1,6 +1,6 @@
-﻿using Plat4Me.DialClientApi.Application.Enums;
+﻿using KL.Manager.API.Application.Enums;
 
-namespace Plat4Me.DialClientApi.Application.Models.Responses.Leads;
+namespace KL.Manager.API.Application.Models.Responses.Leads;
 
 public record LeadQueueItem(
     string GroupName,

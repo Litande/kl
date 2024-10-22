@@ -19,9 +19,11 @@ using System;
 using System.Net.Sockets;
 using System.Threading.Tasks;
 using Microsoft.Extensions.Logging;
-using SIPSorcery.Sys;
+using SIPSorcery.core.SIP;
+using SIPSorcery.sys;
+using SIPSorcery.sys.Crypto;
 
-namespace SIPSorcery.SIP
+namespace SIPSorcery.core.SIPTransactions
 {
     public enum SIPTransactionStatesEnum
     {
@@ -166,7 +168,7 @@ namespace SIPSorcery.SIP
         /// If not null this value is where ALL transaction requests should be sent to.
         /// </summary>
         public SIPEndPoint OutboundProxy;
-        public SIPCDR CDR;
+        public SIPCDR.SIPCDR CDR;
 
         private SIPTransactionStatesEnum m_transactionState = SIPTransactionStatesEnum.Calling;
         public SIPTransactionStatesEnum TransactionState

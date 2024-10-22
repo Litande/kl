@@ -33,7 +33,7 @@
 using System.Collections.Generic;
 using System.Linq;
 
-namespace SIPSorcery.Net
+namespace SIPSorcery.net.RTP.Packetisation
 {
     public class H264Packetiser
     {

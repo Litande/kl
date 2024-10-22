@@ -18,8 +18,9 @@
 using System;
 using System.Collections.Generic;
 using System.Net;
+using SIPSorcery.sys.Net;
 
-namespace SIPSorcery.Sys
+namespace SIPSorcery.sys
 {
     public static class TypeExtensions
     {

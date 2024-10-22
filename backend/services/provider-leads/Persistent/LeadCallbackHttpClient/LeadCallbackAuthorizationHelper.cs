@@ -1,4 +1,4 @@
-﻿namespace Plat4Me.DialLeadProvider.Persistent.LeadCallbackHttpClient;
+﻿namespace KL.Provider.Leads.Persistent.LeadCallbackHttpClient;
 
 public static class LeadCallbackAuthorizationHelper
 {

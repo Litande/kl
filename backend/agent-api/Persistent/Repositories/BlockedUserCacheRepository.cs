@@ -1,10 +1,9 @@
-﻿using Microsoft.EntityFrameworkCore;
-using Plat4Me.DialAgentApi.Persistent.Entities.Cache;
-using Plat4Me.DialAgentApi.Persistent.Repositories.Interfaces;
+﻿using KL.Agent.API.Persistent.Entities.Cache;
+using KL.Agent.API.Persistent.Repositories.Interfaces;
 using Redis.OM;
 using Redis.OM.Searching;
 
-namespace Plat4Me.DialAgentApi.Persistent.Repositories;
+namespace KL.Agent.API.Persistent.Repositories;
 
 public class BlockedUserCacheRepository : IBlockedUserCacheRepository
 {

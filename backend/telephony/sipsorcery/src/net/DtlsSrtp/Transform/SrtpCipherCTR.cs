@@ -64,7 +64,7 @@
 using System.IO;
 using Org.BouncyCastle.Crypto;
 
-namespace SIPSorcery.Net
+namespace SIPSorcery.net.DtlsSrtp.Transform
 {
     /**
      * SRTPCipherCTR implements SRTP Counter Mode AES Encryption (AES-CM).

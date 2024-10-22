@@ -1,15 +1,10 @@
-﻿using Microsoft.EntityFrameworkCore;
-using Plat4Me.DialLeadCaller.Application.Enums;
-using Plat4Me.DialLeadCaller.Application.Models.Messages;
-using Plat4Me.DialLeadCaller.Infrastructure;
-using Plat4Me.DialLeadCaller.Infrastructure.Repositories;
-using System;
+﻿using System;
 using System.Threading.Tasks;
+using Microsoft.EntityFrameworkCore;
 using Moq;
-using Plat4Me.DialLeadCaller.Application.Repositories;
 using Xunit;
 
-namespace Plat4Me.DialLeadCaller.Tests;
+namespace KL.Caller.Leads.Tests;
 
 public class CalculateCallDurationTests
 {

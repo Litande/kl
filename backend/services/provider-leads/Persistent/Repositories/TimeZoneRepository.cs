@@ -1,8 +1,8 @@
-﻿using Microsoft.EntityFrameworkCore;
-using Plat4Me.DialLeadProvider.Application.Models;
-using Plat4Me.DialLeadProvider.Persistent.Repositories.Interfaces;
+﻿using KL.Provider.Leads.Application.Models;
+using KL.Provider.Leads.Persistent.Repositories.Interfaces;
+using Microsoft.EntityFrameworkCore;
 
-namespace Plat4Me.DialLeadProvider.Persistent.Repositories;
+namespace KL.Provider.Leads.Persistent.Repositories;
 
 public class TimeZoneRepository : ITimeZoneRepository
 {

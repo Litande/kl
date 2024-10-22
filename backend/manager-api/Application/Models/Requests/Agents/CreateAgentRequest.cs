@@ -1,4 +1,4 @@
-﻿namespace Plat4Me.DialClientApi.Application.Models.Requests.Agents;
+﻿namespace KL.Manager.API.Application.Models.Requests.Agents;
 
 public record CreateAgentRequest(
     string Email,

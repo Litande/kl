@@ -21,9 +21,10 @@ using System.Runtime.Serialization;
 using System.Text;
 using System.Text.RegularExpressions;
 using Microsoft.Extensions.Logging;
-using SIPSorcery.Sys;
+using SIPSorcery.sys;
+using SIPSorcery.sys.Net;
 
-namespace SIPSorcery.SIP
+namespace SIPSorcery.core.SIP
 {
     /// <summary>
     /// The Via header only has parameters, no headers. Parameters of from ...;name=value;name2=value2

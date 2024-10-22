@@ -1,9 +1,9 @@
-﻿using Microsoft.AspNetCore.Authorization;
+﻿using System.Security.Claims;
+using KL.Agent.API.Application.Common;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using Plat4Me.DialAgentApi.Application.Common;
-using System.Security.Claims;
 
-namespace Plat4Me.DialAgentApi.Controllers;
+namespace KL.Agent.API.Controllers;
 
 [ApiController]
 [Authorize(Roles = "Agent")]

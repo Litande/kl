@@ -1,6 +1,6 @@
 ﻿using BenchmarkDotNet.Running;
 
-namespace Plat4Me.DialRuleEngine.BenchmarkTests
+namespace KL.Engine.Benchmark.Tests
 {
     internal class Program
     {

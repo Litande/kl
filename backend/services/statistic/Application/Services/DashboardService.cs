@@ -1,10 +1,9 @@
-﻿using Plat4Me.Dial.Statistic.Api.Application.Common;
-using Plat4Me.Dial.Statistic.Api.Application.Common.Enums;
-using Plat4Me.Dial.Statistic.Api.Application.Models.Responses;
-using Plat4Me.Dial.Statistic.Api.DAL.Repositories;
-using System.Globalization;
+﻿using System.Globalization;
+using KL.Statistics.Application.Common.Enums;
+using KL.Statistics.Application.Models.Responses;
+using KL.Statistics.DAL.Repositories;
 
-namespace Plat4Me.Dial.Statistic.Api.Application.Services;
+namespace KL.Statistics.Application.Services;
 
 public class DashboardService : IDashboardService
 {

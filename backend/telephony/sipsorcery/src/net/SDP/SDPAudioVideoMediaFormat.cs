@@ -19,7 +19,7 @@ using System.Collections.Generic;
 using System.Linq;
 using SIPSorceryMedia.Abstractions;
 
-namespace SIPSorcery.Net
+namespace SIPSorcery.net.SDP
 {
     /// <summary>
     /// Represents a single media format within a media announcement. Often the whole media format can

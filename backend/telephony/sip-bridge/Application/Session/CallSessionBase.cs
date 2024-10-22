@@ -1,19 +1,17 @@
-using Microsoft.Extensions.Logging;
+using System.Web;
+using KL.SIP.Bridge.Application.Configurations;
+using KL.SIP.Bridge.Application.Connections;
+using KL.SIP.Bridge.Application.Enums;
+using KL.SIP.Bridge.Application.Extensions;
+using KL.SIP.Bridge.Application.Models;
+using KL.SIP.Bridge.Application.Models.Messages;
+using KL.SIP.Bridge.Application.Services;
 using Microsoft.Extensions.Options;
-using Plat4Me.DialSipBridge.Application.Configurations;
-using Plat4Me.DialSipBridge.Application.Connections;
-using Plat4Me.DialSipBridge.Application.Models.Messages;
-using Plat4Me.DialSipBridge.Application.Models;
+using Plat4me.Core.Nats;
 using SIPSorcery.Net;
 using SIPSorcery.SIP;
-using Plat4me.Core.Nats;
-using System.Web;
-using Plat4Me.DialSipBridge.Application.Extensions;
-using Microsoft.Extensions.DependencyInjection;
-using Plat4Me.DialSipBridge.Application.Enums;
-using Plat4Me.DialSipBridge.Application.Services;
 
-namespace Plat4Me.DialSipBridge.Application.Session;
+namespace KL.SIP.Bridge.Application.Session;
 
 public class CallSessionBase : ICallSession
 {

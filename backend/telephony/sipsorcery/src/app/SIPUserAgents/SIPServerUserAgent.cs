@@ -19,10 +19,14 @@ using System.Linq;
 using System.Net.Sockets;
 using System.Threading.Tasks;
 using Microsoft.Extensions.Logging;
-using SIPSorcery.Net;
-using SIPSorcery.Sys;
+using SIPSorcery.app.SIPRequestAuthoriser;
+using SIPSorcery.core.SIP;
+using SIPSorcery.core.SIPCDR;
+using SIPSorcery.core.SIPTransactions;
+using SIPSorcery.net.SDP;
+using SIPSorcery.sys;
 
-namespace SIPSorcery.SIP.App
+namespace SIPSorcery.app.SIPUserAgents
 {
     /// <summary>
     /// Implementation of a SIP Server User Agent that can be used to receive SIP calls.

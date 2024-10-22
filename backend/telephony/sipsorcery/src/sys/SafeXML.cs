@@ -16,7 +16,7 @@
 using System;
 using System.Text.RegularExpressions;
 
-namespace SIPSorcery.Sys
+namespace SIPSorcery.sys
 {
     public class SafeXML
     {

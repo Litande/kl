@@ -1,10 +1,10 @@
-﻿using Microsoft.EntityFrameworkCore;
-using Plat4Me.DialClientApi.Application.Enums;
-using Plat4Me.DialClientApi.Persistent.Entities;
-using Plat4Me.DialClientApi.Persistent.Entities.Projections;
-using Plat4Me.DialClientApi.Persistent.Repositories.Interfaces;
+﻿using KL.Manager.API.Application.Enums;
+using KL.Manager.API.Persistent.Entities;
+using KL.Manager.API.Persistent.Entities.Projections;
+using KL.Manager.API.Persistent.Repositories.Interfaces;
+using Microsoft.EntityFrameworkCore;
 
-namespace Plat4Me.DialClientApi.Persistent.Repositories;
+namespace KL.Manager.API.Persistent.Repositories;
 
 public class RuleRepository : IRuleRepository
 {

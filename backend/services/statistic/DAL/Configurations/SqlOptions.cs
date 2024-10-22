@@ -1,6 +1,6 @@
 ﻿using System.Text.Json.Serialization;
 
-namespace Plat4Me.Dial.Statistic.Api.DAL.Configurations;
+namespace KL.Statistics.DAL.Configurations;
 
 public class SqlOptions
 {

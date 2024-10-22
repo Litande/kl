@@ -15,7 +15,7 @@
 // BSD 3-Clause "New" or "Revised" License, see included LICENSE.md file.
 //-----------------------------------------------------------------------------
 
-namespace SIPSorcery.Net
+namespace SIPSorcery.net.SDP
 {
     public struct SDPApplicationMediaFormat
     {

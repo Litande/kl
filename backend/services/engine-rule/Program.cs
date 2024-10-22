@@ -1,7 +1,6 @@
+using KL.Engine.Rule;
+using KL.Engine.Rule.App;
 using Plat4Me.Core.HealthCheck;
-using Plat4Me.DialRuleEngine;
-using Plat4Me.DialRuleEngine.Application.App;
-using Plat4Me.DialRuleEngine.Infrastructure.App;
 using Prometheus;
 using Serilog;
 

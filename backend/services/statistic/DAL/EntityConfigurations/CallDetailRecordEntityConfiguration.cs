@@ -1,9 +1,9 @@
+using KL.Statistics.Application.Common.Enums;
+using KL.Statistics.Application.Models.Entities;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
-using Plat4Me.Dial.Statistic.Api.Application.Common.Enums;
-using Plat4Me.Dial.Statistic.Api.Application.Models.Entities;
 
-namespace Plat4Me.Dial.Statistic.Api.DAL.EntityConfigurations;
+namespace KL.Statistics.DAL.EntityConfigurations;
 
 public class CallDetailRecordEntityConfiguration : IEntityTypeConfiguration<CallDetailRecord>
 {

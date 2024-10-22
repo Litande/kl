@@ -1,18 +1,17 @@
-using Microsoft.Extensions.Options;
-using Plat4Me.DialAgentApi.Application.Enums;
-using Plat4Me.DialAgentApi.Application.Handlers;
-using Plat4Me.DialAgentApi.Application.Models.Messages;
-using Plat4Me.DialAgentApi.Application.Models;
-using Plat4Me.DialAgentApi.Persistent.Repositories.Interfaces;
-using Plat4Me.DialAgentApi.Persistent.Entities.Cache;
-using Plat4Me.DialAgentApi.Application.Configurations;
-using Plat4Me.DialAgentApi.Application.Extensions;
-using Plat4Me.DialAgentApi.Persistent.Entities;
+using KL.Agent.API.Application.Configurations;
+using KL.Agent.API.Application.Enums;
+using KL.Agent.API.Application.Extensions;
+using KL.Agent.API.Application.Handlers;
+using KL.Agent.API.Application.Models;
+using KL.Agent.API.Application.Models.Messages;
+using KL.Agent.API.Persistent.Entities;
+using KL.Agent.API.Persistent.Entities.Cache;
+using KL.Agent.API.Persistent.Repositories.Interfaces;
 using Medallion.Threading;
+using Microsoft.Extensions.Options;
 using Plat4me.Core.Nats;
 
-
-namespace Plat4Me.DialAgentApi.Application.Services;
+namespace KL.Agent.API.Application.Services;
 
 public record AgentState
 (

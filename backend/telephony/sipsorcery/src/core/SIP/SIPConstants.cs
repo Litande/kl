@@ -17,10 +17,11 @@ using System;
 using System.Collections.Generic;
 using System.Reflection;
 using System.Text;
-using SIPSorcery.Sys;
+using SIPSorcery.sys;
+
 // ReSharper disable InconsistentNaming
 
-namespace SIPSorcery.SIP
+namespace SIPSorcery.core.SIP
 {
     public static class SIPConstants
     {

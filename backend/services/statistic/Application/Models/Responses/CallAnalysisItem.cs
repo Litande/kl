@@ -1,4 +1,4 @@
-﻿namespace Plat4Me.Dial.Statistic.Api.Application.Models.Responses;
+﻿namespace KL.Statistics.Application.Models.Responses;
 
 public record CallAnalysisItem(
     string Country,

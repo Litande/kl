@@ -1,7 +1,7 @@
+using KL.Provider.Leads;
+using KL.Provider.Leads.Application.Configurations;
+using KL.Provider.Leads.Persistent.Configurations;
 using Plat4Me.Core.HealthCheck;
-using Plat4Me.DialLeadProvider;
-using Plat4Me.DialLeadProvider.Application.Configurations;
-using Plat4Me.DialLeadProvider.Persistent.Configurations;
 using Prometheus;
 using Serilog;
 

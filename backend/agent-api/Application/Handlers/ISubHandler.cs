@@ -1,4 +1,4 @@
-﻿namespace Plat4Me.DialAgentApi.Application.Handlers;
+﻿namespace KL.Agent.API.Application.Handlers;
 
 public interface ISubHandler<in TMessage>
 {

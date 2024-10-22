@@ -1,8 +1,8 @@
-﻿using Microsoft.AspNetCore.Mvc;
-using Plat4Me.DialAgentApi.Application.Models.Requests;
-using Plat4Me.DialAgentApi.Persistent.Repositories.Interfaces;
+﻿using KL.Agent.API.Application.Models.Requests;
+using KL.Agent.API.Persistent.Repositories.Interfaces;
+using Microsoft.AspNetCore.Mvc;
 
-namespace Plat4Me.DialAgentApi.Controllers;
+namespace KL.Agent.API.Controllers;
 
 [Route("leads")]
 public class LeadController : ApiAuthorizeBase

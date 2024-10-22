@@ -15,9 +15,9 @@
 //-----------------------------------------------------------------------------
 
 using System.Net;
-using SIPSorcery.Sys;
+using SIPSorcery.sys.Net;
 
-namespace SIPSorcery.Net
+namespace SIPSorcery.net.RTP
 {
     public enum RtpSecureMediaOptionEnum
     {

@@ -1,6 +1,6 @@
 using System.Text.Json.Serialization;
 
-namespace Plat4Me.DialSipBridge.Application.Models;
+namespace KL.SIP.Bridge.Application.Models;
 
 public record HangupRequest
 {

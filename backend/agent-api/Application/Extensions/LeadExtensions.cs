@@ -1,8 +1,8 @@
-﻿using Plat4Me.DialAgentApi.Application.Models.SignalR;
-using Plat4Me.DialAgentApi.Application.Enums;
-using Plat4Me.DialAgentApi.Persistent.Entities;
+﻿using KL.Agent.API.Application.Enums;
+using KL.Agent.API.Application.Models.SignalR;
+using KL.Agent.API.Persistent.Entities;
 
-namespace Plat4Me.DialAgentApi.Application.Extensions;
+namespace KL.Agent.API.Application.Extensions;
 
 public static class LeadExtensions
 {

@@ -1,9 +1,9 @@
-﻿using Plat4Me.DialClientApi.Application.Extensions;
-using Plat4Me.DialClientApi.Application.Models.Messages.Agents;
-using Plat4Me.DialClientApi.Application.Services.Interfaces;
-using Plat4Me.DialClientApi.Persistent.Repositories.Interfaces;
+﻿using KL.Manager.API.Application.Extensions;
+using KL.Manager.API.Application.Models.Messages.Agents;
+using KL.Manager.API.Application.Services.Interfaces;
+using KL.Manager.API.Persistent.Repositories.Interfaces;
 
-namespace Plat4Me.DialClientApi.Application.Handlers.LiveTracking;
+namespace KL.Manager.API.Application.Handlers.LiveTracking;
 
 public class AgentChangedStatusHandler : IAgentChangedStatusHandler
 {

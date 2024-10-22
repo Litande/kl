@@ -1,8 +1,8 @@
-﻿using Microsoft.AspNetCore.Mvc;
-using Plat4Me.DialClientApi.Application.Handlers.LeadGroups;
-using Plat4Me.DialClientApi.Application.Handlers.LiveTracking;
+﻿using KL.Manager.API.Application.Handlers.LeadGroups;
+using KL.Manager.API.Application.Handlers.LiveTracking;
+using Microsoft.AspNetCore.Mvc;
 
-namespace Plat4Me.DialClientApi.Controllers;
+namespace KL.Manager.API.Controllers;
 
 [Route("tracking")]
 public class TrackingController : ApiAuthorizeBase

@@ -1,6 +1,6 @@
-﻿using Plat4Me.DialLeadCaller.Application.Models.Messages;
+﻿using KL.Caller.Leads.Models.Messages;
 
-namespace Plat4Me.DialLeadCaller.Application.Handlers.Contracts;
+namespace KL.Caller.Leads.Handlers.Contracts;
 
 public interface IDroppedAgentHandler : ISubHandler<DroppedAgentMessage>
 {

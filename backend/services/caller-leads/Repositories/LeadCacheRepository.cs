@@ -1,9 +1,6 @@
-﻿using Plat4Me.DialLeadCaller.Application.Repositories;
-using Plat4Me.DialLeadCaller.Application.Models;
-using Redis.OM.Searching;
-using Redis.OM;
+﻿using KL.Caller.Leads.Models;
 
-namespace Plat4Me.DialLeadCaller.Infrastructure.Repositories;
+namespace KL.Caller.Leads.Repositories;
 
 public class LeadCacheRepository : ILeadCacheRepository
 {

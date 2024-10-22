@@ -1,8 +1,6 @@
-using Microsoft.EntityFrameworkCore;
-using Microsoft.EntityFrameworkCore.Metadata.Builders;
-using Plat4Me.DialLeadCaller.Application.Models.Entities;
+using KL.Caller.Leads.Models.Entities;
 
-namespace Plat4Me.DialLeadCaller.Infrastructure.EntityConfigurations;
+namespace KL.Caller.Leads.EntityConfigurations;
 
 public class DataSourceEntityConfiguration : IEntityTypeConfiguration<DataSource>
 {

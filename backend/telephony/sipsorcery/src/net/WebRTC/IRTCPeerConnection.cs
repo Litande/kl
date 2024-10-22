@@ -24,9 +24,12 @@ using System.Collections.Generic;
 using System.Net;
 using System.Security.Cryptography.X509Certificates;
 using System.Threading.Tasks;
-using SIPSorcery.Sys;
+using SIPSorcery.net.DtlsSrtp;
+using SIPSorcery.net.ICE;
+using SIPSorcery.net.RTP;
+using SIPSorcery.sys;
 
-namespace SIPSorcery.Net
+namespace SIPSorcery.net.WebRTC
 {
     public enum RTCSdpType
     {
@@ -64,7 +67,7 @@ namespace SIPSorcery.Net
     public class RTCSessionDescription
     {
         public RTCSdpType type;
-        public SDP sdp;
+        public SDP.SDP sdp;
     }
 
     /// <summary>

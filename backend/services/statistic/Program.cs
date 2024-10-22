@@ -1,16 +1,16 @@
+using System.Text.Json.Serialization;
+using KL.Statistics.Application.SignalR;
+using KL.Statistics.Authentication;
+using KL.Statistics.Configurations;
+using KL.Statistics.DAL.Configurations;
+using KL.Statistics.Middlewares;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.OpenApi.Models;
-using Plat4me.Core.Nats;
 using Plat4Me.Authentication.Configurations;
 using Plat4Me.Core.HealthCheck;
-using Plat4Me.Dial.Statistic.Api.Application.SignalR;
-using Plat4Me.Dial.Statistic.Api.Authentication;
-using Plat4Me.Dial.Statistic.Api.Configurations;
-using Plat4Me.Dial.Statistic.Api.DAL.Configurations;
-using Plat4Me.Dial.Statistic.Api.Middlewares;
+using Plat4me.Core.Nats;
 using Prometheus;
 using Serilog;
-using System.Text.Json.Serialization;
 
 var builder = WebApplication.CreateBuilder(args);
 //Services
@@ -128,7 +128,7 @@ app.MapControllers();
 
 app.Run();
 
-namespace Plat4Me.Dial.Statistic.Api
+namespace KL.Statistics
 {
     partial class Program
     {

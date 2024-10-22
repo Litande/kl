@@ -1,4 +1,4 @@
-namespace Plat4Me.DialSipBridge.Infrastructure.App;
+namespace KL.SIP.Bridge.Application.App;
 
 public class JwtOptions
 {

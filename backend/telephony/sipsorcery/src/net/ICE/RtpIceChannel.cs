@@ -76,11 +76,17 @@ using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 using Microsoft.Extensions.Logging;
-using SIPSorcery.Sys;
+using SIPSorcery.net.RTP;
+using SIPSorcery.net.STUN;
+using SIPSorcery.net.STUN.STUNAttributes;
+using SIPSorcery.net.WebRTC;
+using SIPSorcery.sys;
+using SIPSorcery.sys.Crypto;
+using SIPSorcery.sys.Net;
 
-[assembly: InternalsVisibleToAttribute("SIPSorcery.UnitTests")]
+[assembly: InternalsVisibleTo("SIPSorcery.UnitTests")]
 
-namespace SIPSorcery.Net
+namespace SIPSorcery.net.ICE
 {
     /// <summary>
     /// An RTP ICE Channel carries out connectivity checks with a remote peer in an

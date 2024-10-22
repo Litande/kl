@@ -15,9 +15,9 @@
 
 using System;
 using System.Net;
-using SIPSorcery.Sys;
+using SIPSorcery.sys.Net;
 
-namespace SIPSorcery.Net
+namespace SIPSorcery.net.STUN.STUNAttributes
 {
     public class STUNAddressAttribute : STUNAttribute
     {

@@ -1,7 +1,7 @@
+using KL.Manager.API.Persistent.Repositories.Interfaces;
 using Microsoft.AspNetCore.Mvc;
-using Plat4Me.DialClientApi.Persistent.Repositories.Interfaces;
 
-namespace Plat4Me.DialClientApi.Controllers;
+namespace KL.Manager.API.Controllers;
 
 [Route("commons")]
 public class CommonsController : ApiAuthorizeBase

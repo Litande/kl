@@ -1,7 +1,7 @@
-﻿using Microsoft.EntityFrameworkCore;
-using Plat4Me.Dial.Statistic.Api.DAL.Repositories;
+﻿using KL.Statistics.DAL.Repositories;
+using Microsoft.EntityFrameworkCore;
 
-namespace Plat4Me.Dial.Statistic.Api.DAL.Configurations;
+namespace KL.Statistics.DAL.Configurations;
 
 public static class RepositoryConfiguration
 {

@@ -1,10 +1,9 @@
-﻿using Plat4Me.DialRuleEngine.Application.Models;
-using Plat4Me.DialRuleEngine.Application.Models.Entities;
+﻿using KL.Engine.Rule.Models;
 
-namespace Plat4Me.DialRuleEngine.Application.Common.Extensions;
+namespace KL.Engine.Rule.Extensions;
 
 public static class RuleExtension
 {
-    public static RuleDto ToResponse(this Rule rule)
+    public static RuleDto ToResponse(this Models.Entities.Rule rule)
         => new(rule.QueueId, rule.Name, rule.Rules, rule.Ordinal);
 }

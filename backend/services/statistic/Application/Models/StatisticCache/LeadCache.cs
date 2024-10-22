@@ -1,4 +1,4 @@
-﻿namespace Plat4Me.Dial.Statistic.Api.Application.Models.StatisticCache;
+﻿namespace KL.Statistics.Application.Models.StatisticCache;
 
 public class LeadCache
 {

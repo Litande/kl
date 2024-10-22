@@ -1,8 +1,8 @@
-﻿using Microsoft.AspNetCore.Mvc;
-using Plat4Me.Dial.Statistic.Api.Application.Common.Enums;
-using Plat4Me.Dial.Statistic.Api.Application.Handlers.Dashboard;
+﻿using KL.Statistics.Application.Common.Enums;
+using KL.Statistics.Application.Handlers.Dashboard;
+using Microsoft.AspNetCore.Mvc;
 
-namespace Plat4Me.Dial.Statistic.Api.Controllers;
+namespace KL.Statistics.Controllers;
 
 [Route("dashboard")]
 public class DashboardController : ApiAuthorizeBase

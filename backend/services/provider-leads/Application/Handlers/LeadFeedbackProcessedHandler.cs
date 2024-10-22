@@ -1,12 +1,12 @@
-﻿using Plat4Me.DialLeadProvider.Application.Enums;
-using Plat4Me.DialLeadProvider.Application.Handlers.Interfaces;
-using Plat4Me.DialLeadProvider.Application.Models;
-using Plat4Me.DialLeadProvider.Application.Models.Messages;
-using Plat4Me.DialLeadProvider.Persistent.LeadCallbackHttpClient;
-using Plat4Me.DialLeadProvider.Persistent.Repositories.Interfaces;
-using System.Text.Json;
+﻿using System.Text.Json;
+using KL.Provider.Leads.Application.Enums;
+using KL.Provider.Leads.Application.Handlers.Interfaces;
+using KL.Provider.Leads.Application.Models;
+using KL.Provider.Leads.Application.Models.Messages;
+using KL.Provider.Leads.Persistent.LeadCallbackHttpClient;
+using KL.Provider.Leads.Persistent.Repositories.Interfaces;
 
-namespace Plat4Me.DialLeadProvider.Application.Handlers;
+namespace KL.Provider.Leads.Application.Handlers;
 
 public class LeadFeedbackProcessedHandler : ILeadFeedbackProcessedHandler
 {

@@ -1,4 +1,4 @@
-namespace Plat4Me.DialCallRecordMixer.Services;
+namespace KL.Call.Mixer.Services;
 
 public interface IAudioMixerService
 {

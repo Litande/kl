@@ -1,13 +1,13 @@
-﻿using Microsoft.Extensions.DependencyInjection.Extensions;
+﻿using KL.Statistics.Application.Cache;
+using KL.Statistics.Application.Handlers;
+using KL.Statistics.Application.Handlers.Agent;
+using KL.Statistics.Application.Handlers.Dashboard;
+using KL.Statistics.Application.Handlers.LeadStatistics;
+using KL.Statistics.Application.Services;
+using Microsoft.Extensions.DependencyInjection.Extensions;
 using Microsoft.Extensions.Internal;
-using Plat4Me.Dial.Statistic.Api.Application.Cache;
-using Plat4Me.Dial.Statistic.Api.Application.Handlers;
-using Plat4Me.Dial.Statistic.Api.Application.Handlers.Agent;
-using Plat4Me.Dial.Statistic.Api.Application.Handlers.Dashboard;
-using Plat4Me.Dial.Statistic.Api.Application.Handlers.LeadStatistics;
-using Plat4Me.Dial.Statistic.Api.Application.Services;
 
-namespace Plat4Me.Dial.Statistic.Api.Configurations;
+namespace KL.Statistics.Configurations;
 
 public static class ServiceConfiguration
 {

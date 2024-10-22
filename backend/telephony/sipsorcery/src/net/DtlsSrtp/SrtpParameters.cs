@@ -20,7 +20,7 @@
 using System;
 using Org.BouncyCastle.Crypto.Tls;
 
-namespace SIPSorcery.Net
+namespace SIPSorcery.net.DtlsSrtp
 {
     public struct SrtpParameters
     {

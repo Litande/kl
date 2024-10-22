@@ -1,6 +1,6 @@
 ﻿using Microsoft.Extensions.Caching.Memory;
 
-namespace Plat4Me.Dial.Statistic.Api.Application.Cache;
+namespace KL.Statistics.Application.Cache;
 
 public interface ICacheService<T>
 {

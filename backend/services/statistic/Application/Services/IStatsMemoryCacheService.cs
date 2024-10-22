@@ -1,8 +1,8 @@
-﻿using Plat4Me.Dial.Statistic.Api.Application.Cache;
-using Plat4Me.Dial.Statistic.Api.Application.Models.Messages;
-using Plat4Me.Dial.Statistic.Api.Application.Models.StatisticCache;
+﻿using KL.Statistics.Application.Cache;
+using KL.Statistics.Application.Models.Messages;
+using KL.Statistics.Application.Models.StatisticCache;
 
-namespace Plat4Me.Dial.Statistic.Api.Application.Services;
+namespace KL.Statistics.Application.Services;
 
 public interface IStatsMemoryCacheService : ICacheService<CdrStatisticCache>
 {

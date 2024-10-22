@@ -16,7 +16,7 @@
 using System.IO;
 using System.Threading;
 
-namespace SIPSorcery.Sys
+namespace SIPSorcery.sys.Net
 {
     internal class PipedMemoryStream
     {

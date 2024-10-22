@@ -2,8 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using SIPSorcery.Net;
-using SIPSorcery.Sys;
+using SIPSorcery.sys.Net;
 
 namespace SIPSorcery.net.RTP
 {

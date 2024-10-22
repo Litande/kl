@@ -1,9 +1,9 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using KL.Provider.Leads.Persistent.Entities;
+using KL.Provider.Leads.Persistent.Repositories.Interfaces;
+using Microsoft.EntityFrameworkCore;
 using MySqlConnector;
-using Plat4Me.DialLeadProvider.Persistent.Entities;
-using Plat4Me.DialLeadProvider.Persistent.Repositories.Interfaces;
 
-namespace Plat4Me.DialLeadProvider.Persistent.Repositories;
+namespace KL.Provider.Leads.Persistent.Repositories;
 
 public class LeadRepository : ILeadRepository
 {

@@ -1,4 +1,4 @@
-﻿namespace Plat4Me.DialClientApi.Persistent.Entities;
+﻿namespace KL.Manager.API.Persistent.Entities;
 
 public class Team
 {

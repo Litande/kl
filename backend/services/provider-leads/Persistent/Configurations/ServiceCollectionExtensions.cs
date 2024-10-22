@@ -1,13 +1,13 @@
-﻿using Microsoft.EntityFrameworkCore;
-using Plat4Me.DialLeadProvider.Persistent.LeadCallbackHttpClient;
-using Plat4Me.DialLeadProvider.Persistent.LeadProviderHttpClient;
-using Plat4Me.DialLeadProvider.Persistent.Repositories;
-using Plat4Me.DialLeadProvider.Persistent.Repositories.Interfaces;
-using Plat4Me.DialLeadProvider.Persistent.Seed;
+﻿using KL.Provider.Leads.Persistent.LeadCallbackHttpClient;
+using KL.Provider.Leads.Persistent.LeadProviderHttpClient;
+using KL.Provider.Leads.Persistent.Repositories;
+using KL.Provider.Leads.Persistent.Repositories.Interfaces;
+using KL.Provider.Leads.Persistent.Seed;
+using Microsoft.EntityFrameworkCore;
 using Polly;
 using Polly.Extensions.Http;
 
-namespace Plat4Me.DialLeadProvider.Persistent.Configurations;
+namespace KL.Provider.Leads.Persistent.Configurations;
 
 public static class ServiceCollectionExtensions
 {

@@ -1,9 +1,9 @@
-﻿using Plat4Me.DialClientApi.Application.Enums;
-using Plat4Me.DialClientApi.Application.Models.Requests.LeadQueue;
-using Plat4Me.DialClientApi.Application.Models.Responses.LeadQueues;
-using Plat4Me.DialClientApi.Persistent.Entities;
+﻿using KL.Manager.API.Application.Enums;
+using KL.Manager.API.Application.Models.Requests.LeadQueue;
+using KL.Manager.API.Application.Models.Responses.LeadQueues;
+using KL.Manager.API.Persistent.Entities;
 
-namespace Plat4Me.DialClientApi.Persistent.Repositories.Interfaces;
+namespace KL.Manager.API.Persistent.Repositories.Interfaces;
 
 public interface ILeadQueueRepository
 {

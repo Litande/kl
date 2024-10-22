@@ -1,6 +1,6 @@
-﻿using Plat4Me.DialLeadCaller.Application.Models.Requests;
+﻿using KL.Caller.Leads.Models.Requests;
 
-namespace Plat4Me.DialLeadCaller.Application.Handlers;
+namespace KL.Caller.Leads.Handlers.Contracts;
 
 public interface IAgentFilledCallInfoHandler
 {

@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace SIPSorcery.Net
+namespace SIPSorcery.net.RTP
 {
     public class TimestampPair
     {

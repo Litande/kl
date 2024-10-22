@@ -1,6 +1,6 @@
 using System.Text.Json.Serialization;
 
-namespace Plat4Me.DialClientApi.Persistent.Configurations;
+namespace KL.Manager.API.Persistent.Configurations;
 
 public class MysqlOptions
 {

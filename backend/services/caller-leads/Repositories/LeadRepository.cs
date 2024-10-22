@@ -1,13 +1,10 @@
-﻿using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.Logging;
-using Plat4Me.DialLeadCaller.Application.Enums;
-using Plat4Me.DialLeadCaller.Application.Extensions;
-using Plat4Me.DialLeadCaller.Application.Models;
-using Plat4Me.DialLeadCaller.Application.Models.Entities;
-using Plat4Me.DialLeadCaller.Application.Repositories;
-using System.Text.Json;
+﻿using System.Text.Json;
+using KL.Caller.Leads.Enums;
+using KL.Caller.Leads.Extensions;
+using KL.Caller.Leads.Models;
+using KL.Caller.Leads.Models.Entities;
 
-namespace Plat4Me.DialLeadCaller.Infrastructure.Repositories;
+namespace KL.Caller.Leads.Repositories;
 
 public class LeadRepository : ILeadRepository
 {

@@ -1,7 +1,6 @@
-﻿using Plat4Me.DialRuleEngine.Application.Enums;
-using Redis.OM.Modeling;
+﻿using KL.Engine.Rule.Enums;
 
-namespace Plat4Me.DialRuleEngine.Application.Models;
+namespace KL.Engine.Rule.Models;
 
 [Document(StorageType = StorageType.Json, Prefixes = new[] { "QueueLead" })]
 public class QueueLeadCache

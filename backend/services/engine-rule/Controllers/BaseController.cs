@@ -1,7 +1,7 @@
-﻿using Microsoft.AspNetCore.Mvc;
-using Plat4Me.DialRuleEngine.Application.Extensions;
+﻿using KL.Engine.Rule.Extensions;
+using Microsoft.AspNetCore.Mvc;
 
-namespace Plat4Me.DialRuleEngine.Controllers;
+namespace KL.Engine.Rule.Controllers;
 
 public class BaseController : Controller
 {

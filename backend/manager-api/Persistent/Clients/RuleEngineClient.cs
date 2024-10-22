@@ -1,11 +1,11 @@
-﻿using Microsoft.Extensions.Options;
-using Plat4Me.DialClientApi.Application.Models;
-using Plat4Me.DialClientApi.Persistent.Configurations;
-using System.Text;
+﻿using System.Text;
 using System.Text.Json;
-using Plat4Me.DialClientApi.Application.Enums;
+using KL.Manager.API.Application.Enums;
+using KL.Manager.API.Application.Models;
+using KL.Manager.API.Persistent.Configurations;
+using Microsoft.Extensions.Options;
 
-namespace Plat4Me.DialClientApi.Persistent.Clients;
+namespace KL.Manager.API.Persistent.Clients;
 
 public class RuleEngineClient : IRuleEngineClient
 {

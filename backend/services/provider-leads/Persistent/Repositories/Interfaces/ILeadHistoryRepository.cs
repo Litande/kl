@@ -1,7 +1,7 @@
-﻿using Plat4Me.DialLeadProvider.Application.Enums;
-using Plat4Me.DialLeadProvider.Application.Models;
+﻿using KL.Provider.Leads.Application.Enums;
+using KL.Provider.Leads.Application.Models;
 
-namespace Plat4Me.DialLeadProvider.Persistent.Repositories.Interfaces;
+namespace KL.Provider.Leads.Persistent.Repositories.Interfaces;
 
 public interface ILeadHistoryRepository
 {

@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel;
 
-namespace Plat4Me.Dial.Statistic.Api.Application.Common.Enums;
+namespace KL.Statistics.Application.Common.Enums;
 
 public enum PerformanceTypes
 {

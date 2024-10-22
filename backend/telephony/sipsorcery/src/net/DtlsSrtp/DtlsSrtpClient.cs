@@ -20,9 +20,10 @@ using Org.BouncyCastle.Crypto;
 using Org.BouncyCastle.Crypto.Tls;
 using Org.BouncyCastle.Security;
 using Org.BouncyCastle.Utilities;
-using SIPSorcery.Sys;
+using SIPSorcery.net.WebRTC;
+using SIPSorcery.sys;
 
-namespace SIPSorcery.Net
+namespace SIPSorcery.net.DtlsSrtp
 {
     internal class DtlsSrtpTlsAuthentication
             : TlsAuthentication

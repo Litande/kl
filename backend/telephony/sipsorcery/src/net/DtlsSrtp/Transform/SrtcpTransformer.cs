@@ -21,7 +21,7 @@ using System.Collections.Concurrent;
 using System.Collections.Generic;
 using System.Threading;
 
-namespace SIPSorcery.Net
+namespace SIPSorcery.net.DtlsSrtp.Transform
 {
     /// <summary>
     /// SRTCPTransformer implements PacketTransformer.

@@ -21,9 +21,10 @@ using System.Text;
 using System.Xml;
 using System.Xml.Linq;
 using Microsoft.Extensions.Logging;
-using SIPSorcery.Sys;
+using SIPSorcery.core.SIP;
+using SIPSorcery.sys;
 
-namespace SIPSorcery.SIP
+namespace SIPSorcery.core.SIPEvents.Dialog
 {
     /// <summary>
     /// Represents the top level XML element on a SIP event dialog payload as described in: 

@@ -1,7 +1,7 @@
-﻿using Plat4Me.DialRuleEngine.Application.Enums;
-using Plat4Me.DialRuleEngine.Application.RuleEngine.Contracts;
+﻿using KL.Engine.Rule.Enums;
+using KL.Engine.Rule.RuleEngine.Contracts;
 
-namespace Plat4Me.DialRuleEngine.Application.Services.Contracts;
+namespace KL.Engine.Rule.Services.Contracts;
 
 public interface ILeadQueueRuleService
 {

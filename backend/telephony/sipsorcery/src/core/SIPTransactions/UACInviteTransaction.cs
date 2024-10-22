@@ -21,11 +21,14 @@ using System.Net.Sockets;
 using System.Runtime.CompilerServices;
 using System.Threading.Tasks;
 using Microsoft.Extensions.Logging;
-using SIPSorcery.Sys;
+using SIPSorcery.core.SIP;
+using SIPSorcery.core.SIPCDR;
+using SIPSorcery.sys;
+using SIPSorcery.sys.Net;
 
-[assembly: InternalsVisibleToAttribute("SIPSorcery.UnitTests")]
+[assembly: InternalsVisibleTo("SIPSorcery.UnitTests")]
 
-namespace SIPSorcery.SIP
+namespace SIPSorcery.core.SIPTransactions
 {
     /// <summary>
     /// SIP transaction that initiates a call to a SIP User Agent Server. This transaction 
@@ -72,7 +75,7 @@ namespace SIPSorcery.SIP
         {
             TransactionType = SIPTransactionTypesEnum.InviteClient;
             m_localTag = sipRequest.Header.From.FromTag;
-            CDR = new SIPCDR(SIPCallDirection.Out, sipRequest.URI, sipRequest.Header.From, sipRequest.Header.CallId, sipRequest.LocalSIPEndPoint, sipRequest.RemoteSIPEndPoint);
+            CDR = new SIPCDR.SIPCDR(SIPCallDirection.Out, sipRequest.URI, sipRequest.Header.From, sipRequest.Header.CallId, sipRequest.LocalSIPEndPoint, sipRequest.RemoteSIPEndPoint);
             _sendOkAckManually = sendOkAckManually;
             m_cseq = sipRequest.Header.CSeq;
             _disablePrackSupport = !((sipRequest.Header.Supported?.Contains(SIPExtensionHeaders.PRACK) ?? false) 

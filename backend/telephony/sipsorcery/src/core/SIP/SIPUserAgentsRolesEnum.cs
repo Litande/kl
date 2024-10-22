@@ -18,7 +18,7 @@
 
 using System;
 
-namespace SIPSorcery.SIP
+namespace SIPSorcery.core.SIP
 {
     public enum SIPUserAgentRolesEnum
     {

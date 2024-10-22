@@ -1,4 +1,4 @@
-﻿namespace Plat4Me.Dial.Statistic.Api.Application.Handlers;
+﻿namespace KL.Statistics.Application.Handlers;
 
 public interface ISubHandler<in TMessage>
 {

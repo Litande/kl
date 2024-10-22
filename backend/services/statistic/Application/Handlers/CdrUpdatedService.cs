@@ -1,11 +1,11 @@
-﻿using Plat4Me.Dial.Statistic.Api.Application.Common;
-using Plat4Me.Dial.Statistic.Api.Application.Common.Extensions;
-using Plat4Me.Dial.Statistic.Api.Application.Models.Messages;
-using Plat4Me.Dial.Statistic.Api.Application.Services;
-using Plat4Me.Dial.Statistic.Api.DAL.Repositories;
-using System.Collections.Concurrent;
+﻿using System.Collections.Concurrent;
+using KL.Statistics.Application.Common;
+using KL.Statistics.Application.Common.Extensions;
+using KL.Statistics.Application.Models.Messages;
+using KL.Statistics.Application.Services;
+using KL.Statistics.DAL.Repositories;
 
-namespace Plat4Me.Dial.Statistic.Api.Application.Handlers;
+namespace KL.Statistics.Application.Handlers;
 
 public class CdrUpdatedService : ICdrUpdatedService
 {

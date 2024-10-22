@@ -16,7 +16,7 @@
 using System;
 using System.Text;
 
-namespace SIPSorcery.Net
+namespace SIPSorcery.net.STUN.STUNAttributes
 {
     public class STUNErrorCodeAttribute : STUNAttribute
     {

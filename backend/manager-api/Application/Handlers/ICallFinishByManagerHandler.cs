@@ -1,4 +1,4 @@
-﻿namespace Plat4Me.DialClientApi.Application.Handlers;
+﻿namespace KL.Manager.API.Application.Handlers;
 
 public interface ICallFinishByManagerHandler
 {

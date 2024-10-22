@@ -1,4 +1,4 @@
-namespace Plat4Me.DialLeadCaller.Application.Models;
+namespace KL.Caller.Leads.Models;
 
 public class LeadHistoryChangesDto<T>
 {

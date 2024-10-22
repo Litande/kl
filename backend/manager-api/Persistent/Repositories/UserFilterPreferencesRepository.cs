@@ -1,12 +1,12 @@
 ﻿using System.Text.Json;
+using KL.Manager.API.Application.Models;
+using KL.Manager.API.Application.Models.Requests.UserFilter;
+using KL.Manager.API.Application.Models.Responses.UserFilter;
+using KL.Manager.API.Persistent.Entities;
+using KL.Manager.API.Persistent.Repositories.Interfaces;
 using Microsoft.EntityFrameworkCore;
-using Plat4Me.DialClientApi.Application.Models;
-using Plat4Me.DialClientApi.Application.Models.Requests.UserFilter;
-using Plat4Me.DialClientApi.Application.Models.Responses.UserFilter;
-using Plat4Me.DialClientApi.Persistent.Entities;
-using Plat4Me.DialClientApi.Persistent.Repositories.Interfaces;
 
-namespace Plat4Me.DialClientApi.Persistent.Repositories;
+namespace KL.Manager.API.Persistent.Repositories;
 
 public class UserFilterPreferencesRepository : IUserFilterPreferencesRepository
 {

@@ -1,6 +1,6 @@
-﻿using Plat4Me.Dial.Statistic.Api.Application.Common.Enums;
+﻿using KL.Statistics.Application.Common.Enums;
 
-namespace Plat4Me.Dial.Statistic.Api.Application.Models.Entities;
+namespace KL.Statistics.Application.Models.Entities;
 
 public class User
 {

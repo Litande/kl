@@ -23,7 +23,7 @@ using System.Linq;
 using System.Net;
 using System.Net.Sockets;
 
-namespace SIPSorcery.Sys
+namespace SIPSorcery.sys.Net
 {
     public class IPSocket
     {

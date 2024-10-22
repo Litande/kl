@@ -13,9 +13,8 @@
 
 using System.Collections.Generic;
 using System.Linq;
-using SIPSorcery.SIP;
 
-namespace SIPSorcery.SIP
+namespace SIPSorcery.core.SIP
 {
     public static class SIPAuthChallenge
     {

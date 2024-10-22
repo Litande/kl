@@ -1,9 +1,9 @@
-﻿using Plat4Me.DialClientApi.Application.Common;
-using Plat4Me.DialClientApi.Application.Enums;
-using Plat4Me.DialClientApi.Persistent.Entities;
-using System.Text.Json;
+﻿using System.Text.Json;
+using KL.Manager.API.Application.Common;
+using KL.Manager.API.Application.Enums;
+using KL.Manager.API.Persistent.Entities;
 
-namespace Plat4Me.DialClientApi.Persistent.Seed;
+namespace KL.Manager.API.Persistent.Seed;
 
 public static class SeedSettings
 {

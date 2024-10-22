@@ -1,12 +1,12 @@
-﻿using Microsoft.AspNetCore.Authorization;
+﻿using KL.Agent.API.Application.Handlers;
+using KL.Agent.API.Application.Services;
+using KL.Agent.API.Middlewares;
+using KL.Agent.API.SignalR;
+using Microsoft.AspNetCore.Authorization;
 using Plat4me.Core.Nats;
 using Plat4Me.Core.Storage.Configuration;
-using Plat4Me.DialAgentApi.Application.Handlers;
-using Plat4Me.DialAgentApi.Application.Services;
-using Plat4Me.DialAgentApi.Middlewares;
-using Plat4Me.DialAgentApi.SignalR;
 
-namespace Plat4Me.DialAgentApi.Application.Configurations;
+namespace KL.Agent.API.Application.Configurations;
 
 public static class ServiceCollectionExtensions
 {

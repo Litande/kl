@@ -1,4 +1,4 @@
-namespace Plat4Me.DialAgentApi.Persistent.Entities;
+namespace KL.Agent.API.Persistent.Entities;
 
 public class DataSource
 {

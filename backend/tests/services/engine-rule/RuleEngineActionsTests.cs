@@ -1,11 +1,8 @@
 ﻿using System;
-using Plat4Me.DialRuleEngine.Application.Enums;
 using System.Threading.Tasks;
-using Plat4Me.DialRuleEngine.Application.Models;
-using Plat4Me.DialRuleEngine.Application.RuleEngine.Enums;
 using Xunit;
 
-namespace Plat4Me.DialRuleEngine.Tests;
+namespace KL.Engine.Rule.Tests;
 
 public class RuleEngineActionsTests : RuleEngineActionsTestsFixture
 {

@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel;
 
-namespace Plat4Me.DialClientApi.Application.Enums;
+namespace KL.Manager.API.Application.Enums;
 
 public enum RulesCondition
 {

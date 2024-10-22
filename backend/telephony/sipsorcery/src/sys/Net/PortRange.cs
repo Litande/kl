@@ -18,7 +18,7 @@
 using System;
 using System.Net;
 
-namespace SIPSorcery.Sys
+namespace SIPSorcery.sys.Net
 {
     /// <summary>
     /// Class to manage port allocation for Rtp Ports. Ports are always even, because

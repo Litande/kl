@@ -1,4 +1,4 @@
-﻿namespace Plat4Me.DialSipBridge.Application.Handlers;
+﻿namespace KL.SIP.Bridge.Application.Handlers;
 
 public interface ISubHandler<in TMessage>
 {

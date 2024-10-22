@@ -1,18 +1,15 @@
-﻿using Medallion.Threading;
-using Microsoft.Extensions.Logging;
+﻿using System.Text.Json;
+using KL.Caller.Leads.App;
+using KL.Caller.Leads.Enums;
+using KL.Caller.Leads.Extensions;
+using KL.Caller.Leads.Handlers.Contracts;
+using KL.Caller.Leads.Models.Entities.Settings;
+using KL.Caller.Leads.Models.Messages;
+using KL.Caller.Leads.Repositories;
+using KL.Caller.Leads.Services.Contracts;
 using Microsoft.Extensions.Options;
-using Plat4me.Core.Nats;
-using Plat4Me.DialLeadCaller.Application.App;
-using Plat4Me.DialLeadCaller.Application.Enums;
-using Plat4Me.DialLeadCaller.Application.Handlers.Contracts;
-using Plat4Me.DialLeadCaller.Application.Models.Entities.Settings;
-using Plat4Me.DialLeadCaller.Application.Models.Messages;
-using Plat4Me.DialLeadCaller.Application.Repositories;
-using Plat4Me.DialLeadCaller.Application.Services.Contracts;
-using System.Text.Json;
-using Plat4Me.DialLeadCaller.Application.Extensions;
 
-namespace Plat4Me.DialLeadCaller.Application.Handlers;
+namespace KL.Caller.Leads.Handlers;
 
 public class CallFailedHandler : ICallFailedHandler
 {

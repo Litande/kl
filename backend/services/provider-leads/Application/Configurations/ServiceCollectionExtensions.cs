@@ -1,11 +1,11 @@
-﻿using Plat4me.Core.Nats;
-using Plat4Me.DialLeadProvider.Application.Handlers;
-using Plat4Me.DialLeadProvider.Application.Handlers.Interfaces;
-using Plat4Me.DialLeadProvider.Application.Services;
-using Plat4Me.DialLeadProvider.Application.Services.Interfaces;
-using Plat4Me.DialLeadProvider.Workers;
+﻿using KL.Provider.Leads.Application.Handlers;
+using KL.Provider.Leads.Application.Handlers.Interfaces;
+using KL.Provider.Leads.Application.Services;
+using KL.Provider.Leads.Application.Services.Interfaces;
+using KL.Provider.Leads.Workers;
+using Plat4me.Core.Nats;
 
-namespace Plat4Me.DialLeadProvider.Application.Configurations;
+namespace KL.Provider.Leads.Application.Configurations;
 
 public static class ServiceCollectionExtensions
 {

@@ -1,3 +1,3 @@
-namespace Plat4Me.DialClientApi.Application.Models;
+namespace KL.Manager.API.Application.Models;
 
 public record OperationResponse(bool Success, string? Error);

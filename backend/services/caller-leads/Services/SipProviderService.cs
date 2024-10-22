@@ -1,9 +1,8 @@
-using Microsoft.Extensions.Logging;
-using Plat4Me.DialLeadCaller.Application.Models.Entities;
-using Plat4Me.DialLeadCaller.Application.Repositories;
-using Plat4Me.DialLeadCaller.Application.Services.Contracts;
+using KL.Caller.Leads.Models.Entities;
+using KL.Caller.Leads.Repositories;
+using KL.Caller.Leads.Services.Contracts;
 
-namespace Plat4Me.DialLeadCaller.Application.Services;
+namespace KL.Caller.Leads.Services;
 
 public class SipProviderService : ISipProviderService
 {

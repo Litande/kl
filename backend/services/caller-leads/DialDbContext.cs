@@ -1,8 +1,7 @@
-using Microsoft.EntityFrameworkCore;
-using Plat4Me.DialLeadCaller.Application.Models.Entities;
-using Plat4Me.DialLeadCaller.Infrastructure.EntityConfigurations;
+using KL.Caller.Leads.EntityConfigurations;
+using KL.Caller.Leads.Models.Entities;
 
-namespace Plat4Me.DialLeadCaller.Infrastructure;
+namespace KL.Caller.Leads;
 
 public class DialDbContext : DbContext
 {

@@ -1,11 +1,11 @@
-﻿using Plat4Me.Dial.Statistic.Api.Application.Common.Enums;
-using Plat4Me.Dial.Statistic.Api.Application.Models.Responses;
-using Plat4Me.Dial.Statistic.Api.Application.Services;
-using Plat4Me.Dial.Statistic.Api.Application.SignalR;
-using Plat4Me.Dial.Statistic.Api.DAL.Repositories;
-using System.Text.Json;
+﻿using System.Text.Json;
+using KL.Statistics.Application.Common.Enums;
+using KL.Statistics.Application.Models.Responses;
+using KL.Statistics.Application.Services;
+using KL.Statistics.Application.SignalR;
+using KL.Statistics.DAL.Repositories;
 
-namespace Plat4Me.Dial.Statistic.Api.Application.Handlers.Dashboard;
+namespace KL.Statistics.Application.Handlers.Dashboard;
 
 public class CallAnalysisChangedHandler : ICallAnalysisChangedHandler
 {

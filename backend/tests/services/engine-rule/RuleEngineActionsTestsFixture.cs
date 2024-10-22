@@ -1,10 +1,7 @@
 ﻿using Microsoft.Extensions.Logging;
 using Moq;
-using Plat4Me.DialRuleEngine.Application.Repositories;
-using Plat4Me.DialRuleEngine.Application.RuleEngine;
-using Plat4Me.DialRuleEngine.Application.RuleEngine.MicrosoftEngine;
 
-namespace Plat4Me.DialRuleEngine.Tests;
+namespace KL.Engine.Rule.Tests;
 
 public class RuleEngineActionsTestsFixture: TestBase
 {

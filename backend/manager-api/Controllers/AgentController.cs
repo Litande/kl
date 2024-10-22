@@ -1,9 +1,9 @@
-﻿using Microsoft.AspNetCore.Mvc;
-using Plat4Me.DialClientApi.Application.Handlers.Agents;
-using Plat4Me.DialClientApi.Application.Models.Requests.Agents;
-using Plat4Me.DialClientApi.Persistent.Repositories.Interfaces;
+﻿using KL.Manager.API.Application.Handlers.Agents;
+using KL.Manager.API.Application.Models.Requests.Agents;
+using KL.Manager.API.Persistent.Repositories.Interfaces;
+using Microsoft.AspNetCore.Mvc;
 
-namespace Plat4Me.DialClientApi.Controllers;
+namespace KL.Manager.API.Controllers;
 
 [Route("agents")]
 public class AgentController : ApiAuthorizeBase

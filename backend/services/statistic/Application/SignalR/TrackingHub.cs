@@ -1,11 +1,11 @@
-﻿using Microsoft.AspNetCore.Authorization;
+﻿using System.Collections.Concurrent;
+using KL.Statistics.Application.Common;
+using KL.Statistics.Application.Models;
+using KL.Statistics.Application.Models.Requests;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.SignalR;
-using Plat4Me.Dial.Statistic.Api.Application.Common;
-using Plat4Me.Dial.Statistic.Api.Application.Models;
-using Plat4Me.Dial.Statistic.Api.Application.Models.Requests;
-using System.Collections.Concurrent;
 
-namespace Plat4Me.Dial.Statistic.Api.Application.SignalR;
+namespace KL.Statistics.Application.SignalR;
 
 [Authorize(Roles = "Manager")]
 public class TrackingHub : Hub

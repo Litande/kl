@@ -1,4 +1,4 @@
-﻿namespace Plat4Me.DialClientApi.Application.Configurations;
+﻿namespace KL.Manager.API.Application.Configurations;
 
 public class NatsPubSubOptions
 {

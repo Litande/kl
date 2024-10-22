@@ -1,4 +1,4 @@
-﻿namespace Plat4Me.DialAgentApi.Application.Extensions;
+﻿namespace KL.Agent.API.Application.Extensions;
 
 public static class DateTimeOffsetExtensions
 {

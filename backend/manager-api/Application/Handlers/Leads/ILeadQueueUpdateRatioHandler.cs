@@ -1,6 +1,6 @@
-﻿using Plat4Me.DialClientApi.Persistent.Entities;
+﻿using KL.Manager.API.Persistent.Entities;
 
-namespace Plat4Me.DialClientApi.Application.Handlers.Leads;
+namespace KL.Manager.API.Application.Handlers.Leads;
 
 public interface ILeadQueueUpdateRatioHandler
 {

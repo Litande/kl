@@ -1,8 +1,6 @@
-using Plat4Me.DialRuleEngine.Application.Models;
-using Microsoft.Extensions.Hosting;
-using Redis.OM;
+using KL.Engine.Rule.Models;
 
-namespace Plat4Me.DialRuleEngine.Infrastructure;
+namespace KL.Engine.Rule;
 
 public class RedisIndexCreationService : IHostedService
 {

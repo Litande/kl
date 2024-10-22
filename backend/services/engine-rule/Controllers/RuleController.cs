@@ -1,9 +1,9 @@
-﻿using Microsoft.AspNetCore.Mvc;
-using Plat4Me.DialRuleEngine.Application.Enums;
-using Plat4Me.DialRuleEngine.Application.Models.Responses;
-using Plat4Me.DialRuleEngine.Application.Services.Contracts;
+﻿using KL.Engine.Rule.Enums;
+using KL.Engine.Rule.Models.Responses;
+using KL.Engine.Rule.Services.Contracts;
+using Microsoft.AspNetCore.Mvc;
 
-namespace Plat4Me.DialRuleEngine.Controllers;
+namespace KL.Engine.Rule.Controllers;
 
 [Route("rules")]
 public class RuleController : BaseController

@@ -1,4 +1,4 @@
-﻿namespace Plat4Me.DialSipBridge.Application.Enums;
+﻿namespace KL.SIP.Bridge.Application.Enums;
 
 public enum SipProviderStatus
 {

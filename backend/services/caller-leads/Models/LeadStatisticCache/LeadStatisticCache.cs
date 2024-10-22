@@ -1,6 +1,4 @@
-﻿using Redis.OM.Modeling;
-
-namespace Plat4Me.DialLeadCaller.Application.Models.LeadStatisticCache;
+﻿namespace KL.Caller.Leads.Models.LeadStatisticCache;
 
 [Document(StorageType = StorageType.Json, Prefixes = new[] { "LeadStatistic" })]
 public class LeadStatisticCache

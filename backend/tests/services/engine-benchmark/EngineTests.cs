@@ -1,13 +1,6 @@
 ﻿using BenchmarkDotNet.Attributes;
-using Plat4Me.DialRuleEngine.Application.Enums;
-using Plat4Me.DialRuleEngine.Application.Models;
-using Plat4Me.DialRuleEngine.Application.RuleEngine;
-using Plat4Me.DialRuleEngine.Application.RuleEngine.Enums;
-using Plat4Me.DialRuleEngine.Application.RuleEngine.Conditions;
-using Plat4Me.DialRuleEngine.Application.RuleEngine.Actions;
-using Plat4Me.DialRuleEngine.Application.RuleEngine.MicrosoftEngine;
 
-namespace Plat4Me.DialRuleEngine.BenchmarkTests;
+namespace KL.Engine.Benchmark.Tests;
 
 public class EngineTests : LeadProcessingPipelineServiceTestsFixture
 {

@@ -1,5 +1,5 @@
-using Plat4Me.DialLeadCaller.Application.Enums;
+using KL.Caller.Leads.Enums;
 
-namespace Plat4Me.DialLeadCaller.Application.Models.LeadStatisticCache;
+namespace KL.Caller.Leads.Models.LeadStatisticCache;
 
 public record LeadStatisticSettings(List<LeadStatusTypes> LeadStatuses);

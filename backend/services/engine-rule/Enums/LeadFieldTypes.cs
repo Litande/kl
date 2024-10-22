@@ -1,4 +1,4 @@
-﻿namespace Plat4Me.DialRuleEngine.Application.Enums;
+﻿namespace KL.Engine.Rule.Enums;
 
 public enum LeadFieldTypes
 {

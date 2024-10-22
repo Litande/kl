@@ -1,8 +1,8 @@
 ﻿using System.Text.Json.Nodes;
-using Plat4Me.DialLeadProvider.Application.Models;
-using Plat4Me.DialLeadProvider.Persistent.Entities;
+using KL.Provider.Leads.Application.Models;
+using KL.Provider.Leads.Persistent.Entities;
 
-namespace Plat4Me.DialLeadProvider.Application.Services.Interfaces;
+namespace KL.Provider.Leads.Application.Services.Interfaces;
 
 public interface ILeadDataMapperService
 {

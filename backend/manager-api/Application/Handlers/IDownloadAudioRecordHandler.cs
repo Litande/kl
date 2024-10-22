@@ -1,6 +1,6 @@
-﻿using Plat4Me.DialClientApi.Application.Models.Responses.Audio;
+﻿using KL.Manager.API.Application.Models.Responses.Audio;
 
-namespace Plat4Me.DialClientApi.Application.Handlers;
+namespace KL.Manager.API.Application.Handlers;
 
 public interface IDownloadAudioRecordHandler
 {

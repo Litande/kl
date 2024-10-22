@@ -1,6 +1,6 @@
-﻿using Plat4Me.DialRuleEngine.Application.RuleEngine.Enums;
+﻿using KL.Engine.Rule.RuleEngine.Enums;
 
-namespace Plat4Me.DialRuleEngine.Application.Extensions;
+namespace KL.Engine.Rule.Extensions;
 
 public static class ComparisonOperationExtensions
 {

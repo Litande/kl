@@ -14,7 +14,10 @@
 // BSD 3-Clause "New" or "Revised" License, see included LICENSE.md file.
 //-----------------------------------------------------------------------------
 
-namespace SIPSorcery.SIP.App
+using SIPSorcery.core.SIP;
+using SIPSorcery.core.SIPTransactions;
+
+namespace SIPSorcery.app.SIPUserAgents
 {
     public delegate void SIPCallResponseDelegate(ISIPClientUserAgent uac, SIPResponse sipResponse);
     public delegate void SIPCallFailedDelegate(ISIPClientUserAgent uac, string errorMessage, SIPResponse sipResponse);

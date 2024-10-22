@@ -1,13 +1,6 @@
-﻿using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.Configuration;
-using Microsoft.Extensions.DependencyInjection;
-using Plat4Me.DialRuleEngine.Application.App;
-using Plat4Me.DialRuleEngine.Application.Repositories;
-using Plat4Me.DialRuleEngine.Infrastructure.Repositories;
-using Redis.OM;
-using StackExchange.Redis;
+﻿using KL.Engine.Rule.Repositories;
 
-namespace Plat4Me.DialRuleEngine.Infrastructure.App;
+namespace KL.Engine.Rule.App;
 
 public static class AppRegistrations
 {

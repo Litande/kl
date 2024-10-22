@@ -1,7 +1,7 @@
 ﻿using System.Text.Json;
-using TimeZone = Plat4Me.DialLeadProvider.Persistent.Entities.TimeZone;
+using TimeZone = KL.Provider.Leads.Persistent.Entities.TimeZone;
 
-namespace Plat4Me.DialLeadProvider.Persistent.Seed;
+namespace KL.Provider.Leads.Persistent.Seed;
 
 public static class SeedTimeZones
 {

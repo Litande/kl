@@ -18,9 +18,10 @@
 using System;
 using System.Net;
 using System.Net.Sockets;
-using SIPSorcery.Sys;
+using SIPSorcery.sys;
+using SIPSorcery.sys.Net;
 
-namespace SIPSorcery.SIP
+namespace SIPSorcery.core.SIP
 {
     /// <summary>
     /// This class is a more specific version of the SIPURI class BUT is only concerned with the network and

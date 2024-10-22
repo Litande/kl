@@ -1,7 +1,7 @@
-﻿using Microsoft.AspNetCore.Mvc;
-using Plat4Me.DialClientApi.Application.Handlers;
+﻿using KL.Manager.API.Application.Handlers;
+using Microsoft.AspNetCore.Mvc;
 
-namespace Plat4Me.DialClientApi.Controllers;
+namespace KL.Manager.API.Controllers;
 
 [Route("user")]
 public class ClientAccountController : ApiAuthorizeBase

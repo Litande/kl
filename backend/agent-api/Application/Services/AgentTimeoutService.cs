@@ -1,7 +1,7 @@
 using System.Collections.Concurrent;
-using Plat4Me.DialAgentApi.Application.Enums;
+using KL.Agent.API.Application.Enums;
 
-namespace Plat4Me.DialAgentApi.Application.Services;
+namespace KL.Agent.API.Application.Services;
 
 public class AgentTimeoutService : IAgentTimeoutService
 {

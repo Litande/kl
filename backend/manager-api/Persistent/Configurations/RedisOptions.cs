@@ -1,7 +1,7 @@
 ﻿using System.Text.Json.Serialization;
 using StackExchange.Redis;
 
-namespace Plat4Me.DialClientApi.Persistent.Configurations;
+namespace KL.Manager.API.Persistent.Configurations;
 
 public class RedisOptions
 {

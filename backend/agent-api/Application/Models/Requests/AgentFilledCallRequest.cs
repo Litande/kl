@@ -1,6 +1,6 @@
-﻿using Plat4Me.DialAgentApi.Application.Enums;
+﻿using KL.Agent.API.Application.Enums;
 
-namespace Plat4Me.DialAgentApi.Application.Models.Requests;
+namespace KL.Agent.API.Application.Models.Requests;
 
 public record AgentFilledCallRequest(
     string SessionId,

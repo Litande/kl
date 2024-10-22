@@ -1,21 +1,13 @@
-﻿using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.Logging;
-using Moq;
-using Plat4Me.DialRuleEngine.Application.Enums;
-using Plat4Me.DialRuleEngine.Application.Models;
-using Plat4Me.DialRuleEngine.Application.Models.Entities;
-using Plat4Me.DialRuleEngine.Application.Repositories;
-using Plat4Me.DialRuleEngine.Application.RuleEngine.MicrosoftEngine;
-using Plat4Me.DialRuleEngine.Infrastructure;
-using Plat4Me.DialRuleEngine.Infrastructure.Repositories;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-using RulesEngine.Models;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Logging;
+using Moq;
 
-namespace Plat4Me.DialRuleEngine.Tests;
+namespace KL.Engine.Rule.Tests;
 
 public class RuleEngineConditionsTestsFixture : TestBase
 {

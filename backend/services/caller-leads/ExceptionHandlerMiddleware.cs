@@ -1,7 +1,7 @@
 ﻿using System.Net;
 using System.Text.Json;
 
-namespace Plat4Me.DialLeadCaller;
+namespace KL.Caller.Leads;
 
 public class ExceptionHandlerMiddleware
 {

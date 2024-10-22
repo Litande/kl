@@ -1,7 +1,7 @@
-using Plat4Me.DialAgentApi.Persistent.Entities.Cache;
+using KL.Agent.API.Persistent.Entities.Cache;
 using Redis.OM;
 
-namespace Plat4Me.DialAgentApi.Workers;
+namespace KL.Agent.API.Workers;
 
 public class RedisIndexCreationService : IHostedService
 {

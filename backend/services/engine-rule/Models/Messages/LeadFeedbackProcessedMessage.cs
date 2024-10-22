@@ -1,6 +1,6 @@
-﻿using Plat4Me.DialRuleEngine.Application.Enums;
+﻿using KL.Engine.Rule.Enums;
 
-namespace Plat4Me.DialRuleEngine.Application.Models.Messages;
+namespace KL.Engine.Rule.Models.Messages;
 
 public record LeadFeedbackProcessedMessage(
     long ClientId,

@@ -1,12 +1,11 @@
-using Microsoft.Extensions.Logging;
+using KL.SIP.Bridge.Application.Configurations;
+using KL.SIP.Bridge.Application.Enums;
+using KL.SIP.Bridge.Application.Models;
+using KL.SIP.Bridge.Application.Services;
+using KL.SIP.Bridge.Application.Services.AudioRecorders;
 using Microsoft.Extensions.Options;
-using Plat4Me.DialSipBridge.Application.Configurations;
-using Plat4Me.DialSipBridge.Application.Enums;
-using Plat4Me.DialSipBridge.Application.Models;
-using Plat4Me.DialSipBridge.Application.Services;
-using Plat4Me.DialSipBridge.Application.Services.AudioRecorders;
 
-namespace Plat4Me.DialSipBridge.Application.Session;
+namespace KL.SIP.Bridge.Application.Session;
 
 public class SessionRecordingService : ISessionRecordingService
 {

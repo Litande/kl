@@ -9,7 +9,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 
-namespace SIPSorcery.Net
+namespace SIPSorcery.net.RTP.Packetisation
 {
     public class H264Depacketiser
     {

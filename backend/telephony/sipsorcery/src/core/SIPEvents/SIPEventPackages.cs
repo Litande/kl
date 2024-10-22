@@ -17,9 +17,9 @@
 // ============================================================================
 
 using System;
-using SIPSorcery.Sys;
+using SIPSorcery.sys;
 
-namespace SIPSorcery.SIP
+namespace SIPSorcery.core.SIPEvents
 {
     public static class SIPEventConsts
     {

@@ -47,9 +47,9 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using SIPSorcery.Sys;
+using SIPSorcery.sys.Net;
 
-namespace SIPSorcery.Net
+namespace SIPSorcery.net.RTCP
 {
     /// <summary>
     /// An RTCP sender report is for use by active RTP senders. 

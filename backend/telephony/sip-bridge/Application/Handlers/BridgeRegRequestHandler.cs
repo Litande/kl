@@ -1,14 +1,13 @@
-﻿using Microsoft.Extensions.Logging;
-using Microsoft.Extensions.Options;
+﻿using System.Net;
+using System.Net.Sockets;
+using KL.SIP.Bridge.Application.Configurations;
+using KL.SIP.Bridge.Application.Models.Messages;
 using Microsoft.AspNetCore.Hosting.Server;
 using Microsoft.AspNetCore.Hosting.Server.Features;
-using Plat4Me.DialSipBridge.Application.Models.Messages;
-using Plat4Me.DialSipBridge.Application.Configurations;
+using Microsoft.Extensions.Options;
 using Plat4me.Core.Nats;
-using System.Net;
-using System.Net.Sockets;
 
-namespace Plat4Me.DialSipBridge.Application.Handlers;
+namespace KL.SIP.Bridge.Application.Handlers;
 
 public class BridgeRegRequestHandler : IBridgeRegRequestHandler
 {

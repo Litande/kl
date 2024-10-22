@@ -1,6 +1,6 @@
-using Plat4Me.DialClientApi.Application.Enums;
+using KL.Manager.API.Application.Enums;
 
-namespace Plat4Me.DialClientApi.Application.Models.Requests.Leads;
+namespace KL.Manager.API.Application.Models.Requests.Leads;
 
 public record LeadsFilterRequest(
     string? LeadId,

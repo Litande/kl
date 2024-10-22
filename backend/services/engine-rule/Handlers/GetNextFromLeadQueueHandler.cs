@@ -1,14 +1,13 @@
 ﻿using System.Text.Json;
-using Microsoft.Extensions.Logging;
-using Plat4Me.DialRuleEngine.Application.Enums;
-using Plat4Me.DialRuleEngine.Application.Extensions;
-using Plat4Me.DialRuleEngine.Application.Handlers.Contracts;
-using Plat4Me.DialRuleEngine.Application.Models;
-using Plat4Me.DialRuleEngine.Application.Models.Responses;
-using Plat4Me.DialRuleEngine.Application.Repositories;
-using Plat4Me.DialRuleEngine.Application.Services.Contracts;
+using KL.Engine.Rule.Enums;
+using KL.Engine.Rule.Extensions;
+using KL.Engine.Rule.Handlers.Contracts;
+using KL.Engine.Rule.Models;
+using KL.Engine.Rule.Models.Responses;
+using KL.Engine.Rule.Repositories;
+using KL.Engine.Rule.Services.Contracts;
 
-namespace Plat4Me.DialRuleEngine.Application.Handlers;
+namespace KL.Engine.Rule.Handlers;
 
 public class GetNextFromLeadQueueHandler : IGetNextFromLeadQueueHandler
 {

@@ -1,9 +1,7 @@
-﻿using Microsoft.EntityFrameworkCore;
-using Microsoft.EntityFrameworkCore.Metadata.Builders;
-using Plat4Me.DialRuleEngine.Application.Enums;
-using Plat4Me.DialRuleEngine.Application.Models.Entities;
+﻿using KL.Engine.Rule.Enums;
+using KL.Engine.Rule.Models.Entities;
 
-namespace Plat4Me.DialRuleEngine.Infrastructure.EntityConfigurations;
+namespace KL.Engine.Rule.EntityConfigurations;
 
 public class StatusDataSourceMapEntityConfiguration : IEntityTypeConfiguration<StatusDataSourceMap>
 {

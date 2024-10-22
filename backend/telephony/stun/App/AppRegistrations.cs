@@ -1,6 +1,4 @@
-﻿using Plat4Me.DialStun.Workers;
-
-namespace Plat4Me.DialStun.App;
+﻿namespace KL.Stun.App;
 
 public static class AppRegistrations
 {

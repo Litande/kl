@@ -1,11 +1,9 @@
-﻿using Microsoft.Extensions.Logging;
-using Plat4Me.DialRuleEngine.Application.Enums;
-using Plat4Me.DialRuleEngine.Application.Models;
-using Plat4Me.DialRuleEngine.Application.Repositories;
-using Plat4Me.DialRuleEngine.Application.RuleEngine.Actions;
-using RulesEngine.Models;
+﻿using KL.Engine.Rule.Enums;
+using KL.Engine.Rule.Models;
+using KL.Engine.Rule.Repositories;
+using KL.Engine.Rule.RuleEngine.Actions;
 
-namespace Plat4Me.DialRuleEngine.Application.RuleEngine.MicrosoftEngine;
+namespace KL.Engine.Rule.RuleEngine.MicrosoftEngine;
 
 public class MicrosoftRuleEngineProcessingService : IRuleEngineProcessingService
 {

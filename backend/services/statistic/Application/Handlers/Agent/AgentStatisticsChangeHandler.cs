@@ -1,11 +1,11 @@
-﻿using Plat4Me.Dial.Statistic.Api.Application.Common.Enums;
-using Plat4Me.Dial.Statistic.Api.Application.Common.Extensions;
-using Plat4Me.Dial.Statistic.Api.Application.Handlers.Dashboard;
-using Plat4Me.Dial.Statistic.Api.Application.Models.Messages;
-using Plat4Me.Dial.Statistic.Api.Application.SignalR;
-using Plat4Me.Dial.Statistic.Api.DAL.Repositories;
+﻿using KL.Statistics.Application.Common.Enums;
+using KL.Statistics.Application.Common.Extensions;
+using KL.Statistics.Application.Handlers.Dashboard;
+using KL.Statistics.Application.Models.Messages;
+using KL.Statistics.Application.SignalR;
+using KL.Statistics.DAL.Repositories;
 
-namespace Plat4Me.Dial.Statistic.Api.Application.Handlers.Agent;
+namespace KL.Statistics.Application.Handlers.Agent;
 
 public class AgentStatisticsChangeHandler : IAgentStatisticsChangeHandler
 {

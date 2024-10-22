@@ -1,6 +1,6 @@
 using System.ComponentModel;
 
-namespace Plat4Me.DialRuleEngine.Application.RuleEngine.Enums;
+namespace KL.Engine.Rule.RuleEngine.Enums;
 
 public enum RuleValueType
 {

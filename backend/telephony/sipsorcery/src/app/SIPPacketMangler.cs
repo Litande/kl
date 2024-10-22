@@ -21,10 +21,12 @@ using System.Net;
 using System.Net.Sockets;
 using System.Text.RegularExpressions;
 using Microsoft.Extensions.Logging;
-using SIPSorcery.Net;
-using SIPSorcery.Sys;
+using SIPSorcery.core.SIP;
+using SIPSorcery.net.SDP;
+using SIPSorcery.sys;
+using SIPSorcery.sys.Net;
 
-namespace SIPSorcery.SIP.App
+namespace SIPSorcery.app
 {
     public class SIPPacketMangler
     {

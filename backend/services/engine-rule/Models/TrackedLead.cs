@@ -1,11 +1,10 @@
-using Plat4Me.DialRuleEngine.Application.Enums;
-using Plat4Me.DialRuleEngine.Application.Models.Entities;
 using System.Text.Json;
 using System.Text.Json.Nodes;
 using System.Text.Json.Serialization;
-using Plat4Me.DialRuleEngine.Application.Extensions;
+using KL.Engine.Rule.Enums;
+using KL.Engine.Rule.Models.Entities;
 
-namespace Plat4Me.DialRuleEngine.Application.Models;
+namespace KL.Engine.Rule.Models;
 
 public class TrackedLead
 {

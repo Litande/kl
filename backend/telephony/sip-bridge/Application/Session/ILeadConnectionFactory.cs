@@ -1,7 +1,7 @@
-using Plat4Me.DialSipBridge.Application.Connections;
+using KL.SIP.Bridge.Application.Connections;
 using SIPSorcery.SIP;
 
-namespace Plat4Me.DialSipBridge.Application.Session;
+namespace KL.SIP.Bridge.Application.Session;
 
 public interface ILeadConnectionFactory
 {

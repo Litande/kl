@@ -1,6 +1,6 @@
-using Plat4Me.DialSipBridge.Application.Models;
+using KL.SIP.Bridge.Application.Models;
 
-namespace Plat4Me.DialSipBridge.Application.Services;
+namespace KL.SIP.Bridge.Application.Services;
 
 public interface IUploaderService
 {

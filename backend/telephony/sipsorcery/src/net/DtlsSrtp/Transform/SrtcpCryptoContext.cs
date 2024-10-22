@@ -63,7 +63,7 @@ using Org.BouncyCastle.Crypto.Macs;
 using Org.BouncyCastle.Crypto.Parameters;
 using Org.BouncyCastle.Utilities;
 
-namespace SIPSorcery.Net
+namespace SIPSorcery.net.DtlsSrtp.Transform
 {
     public class SrtcpCryptoContext
     {

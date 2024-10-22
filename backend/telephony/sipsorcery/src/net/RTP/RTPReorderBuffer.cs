@@ -1,7 +1,6 @@
 ﻿using System;
 using Microsoft.Extensions.Logging;
-using SIPSorcery.Net;
-using SIPSorcery.Sys;
+using SIPSorcery.sys;
 
 namespace SIPSorcery.net.RTP
 {

@@ -1,10 +1,4 @@
-﻿using Plat4Me.DialRuleEngine.Application.Enums;
-using Plat4Me.DialRuleEngine.Application.Models;
-using Plat4Me.DialRuleEngine.Application.RuleEngine.Enums;
-using Plat4Me.DialRuleEngine.Application.RuleEngine.MicrosoftEngine;
-using Plat4Me.DialRuleEngine.Infrastructure;
-using Plat4Me.DialRuleEngine.Infrastructure.Repositories;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text.Json;
@@ -12,7 +6,7 @@ using System.Text.Json.Serialization;
 using System.Threading.Tasks;
 using Xunit;
 
-namespace Plat4Me.DialRuleEngine.Tests;
+namespace KL.Engine.Rule.Tests;
 
 public class LeadProcessingPipelineServiceTests : LeadProcessingPipelineServiceTestsFixture
 {

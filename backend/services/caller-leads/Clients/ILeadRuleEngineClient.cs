@@ -1,7 +1,7 @@
-﻿using Plat4Me.DialLeadCaller.Application.Models.Requests;
-using Plat4Me.DialLeadCaller.Application.Models.Responses;
+﻿using KL.Caller.Leads.Models.Requests;
+using KL.Caller.Leads.Models.Responses;
 
-namespace Plat4Me.DialLeadCaller.Application.Clients;
+namespace KL.Caller.Leads.Clients;
 
 public interface ILeadRuleEngineClient
 {

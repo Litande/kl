@@ -1,6 +1,6 @@
 using Microsoft.AspNetCore.Identity;
 
-namespace Plat4Me.DialAgentApi.Persistent.Seed.Authentication;
+namespace KL.Agent.API.Persistent.Seed.Authentication;
 
 public static class AdminRegistration
 {

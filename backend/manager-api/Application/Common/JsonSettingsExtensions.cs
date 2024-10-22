@@ -1,7 +1,7 @@
 ﻿using System.Text.Json;
 using System.Text.Json.Serialization;
 
-namespace Plat4Me.DialClientApi.Application.Common;
+namespace KL.Manager.API.Application.Common;
 
 public class JsonSettingsExtensions
 {

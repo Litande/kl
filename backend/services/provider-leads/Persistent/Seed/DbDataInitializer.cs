@@ -1,4 +1,4 @@
-﻿namespace Plat4Me.DialLeadProvider.Persistent.Seed;
+﻿namespace KL.Provider.Leads.Persistent.Seed;
 
 public static class DbDataInitializer
 {

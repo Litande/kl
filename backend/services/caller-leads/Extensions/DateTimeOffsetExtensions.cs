@@ -1,4 +1,4 @@
-﻿namespace Plat4Me.DialLeadCaller.Application.Extensions;
+﻿namespace KL.Caller.Leads.Extensions;
 
 public static class DateTimeOffsetExtensions
 {

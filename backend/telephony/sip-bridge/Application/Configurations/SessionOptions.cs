@@ -1,4 +1,4 @@
-namespace Plat4Me.DialSipBridge.Application.Configurations;
+namespace KL.SIP.Bridge.Application.Configurations;
 
 public class CallSessionOptions
 {

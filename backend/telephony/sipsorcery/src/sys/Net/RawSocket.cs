@@ -17,7 +17,7 @@ using System;
 using System.Net;
 using System.Net.Sockets;
 
-namespace SIPSorcery.Sys
+namespace SIPSorcery.sys.Net
 {
     /// <summary>
     ///     0                   1                   2                   3   

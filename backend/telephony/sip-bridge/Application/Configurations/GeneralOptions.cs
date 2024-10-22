@@ -1,6 +1,6 @@
-using Plat4Me.DialSipBridge.Application.Enums;
+using KL.SIP.Bridge.Application.Enums;
 
-namespace Plat4Me.DialSipBridge.Application.Configurations;
+namespace KL.SIP.Bridge.Application.Configurations;
 
 public class GeneralOptions
 {

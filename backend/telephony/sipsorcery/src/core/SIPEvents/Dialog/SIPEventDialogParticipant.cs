@@ -18,9 +18,10 @@
 
 using System;
 using System.Xml.Linq;
-using SIPSorcery.Sys;
+using SIPSorcery.core.SIP;
+using SIPSorcery.sys;
 
-namespace SIPSorcery.SIP
+namespace SIPSorcery.core.SIPEvents.Dialog
 {
     public class SIPEventDialogParticipant
     {

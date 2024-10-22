@@ -1,4 +1,4 @@
-﻿namespace Plat4Me.DialAgentApi.Application.Enums;
+﻿namespace KL.Agent.API.Application.Enums;
 
 public enum HubErrorCode
 {

@@ -16,7 +16,7 @@
 // MS_PL Microsoft Public License.
 //-----------------------------------------------------------------------------
 
-namespace SIPSorcery.Media
+namespace SIPSorcery.app.Media.Codecs
 {
     /// <summary>
     /// mu-law encoder

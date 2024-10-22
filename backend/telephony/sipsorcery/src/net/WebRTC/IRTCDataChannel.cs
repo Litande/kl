@@ -34,7 +34,7 @@
 
 using System;
 
-namespace SIPSorcery.Net
+namespace SIPSorcery.net.WebRTC
 {
     public delegate void OnDataChannelMessageDelegate(RTCDataChannel dc, DataChannelPayloadProtocols protocol, byte[] data);
 

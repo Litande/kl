@@ -1,4 +1,4 @@
-namespace Plat4Me.DialLeadCaller.Application.App;
+namespace KL.Caller.Leads.App;
 public class DialerOptions
 {
     public long DefaultRingingTimeout { get; set; }

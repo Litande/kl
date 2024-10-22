@@ -14,7 +14,11 @@
 // BSD 3-Clause "New" or "Revised" License, see included LICENSE.md file.
 //-----------------------------------------------------------------------------
 
-namespace SIPSorcery.SIP.App
+using SIPSorcery.core.SIP;
+using SIPSorcery.core.SIPCDR;
+using SIPSorcery.core.SIPTransactions;
+
+namespace SIPSorcery.app.SIPUserAgents
 {
     public delegate void SIPUASDelegate(ISIPServerUserAgent uas);
 

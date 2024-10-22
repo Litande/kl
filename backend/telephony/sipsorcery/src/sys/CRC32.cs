@@ -3,7 +3,7 @@
 using System;
 using System.Security.Cryptography;
 
-namespace SIPSorcery.Sys
+namespace SIPSorcery.sys
 {
     public class Crc32 : HashAlgorithm
     {

@@ -1,4 +1,4 @@
-﻿namespace Plat4Me.Dial.Statistic.Api.Application.Common;
+﻿namespace KL.Statistics.Application.Common;
 
 public static class CacheKeys
 {

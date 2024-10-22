@@ -1,9 +1,9 @@
-﻿using Microsoft.EntityFrameworkCore;
-using Plat4Me.Dial.Statistic.Api.Application.Models;
+﻿using KL.Statistics.Application.Models;
+using Microsoft.EntityFrameworkCore;
 using Redis.OM;
 using Redis.OM.Searching;
 
-namespace Plat4Me.Dial.Statistic.Api.DAL.Repositories;
+namespace KL.Statistics.DAL.Repositories;
 
 public class QueueLeadsCacheRepository : IQueueLeadsCacheRepository
 {

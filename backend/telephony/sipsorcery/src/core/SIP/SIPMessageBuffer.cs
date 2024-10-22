@@ -17,9 +17,9 @@
 using System;
 using System.Text;
 using Microsoft.Extensions.Logging;
-using SIPSorcery.Sys;
+using SIPSorcery.sys;
 
-namespace SIPSorcery.SIP
+namespace SIPSorcery.core.SIP
 {
     /// <summary>
     /// Represents an incoming message before having determined whether it is a request or a response.
@@ -307,8 +307,8 @@ namespace SIPSorcery.SIP
             }
             else
             {
-                byte[] contentHeaderBytes = sipEncoding.GetBytes(m_CRLF + SIPSorcery.SIP.SIPHeaders.SIP_HEADER_CONTENTLENGTH.ToUpper());
-                byte[] compactContentHeaderBytes = sipEncoding.GetBytes(m_CRLF + SIPSorcery.SIP.SIPHeaders.SIP_COMPACTHEADER_CONTENTLENGTH.ToUpper());
+                byte[] contentHeaderBytes = sipEncoding.GetBytes(m_CRLF + SIP.SIPHeaders.SIP_HEADER_CONTENTLENGTH.ToUpper());
+                byte[] compactContentHeaderBytes = sipEncoding.GetBytes(m_CRLF + SIP.SIPHeaders.SIP_COMPACTHEADER_CONTENTLENGTH.ToUpper());
 
                 int inContentHeaderPosn = 0;
                 int inCompactContentHeaderPosn = 0;

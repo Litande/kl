@@ -17,10 +17,12 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using Microsoft.Extensions.Logging;
-using SIPSorcery.SIP.App;
-using SIPSorcery.Sys;
+using SIPSorcery.app.Media;
+using SIPSorcery.net.DtlsSrtp.Transform;
+using SIPSorcery.net.SDP;
+using SIPSorcery.sys;
 
-namespace SIPSorcery.Net
+namespace SIPSorcery.net.DtlsSrtp
 {
     public sealed class SrtpHandler
     {

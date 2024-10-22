@@ -1,6 +1,6 @@
-﻿using Plat4Me.DialClientApi.Persistent.Entities;
+﻿using KL.Manager.API.Persistent.Entities;
 
-namespace Plat4Me.DialClientApi.Persistent.Seed;
+namespace KL.Manager.API.Persistent.Seed;
 
 public static class SeedClient
 {

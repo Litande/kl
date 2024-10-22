@@ -23,7 +23,7 @@ using System.Text;
 using System.Threading;
 using Microsoft.Extensions.Logging;
 
-namespace SIPSorcery.Sys
+namespace SIPSorcery.sys.Crypto
 {
     public class Crypto
     {

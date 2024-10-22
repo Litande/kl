@@ -16,9 +16,12 @@
 using System;
 using System.Linq;
 using Microsoft.Extensions.Logging;
-using SIPSorcery.Sys;
+using SIPSorcery.app.SIPUserAgents;
+using SIPSorcery.core.SIP;
+using SIPSorcery.sys;
+using SIPSorcery.sys.Crypto;
 
-namespace SIPSorcery.SIP.App
+namespace SIPSorcery.app.SIPRequestAuthoriser
 {
     public class SIPRequestAuthenticator
     {

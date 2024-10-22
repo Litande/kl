@@ -1,7 +1,8 @@
 // using Prometheus;
 // using Plat4Me.Core.HealthCheck;
+
+using KL.Call.Mixer.App;
 using Serilog;
-using Plat4Me.DialCallRecordMixer.App;
 
 var builder = WebApplication.CreateBuilder(args);
 //Services

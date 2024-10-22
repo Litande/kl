@@ -1,7 +1,7 @@
-﻿using Microsoft.AspNetCore.Identity;
-using Plat4Me.DialAgentApi.Persistent.Seed.Authentication;
+﻿using KL.Agent.API.Persistent.Seed.Authentication;
+using Microsoft.AspNetCore.Identity;
 
-namespace Plat4Me.DialAgentApi.Persistent.Seed;
+namespace KL.Agent.API.Persistent.Seed;
 
 public static class DbDataInitializer
 {

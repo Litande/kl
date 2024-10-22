@@ -1,13 +1,10 @@
-using Microsoft.Extensions.Options;
-using Moq;
-using Plat4Me.DialLeadCaller.Application.Models.Requests;
-using Plat4Me.DialLeadCaller.Infrastructure.App;
-using Plat4Me.DialLeadCaller.Infrastructure.Clients;
 using System.Net.Http;
 using System.Threading.Tasks;
+using Microsoft.Extensions.Options;
+using Moq;
 using Xunit;
 
-namespace Plat4Me.DialLeadCaller.Tests;
+namespace KL.Caller.Leads.Tests;
 
 public class LeadRuleEngineClientTests
 {

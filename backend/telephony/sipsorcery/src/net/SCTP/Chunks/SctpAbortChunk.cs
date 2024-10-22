@@ -17,12 +17,9 @@
 // BSD 3-Clause "New" or "Revised" License, see included LICENSE.md file.
 //-----------------------------------------------------------------------------
 
-using System;
 using System.Linq;
-using System.Collections.Generic;
-using System.Text;
 
-namespace SIPSorcery.Net
+namespace SIPSorcery.net.SCTP.Chunks
 {
     /// <summary>
     /// The ABORT chunk is sent to the peer of an association to close the

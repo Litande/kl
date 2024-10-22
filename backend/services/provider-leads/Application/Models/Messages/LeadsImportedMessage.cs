@@ -1,4 +1,4 @@
-﻿namespace Plat4Me.DialLeadProvider.Application.Models.Messages;
+﻿namespace KL.Provider.Leads.Application.Models.Messages;
 
 public record LeadsImportedMessage(
     IEnumerable<long> ClientIds)

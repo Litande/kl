@@ -16,7 +16,7 @@
 using System;
 using Microsoft.Extensions.Logging;
 
-namespace SIPSorcery.Sys
+namespace SIPSorcery.sys
 {
     public enum StorageTypes
     {

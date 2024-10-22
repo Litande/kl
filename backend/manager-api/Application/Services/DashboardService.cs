@@ -1,11 +1,10 @@
-﻿using Microsoft.Extensions.Logging;
-using Plat4Me.DialClientApi.Application.Models.Responses.Dashboard;
-using System.Globalization;
-using Plat4Me.DialClientApi.Application.Enums;
-using Plat4Me.DialClientApi.Application.Services.Interfaces;
-using Plat4Me.DialClientApi.Persistent.Repositories.Interfaces;
+﻿using System.Globalization;
+using KL.Manager.API.Application.Enums;
+using KL.Manager.API.Application.Models.Responses.Dashboard;
+using KL.Manager.API.Application.Services.Interfaces;
+using KL.Manager.API.Persistent.Repositories.Interfaces;
 
-namespace Plat4Me.DialClientApi.Application.Services;
+namespace KL.Manager.API.Application.Services;
 
 public class DashboardService : IDashboardService
 {

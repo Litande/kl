@@ -1,4 +1,4 @@
-﻿namespace Plat4Me.Dial.Statistic.Api.Application.SignalR;
+﻿namespace KL.Statistics.Application.SignalR;
 
 public class SignalROptions
 {

@@ -1,7 +1,7 @@
-﻿using Microsoft.AspNetCore.Mvc;
-using Plat4Me.DialClientApi.Application.Models.Requests.Click2Call;
+﻿using KL.Manager.API.Application.Models.Requests.Click2Call;
+using Microsoft.AspNetCore.Mvc;
 
-namespace Plat4Me.DialClientApi.Controllers;
+namespace KL.Manager.API.Controllers;
 
 [Route("click2call")]
 public class Click2CallController : Controller

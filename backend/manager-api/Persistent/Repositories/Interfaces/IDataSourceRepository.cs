@@ -1,6 +1,6 @@
-﻿using Plat4Me.DialClientApi.Persistent.Entities;
+﻿using KL.Manager.API.Persistent.Entities;
 
-namespace Plat4Me.DialClientApi.Persistent.Repositories.Interfaces;
+namespace KL.Manager.API.Persistent.Repositories.Interfaces;
 
 public interface IDataSourceRepository
 {

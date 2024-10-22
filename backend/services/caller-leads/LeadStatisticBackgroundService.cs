@@ -1,11 +1,8 @@
-﻿using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.Hosting;
-using Microsoft.Extensions.Logging;
+﻿using KL.Caller.Leads.App;
+using KL.Caller.Leads.Services.Contracts;
 using Microsoft.Extensions.Options;
-using Plat4Me.DialLeadCaller.Application.Services.Contracts;
-using Plat4Me.DialLeadCaller.Infrastructure.App;
 
-namespace Plat4Me.DialLeadCaller.Infrastructure;
+namespace KL.Caller.Leads;
 
 public class LeadStatisticBackgroundService : BackgroundService
 {

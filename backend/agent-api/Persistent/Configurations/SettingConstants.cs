@@ -1,6 +1,6 @@
-﻿using Plat4Me.DialAgentApi.Application.Enums;
+﻿using KL.Agent.API.Application.Enums;
 
-namespace Plat4Me.DialAgentApi.Persistent.Configurations;
+namespace KL.Agent.API.Persistent.Configurations;
 
 public static class SettingConstants
 {

@@ -1,4 +1,4 @@
-﻿namespace Plat4Me.DialLeadCaller.Application.Models.Requests;
+﻿namespace KL.Caller.Leads.Models.Requests;
 
 public record GetNextLeadRequest(
     long LeadQueueId,

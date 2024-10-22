@@ -16,9 +16,11 @@
 using System;
 using System.Net;
 using Microsoft.Extensions.Logging;
-using SIPSorcery.Sys;
+using SIPSorcery.core.SIPCDR;
+using SIPSorcery.core.SIPTransactions;
+using SIPSorcery.sys;
 
-namespace SIPSorcery.SIP
+namespace SIPSorcery.core.SIP
 {
     public enum SIPDialogueStateEnum
     {

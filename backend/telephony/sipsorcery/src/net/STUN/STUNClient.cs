@@ -18,9 +18,10 @@ using System.Net;
 using System.Net.Sockets;
 using System.Threading;
 using Microsoft.Extensions.Logging;
-using SIPSorcery.Sys;
+using SIPSorcery.net.STUN.STUNAttributes;
+using SIPSorcery.sys;
 
-namespace SIPSorcery.Net
+namespace SIPSorcery.net.STUN
 {
     /// <summary>
     /// Methods to resolve the public IP address and port information of the client.

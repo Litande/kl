@@ -1,4 +1,4 @@
-﻿namespace Plat4Me.DialClientApi.Application.Models.Responses.LeadQueues;
+﻿namespace KL.Manager.API.Application.Models.Responses.LeadQueues;
 
 public record LeadQueueItemResponse(
     long LeadQueueId,

@@ -1,9 +1,9 @@
-﻿using Microsoft.EntityFrameworkCore;
-using Plat4Me.DialClientApi.Application.Extensions;
-using Plat4Me.DialClientApi.Application.Models.Responses.Team;
-using Plat4Me.DialClientApi.Persistent.Repositories.Interfaces;
+﻿using KL.Manager.API.Application.Extensions;
+using KL.Manager.API.Application.Models.Responses.Team;
+using KL.Manager.API.Persistent.Repositories.Interfaces;
+using Microsoft.EntityFrameworkCore;
 
-namespace Plat4Me.DialClientApi.Persistent.Repositories;
+namespace KL.Manager.API.Persistent.Repositories;
 
 public class TeamRepository : ITeamRepository
 {

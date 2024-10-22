@@ -1,9 +1,9 @@
 ﻿using System.Text.Json.Nodes;
-using Plat4Me.DialClientApi.Application.Models.Requests.Rule;
-using Plat4Me.DialClientApi.Application.Models.Responses.Rule;
-using Plat4Me.DialClientApi.Persistent.Entities;
+using KL.Manager.API.Application.Models.Requests.Rule;
+using KL.Manager.API.Application.Models.Responses.Rule;
+using KL.Manager.API.Persistent.Entities;
 
-namespace Plat4Me.DialClientApi.Application.Extensions;
+namespace KL.Manager.API.Application.Extensions;
 
 public static class RuleExtensions
 {

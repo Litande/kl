@@ -1,10 +1,10 @@
 ﻿using System.Globalization;
-using Plat4Me.DialAgentApi.Application.Enums;
-using Plat4Me.DialAgentApi.Application.Extensions;
-using Plat4Me.DialAgentApi.Application.Models.Responses.Common;
-using Plat4Me.DialAgentApi.Persistent.Repositories.Interfaces;
+using KL.Agent.API.Application.Enums;
+using KL.Agent.API.Application.Extensions;
+using KL.Agent.API.Application.Models.Responses.Common;
+using KL.Agent.API.Persistent.Repositories.Interfaces;
 
-namespace Plat4Me.DialAgentApi.Persistent.Repositories;
+namespace KL.Agent.API.Persistent.Repositories;
 
 public class CommonsRepository : ICommonsRepository
 {

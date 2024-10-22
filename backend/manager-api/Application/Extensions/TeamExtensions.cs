@@ -1,9 +1,9 @@
-﻿using Plat4Me.DialClientApi.Application.Enums;
-using Plat4Me.DialClientApi.Application.Models.Responses.Team;
-using Plat4Me.DialClientApi.Persistent.Entities;
-using Plat4Me.DialClientApi.Persistent.Entities.Cache;
+﻿using KL.Manager.API.Application.Enums;
+using KL.Manager.API.Application.Models.Responses.Team;
+using KL.Manager.API.Persistent.Entities;
+using KL.Manager.API.Persistent.Entities.Cache;
 
-namespace Plat4Me.DialClientApi.Application.Extensions;
+namespace KL.Manager.API.Application.Extensions;
 
 public static class TeamExtensions
 {

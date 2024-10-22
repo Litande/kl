@@ -18,9 +18,13 @@
 
 using System;
 using Microsoft.Extensions.Logging;
-using SIPSorcery.Sys;
+using SIPSorcery.app.SIPRequestAuthoriser;
+using SIPSorcery.core.SIP;
+using SIPSorcery.core.SIPCDR;
+using SIPSorcery.core.SIPTransactions;
+using SIPSorcery.sys;
 
-namespace SIPSorcery.SIP.App
+namespace SIPSorcery.app.SIPUserAgents
 {
     public class SIPNonInviteServerUserAgent : ISIPServerUserAgent
     {

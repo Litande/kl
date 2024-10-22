@@ -1,7 +1,7 @@
 ﻿using System.Text.Json;
 using System.Text.Json.Serialization;
 
-namespace Plat4Me.DialRuleEngine.Application.Extensions;
+namespace KL.Engine.Rule.Extensions;
 
 public static class JsonSettingsExtensions
 {

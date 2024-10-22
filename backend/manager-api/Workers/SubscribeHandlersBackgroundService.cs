@@ -1,15 +1,15 @@
 ﻿using System.Text.Json;
+using KL.Manager.API.Application.Configurations;
+using KL.Manager.API.Application.Handlers;
+using KL.Manager.API.Application.Handlers.LeadGroups;
+using KL.Manager.API.Application.Handlers.LiveTracking;
+using KL.Manager.API.Application.Models.Messages.Agents;
+using KL.Manager.API.Application.Models.Messages.LeadGroups;
+using KL.Manager.API.Application.Models.Messages.RuleEngine;
 using Microsoft.Extensions.Options;
 using Plat4me.Core.Nats;
-using Plat4Me.DialClientApi.Application.Configurations;
-using Plat4Me.DialClientApi.Application.Handlers;
-using Plat4Me.DialClientApi.Application.Handlers.LeadGroups;
-using Plat4Me.DialClientApi.Application.Handlers.LiveTracking;
-using Plat4Me.DialClientApi.Application.Models.Messages.Agents;
-using Plat4Me.DialClientApi.Application.Models.Messages.LeadGroups;
-using Plat4Me.DialClientApi.Application.Models.Messages.RuleEngine;
 
-namespace Plat4Me.DialClientApi.Workers;
+namespace KL.Manager.API.Workers;
 
 public class SubscribeHandlersBackgroundService : BackgroundService
 {

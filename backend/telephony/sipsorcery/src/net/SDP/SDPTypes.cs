@@ -19,7 +19,7 @@
 
 using System;
 
-namespace SIPSorcery.Net
+namespace SIPSorcery.net.SDP
 {
     public enum SDPMediaTypesEnum
     {

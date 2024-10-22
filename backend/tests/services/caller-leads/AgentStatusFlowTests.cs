@@ -2,12 +2,9 @@
 using System.Threading;
 using System.Threading.Tasks;
 using Moq;
-using Plat4Me.DialLeadCaller.Application.Enums;
-using Plat4Me.DialLeadCaller.Application.Models;
-using Plat4Me.DialLeadCaller.Application.Models.Messages;
 using Xunit;
 
-namespace Plat4Me.DialLeadCaller.Tests;
+namespace KL.Caller.Leads.Tests;
 
 public class AgentStatusFlowTests : AgentStatusFlowTestsFixture
 {

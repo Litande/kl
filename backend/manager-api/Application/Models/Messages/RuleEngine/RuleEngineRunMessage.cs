@@ -1,3 +1,3 @@
-namespace Plat4Me.DialClientApi.Application.Models.Messages.RuleEngine;
+namespace KL.Manager.API.Application.Models.Messages.RuleEngine;
 
 public record RuleEngineRunMessage(string Initiator);

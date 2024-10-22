@@ -24,9 +24,10 @@
  *
  * @author Lubomir Marinov (translation of ITU-T C source code to Java)
  */
+
 using System.IO;
 
-namespace SIPSorcery.Media.G729Codec
+namespace SIPSorcery.app.Media.Codecs.G729Codec
 {
     public class Util
     {

@@ -1,8 +1,7 @@
-using RulesEngine.Models;
-using Plat4Me.DialRuleEngine.Application.Enums;
-using Plat4Me.DialRuleEngine.Application.RuleEngine.Contracts;
+using KL.Engine.Rule.Enums;
+using KL.Engine.Rule.RuleEngine.Contracts;
 
-namespace Plat4Me.DialRuleEngine.Application.RuleEngine.Conditions;
+namespace KL.Engine.Rule.RuleEngine.Conditions;
 
 public interface IRuleCondition
 {

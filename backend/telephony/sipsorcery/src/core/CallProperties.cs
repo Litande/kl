@@ -15,9 +15,10 @@
 
 using System;
 using System.Text.RegularExpressions;
-using SIPSorcery.Sys;
+using SIPSorcery.core.SIP;
+using SIPSorcery.sys.Crypto;
 
-namespace SIPSorcery.SIP
+namespace SIPSorcery.core
 {
     public class CallProperties
     {

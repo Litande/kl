@@ -1,7 +1,7 @@
-﻿using Plat4Me.DialClientApi.Persistent.Entities;
-using Plat4Me.DialClientApi.Persistent.Entities.Projections;
+﻿using KL.Manager.API.Persistent.Entities;
+using KL.Manager.API.Persistent.Entities.Projections;
 
-namespace Plat4Me.DialClientApi.Application.Extensions;
+namespace KL.Manager.API.Application.Extensions;
 
 public static class AgentExtensions
 {

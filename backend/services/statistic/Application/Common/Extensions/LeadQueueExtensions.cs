@@ -1,8 +1,8 @@
-﻿using Plat4Me.Dial.Statistic.Api.Application.Models;
-using Plat4Me.Dial.Statistic.Api.Application.Models.Entities;
-using Plat4Me.Dial.Statistic.Api.Application.Models.Responses;
+﻿using KL.Statistics.Application.Models;
+using KL.Statistics.Application.Models.Entities;
+using KL.Statistics.Application.Models.Responses;
 
-namespace Plat4Me.Dial.Statistic.Api.Application.Common.Extensions;
+namespace KL.Statistics.Application.Common.Extensions;
 
 public static class LeadQueueExtensions
 {

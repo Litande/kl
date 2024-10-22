@@ -1,13 +1,8 @@
-﻿using FluentAssertions;
-using Microsoft.AspNetCore.Mvc.Testing;
-using Plat4Me.DialRuleEngine.Application.Models;
-using System.Collections.Generic;
-using System.Net.Http;
-using System.Text.Json;
+﻿using System.Collections.Generic;
 using System.Threading.Tasks;
 using Xunit;
 
-namespace Plat4Me.DialRuleEngine.Tests.IntegrationTests;
+namespace KL.Engine.Rule.Tests.IntegrationTests;
 
 public class LeadProcessingBackgroundServiceTests : LeadProcessingBackgroundServiceTestsFixture
 {

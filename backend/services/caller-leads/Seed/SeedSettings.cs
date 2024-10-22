@@ -1,11 +1,10 @@
 ﻿using System.Text.Json;
-using Plat4Me.DialLeadCaller.Application.Enums;
-using Plat4Me.DialLeadCaller.Application.Extensions;
-using Plat4Me.DialLeadCaller.Application.Models.Entities;
-using Plat4Me.DialLeadCaller.Application.Models.Entities.Settings;
-using Plat4Me.DialLeadCaller.Infrastructure;
+using KL.Caller.Leads.Enums;
+using KL.Caller.Leads.Extensions;
+using KL.Caller.Leads.Models.Entities;
+using KL.Caller.Leads.Models.Entities.Settings;
 
-namespace Plat4Me.DialLeadCaller.Seed;
+namespace KL.Caller.Leads.Seed;
 
 public static class SeedSettings
 {

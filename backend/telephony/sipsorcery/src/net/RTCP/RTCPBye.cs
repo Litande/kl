@@ -28,9 +28,9 @@
 
 using System;
 using System.Text;
-using SIPSorcery.Sys;
+using SIPSorcery.sys.Net;
 
-namespace SIPSorcery.Net
+namespace SIPSorcery.net.RTCP
 {
     /// <summary>
     /// RTCP Goodbye packet as defined in RFC3550. The BYE packet indicates 

@@ -1,7 +1,7 @@
-﻿using Microsoft.EntityFrameworkCore;
-using Plat4Me.Dial.Statistic.Api.Application.Models.Entities;
+﻿using KL.Statistics.Application.Models.Entities;
+using Microsoft.EntityFrameworkCore;
 
-namespace Plat4Me.Dial.Statistic.Api.DAL.Repositories;
+namespace KL.Statistics.DAL.Repositories;
 
 public class ClientRepository: IClientRepository
 {
