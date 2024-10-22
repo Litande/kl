@@ -4,6 +4,7 @@ using KL.Engine.Rule.Models.Entities;
 using KL.Engine.Rule.Models.Messages;
 using KL.Engine.Rule.Repositories;
 using KL.Engine.Rule.Services.Contracts;
+using KL.Nats;
 using Microsoft.Extensions.Options;
 
 namespace KL.Engine.Rule.Handlers;

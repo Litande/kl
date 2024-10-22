@@ -1,5 +1,8 @@
 ﻿using KL.Engine.Rule.Enums;
 using KL.Engine.Rule.Models;
+using Microsoft.EntityFrameworkCore;
+using Redis.OM;
+using Redis.OM.Searching;
 
 namespace KL.Engine.Rule.Repositories;
 
@@ -19,8 +22,7 @@ public class QueueLeadsCacheRepository : IQueueLeadsCacheRepository
         long clientId,
         CancellationToken ct = default)
     {
-        var items = await _queueLeadCache
-            .Where(r => r.ClientId == clientId)
+        var items = await Queryable.Where(_queueLeadCache, r => r.ClientId == clientId)
             .ToArrayAsync(ct);
 
         return items;

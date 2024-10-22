@@ -11,5 +11,5 @@ public record LeadFeedbackCallFailedMessage(
     LeadStatusTypes LeadStatus,
     DateTimeOffset? RemindOn = null)
 {
-    protected string Initiator => nameof(DialLeadCaller);
+    protected string Initiator => nameof(KL.Caller);
 }

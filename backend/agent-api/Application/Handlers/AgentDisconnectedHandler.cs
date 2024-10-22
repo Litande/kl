@@ -2,8 +2,8 @@ using KL.Agent.API.Application.Configurations;
 using KL.Agent.API.Application.Enums;
 using KL.Agent.API.Application.Services;
 using KL.Agent.API.Persistent.Repositories.Interfaces;
+using KL.Nats;
 using Microsoft.Extensions.Options;
-using Plat4me.Core.Nats;
 
 namespace KL.Agent.API.Application.Handlers;
 

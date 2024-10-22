@@ -1,4 +1,5 @@
 ﻿using KL.Engine.Rule.Enums;
+using Redis.OM.Modeling;
 
 namespace KL.Engine.Rule.Models;
 

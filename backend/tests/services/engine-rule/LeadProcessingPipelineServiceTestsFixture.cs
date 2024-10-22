@@ -1,8 +1,17 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text.Json;
 using System.Text.Json.Serialization;
 using System.Threading.Tasks;
+using KL.Engine.Rule.Enums;
+using KL.Engine.Rule.Extensions;
+using KL.Engine.Rule.Models;
+using KL.Engine.Rule.Models.Entities;
+using KL.Engine.Rule.Repositories;
+using KL.Engine.Rule.RuleEngine.Contracts;
+using KL.Engine.Rule.RuleEngine.Enums;
+using KL.Engine.Rule.RuleEngine.MicrosoftEngine;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
 using Moq;
@@ -13,7 +22,7 @@ public class LeadProcessingPipelineServiceTestsFixture : TestBase
 {
     protected readonly Mock<ILogger<MicrosoftEngineMapper>> RuleMapperLoggerMock;
     protected readonly Mock<ILogger<MicrosoftRuleEngineProcessingService>> RuleServiceLoggerMock;
-    protected readonly DbContextOptions<DialDbContext> DbContextOptions;
+    protected readonly DbContextOptions<KlDbContext> DbContextOptions;
     protected readonly MicrosoftRuleEngineProcessingService RuleEngine;
     protected readonly Mock<MicrosoftEngineMapper> EngineMapper;
 
@@ -31,7 +40,7 @@ public class LeadProcessingPipelineServiceTestsFixture : TestBase
         EmptySettingsRepositoryMock = new Mock<ISettingsRepository>();
         EngineMapper = new Mock<MicrosoftEngineMapper>(RuleMapperLoggerMock.Object);
 
-        DbContextOptions = new DbContextOptionsBuilder<DialDbContext>()
+        DbContextOptions = new DbContextOptionsBuilder<KlDbContext>()
             .UseInMemoryDatabase(databaseName: "DialDbContextInMemory")
             .Options;
 
@@ -665,7 +674,7 @@ public class LeadProcessingPipelineServiceTestsFixture : TestBase
 
     protected List<RuleDto> GetQueueFakeRulesCampaignLeadTotalCalls(int x, int? y, ComparisonOperation operation)
     {
-        using (var context = new DialDbContext(DbContextOptions))
+        using (var context = new KlDbContext(DbContextOptions))
         {
             context.CallDetailRecords.RemoveRange(context.CallDetailRecords.ToArray());
 
@@ -768,7 +777,7 @@ public class LeadProcessingPipelineServiceTestsFixture : TestBase
     protected List<CallDetailRecord> GenerateCdRs(IEnumerable<TrackedLead> leads)
     {
         var cdrList = new List<CallDetailRecord>();
-        using var context = new DialDbContext(DbContextOptions);
+        using var context = new KlDbContext(DbContextOptions);
         context.CallDetailRecords.RemoveRange(context.CallDetailRecords.ToArray());
         var r = new Random();
         foreach (var lead in leads)

@@ -1,5 +1,8 @@
 ﻿using System;
 using System.Threading.Tasks;
+using KL.Caller.Leads.Enums;
+using KL.Caller.Leads.Models.Messages;
+using KL.Caller.Leads.Repositories;
 using Microsoft.EntityFrameworkCore;
 using Moq;
 using Xunit;
@@ -8,11 +11,11 @@ namespace KL.Caller.Leads.Tests;
 
 public class CalculateCallDurationTests
 {
-    private readonly DbContextOptions<DialDbContext> _dbContextOptions;
+    private readonly DbContextOptions<KlDbContext> _dbContextOptions;
 
     public CalculateCallDurationTests()
     {
-        _dbContextOptions = new DbContextOptionsBuilder<DialDbContext>()
+        _dbContextOptions = new DbContextOptionsBuilder<KlDbContext>()
             .UseInMemoryDatabase(databaseName: "DialDbContextInMemory")
             .Options;
     }
@@ -32,7 +35,7 @@ public class CalculateCallDurationTests
         long? expectedCallDurationSeconds)
     {
         var userRepositoryMock = new Mock<IUserRepository>();
-        await using var context = new DialDbContext(_dbContextOptions);
+        await using var context = new KlDbContext(_dbContextOptions);
         var repo = new CDRRepository(context, userRepositoryMock.Object);
         var rand = new Random();
 

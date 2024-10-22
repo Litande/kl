@@ -23,10 +23,10 @@ public class IsImportedCondition : RuleConditionBase, IRuleCondition
     )
     { }
 
-    public override Task<Rule> Prepare(RuleGroupData data)
+    public override Task<EngineRule> Prepare(RuleGroupData data)
     {
         var ruleName = GenerateUniqueRuleName(data.Name);
         var expression = $"{LeadParam}.SystemStatus == {(int)LeadSystemStatusTypes.Imported}";
-        return Task.FromResult(new Rule { RuleName = ruleName, Expression = expression });
+        return Task.FromResult(new EngineRule { RuleName = ruleName, Expression = expression });
     }
 }

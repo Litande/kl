@@ -5,9 +5,9 @@ namespace KL.Provider.Leads.Persistent.Repositories;
 
 public class LeadDataSourceMapRepository : ILeadDataSourceMapRepository
 {
-    private readonly DialDbContext _context;
+    private readonly KlDbContext _context;
 
-    public LeadDataSourceMapRepository(DialDbContext context)
+    public LeadDataSourceMapRepository(KlDbContext context)
     {
         _context = context;
     }

@@ -134,12 +134,16 @@ namespace SIPSorcery.net.ICE
                 var bytesToCompare = (lengthInBits >> 3);
 
                 if (addr == null || addr.Length < bytesToCompare || tomatch == null || tomatch.Length < bytesToCompare)
+                {
                     return false;
+                }
 
                 for (int i = 0; i < bytesToCompare; i++)
                 {
                     if (addr[i] != tomatch[i])
+                    {
                         return false;
+                    }
                 }
                 return true;
             }

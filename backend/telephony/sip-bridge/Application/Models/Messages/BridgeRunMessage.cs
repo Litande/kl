@@ -4,5 +4,5 @@ public record BridgeRunMessage(
     string BridgeId,
     string BridgeAddr)
 {
-    public string Initiator => nameof(DialSipBridge);
+    public string Initiator => nameof(KL.SIP.Bridge);
 }

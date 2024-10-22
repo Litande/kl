@@ -2,5 +2,5 @@
 
 public record LeadsStatisticsUpdateMessage(long ClientId)
 {
-    public string Initiator => nameof(DialLeadCaller);
+    public string Initiator => nameof(KL.Caller);
 }

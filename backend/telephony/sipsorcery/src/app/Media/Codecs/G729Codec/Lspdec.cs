@@ -96,7 +96,9 @@ namespace SIPSorcery.app.Media.Codecs.G729Codec
         {
             // need this to initialize freq_prev
             for (var i = 0; i < freq_prev.Length; i++)
+            {
                 freq_prev[i] = new float[M];
+            }
         }
 
         /**
@@ -108,7 +110,9 @@ namespace SIPSorcery.app.Media.Codecs.G729Codec
             int i;
 
             for (i = 0; i < MA_NP; i++)
+            {
                 Util.copy(FREQ_PREV_RESET, freq_prev[i], M);
+            }
 
             prev_ma = 0;
 
@@ -120,7 +124,10 @@ namespace SIPSorcery.app.Media.Codecs.G729Codec
             var maskIt = i < 0;
             i = i >> j;
             if (maskIt)
+            {
                 i &= 0x7FFFFFFF;
+            }
+
             return i;
         }
 
@@ -214,7 +221,9 @@ namespace SIPSorcery.app.Media.Codecs.G729Codec
             /* Convert LSFs to LSPs */
 
             for (i = 0; i < M; i++)
+            {
                 lsp_q[i] = (float)Math.Cos(lsp_q[i]);
+            }
         }
     }
 }

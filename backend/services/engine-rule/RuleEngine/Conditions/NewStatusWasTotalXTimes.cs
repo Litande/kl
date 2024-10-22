@@ -32,7 +32,7 @@ public class NewStatusWasTotalXTimes : RuleConditionBase
     )
     { }
 
-    public override Task<Rule> Prepare(RuleGroupData data) //TODO check impl
+    public override Task<EngineRule> Prepare(RuleGroupData data) //TODO check impl
     {
         ValidateFields(data);
         ValidateComparison(data);
@@ -40,13 +40,13 @@ public class NewStatusWasTotalXTimes : RuleConditionBase
         return PrepareWithSingleParam(data.Name, data.Fields![0], data.ComparisonOperation!.Value);
     }
 
-    private static Task<Rule> PrepareWithSingleParam(string name, RuleValueData? param1, ComparisonOperation operation)
+    private static Task<EngineRule> PrepareWithSingleParam(string name, RuleValueData? param1, ComparisonOperation operation)
     {
         var param1Value = ParseInt(param1, name);
         var comparison = DefineComparison(operation);
         var expression = $"ConditionsHelper.LastStatusTimes({LeadParam}) {comparison} {param1Value}";
 
         var ruleName = GenerateUniqueRuleName(name);
-        return Task.FromResult(new Rule { RuleName = ruleName, Expression = expression });
+        return Task.FromResult(new EngineRule { RuleName = ruleName, Expression = expression });
     }
 }

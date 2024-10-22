@@ -1,10 +1,10 @@
 ﻿using KL.Statistics.Application.Common.Enums;
+using Microsoft.AspNetCore.Identity;
 
 namespace KL.Statistics.Application.Models.Entities;
 
-public class User
+public class User: IdentityUser<long>
 {
-    public long UserId { get; set; }
     public long ClientId { get; set; }
     public RoleTypes RoleType { get; set; } = RoleTypes.Agent;
     public string FirstName { get; set; } = null!;

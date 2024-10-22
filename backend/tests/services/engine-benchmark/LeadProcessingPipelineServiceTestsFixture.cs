@@ -1,24 +1,32 @@
 ﻿using System.Text.Json;
 using Microsoft.Extensions.Logging;
 using Moq;
+using RulesEngine.Models;
+using KL.Engine.Rule.Enums;
+using KL.Engine.Rule.Models;
+using KL.Engine.Rule.RuleEngine;
+using KL.Engine.Rule.RuleEngine.Contracts;
+using KL.Engine.Rule.RuleEngine.Enums;
+using KL.Engine.Rule.RuleEngine.MicrosoftEngine;
+using KL.Engine.Rule.Services.Contracts;
 
 namespace KL.Engine.Benchmark.Tests;
 
 public class LeadProcessingPipelineServiceTestsFixture
 {
     private const string InputName = "lead";
-    protected readonly Mock<ILogger<MicrosoftRuleEngineProcessingService>> RuleServiceLoggerMock;
+    protected readonly Mock<ILogger<MicrosoftRuleEngineProcessingService>> RuleserviceLoggerMock;
     protected readonly Mock<ILeadsQueueStore> LeadsQueueStore;
 
     public LeadProcessingPipelineServiceTestsFixture()
     {
-        RuleServiceLoggerMock = new Mock<ILogger<MicrosoftRuleEngineProcessingService>>();
+        RuleserviceLoggerMock = new Mock<ILogger<MicrosoftRuleEngineProcessingService>>();
         LeadsQueueStore = new Mock<ILeadsQueueStore>();
     }
 
     protected static List<RuleDto> GetQueueFakeRulesPreviousStatusAndChangeStatus()
     {
-        var ruleEntry = new RuleEntry()
+        var EngineRuleEntry = new RuleEntry()
         {
             Combination = new RuleCombinationData
             {
@@ -27,7 +35,7 @@ public class LeadProcessingPipelineServiceTestsFixture
                 {
                     new RuleGroupData()
                     {
-                        Name = RulesCondition.PreviousStatus,
+                        Name = RulesCondition.PreviousStatus.ToString(),
                         Fields = new List<RuleValueData>
                         {
                             new RuleValueData()
@@ -59,29 +67,29 @@ public class LeadProcessingPipelineServiceTestsFixture
 
         return new List<RuleDto>
         {
-            new(null, "QueueRules", JsonSerializer.Serialize(ruleEntry), 0),
+            new(null, "QueueRules", JsonSerializer.Serialize(EngineRuleEntry), 0),
         };
     }
 
     protected static List<RuleDto> GetQueueFakeRules70PrcEasyAnd30PrcExt(int totalCount = 50)
     {
-        var rules = new List<Rule>();
+        var Rules = new List<EngineRule>();
         var rand = new Random();
 
         for (var i = 0; i < totalCount / 3; i++)
         {
-            rules.Add(new Rule
+            Rules.Add(new EngineRule
             {
                 RuleName = "TestGetQueueIdExt_" + i,
                 Operator = "And",
                 Rules = new[]
                 {
-                    new Rule
+                    new EngineRule
                     {
                         RuleName = "TestSubGetQueueId_1_" + i,
                         Expression = $"{InputName}.Status == \"{(LeadStatusTypes)rand.Next(1, 29)}\"",
                     },
-                    new Rule
+                    new EngineRule
                     {
                         RuleName = "TestSubGetQueueId_2_" + i,
                         Expression = $"{InputName}.Score > {rand.Next(100, 10000)}",
@@ -100,7 +108,7 @@ public class LeadProcessingPipelineServiceTestsFixture
 
         for (var i = 0; i < totalCount / 3 * 2; i++)
         {
-            rules.Add(new Rule
+            Rules.Add(new EngineRule
             {
                 RuleName = "TestGetQueueId_" + i,
                 Expression = $"{InputName}.Status == \"{(LeadStatusTypes)rand.Next(1, 29)}\"",
@@ -115,7 +123,7 @@ public class LeadProcessingPipelineServiceTestsFixture
             });
         }
 
-        rules.Add(new Rule
+        Rules.Add(new EngineRule
         {
             RuleName = "TestGetDefaultQueueId",
             Expression = "true",
@@ -131,29 +139,29 @@ public class LeadProcessingPipelineServiceTestsFixture
 
         return new List<RuleDto>
         {
-            new(null, "QueueRules", JsonSerializer.Serialize(rules), 0),
+            new(null, "QueueRules", JsonSerializer.Serialize(Rules), 0),
         };
     }
 
     protected static List<RuleDto> GetScoreFakeRules70PrcEasyAnd30PrcExt(int totalCount = 50)
     {
-        var rules = new List<Rule>();
+        var Rules = new List<EngineRule>();
         var rand = new Random();
 
         for (var i = 0; i < totalCount / 3; i++)
         {
-            rules.Add(new Rule
+            Rules.Add(new EngineRule
             {
                 RuleName = "TestGetScoreExt_" + i,
                 Operator = "And",
                 Rules = new[]
                 {
-                    new Rule
+                    new EngineRule
                     {
                         RuleName = "TestSubGetScoreId_1_" + i,
                         Expression = $"{InputName}.Status == \"{(LeadStatusTypes)rand.Next(1, 29)}\"",
                     },
-                    new Rule
+                    new EngineRule
                     {
                         RuleName = "TestSubGetScoreId_2_" + i,
                         Expression = $"{InputName}.MinutesSinceRegistration <= {rand.Next(1, 50)} AND {InputName}.MinutesSinceRegistration > 0",
@@ -172,7 +180,7 @@ public class LeadProcessingPipelineServiceTestsFixture
 
         for (var i = 0; i < totalCount / 3 * 2; i++)
         {
-            rules.Add(new Rule
+            Rules.Add(new EngineRule
             {
                 RuleName = "TestGetScoreId_" + i,
                 Expression = $"{InputName}.MinutesSinceRegistration <= {rand.Next(1, 50)} AND {InputName}.MinutesSinceRegistration > 0",
@@ -187,7 +195,7 @@ public class LeadProcessingPipelineServiceTestsFixture
             });
         }
 
-        rules.Add(new Rule
+        Rules.Add(new EngineRule
         {
             RuleName = "TestGetDefaultScore",
             Expression = "true",
@@ -203,7 +211,7 @@ public class LeadProcessingPipelineServiceTestsFixture
 
         return new List<RuleDto>
         {
-            new(null, "ScoreRules", JsonSerializer.Serialize(rules), 0),
+            new(null, "ScoreRules", JsonSerializer.Serialize(Rules), 0),
         };
     }
 }

@@ -56,7 +56,7 @@ public static class ServiceCollectionExtensions
         };
 
         var connectionString = mysqlOptions.GetUrl("dial");
-        services.AddDbContextFactory<DialDbContext>(options => options.UseMySql(connectionString,
+        services.AddDbContextFactory<KlDbContext>(options => options.UseMySql(connectionString,
             ServerVersion.AutoDetect(connectionString),
             opt => opt.EnableRetryOnFailure(mysqlOptions.ConnectRetry)));
 

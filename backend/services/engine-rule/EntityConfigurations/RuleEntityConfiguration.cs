@@ -1,4 +1,6 @@
 ﻿using KL.Engine.Rule.Enums;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
 namespace KL.Engine.Rule.EntityConfigurations;
 

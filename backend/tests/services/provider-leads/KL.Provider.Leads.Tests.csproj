@@ -1,10 +1,12 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
     <PropertyGroup>
-        <TargetFramework>net6.0</TargetFramework>
+        <TargetFramework>net8.0</TargetFramework>
         <Nullable>enable</Nullable>
 
         <IsPackable>false</IsPackable>
+
+        <LangVersion>latestmajor</LangVersion>
     </PropertyGroup>
 
     <ItemGroup>
@@ -23,7 +25,7 @@
     </ItemGroup>
 
     <ItemGroup>
-        <ProjectReference Include="..\Plat4Me.DialLeadProvider\Plat4Me.DialLeadProvider.csproj"/>
+      <ProjectReference Include="..\..\..\services\provider-leads\KL.Provider.Leads.csproj" />
     </ItemGroup>
 
 </Project>

@@ -1,4 +1,5 @@
 ﻿using System.Text.Json.Serialization;
+using StackExchange.Redis;
 
 namespace KL.Engine.Rule.App;
 

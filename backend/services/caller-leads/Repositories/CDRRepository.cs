@@ -4,17 +4,18 @@ using KL.Caller.Leads.Extensions;
 using KL.Caller.Leads.Models;
 using KL.Caller.Leads.Models.Entities;
 using KL.Caller.Leads.Models.Messages;
+using Microsoft.EntityFrameworkCore;
 
 namespace KL.Caller.Leads.Repositories;
 
 public class CDRRepository : ICDRRepository
 {
-    private readonly DialDbContext _context;
+    private readonly KlDbContext _context;
 
     private readonly IUserRepository _userRepository;
 
     public CDRRepository(
-        DialDbContext context,
+        KlDbContext context,
         IUserRepository userRepository)
     {
         _context = context;

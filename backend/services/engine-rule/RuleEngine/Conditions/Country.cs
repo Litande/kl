@@ -2,6 +2,7 @@ using KL.Engine.Rule.Enums;
 using KL.Engine.Rule.Extensions;
 using KL.Engine.Rule.RuleEngine.Contracts;
 using KL.Engine.Rule.RuleEngine.Enums;
+using RulesEngine.Models;
 
 namespace KL.Engine.Rule.RuleEngine.Conditions;
 
@@ -28,7 +29,7 @@ public class CountryCondition : RuleConditionBase
     )
     { }
 
-    public override Task<Rule> Prepare(RuleGroupData data)
+    public override Task<EngineRule> Prepare(RuleGroupData data)
     {
         ValidateFields(data);
         ValidateComparison(data);
@@ -46,7 +47,7 @@ public class CountryCondition : RuleConditionBase
 
         var expression = $"{comparison}localParam1.Contains({LeadParam}.CountryCode) ";
 
-        return Task.FromResult(new Rule
+        return Task.FromResult(new EngineRule
         {
             RuleName = GenerateUniqueRuleName(data.Name),
             Expression = expression,

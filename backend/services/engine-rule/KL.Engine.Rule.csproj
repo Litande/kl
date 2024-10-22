@@ -1,26 +1,37 @@
 <Project Sdk="Microsoft.NET.Sdk.Web">
 
     <PropertyGroup>
-        <TargetFramework>net6.0</TargetFramework>
+        <TargetFramework>net8.0</TargetFramework>
         <Nullable>enable</Nullable>
         <ImplicitUsings>enable</ImplicitUsings>
         <DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
+        <LangVersion>latestmajor</LangVersion>
     </PropertyGroup>
 
     <ItemGroup>
-        <PackageReference Include="Plat4Me.Core.HealthCheck" Version="1.0.2" />
+        <PackageReference Include="DistributedLock.Redis" Version="1.0.3" />
         <PackageReference Include="prometheus-net.AspNetCore" Version="6.0.0" />
         <PackageReference Include="prometheus-net.AspNetCore.HealthChecks" Version="6.0.0" />
+        <PackageReference Include="Redis.OM" Version="0.7.5" />
+        <PackageReference Include="RulesEngine" Version="5.0.3" />
         <PackageReference Include="Serilog" Version="2.11.0" />
         <PackageReference Include="Serilog.Extensions.Hosting" Version="4.2.0" />
         <PackageReference Include="Serilog.Settings.Configuration" Version="3.3.0" />
         <PackageReference Include="Serilog.Sinks.Console" Version="4.0.1" />
         <PackageReference Include="Serilog.Sinks.Http" Version="8.0.0" />
+        <PackageReference Include="StackExchange.Redis" Version="2.8.16" />
         <PackageReference Include="Swashbuckle.AspNetCore" Version="6.4.0" />
     </ItemGroup>
 
     <ItemGroup>
         <InternalsVisibleTo Include="Plat4Me.DialRuleEngine.Tests" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\..\libraries\KL.Auth\KL.Auth.csproj" />
+      <ProjectReference Include="..\..\libraries\KL.HealthCheck\KL.HealthCheck.csproj" />
+      <ProjectReference Include="..\..\libraries\KL.MySql\KL.MySql.csproj" />
+      <ProjectReference Include="..\..\libraries\KL.Nats\KL.Nats.csproj" />
     </ItemGroup>
 
 </Project>

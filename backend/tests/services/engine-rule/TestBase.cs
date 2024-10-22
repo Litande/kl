@@ -3,6 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text.Json;
 using Castle.Components.DictionaryAdapter;
+using KL.Engine.Rule.Enums;
+using KL.Engine.Rule.Extensions;
+using KL.Engine.Rule.Models;
+using KL.Engine.Rule.RuleEngine.Contracts;
+using KL.Engine.Rule.RuleEngine.Enums;
 
 namespace KL.Engine.Rule.Tests;
 

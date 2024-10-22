@@ -1,28 +1,22 @@
 ﻿using KL.Caller.Leads.Enums;
 using KL.Caller.Leads.Models;
 using KL.Caller.Leads.Models.Entities;
+using Microsoft.EntityFrameworkCore;
 
 namespace KL.Caller.Leads.Repositories;
 
-public class UserRepository : IUserRepository
+public class UserRepository(KlDbContext context) : IUserRepository
 {
-    private readonly DialDbContext _context;
-
-    public UserRepository(DialDbContext context)
-    {
-        _context = context;
-    }
-
     public async Task<IDictionary<long, AgentScore>> GetAgentsWithScore(
         long clientId,
         CancellationToken ct = default)
     {
-        var q = _context.Users.ActiveAgents(clientId);
+        var q = context.Users.ActiveAgents(clientId);
 
         return await q
             .Select(x => new
             {
-                AgentId = x.UserId,
+                AgentId = x.Id,
                 Score = x.UserTags
                     .Where(p => p.Tag.Status == TagStatusTypes.Enable
                                 && (!p.ExpiredOn.HasValue
@@ -37,9 +31,9 @@ public class UserRepository : IUserRepository
 
     public async Task<User?> Get(long clientId, long userId, CancellationToken ct = default)
     {
-        var user = await _context.Users
+        var user = await context.Users
             .Where(x => x.ClientId == clientId
-                        && x.UserId == userId)
+                        && x.Id == userId)
             .FirstOrDefaultAsync(ct);
 
         return user;

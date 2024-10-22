@@ -9,7 +9,7 @@ namespace KL.Provider.Leads.Persistent.Repositories;
 
 public class LeadHistoryRepository : ILeadHistoryRepository
 {
-    private readonly DialDbContext _context;
+    private readonly KlDbContext _context;
 
     private readonly JsonSerializerOptions _jsonOptions = new()
     {
@@ -20,7 +20,7 @@ public class LeadHistoryRepository : ILeadHistoryRepository
         }
     };
 
-    public LeadHistoryRepository(DialDbContext context)
+    public LeadHistoryRepository(KlDbContext context)
     {
         _context = context;
     }

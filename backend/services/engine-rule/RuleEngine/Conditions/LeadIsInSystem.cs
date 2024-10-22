@@ -3,6 +3,7 @@ using KL.Engine.Rule.Extensions;
 using KL.Engine.Rule.Models;
 using KL.Engine.Rule.RuleEngine.Contracts;
 using KL.Engine.Rule.RuleEngine.Enums;
+using RulesEngine.Models;
 
 namespace KL.Engine.Rule.RuleEngine.Conditions;
 
@@ -28,7 +29,7 @@ public class LeadIsInSystemCondition : RuleConditionBase, IRuleCondition
     )
     { }
 
-    public override Task<Rule> Prepare(RuleGroupData data) //TODO check impl
+    public override Task<EngineRule> Prepare(RuleGroupData data) //TODO check impl
     {
         ValidateFields(data, requiredMinFieldsCount: 2);
         ValidateComparison(data);
@@ -52,7 +53,7 @@ public class LeadIsInSystemCondition : RuleConditionBase, IRuleCondition
 
         var ruleName = GenerateUniqueRuleName(data.Name);
         var expression = $"{LeadParam}.RegistrationTime {comparison} localParam1";
-        return Task.FromResult(new Rule
+        return Task.FromResult(new EngineRule
         {
             RuleName = ruleName,
             Expression = expression,

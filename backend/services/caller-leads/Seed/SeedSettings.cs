@@ -8,13 +8,13 @@ namespace KL.Caller.Leads.Seed;
 
 public static class SeedSettings
 {
-    public static void Seed(DialDbContext context, long clientId)
+    public static void Seed(KlDbContext context, long clientId)
     {
         CallFinishedReason(context, clientId);
         CallNaSettings(context, clientId);
     }
 
-    private static void CallFinishedReason(DialDbContext context, long clientId)
+    private static void CallFinishedReason(KlDbContext context, long clientId)
     {
         var entity = context.Settings.FirstOrDefault(r => r.Type == SettingTypes.CallFinishedReason && r.ClientId == clientId);
         if (entity is not null) return;
@@ -41,7 +41,7 @@ public static class SeedSettings
         context.SaveChanges();
     }
 
-    private static void CallNaSettings(DialDbContext context, long clientId)
+    private static void CallNaSettings(KlDbContext context, long clientId)
     {
         var entity = context.Settings.FirstOrDefault(r => r.Type == SettingTypes.CallNa && r.ClientId == clientId);
         if (entity is not null) return;

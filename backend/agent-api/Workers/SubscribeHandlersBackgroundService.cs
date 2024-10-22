@@ -2,8 +2,8 @@
 using KL.Agent.API.Application.Configurations;
 using KL.Agent.API.Application.Handlers;
 using KL.Agent.API.Application.Models.Messages;
+using KL.Nats;
 using Microsoft.Extensions.Options;
-using Plat4me.Core.Nats;
 
 namespace KL.Agent.API.Workers;
 

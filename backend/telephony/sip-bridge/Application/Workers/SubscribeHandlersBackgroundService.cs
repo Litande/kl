@@ -1,9 +1,9 @@
 ﻿using System.Text.Json;
+using KL.Nats;
 using KL.SIP.Bridge.Application.Configurations;
 using KL.SIP.Bridge.Application.Handlers;
 using KL.SIP.Bridge.Application.Models.Messages;
 using Microsoft.Extensions.Options;
-using Plat4me.Core.Nats;
 
 namespace KL.SIP.Bridge.Application.Workers;
 
@@ -37,7 +37,7 @@ public class SubscribeHandlersBackgroundService : BackgroundService
         {
             _logger.LogInformation("{Service} Starting", nameof(SubscribeHandlersBackgroundService));
 
-            SubHandler<IBridgeRegRequestHandler, BridgeRegRequestMessage>(new BridgeRegRequestMessage(Initiator: nameof(DialSipBridge)));
+            SubHandler<IBridgeRegRequestHandler, BridgeRegRequestMessage>(new BridgeRegRequestMessage(Initiator: nameof(KL.SIP.Bridge)));
 
             await _subscriber.SubscribeAsync<BridgeRegRequestMessage>(_natsSubOptions.BridgeRegRequest, SubHandler<IBridgeRegRequestHandler, BridgeRegRequestMessage>);
             await _subscriber.SubscribeAsync<CallToLeadMessage>(_natsSubOptions.TryCallToLead, SubHandler<ICallToLeadHandler, CallToLeadMessage>);

@@ -1,14 +1,15 @@
 ﻿using KL.Engine.Rule.Enums;
 using KL.Engine.Rule.Models.Entities;
+using Microsoft.EntityFrameworkCore;
 
 namespace KL.Engine.Rule.Repositories;
 
 public class LeadQueueRepository : ILeadQueueRepository
 {
-    private readonly IDbContextFactory<DialDbContext> _dbContextFactory;
+    private readonly IDbContextFactory<KlDbContext> _dbContextFactory;
 
     public LeadQueueRepository(
-        IDbContextFactory<DialDbContext> dbContextFactory)
+        IDbContextFactory<KlDbContext> dbContextFactory)
     {
         _dbContextFactory = dbContextFactory;
     }

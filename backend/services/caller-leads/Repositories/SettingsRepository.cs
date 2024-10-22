@@ -1,13 +1,14 @@
 ﻿using KL.Caller.Leads.Enums;
 using KL.Caller.Leads.Models.Entities;
+using Microsoft.EntityFrameworkCore;
 
 namespace KL.Caller.Leads.Repositories;
 
 public class SettingsRepository : ISettingsRepository
 {
-    private readonly DialDbContext _context;
+    private readonly KlDbContext _context;
 
-    public SettingsRepository(DialDbContext context)
+    public SettingsRepository(KlDbContext context)
     {
         _context = context;
     }

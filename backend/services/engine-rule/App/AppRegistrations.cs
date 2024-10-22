@@ -1,4 +1,14 @@
-﻿using KL.Engine.Rule.Repositories;
+﻿using KL.Engine.Rule.Handlers;
+using KL.Engine.Rule.Handlers.Contracts;
+using KL.Engine.Rule.Repositories;
+using KL.Engine.Rule.RuleEngine;
+using KL.Engine.Rule.RuleEngine.MicrosoftEngine;
+using KL.Engine.Rule.Services;
+using KL.Engine.Rule.Services.Contracts;
+using KL.MySql;
+using KL.Nats;
+using Redis.OM;
+using StackExchange.Redis;
 
 namespace KL.Engine.Rule.App;
 
@@ -33,18 +43,7 @@ public static class AppRegistrations
             )
         );
 
-        var mysqlOptions = new MysqlOptions
-        {
-            Host = configuration.GetValue<string>("CLIENTS:MYSQL:HOST"),
-            Pass = configuration.GetValue<string>("CLIENTS:MYSQL:PASS"),
-            User = configuration.GetValue<string>("CLIENTS:MYSQL:USER"),
-            Port = configuration.GetValue<string>("CLIENTS:MYSQL:PORT"),
-        };
-
-        var connectionString = mysqlOptions.GetUrl("dial");
-        services.AddDbContextFactory<DialDbContext>(options => options.UseMySql(connectionString,
-            ServerVersion.AutoDetect(connectionString),
-            opt => opt.EnableRetryOnFailure(mysqlOptions.ConnectRetry)));
+        services.AddMysql<KlDbContext>(configuration, "lk");
 
         services
             .AddTransient<IRuleRepository, RuleRepository>()

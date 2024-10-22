@@ -330,7 +330,11 @@ namespace SIPSorcery.app.Media.Codecs.G729Codec
             /* range for closed loop pitch search in 1st subframe */
 
             t0_min.value = T_op - 3;
-            if (t0_min.value < PIT_MIN) t0_min.value = PIT_MIN;
+            if (t0_min.value < PIT_MIN)
+            {
+                t0_min.value = PIT_MIN;
+            }
+
             t0_max.value = t0_min.value + 6;
             if (t0_max.value > PIT_MAX)
             {
@@ -379,7 +383,11 @@ namespace SIPSorcery.app.Media.Codecs.G729Codec
     * Compute impulse response, h1[], of weighted synthesis filter  *
     *---------------------------------------------------------------*/
 
-                for (i = 0; i <= M; i++) ai_zero[i] = Ap1[i];
+                for (i = 0; i <= M; i++)
+                {
+                    ai_zero[i] = Ap1[i];
+                }
+
                 Filter.syn_filt(Aq, Aq_offset, ai_zero, 0, h1, 0, L_SUBFR, zero, zero_offset, 0);
                 Filter.syn_filt(Ap2, 0, h1, 0, h1, 0, L_SUBFR, zero, zero_offset, 0);
 
@@ -468,11 +476,17 @@ namespace SIPSorcery.app.Media.Codecs.G729Codec
                 taming = this.taming.test_err(t0, t0_frac.value);
 
                 if (taming == 1)
+                {
                     if (gain_pit > GPCLIP)
+                    {
                         gain_pit = GPCLIP;
+                    }
+                }
 
                 for (i = 0; i < L_SUBFR; i++)
+                {
                     xn2[i] = xn[i] - y1[i] * gain_pit;
+                }
 
                 /*-----------------------------------------------------*
     * - Innovative codebook search.                       *
@@ -503,8 +517,15 @@ namespace SIPSorcery.app.Media.Codecs.G729Codec
     *------------------------------------------------------------*/
 
                 sharp = gain_pit;
-                if (sharp > SHARPMAX) sharp = SHARPMAX;
-                if (sharp < SHARPMIN) sharp = SHARPMIN;
+                if (sharp > SHARPMAX)
+                {
+                    sharp = SHARPMAX;
+                }
+
+                if (sharp < SHARPMIN)
+                {
+                    sharp = SHARPMIN;
+                }
                 /*------------------------------------------------------*
      * - Find the total excitation                          *
      * - find synthesis speech corresponding to exc[]       *
@@ -515,7 +536,9 @@ namespace SIPSorcery.app.Media.Codecs.G729Codec
      *------------------------------------------------------*/
 
                 for (i = 0; i < L_SUBFR; i++)
+                {
                     exc[exc_offset + i + i_subfr] = gain_pit * exc[exc_offset + i + i_subfr] + gain_code * code[i];
+                }
 
                 this.taming.update_exc_err(gain_pit, t0);
 

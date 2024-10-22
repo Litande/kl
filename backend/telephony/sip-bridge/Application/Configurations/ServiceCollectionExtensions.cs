@@ -1,9 +1,9 @@
-﻿using KL.SIP.Bridge.Application.Handlers;
+﻿using KL.Nats;
+using KL.SIP.Bridge.Application.Handlers;
 using KL.SIP.Bridge.Application.Services;
 using KL.SIP.Bridge.Application.Session;
 using KL.SIP.Bridge.Application.Workers;
-using Plat4me.Core.Nats;
-using Plat4Me.Core.Storage.Configuration;
+using KL.Storage.Configuration;
 
 namespace KL.SIP.Bridge.Application.Configurations;
 

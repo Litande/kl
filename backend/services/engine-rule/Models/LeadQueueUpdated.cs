@@ -4,5 +4,5 @@ public record QueuesUpdatedMessage(
     long ClientId,
     IReadOnlyCollection<long>? QueueIds = null)
 {
-    public string Initiator => nameof(DialRuleEngine);
+    public string Initiator => nameof(KL.Engine.Rule);
 }

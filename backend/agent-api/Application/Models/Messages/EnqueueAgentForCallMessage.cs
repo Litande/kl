@@ -7,5 +7,5 @@ public record EnqueueAgentForCallMessage(
     long AgentId,
     CallType callType)
 {
-    public string Initiator => nameof(DialAgentApi);
+    public string Initiator => nameof(KL.Agent.API);
 }

@@ -5,9 +5,9 @@ namespace KL.Provider.Leads.Persistent.Repositories;
 
 public class UserDataSourceMapRepository : IUserDataSourceMapRepository
 {
-    private readonly DialDbContext _context;
+    private readonly KlDbContext _context;
 
-    public UserDataSourceMapRepository(DialDbContext context)
+    public UserDataSourceMapRepository(KlDbContext context)
     {
         _context = context;
     }

@@ -5,5 +5,5 @@ public record CallAgainMessage(
     long AgentId,
     string SessionId)
 {
-    public string Initiator => nameof(DialAgentApi);
+    public string Initiator => nameof(KL.Agent.API);
 }

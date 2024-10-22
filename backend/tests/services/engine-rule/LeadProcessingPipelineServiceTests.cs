@@ -4,6 +4,11 @@ using System.Linq;
 using System.Text.Json;
 using System.Text.Json.Serialization;
 using System.Threading.Tasks;
+using KL.Engine.Rule.Enums;
+using KL.Engine.Rule.Models;
+using KL.Engine.Rule.Repositories;
+using KL.Engine.Rule.RuleEngine.Enums;
+using KL.Engine.Rule.RuleEngine.MicrosoftEngine;
 using Xunit;
 
 namespace KL.Engine.Rule.Tests;
@@ -593,7 +598,7 @@ public class LeadProcessingPipelineServiceTests : LeadProcessingPipelineServiceT
     [InlineData(3, null, ComparisonOperation.Equal)]
     public async Task Process_TotalCallsCount(int calls, int? period, ComparisonOperation operation)
     {
-        await using var context = new DialDbContext(DbContextOptions);
+        await using var context = new KlDbContext(DbContextOptions);
         
         var ruleService = new MicrosoftRuleEngineProcessingService(
             RuleServiceLoggerMock.Object,
@@ -643,7 +648,7 @@ public class LeadProcessingPipelineServiceTests : LeadProcessingPipelineServiceT
     [InlineData(1799, ComparisonOperation.MoreThan)]
     public async Task Process_TotalCallsSeconds(int calls, ComparisonOperation operation)
     {
-        await using var context = new DialDbContext(DbContextOptions);
+        await using var context = new KlDbContext(DbContextOptions);
 
         var ruleService = new MicrosoftRuleEngineProcessingService(
             RuleServiceLoggerMock.Object,
@@ -704,7 +709,7 @@ public class LeadProcessingPipelineServiceTests : LeadProcessingPipelineServiceT
     [InlineData(LeadStatusTypes.Busy, ComparisonOperation.IsNot)]
     public async Task Process_PreviousStatus(LeadStatusTypes status, ComparisonOperation operation)
     {
-        await using var context = new DialDbContext(DbContextOptions);
+        await using var context = new KlDbContext(DbContextOptions);
 
         var ruleService = new MicrosoftRuleEngineProcessingService(
             RuleServiceLoggerMock.Object,

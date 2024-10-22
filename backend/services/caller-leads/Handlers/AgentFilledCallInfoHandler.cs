@@ -4,6 +4,7 @@ using KL.Caller.Leads.Handlers.Contracts;
 using KL.Caller.Leads.Models.Messages;
 using KL.Caller.Leads.Models.Requests;
 using KL.Caller.Leads.Repositories;
+using KL.Nats;
 using Microsoft.Extensions.Options;
 
 namespace KL.Caller.Leads.Handlers;
@@ -66,7 +67,7 @@ public class AgentFilledCallInfoHandler : IAgentFilledCallInfoHandler
             lead.Id,
             request.LeadStatus,
             request.RemindOn,
-            nameof(DialLeadCaller),
+            nameof(KL.Caller),
             request.Comment);
 
         await _natsPublisher.PublishAsync(_pubSubjects.LeadFeedbackFilled, message);

@@ -28,7 +28,7 @@ namespace KL.Auth.Configurations
             where TRole : IdentityRole<TId>
             where TId : IEquatable<TId>
         {
-            return services.AddAuthentication<TUser, TRole, TId, KLAuthDbContext<TUser, TRole, TId>, JwtTokenGenerator<TUser, TId>>(configuration, schema);
+            return services.AddAuthentication<TUser, TRole, TId, KlAuthDbContext<TUser, TRole, TId>, JwtTokenGenerator<TUser, TId>>(configuration, schema);
         }
 
         // ReSharper disable once UnusedMember.Global
@@ -42,7 +42,7 @@ namespace KL.Auth.Configurations
             where TId : IEquatable<TId>
             where TJwtTokenGenerator : JwtTokenGenerator<TUser, TId>
         {
-            return services.AddAuthentication<TUser, TRole, TId, KLAuthDbContext<TUser, TRole, TId>, TJwtTokenGenerator>(configuration, schema);
+            return services.AddAuthentication<TUser, TRole, TId, KlAuthDbContext<TUser, TRole, TId>, TJwtTokenGenerator>(configuration, schema);
         }
 
         // ReSharper disable once UnusedMember.Global
@@ -54,7 +54,7 @@ namespace KL.Auth.Configurations
             where TUser : IdentityUser<TId>
             where TRole : IdentityRole<TId>
             where TId : IEquatable<TId>
-            where TAuthenticationDbContext: KLAuthDbContext<TUser, TRole, TId>
+            where TAuthenticationDbContext: KlAuthDbContext<TUser, TRole, TId>
             where TJwtTokenGenerator : JwtTokenGenerator<TUser, TId>
         {
 

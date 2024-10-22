@@ -38,3 +38,9 @@ app.UseRouting();
 app.MapControllers();
 
 app.Run();
+
+
+// declare class Program for testing
+public partial class Program
+{
+}

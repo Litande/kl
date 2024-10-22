@@ -12,7 +12,7 @@ namespace KL.Engine.Rule.RuleEngine.MicrosoftEngine;
 
 public interface IEngineMapper
 {
-    Task<IReadOnlyCollection<Rule>> MapToEngineRule(IEnumerable<RuleDto> rules, RuleGroupTypes rulesType,
+    Task<IReadOnlyCollection<EngineRule>> MapToEngineRule(IEnumerable<RuleDto> rules, RuleGroupTypes rulesType,
         string ruleActionProperty,
         Dictionary<string, IRuleCondition>? additionalConditions = null,
         Dictionary<string, IRuleAction>? additionalActions = null
@@ -46,7 +46,7 @@ public class MicrosoftEngineMapper : IEngineMapper
         _actions = PrepareActions();
     }
 
-    public async Task<IReadOnlyCollection<Rule>> MapToEngineRule(
+    public async Task<IReadOnlyCollection<EngineRule>> MapToEngineRule(
         IEnumerable<RuleDto> rules,
         RuleGroupTypes rulesType,
         string ruleActionProperty,
@@ -116,7 +116,7 @@ public class MicrosoftEngineMapper : IEngineMapper
         return Task.FromResult(result);
     }
 
-    private async Task<Rule> MapToRootInternalRule(
+    private async Task<EngineRule> MapToRootInternalRule(
         RuleDto r,
         IReadOnlyDictionary<string, IRuleCondition> conditions,
         IReadOnlyDictionary<string, IRuleAction> actions,
@@ -146,18 +146,18 @@ public class MicrosoftEngineMapper : IEngineMapper
         return rule;
     }
 
-    private async Task<IEnumerable<Rule>> PrepareRule(
+    private async Task<IEnumerable<EngineRule>> PrepareRule(
         RuleCombinationData combination,
         string ruleName,
         IReadOnlyDictionary<string, IRuleCondition> conditions
     )
     {
-        var result = new List<Rule>();
+        var result = new List<EngineRule>();
         switch (combination.Operator)
         {
             case RuleCombinationOperator.True:
                 {
-                    var rule = new Rule
+                    var rule = new EngineRule
                     {
                         RuleName = ruleName,
                         Expression = "true"
@@ -167,7 +167,7 @@ public class MicrosoftEngineMapper : IEngineMapper
                 break;
             case RuleCombinationOperator.False:
                 {
-                    var rule = new Rule
+                    var rule = new EngineRule
                     {
                         RuleName = ruleName,
                         Expression = "false"
@@ -187,12 +187,12 @@ public class MicrosoftEngineMapper : IEngineMapper
             case RuleCombinationOperator.Or:
             case RuleCombinationOperator.And:
                 {
-                    var rule = new Rule
+                    var rule = new EngineRule
                     {
                         RuleName = ruleName,
                         Operator = combination.Operator.ToString()
                     };
-                    var subRules = new List<Rule>();
+                    var subRules = new List<EngineRule>();
                     if (combination.Combination is not null)
                     {
                         foreach (var subComb in combination.Combination.Select((combination, idx) => (combination, idx)))
@@ -216,7 +216,7 @@ public class MicrosoftEngineMapper : IEngineMapper
         return result;
     }
 
-    private async Task<Rule> PrepareRule(RuleGroupData grp, IReadOnlyDictionary<string, IRuleCondition> conditions)
+    private async Task<EngineRule> PrepareRule(RuleGroupData grp, IReadOnlyDictionary<string, IRuleCondition> conditions)
     {
         if (!conditions.TryGetValue(grp.Name, out var condition))
             throw new ArgumentException("Condition not found", grp.Name);

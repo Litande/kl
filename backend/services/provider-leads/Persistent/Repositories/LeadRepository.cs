@@ -7,9 +7,9 @@ namespace KL.Provider.Leads.Persistent.Repositories;
 
 public class LeadRepository : ILeadRepository
 {
-    private readonly DialDbContext _context;
+    private readonly KlDbContext _context;
 
-    public LeadRepository(DialDbContext context)
+    public LeadRepository(KlDbContext context)
     {
         _context = context;
     }

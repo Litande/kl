@@ -131,9 +131,14 @@ namespace SIPSorcery.app.Media.Codecs.G729Codec
             {
                 bit = value & 0x0001; /* get lsb */
                 if (bit == 0)
+                {
                     bitstream[--pt_bitstream] = BIT_0;
+                }
                 else
+                {
                     bitstream[--pt_bitstream] = BIT_1;
+                }
+
                 value >>= 1;
             }
         }
@@ -199,7 +204,10 @@ namespace SIPSorcery.app.Media.Codecs.G729Codec
             {
                 value <<= 1;
                 bit = bitstream[bitstream_offset++];
-                if (bit == BIT_1) value += 1;
+                if (bit == BIT_1)
+                {
+                    value += 1;
+                }
             }
 
             return value;

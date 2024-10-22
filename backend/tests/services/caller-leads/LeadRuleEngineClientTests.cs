@@ -1,5 +1,8 @@
 using System.Net.Http;
 using System.Threading.Tasks;
+using KL.Caller.Leads.App;
+using KL.Caller.Leads.Clients;
+using KL.Caller.Leads.Models.Requests;
 using Microsoft.Extensions.Options;
 using Moq;
 using Xunit;

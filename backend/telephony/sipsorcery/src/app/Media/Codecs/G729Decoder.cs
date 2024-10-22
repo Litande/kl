@@ -131,13 +131,24 @@ namespace SIPSorcery.app.Media.Codecs
                 /* round and convert to int */
                 var f = floats[i];
                 if (f >= 0.0f)
+                {
                     f += 0.5f;
+                }
                 else
+                {
                     f -= 0.5f;
+                }
+
                 if (f > 32767.0f)
+                {
                     f = 32767.0f;
+                }
+
                 if (f < -32768.0f)
+                {
                     f = -32768.0f;
+                }
+
                 shorts[i] = (short)f;
             }
         }
@@ -170,8 +181,12 @@ namespace SIPSorcery.app.Media.Codecs
              */
             parm[0] = 0; /* No frame erasure */
             for (var i = 2; i < SERIAL_SIZE; i++)
+            {
                 if (serial[i] == 0)
+                {
                     parm[0] = 1; /* frame erased     */
+                }
+            }
 
             /* check parity and put 1 in parm[4] if parity error */
 
@@ -191,7 +206,10 @@ namespace SIPSorcery.app.Media.Codecs
 
                 sf_voic = postfil.post(t0_first, synth, synth_offset + i, ptr_Az, ptr_Az_offset, pst_out, i);
                 if (sf_voic != 0)
+                {
                     voicing = sf_voic;
+                }
+
                 ptr_Az_offset += MP1;
             }
 

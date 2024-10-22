@@ -1,7 +1,7 @@
+using KL.Nats;
 using KL.SIP.Bridge.Application.Configurations;
 using KL.SIP.Bridge.Application.Enums;
 using Microsoft.Extensions.Options;
-using Plat4me.Core.Nats;
 using SIPSorcery.SIP;
 
 namespace KL.SIP.Bridge.Application.Session;

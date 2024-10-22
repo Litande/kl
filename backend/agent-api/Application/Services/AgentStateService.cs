@@ -7,9 +7,9 @@ using KL.Agent.API.Application.Models.Messages;
 using KL.Agent.API.Persistent.Entities;
 using KL.Agent.API.Persistent.Entities.Cache;
 using KL.Agent.API.Persistent.Repositories.Interfaces;
+using KL.Nats;
 using Medallion.Threading;
 using Microsoft.Extensions.Options;
-using Plat4me.Core.Nats;
 
 namespace KL.Agent.API.Application.Services;
 
@@ -298,7 +298,7 @@ public class AgentStateService : IAgentStateService
                     AgentId = agentCache.AgentId,
                     OldStatus = prevStatus,
                     NewStatus = agentCache.AgentDisplayStatus,
-                    Initiator = nameof(DialAgentApi),
+                    Initiator = nameof(KL.Agent.API),
                     CreatedAt = DateTimeOffset.UtcNow,
                 }, ct);
 

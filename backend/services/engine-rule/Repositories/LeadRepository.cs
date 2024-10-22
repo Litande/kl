@@ -3,12 +3,13 @@ using KL.Engine.Rule.Enums;
 using KL.Engine.Rule.Extensions;
 using KL.Engine.Rule.Models;
 using KL.Engine.Rule.Models.Entities;
+using Microsoft.EntityFrameworkCore;
 
 namespace KL.Engine.Rule.Repositories;
 
 public class LeadRepository : ILeadRepository
 {
-    private readonly DialDbContext _context;
+    private readonly KlDbContext _context;
     private readonly ILogger<LeadRepository> _logger;
 
     private IQueryable<Lead> ProcessingAvailableLeads() => _context.Leads
@@ -19,7 +20,7 @@ public class LeadRepository : ILeadRepository
                     && !r.LeadBlacklist.Any());
 
     public LeadRepository(
-        DialDbContext context,
+        KlDbContext context,
         ILogger<LeadRepository> logger)
     {
         _context = context;

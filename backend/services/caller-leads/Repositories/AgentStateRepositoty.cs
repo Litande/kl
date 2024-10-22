@@ -1,4 +1,7 @@
 ﻿using KL.Caller.Leads.Models;
+using Microsoft.EntityFrameworkCore;
+using Redis.OM;
+using Redis.OM.Searching;
 
 namespace KL.Caller.Leads.Repositories;
 
@@ -15,16 +18,14 @@ public class AgentStateRepository : IAgentStateRepository
         long clientId,
         CancellationToken ct = default)
     {
-        return await _agentStates
-            .Where(r => r.ClientId == clientId)
+        return await Queryable.Where(_agentStates, r => r.ClientId == clientId)
             .ToArrayAsync(ct);         
     }
 
     public async Task<WaitingAgent?> GetWaitingAgentById(long clientId, long agentId, CancellationToken ct = default)
     {
-        return await _agentStates
-            .Where(r => r.ClientId == clientId)
-            .FindByIdAsync(agentId.ToString());
+        return await Queryable.Where(_agentStates, r => r.ClientId == clientId)
+            .FirstOrDefaultAsync(i => i.AgentId == agentId);
     }
 
     public async Task UpdateAgents(IEnumerable<WaitingAgent> agents)

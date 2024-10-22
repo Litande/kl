@@ -2,6 +2,7 @@
 using KL.Caller.Leads.App;
 using KL.Caller.Leads.Models;
 using KL.Caller.Leads.Services.Contracts;
+using KL.Nats;
 using Microsoft.Extensions.Options;
 
 namespace KL.Caller.Leads;

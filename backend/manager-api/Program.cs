@@ -1,3 +1,4 @@
+using KL.Auth.Configurations;
 using KL.Manager.API.Application.Configurations;
 using KL.Manager.API.Configurations;
 using KL.Manager.API.Middlewares;
@@ -5,7 +6,6 @@ using KL.Manager.API.Persistent.Configurations;
 using KL.Manager.API.Persistent.Seed.Authentication;
 using KL.Manager.API.SignalR;
 using Microsoft.AspNetCore.Identity;
-using Plat4Me.Authentication.Configurations;
 using Plat4Me.Core.HealthCheck;
 using Prometheus;
 using Serilog;
@@ -34,7 +34,7 @@ builder.Services
     .ForwardToPrometheus();
 
 builder.Services
-    .AddPlatAuthentication<IdentityUser<long>, IdentityRole<long>, long, JwtTokenGeneratorDial>(builder.Configuration, "dial");
+    .AddAuthentication<IdentityUser<long>, IdentityRole<long>, long, JwtTokenGeneratorDial>(builder.Configuration, "kl");
 
 builder.Services
     .AddCustomControllers()
@@ -71,3 +71,8 @@ app.UseAuthorization();
 app.MapControllers();
 
 app.Run();
+
+// declare class Program for testing
+public partial class Program
+{
+}

@@ -2,6 +2,7 @@ using KL.Engine.Rule.Enums;
 using KL.Engine.Rule.Extensions;
 using KL.Engine.Rule.RuleEngine.Contracts;
 using KL.Engine.Rule.RuleEngine.Enums;
+using RulesEngine.Models;
 
 namespace KL.Engine.Rule.RuleEngine.Conditions;
 
@@ -22,12 +23,12 @@ public class IsFutureCall : RuleConditionBase, IRuleCondition
     )
     { }
 
-    public override Task<Rule> Prepare(RuleGroupData data)
+    public override Task<EngineRule> Prepare(RuleGroupData data)
     {
         var localParam1 = DateTimeOffset.UtcNow;
 
         var expression = $"{LeadParam}.RemindOn != null && {LeadParam}.RemindOn.Value.Date <= localParam1";
-        return Task.FromResult(new Rule
+        return Task.FromResult(new EngineRule
         {
             RuleName = GenerateUniqueRuleName(data.Name),
             Expression = expression,

@@ -1,7 +1,18 @@
-﻿using KL.Caller.Leads.Handlers;
+﻿using System.Net;
+using KL.Caller.Leads.Clients;
+using KL.Caller.Leads.Handlers;
 using KL.Caller.Leads.Handlers.Contracts;
+using KL.Caller.Leads.Repositories;
 using KL.Caller.Leads.Services;
 using KL.Caller.Leads.Services.Contracts;
+using KL.MySql;
+using KL.Nats;
+using Medallion.Threading;
+using Medallion.Threading.Redis;
+using Polly;
+using Polly.Extensions.Http;
+using Redis.OM;
+using StackExchange.Redis;
 
 namespace KL.Caller.Leads.App;
 
@@ -57,23 +68,15 @@ public static class AppRegistrations
         services.AddSingleton<IDistributedLockProvider>(sp =>
             new RedisDistributedSynchronizationProvider(sp.GetRequiredService<IConnectionMultiplexer>().GetDatabase()));
 
-        var mysqlOptions = new MysqlOptions
-        {
-            Host = configuration.GetValue<string>("CLIENTS:MYSQL:HOST"),
-            Pass = configuration.GetValue<string>("CLIENTS:MYSQL:PASS"),
-            User = configuration.GetValue<string>("CLIENTS:MYSQL:USER"),
-            Port = configuration.GetValue<string>("CLIENTS:MYSQL:PORT"),
-        };
 
-        var connectionString = mysqlOptions.GetUrl("dial");
-        services.AddDbContext<DialDbContext>(options => options.UseMySql(connectionString,
-            ServerVersion.AutoDetect(connectionString),
-            opt => opt.EnableRetryOnFailure(mysqlOptions.ConnectRetry)));
-
-        services.AddHttpClient(nameof(LeadRuleEngineClient), config =>
-        {
-            config.Timeout = new TimeSpan(0, 0, 30);
-        }).AddPolicyHandler(GetRetryPolicy());
+        services.AddMysql<KlDbContext>(configuration, "lk");
+        
+        services
+            .AddHttpClient(nameof(LeadRuleEngineClient), config =>
+            {
+                config.Timeout = new TimeSpan(0, 0, 30);
+            })
+            .AddPolicyHandler(GetRetryPolicy());
 
         services
             .AddTransient<ILeadQueueRepository, LeadQueueRepository>()

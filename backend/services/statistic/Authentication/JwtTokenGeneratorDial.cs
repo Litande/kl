@@ -1,31 +1,23 @@
 ﻿using System.Security.Claims;
+using KL.Auth.Services.Identity;
 using KL.Statistics.Application.Common;
 using KL.Statistics.DAL;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Options;
-using Plat4Me.Authentication.Services.Identity;
 
 namespace KL.Statistics.Authentication;
 
-public class JwtTokenGeneratorDial : JwtTokenGenerator<IdentityUser<long>, long>
+public class JwtTokenGeneratorDial(
+    IOptions<JwtConfigurations> jwtConfigurations,
+    IDbContextFactory<KlDbContext> dbContextFactory)
+    : JwtTokenGenerator<IdentityUser<long>, long>(jwtConfigurations)
 {
-    private readonly IDbContextFactory<DialDbContext> _dbContextFactory;
-
-    public JwtTokenGeneratorDial(
-        IOptions<JwtConfigurations> jwtConfigurations,
-        IDbContextFactory<DialDbContext> dbContextFactory)
-        : base(jwtConfigurations)
-    {
-        _dbContextFactory = dbContextFactory;
-    }
-
     protected override Claim[] GetCustomCaliClaims(IdentityUser<long> identityUser)
     {
-        using var context = _dbContextFactory.CreateDbContext();
+        using var context = dbContextFactory.CreateDbContext();
         var user = context.Users
-            .Where(r => r.UserId == identityUser.Id)
-            .FirstOrDefault();
+            .FirstOrDefault(r => r.Id == identityUser.Id);
 
         var baseClaims = base.GetCustomCaliClaims(identityUser);
 

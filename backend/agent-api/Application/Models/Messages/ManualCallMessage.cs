@@ -5,5 +5,5 @@ public record ManualCallMessage(
     long AgentId,
     string Phone)
 {
-    public string Initiator => nameof(DialAgentApi);
+    public string Initiator => nameof(KL.Agent.API);
 }

@@ -25,7 +25,7 @@ public class IsFixedAssignedFeedback : RuleConditionBase, IRuleCondition
     )
     { }
 
-    public override Task<Rule> Prepare(RuleGroupData data)
+    public override Task<EngineRule> Prepare(RuleGroupData data)
     {
         ValidateFields(data);
 
@@ -33,6 +33,6 @@ public class IsFixedAssignedFeedback : RuleConditionBase, IRuleCondition
 
         var ruleName = GenerateUniqueRuleName(data.Name);
         var expression = $"{LeadParam}.Status == {(int)param1Value} && {LeadParam}.LastCallAgentId != null && {LeadParam}.RemindOn != null && {LeadParam}.AssignedAgentId == null";
-        return Task.FromResult(new Rule { RuleName = ruleName, Expression = expression });
+        return Task.FromResult(new EngineRule { RuleName = ruleName, Expression = expression });
     }
 }

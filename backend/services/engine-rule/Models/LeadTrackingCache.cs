@@ -1,4 +1,6 @@
-﻿namespace KL.Engine.Rule.Models;
+﻿using Redis.OM.Modeling;
+
+namespace KL.Engine.Rule.Models;
 
 [Document(StorageType = StorageType.Json, Prefixes = new[] { "LeadTracking" })]
 public class LeadTrackingCache

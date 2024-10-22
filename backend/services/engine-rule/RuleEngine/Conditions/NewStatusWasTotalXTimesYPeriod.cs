@@ -3,6 +3,7 @@ using KL.Engine.Rule.Extensions;
 using KL.Engine.Rule.Models;
 using KL.Engine.Rule.RuleEngine.Contracts;
 using KL.Engine.Rule.RuleEngine.Enums;
+using RulesEngine.Models;
 
 namespace KL.Engine.Rule.RuleEngine.Conditions;
 
@@ -35,7 +36,7 @@ public class NewStatusWasTotalXTimesYPeriod : RuleConditionBase
     )
     { }
 
-    public override Task<Rule> Prepare(RuleGroupData data) //TODO check impl
+    public override Task<EngineRule> Prepare(RuleGroupData data) //TODO check impl
     {
         ValidateFields(data, 2);
         ValidateComparison(data);
@@ -43,7 +44,7 @@ public class NewStatusWasTotalXTimesYPeriod : RuleConditionBase
         return PrepareWithMultipleParams(data.Name, data.Fields![0], data.Fields[1], data.ComparisonOperation!.Value);
     }
 
-    private static Task<Rule> PrepareWithMultipleParams(string name, RuleValueData? param1, RuleValueData? param2, ComparisonOperation operation)
+    private static Task<EngineRule> PrepareWithMultipleParams(string name, RuleValueData? param1, RuleValueData? param2, ComparisonOperation operation)
     {
         var param1Value = ParseInt(param1, name);
         var param2Value = ParseInt(param2, name);
@@ -54,7 +55,7 @@ public class NewStatusWasTotalXTimesYPeriod : RuleConditionBase
         var localParam1 = DateTimeOffset.UtcNow - param2TimeSpan;
         var expression = $"ConditionsHelper.LastStatusTimes({LeadParam}, localParam1) {comparison} {param1Value}";
 
-        return Task.FromResult(new Rule
+        return Task.FromResult(new EngineRule
         {
             RuleName = GenerateUniqueRuleName(name),
             Expression = expression,

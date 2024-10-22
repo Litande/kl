@@ -23,10 +23,10 @@ public class NewCampaignLeadCondition : RuleConditionBase
     )
     { }
 
-    public override Task<Rule> Prepare(RuleGroupData data)
+    public override Task<EngineRule> Prepare(RuleGroupData data)
     {
         var ruleName = GenerateUniqueRuleName(data.Name);
         var expression = $"{LeadParam}.Status == {(int)LeadStatusTypes.NewLead}";
-        return Task.FromResult(new Rule { RuleName = ruleName, Expression = expression });
+        return Task.FromResult(new EngineRule { RuleName = ruleName, Expression = expression });
     }
 }

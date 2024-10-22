@@ -1,8 +1,8 @@
 ﻿using KL.Agent.API.Application.Configurations;
 using KL.Agent.API.Application.Models.Responses;
 using KL.Agent.API.Persistent.Repositories.Interfaces;
+using KL.Storage;
 using Microsoft.Extensions.Options;
-using Plat4Me.Core.Storage;
 
 namespace KL.Agent.API.Application.Handlers;
 

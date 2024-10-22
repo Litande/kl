@@ -2,9 +2,9 @@
 using KL.Manager.API.Application.Enums;
 using KL.Manager.API.Application.Models.Messages.Agents;
 using KL.Manager.API.Persistent.Repositories.Interfaces;
+using KL.Nats;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.Extensions.Options;
-using Plat4me.Core.Nats;
 
 namespace KL.Manager.API.Application.Handlers.Agents;
 

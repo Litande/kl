@@ -1,13 +1,14 @@
 ﻿using KL.Caller.Leads.Enums;
 using KL.Caller.Leads.Models.Entities;
+using Microsoft.EntityFrameworkCore;
 
 namespace KL.Caller.Leads.Repositories;
 
 public class SipProviderRepository : ISipProviderRepository
 {
-    private readonly DialDbContext _context;
+    private readonly KlDbContext _context;
 
-    public SipProviderRepository(DialDbContext context)
+    public SipProviderRepository(KlDbContext context)
     {
         _context = context;
     }

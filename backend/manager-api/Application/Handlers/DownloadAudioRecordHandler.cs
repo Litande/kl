@@ -1,29 +1,19 @@
 ﻿using KL.Manager.API.Application.Configurations;
 using KL.Manager.API.Application.Models.Responses.Audio;
 using KL.Manager.API.Persistent.Repositories.Interfaces;
+using KL.Storage;
 using Microsoft.Extensions.Options;
-using Plat4Me.Core.Storage;
 
 namespace KL.Manager.API.Application.Handlers;
 
-public class DownloadAudioRecordHandler : IDownloadAudioRecordHandler
+public class DownloadAudioRecordHandler(
+    IStorageService storage,
+    IOptions<GeneralOptions> generalOptions,
+    ICDRRepository cdrRepository,
+    ILogger<DownloadAudioRecordHandler> logger)
+    : IDownloadAudioRecordHandler
 {
-    private readonly IStorageService _storage;
-    private readonly GeneralOptions _generalOptions;
-    private readonly ICDRRepository _cdrRepository;
-    private readonly ILogger<DownloadAudioRecordHandler> _logger;
-
-    public DownloadAudioRecordHandler(
-        IStorageService storage,
-        IOptions<GeneralOptions> generalOptions,
-        ICDRRepository cdrRepository,
-        ILogger<DownloadAudioRecordHandler> logger)
-    {
-        _storage = storage;
-        _generalOptions = generalOptions.Value;
-        _cdrRepository = cdrRepository;
-        _logger = logger;
-    }
+    private readonly GeneralOptions _generalOptions = generalOptions.Value;
 
     public async Task<AudioRecordResponse?> Handle(
         long clientId,
@@ -32,7 +22,7 @@ public class DownloadAudioRecordHandler : IDownloadAudioRecordHandler
         DateTimeOffset? ifModifiedSince,
         CancellationToken ct = default)
     {
-        var callRecord = await _cdrRepository.GetById(clientId, callId, ct);
+        var callRecord = await cdrRepository.GetById(clientId, callId, ct);
 
         if (callRecord is null || string.IsNullOrEmpty(callRecord.RecordMixedFile)
                                || callRecord.CallHangupAt is null)
@@ -45,7 +35,7 @@ public class DownloadAudioRecordHandler : IDownloadAudioRecordHandler
         try
         {
             var stream =
-                await _storage.Download(Path.Combine(_generalOptions.RecordingStorePrefix, callRecord.RecordMixedFile),
+                await storage.Download(Path.Combine(_generalOptions.RecordingStorePrefix, callRecord.RecordMixedFile),
                     ct);
 
             var fileName = Path.GetFileName(callRecord.RecordMixedFile);
@@ -55,7 +45,7 @@ public class DownloadAudioRecordHandler : IDownloadAudioRecordHandler
         }
         catch (FileNotFoundException)
         {
-            _logger.LogInformation("File with {Id} not found", callId);
+            logger.LogInformation("File with {Id} not found", callId);
             return null;
         }
     }

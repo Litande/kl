@@ -87,7 +87,9 @@ namespace SIPSorcery.app.Media.Codecs.G729Codec
         public static void set_zero(float[] x, int offset, int length)
         {
             for (int i = offset, toIndex = offset + length; i < toIndex; i++)
+            {
                 x[i] = 0.0f;
+            }
         }
 
         /**
@@ -149,7 +151,9 @@ namespace SIPSorcery.app.Media.Codecs.G729Codec
             int i;
 
             for (i = 0; i < L; i++)
+            {
                 y[y_offset + i] = x[x_offset + i];
+            }
         }
 
         /**
@@ -204,7 +208,10 @@ namespace SIPSorcery.app.Media.Codecs.G729Codec
             for (var i = 0; i < length; i++)
             {
                 if (fp.Read(bytes, 0, bytes.Length) != 2)
+                {
                     break;
+                }
+
                 data[i] = (short)((bytes[1] << 8) | (bytes[0] & 0x00FF));
                 readLength++;
             }

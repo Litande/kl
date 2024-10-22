@@ -1,6 +1,7 @@
 ﻿using KL.Engine.Rule.App;
 using KL.Engine.Rule.Handlers.Contracts;
 using KL.Engine.Rule.Models;
+using KL.Nats;
 using Microsoft.Extensions.Options;
 
 namespace KL.Engine.Rule.Handlers;

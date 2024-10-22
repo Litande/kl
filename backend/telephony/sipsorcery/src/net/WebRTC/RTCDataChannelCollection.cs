@@ -40,7 +40,9 @@ namespace SIPSorcery.net.WebRTC
             if (channel.id.HasValue)
             {
                 if (!activeChannels.TryAdd(channel.id.Value, channel))
+                {
                     return false;
+                }
             }
             else
             {
@@ -78,9 +80,13 @@ namespace SIPSorcery.net.WebRTC
                     // INIT - ACK chunks only allowing a maximum of 65535 streams to be
                     // negotiated(0 - 65534) - https://tools.ietf.org/html/rfc8832
                     if (lastChannelId == ushort.MaxValue - 3)
+                    {
                         lastChannelId += 4;
+                    }
                     else
+                    {
                         lastChannelId += 2;
+                    }
                 }
                 return useEvenIds() ? lastChannelId : (ushort) (lastChannelId + 1);
             }

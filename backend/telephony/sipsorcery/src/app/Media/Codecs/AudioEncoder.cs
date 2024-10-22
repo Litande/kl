@@ -87,7 +87,9 @@ namespace SIPSorcery.app.Media.Codecs
             else if (format.Codec == AudioCodecsEnum.G729)
             {
                 if (_g729Encoder == null)
+                {
                     _g729Encoder = new G729Encoder();
+                }
 
                 byte[] pcmBytes = new byte[pcm.Length * sizeof(short)];
                 Buffer.BlockCopy(pcm, 0, pcmBytes, 0, pcmBytes.Length);
@@ -144,7 +146,9 @@ namespace SIPSorcery.app.Media.Codecs
             if (format.Codec == AudioCodecsEnum.G729)
             {
                 if (_g729Decoder == null)
+                {
                     _g729Decoder = new G729Decoder();
+                }
 
                 byte[] decodedBytes = _g729Decoder.Process(encodedSample);
                 short[] decodedPcm = new short[decodedBytes.Length / sizeof(short)];

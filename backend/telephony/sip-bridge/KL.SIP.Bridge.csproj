@@ -1,12 +1,13 @@
 <Project Sdk="Microsoft.NET.Sdk.Web">
 
     <PropertyGroup>
-        <TargetFramework>net6.0</TargetFramework>
+        <TargetFramework>net8.0</TargetFramework>
         <Nullable>enable</Nullable>
         <ImplicitUsings>enable</ImplicitUsings>
         <DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
         <GenerateTargetFrameworkAttribute>false</GenerateTargetFrameworkAttribute>
         <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+        <LangVersion>latestmajor</LangVersion>
     </PropertyGroup>
 
     <ItemGroup>
@@ -19,8 +20,6 @@
       <PackageReference Include="Serilog.Settings.Configuration" Version="3.4.0" />
       <PackageReference Include="Serilog.Sinks.Console" Version="4.1.0" />
       <PackageReference Include="SIPSorcery.WebSocketSharp" Version="0.0.1" />
-      <PackageReference Include="Plat4me.Core.Nats" Version="2.0.0" />
-      <PackageReference Include="Plat4me.Core.Storage" Version="1.0.0" />
       <PackageReference Include="SIPSorceryMedia.Abstractions" Version="1.2.0" />
       <PackageReference Include="Portable.BouncyCastle" Version="1.9.0" />
       <PackageReference Include="DnsClient" Version="1.6.1" />
@@ -42,5 +41,10 @@
       <Content Include="certs\*">
         <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       </Content>    
+    </ItemGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\..\libraries\KL.Nats\KL.Nats.csproj" />
+      <ProjectReference Include="..\..\libraries\KL.Storage\KL.Storage.csproj" />
     </ItemGroup>
 </Project>

@@ -1,4 +1,6 @@
 ﻿using KL.Caller.Leads.Models.LeadStatisticCache;
+using Redis.OM;
+using Redis.OM.Searching;
 
 namespace KL.Caller.Leads.Repositories;
 

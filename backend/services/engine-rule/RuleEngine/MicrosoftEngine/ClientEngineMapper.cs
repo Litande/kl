@@ -28,7 +28,7 @@ public class ClientEngineMapper : IEngineMapper
         _logger = logger;
     }
 
-    public async Task<IReadOnlyCollection<Rule>> MapToEngineRule(
+    public async Task<IReadOnlyCollection<EngineRule>> MapToEngineRule(
         IEnumerable<RuleDto> rules,
         RuleGroupTypes rulesType,
         string ruleActionProperty,

@@ -121,19 +121,33 @@ namespace SIPSorcery.app.Media.Codecs.G729Codec
             /* Initialize arrays and pointers */
 
             /* A(gamma2) residual */
-            for (i = 0; i < MEM_RES2; i++) res2[i] = 0.0f;
+            for (i = 0; i < MEM_RES2; i++)
+            {
+                res2[i] = 0.0f;
+            }
+
             res2_ptr = MEM_RES2;
 
             /* 1/A(gamma1) memory */
-            for (i = 0; i < M; i++) mem_stp[i] = 0.0f;
+            for (i = 0; i < M; i++)
+            {
+                mem_stp[i] = 0.0f;
+            }
+
             ptr_mem_stp = mem_stp;
             ptr_mem_stp_offset = M - 1;
 
             /* fill apond2[M+1->LONG_H_ST-1] with zeroes */
-            for (i = MP1; i < LONG_H_ST; i++) apond2[i] = 0.0f;
+            for (i = MP1; i < LONG_H_ST; i++)
+            {
+                apond2[i] = 0.0f;
+            }
 
             /* null memory to compute i.r. of A(gamma2)/A(gamma1) */
-            for (i = 0; i < M; i++) mem_zero[i] = 0.0f;
+            for (i = 0; i < M; i++)
+            {
+                mem_zero[i] = 0.0f;
+            }
 
             /* for gain adjustment */
             gain_prec = 1.0f;
@@ -304,9 +318,13 @@ namespace SIPSorcery.app.Media.Codecs.G729Codec
                 }
 
                 if (num_gltp > den_gltp)
+                {
                     gain_plt = MIN_GPLT;
+                }
                 else
+                {
                     gain_plt = den_gltp / (den_gltp + GAMMA_G * num_gltp);
+                }
 
                 /* filtering by H0(z) (harmonic filter) */
                 filt_plt(
@@ -370,7 +388,10 @@ namespace SIPSorcery.app.Media.Codecs.G729Codec
             /* Compute current signal energy         */
             ener = 0.0f;
             for (i = 0; i < L_SUBFR; i++)
+            {
                 ener += ptr_sig_in[ptr_sig_in_offset + i] * ptr_sig_in[ptr_sig_in_offset + i];
+            }
+
             if (ener < 0.1f)
             {
                 num_gltp.value = 0.0f;
@@ -396,7 +417,10 @@ namespace SIPSorcery.app.Media.Codecs.G729Codec
             {
                 num = 0.0f;
                 for (n = 0; n < L_SUBFR; n++)
+                {
                     num += ptr_sig_in[ptr_sig_in_offset + n] * ptr_sig_in[ptr_sig_past + n];
+                }
+
                 if (num > num_int)
                 {
                     i_max = i;
@@ -420,7 +444,10 @@ namespace SIPSorcery.app.Media.Codecs.G729Codec
             ptr_sig_past = ptr_sig_in_offset - lambda;
             den_int = 0.0f;
             for (n = 0; n < L_SUBFR; n++)
+            {
                 den_int += ptr_sig_in[ptr_sig_past + n] * ptr_sig_in[ptr_sig_past + n];
+            }
+
             if (den_int < 0.1f)
             {
                 num_gltp.value = 0.0f;
@@ -452,7 +479,10 @@ namespace SIPSorcery.app.Media.Codecs.G729Codec
                     ptr1 = ptr_sig_past++;
                     temp0 = 0.0f;
                     for (i = 0; i < LH2_S; i++)
+                    {
                         temp0 += tab_hup_s[ptr_h + i] * ptr_sig_in[ptr1 - i];
+                    }
+
                     y_up[ptr_y_up + n] = temp0;
                 }
 
@@ -461,7 +491,9 @@ namespace SIPSorcery.app.Media.Codecs.G729Codec
                 /* common part to den0 and den1 */
                 temp0 = 0.0f;
                 for (n = 1; n < L_SUBFR; n++)
+                {
                     temp0 += y_up[ptr_y_up + n] * y_up[ptr_y_up + n];
+                }
 
                 /* den0 */
                 den0 = temp0 + y_up[ptr_y_up + 0] * y_up[ptr_y_up + 0];
@@ -476,12 +508,16 @@ namespace SIPSorcery.app.Media.Codecs.G729Codec
                 if (Math.Abs(y_up[ptr_y_up + 0]) > Math.Abs(y_up[ptr_y_up + L_SUBFR]))
                 {
                     if (den0 > den_max)
+                    {
                         den_max = den0;
+                    }
                 }
                 else
                 {
                     if (den1 > den_max)
+                    {
                         den_max = den1;
+                    }
                 }
 
                 ptr_y_up += L_SUBFRP1;
@@ -522,8 +558,15 @@ namespace SIPSorcery.app.Media.Codecs.G729Codec
                 /* computes num for lambda_max+1 - phi/F_UP_PST */
                 num = 0.0f;
                 for (n = 0; n < L_SUBFR; n++)
+                {
                     num += ptr_sig_in[n] * y_up[ptr_y_up + n];
-                if (num < 0.0f) num = 0.0f;
+                }
+
+                if (num < 0.0f)
+                {
+                    num = 0.0f;
+                }
+
                 numsq = num * num;
 
                 /* selection if num/sqrt(den0) max */
@@ -544,8 +587,15 @@ namespace SIPSorcery.app.Media.Codecs.G729Codec
                 ptr_y_up++;
                 num = 0.0f;
                 for (n = 0; n < L_SUBFR; n++)
+                {
                     num += ptr_sig_in[n] * y_up[ptr_y_up + n];
-                if (num < 0.0f) num = 0.0f;
+                }
+
+                if (num < 0.0f)
+                {
+                    num = 0.0f;
+                }
+
                 numsq = num * num;
 
                 /* selection if num/sqrt(den1) max */
@@ -690,14 +740,24 @@ namespace SIPSorcery.app.Media.Codecs.G729Codec
             var _num = 0.0f;
             /* Compute num */
             for (var n = 0; n < L_SUBFR; n++)
+            {
                 _num += y_up[y_up_offset + n] * s_in[s_in_offset + n];
-            if (_num < 0.0f) _num = 0.0f;
+            }
+
+            if (_num < 0.0f)
+            {
+                _num = 0.0f;
+            }
+
             num.value = _num;
 
             var _den = 0.0f;
             /* Compute den */
             for (int n = y_up_offset, toIndex = y_up_offset + L_SUBFR; n < toIndex; n++)
+            {
                 _den += y_up[n] * y_up[n];
+            }
+
             den.value = _den;
         }
 
@@ -720,9 +780,15 @@ namespace SIPSorcery.app.Media.Codecs.G729Codec
         )
         {
             if (den2 == 0.0f)
+            {
                 return 1;
+            }
+
             if (num2 * num2 * den1 > num1 * num1 * den2)
+            {
                 return 2;
+            }
+
             return 1;
         }
 
@@ -757,14 +823,18 @@ namespace SIPSorcery.app.Media.Codecs.G729Codec
             /* computes gain g0 */
             g0 = 0.0f;
             for (var i = 0; i < LONG_H_ST; i++)
+            {
                 g0 += Math.Abs(h[i]);
+            }
 
             /* Scale signal input of 1/A(gamma1) */
             if (g0 > 1.0f)
             {
                 temp = 1.0f / g0;
                 for (int i = sig_ltp_ptr_offset, toIndex = sig_ltp_ptr_offset + L_SUBFR; i < toIndex; i++)
+                {
                     sig_ltp_ptr[i] = sig_ltp_ptr[i] * temp;
+                }
             }
 
             return parcor0;
@@ -788,7 +858,10 @@ namespace SIPSorcery.app.Media.Codecs.G729Codec
             /* computation of the autocorrelation function acf */
             temp = 0.0f;
             for (i = 0; i < LONG_H_ST; i++)
+            {
                 temp += h[i] * h[i];
+            }
+
             acf0 = temp;
 
             temp = 0.0f;
@@ -804,11 +877,16 @@ namespace SIPSorcery.app.Media.Codecs.G729Codec
 
             /* Initialisation of the calculation */
             if (acf0 == 0.0f)
+            {
                 return 0.0f; /* output: 1st parcor */
+            }
 
             /* Compute 1st parcor */
             if (acf0 < Math.Abs(acf1))
+            {
                 return 0.0f; /* output: 1st parcor */
+            }
+
             return -acf1 / acf0; /* output: 1st parcor */
         }
 
@@ -833,9 +911,14 @@ namespace SIPSorcery.app.Media.Codecs.G729Codec
             int ptrs;
 
             if (parcor0 > 0.0f)
+            {
                 mu = parcor0 * GAMMA3_PLUS;
+            }
             else
+            {
                 mu = parcor0 * GAMMA3_MINUS;
+            }
+
             ga = 1.0f / (1.0f - Math.Abs(mu));
 
             ptrs = 0; /* points on sig_in(-1) */
@@ -873,7 +956,10 @@ namespace SIPSorcery.app.Media.Codecs.G729Codec
             /* compute input gain */
             gain_in = 0.0f;
             for (int i = sig_in_offset, toIndex = sig_in_offset + L_SUBFR; i < toIndex; i++)
+            {
                 gain_in += Math.Abs(sig_in[i]);
+            }
+
             if (gain_in == 0.0f)
             {
                 g0 = 0.0f;
@@ -884,7 +970,10 @@ namespace SIPSorcery.app.Media.Codecs.G729Codec
                 /* Compute output gain */
                 gain_out = 0.0f;
                 for (int i = sig_out_offset, toIndex = sig_out_offset + L_SUBFR; i < toIndex; i++)
+                {
                     gain_out += Math.Abs(sig_out[i]);
+                }
+
                 if (gain_out == 0.0f)
                 {
                     gain_prec = 0.0f;

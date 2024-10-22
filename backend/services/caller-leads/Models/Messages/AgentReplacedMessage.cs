@@ -6,5 +6,5 @@ public record AgentReplacedMessage(
     string SessionId,
     long SipProviderId)
 {
-    public string Initiator => nameof(DialLeadCaller);
+    public string Initiator => nameof(KL.Caller);
 }

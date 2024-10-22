@@ -4,6 +4,8 @@ using KL.Engine.Rule.Models;
 using KL.Engine.Rule.RuleEngine.Contracts;
 using KL.Engine.Rule.RuleEngine.Enums;
 
+using RulesEngine.Models;
+
 namespace KL.Engine.Rule.RuleEngine.Conditions;
 
 public class CallDuration : RuleConditionBase
@@ -29,7 +31,7 @@ public class CallDuration : RuleConditionBase
     )
     { }
 
-    public override Task<Rule> Prepare(RuleGroupData data) //TODO check impl
+    public override Task<EngineRule> Prepare(RuleGroupData data) //TODO check impl
     {
         ValidateFields(data);
         ValidateComparison(data);
@@ -48,6 +50,6 @@ public class CallDuration : RuleConditionBase
 
         var ruleName = GenerateUniqueRuleName(data.Name);
         var expression = $"ConditionsHelper.GetTotalCallsSeconds({LeadParam}, {CdrParam}) {comparison} {param1Value}";
-        return Task.FromResult(new Rule { RuleName = ruleName, Expression = expression });
+        return Task.FromResult(new EngineRule { RuleName = ruleName, Expression = expression });
     }
 }

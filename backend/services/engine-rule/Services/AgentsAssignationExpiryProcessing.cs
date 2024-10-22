@@ -21,7 +21,7 @@ public class AgentsAssignationExpiryProcessing : IAgentsAssignationExpiryProcess
         var fromDate = DateTimeOffset.UtcNow.AddDays(-agentsAssignationExpiresDays);
 
         var agents = await _userRepository.GetOfflineAgentsSince(fromDate, ct);
-        var agentIds = agents.Select(x => x.UserId);
+        var agentIds = agents.Select(x => x.Id);
 
         await _leadRepository.ResetAssignation(agentIds, ct);
     }

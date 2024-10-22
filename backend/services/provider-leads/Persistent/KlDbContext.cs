@@ -1,3 +1,4 @@
+using KL.Auth.Persistence;
 using KL.Provider.Leads.Persistent.Entities;
 using KL.Provider.Leads.Persistent.EntityConfigurations;
 using Microsoft.EntityFrameworkCore;
@@ -5,16 +6,8 @@ using TimeZone = KL.Provider.Leads.Persistent.Entities.TimeZone;
 
 namespace KL.Provider.Leads.Persistent;
 
-public class DialDbContext : DbContext
+public class KlDbContext(DbContextOptions<KlDbContext> options) : KlAuthDbContext<User, Role, long>(options)
 {
-    public DialDbContext()
-    {
-    }
-
-    public DialDbContext(DbContextOptions<DialDbContext> options)
-        : base(options)
-    {
-    }
 
     public virtual DbSet<Client> Clients { get; set; } = null!;
     public virtual DbSet<Lead> Leads { get; set; } = null!;
@@ -23,7 +16,6 @@ public class DialDbContext : DbContext
     public virtual DbSet<LeadDataSourceMap> LeadDataSourceMaps { get; set; } = null!;
     public virtual DbSet<StatusDataSourceMap> StatusDataSourceMaps { get; set; } = null!;
     public virtual DbSet<DataSource> DataSources { get; set; } = null!;
-    public virtual DbSet<User> Users { get; set; } = null!;
     public virtual DbSet<SettingsEntity> Settings { get; set; } = null!;
     public virtual DbSet<TimeZone> TimeZones { get; set; } = null!;
 

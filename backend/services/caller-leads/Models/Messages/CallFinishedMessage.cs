@@ -23,5 +23,5 @@ public record CallFinishedMessage(
     string? ManagerComment = null,
     bool AgentWasDropped = false)
 {
-    public string Initiator => nameof(DialLeadCaller);
+    public string Initiator => nameof(KL.Caller);
 }

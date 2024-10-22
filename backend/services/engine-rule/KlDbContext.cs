@@ -1,18 +1,12 @@
+using KL.Auth.Persistence;
 using KL.Engine.Rule.EntityConfigurations;
 using KL.Engine.Rule.Models.Entities;
+using Microsoft.EntityFrameworkCore;
 
 namespace KL.Engine.Rule;
 
-public class DialDbContext : DbContext
+public class KlDbContext(DbContextOptions<KlDbContext> options) : KlAuthDbContext<User, Role, long>(options)
 {
-    public DialDbContext()
-    {
-    }
-
-    public DialDbContext(DbContextOptions<DialDbContext> options)
-        : base(options)
-    {
-    }
 
     public virtual DbSet<Client> Clients { get; set; } = null!;
     public virtual DbSet<Lead> Leads { get; set; } = null!;

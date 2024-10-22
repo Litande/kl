@@ -2,9 +2,9 @@
 using KL.Agent.API.Application.Services;
 using KL.Agent.API.Middlewares;
 using KL.Agent.API.SignalR;
+using KL.Nats;
+using KL.Storage.Configuration;
 using Microsoft.AspNetCore.Authorization;
-using Plat4me.Core.Nats;
-using Plat4Me.Core.Storage.Configuration;
 
 namespace KL.Agent.API.Application.Configurations;
 

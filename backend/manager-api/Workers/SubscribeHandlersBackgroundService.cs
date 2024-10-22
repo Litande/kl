@@ -6,8 +6,8 @@ using KL.Manager.API.Application.Handlers.LiveTracking;
 using KL.Manager.API.Application.Models.Messages.Agents;
 using KL.Manager.API.Application.Models.Messages.LeadGroups;
 using KL.Manager.API.Application.Models.Messages.RuleEngine;
+using KL.Nats;
 using Microsoft.Extensions.Options;
-using Plat4me.Core.Nats;
 
 namespace KL.Manager.API.Workers;
 

@@ -1,5 +1,7 @@
 ﻿using KL.Caller.Leads.Enums;
 using KL.Caller.Leads.Models.Entities;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
 namespace KL.Caller.Leads.EntityConfigurations;
 
@@ -8,7 +10,6 @@ public class UserEntityConfiguration : IEntityTypeConfiguration<User>
     public void Configure(EntityTypeBuilder<User> builder)
     {
         builder.ToTable("user");
-        builder.Property(e => e.UserId).HasColumnName("user_id");
         builder.Property(e => e.ClientId).HasColumnName("client_id");
         builder.Property(e => e.RoleType).HasColumnName("role")
             .HasConversion(
@@ -23,6 +24,5 @@ public class UserEntityConfiguration : IEntityTypeConfiguration<User>
         builder.Property(e => e.CreatedAt).HasColumnName("created_at");
         builder.Property(e => e.DeletedAt).HasColumnName("deleted_at");
         builder.Property(e => e.Timezone).HasColumnName("timezone");
-        builder.HasKey(e => e.UserId).HasName("PRIMARY");
     }
 }

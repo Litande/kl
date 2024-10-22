@@ -5,9 +5,9 @@ namespace KL.Statistics.DAL.Repositories;
 
 public class CdrRepository : ICdrRepository
 {
-    private readonly DialDbContext _context;
+    private readonly KlDbContext _context;
 
-    public CdrRepository(DialDbContext context)
+    public CdrRepository(KlDbContext context)
     {
         _context = context;
     }

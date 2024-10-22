@@ -5,5 +5,5 @@ public record RatioChangedMessage(
     long QueueId,
     double Ratio)
 {
-    public string Initiator => nameof(DialClientApi);
+    public string Initiator => nameof(KL.Manager.API);
 }

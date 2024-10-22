@@ -3,9 +3,15 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
+using KL.Engine.Rule.Enums;
+using KL.Engine.Rule.Models;
+using KL.Engine.Rule.Models.Entities;
+using KL.Engine.Rule.Repositories;
+using KL.Engine.Rule.RuleEngine.MicrosoftEngine;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
 using Moq;
+using RulesEngine.Models;
 
 namespace KL.Engine.Rule.Tests;
 
@@ -17,7 +23,7 @@ public class RuleEngineConditionsTestsFixture : TestBase
     protected readonly Mock<ISettingsRepository> SettingsRepositoryMock = new();
 
     // Services
-    private DialDbContext _context;
+    private KlDbContext _context;
     private ICDRRepository _cdrRepository;
 
     // Fills
@@ -74,11 +80,11 @@ public class RuleEngineConditionsTestsFixture : TestBase
     {
         if (useInMemoryDb)
         {
-            var dbContextOptions = new DbContextOptionsBuilder<DialDbContext>()
+            var dbContextOptions = new DbContextOptionsBuilder<KlDbContext>()
                 .UseInMemoryDatabase(databaseName: "test-kl-db-context-in-memory-1")
                 .Options;
 
-            _context = new DialDbContext(dbContextOptions);
+            _context = new KlDbContext(dbContextOptions);
             _cdrRepository = new CDRRepository(_context);
         }
         else

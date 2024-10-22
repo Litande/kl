@@ -1,4 +1,5 @@
 using KL.Caller.Leads.Models;
+using Redis.OM;
 
 namespace KL.Caller.Leads;
 

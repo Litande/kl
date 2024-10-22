@@ -1,6 +1,6 @@
 ﻿using KL.Call.Mixer.Services;
-using Plat4me.Core.Nats;
-using Plat4Me.Core.Storage.Configuration;
+using KL.Nats;
+using KL.Storage.Configuration;
 
 namespace KL.Call.Mixer.App;
 

@@ -1,4 +1,6 @@
-﻿namespace KL.Caller.Leads.Models;
+﻿using Redis.OM.Modeling;
+
+namespace KL.Caller.Leads.Models;
 
 [Document(StorageType = StorageType.Json, Prefixes = new[] { "WaitingAgent" })]
 public class WaitingAgent

@@ -2,6 +2,7 @@
 using KL.Engine.Rule.Models;
 using KL.Engine.Rule.Repositories;
 using KL.Engine.Rule.RuleEngine.Actions;
+using RulesEngine.Models;
 
 namespace KL.Engine.Rule.RuleEngine.MicrosoftEngine;
 

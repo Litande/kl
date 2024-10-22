@@ -1,10 +1,8 @@
-// using Prometheus;
-// using Plat4Me.Core.HealthCheck;
 using Serilog;
 using System.Text.Json.Serialization;
 using Microsoft.Extensions.Options;
-using Plat4me.Core.Nats;
 using System.Web;
+using KL.Nats;
 using KL.SIP.Bridge.Application.Configurations;
 using KL.SIP.Bridge.Application.Enums;
 using KL.SIP.Bridge.Application.Models;

@@ -6,9 +6,9 @@ namespace KL.Provider.Leads.Persistent.Repositories;
 
 public class TimeZoneRepository : ITimeZoneRepository
 {
-    private readonly DialDbContext _context;
+    private readonly KlDbContext _context;
 
-    public TimeZoneRepository(DialDbContext context)
+    public TimeZoneRepository(KlDbContext context)
     {
         _context = context;
     }

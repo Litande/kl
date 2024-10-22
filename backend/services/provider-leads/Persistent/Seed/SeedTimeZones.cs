@@ -5,12 +5,12 @@ namespace KL.Provider.Leads.Persistent.Seed;
 
 public static class SeedTimeZones
 {
-    public static void Seed(DialDbContext context)
+    public static void Seed(KlDbContext context)
     {
         AddTimeZonesIfNeed(context);
     }
 
-    private static void AddTimeZonesIfNeed(DialDbContext context)
+    private static void AddTimeZonesIfNeed(KlDbContext context)
     {
         var isTimeZoneExist = context.TimeZones.Any();
         if (isTimeZoneExist) return;

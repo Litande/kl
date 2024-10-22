@@ -3,16 +3,17 @@ using KL.Caller.Leads.Enums;
 using KL.Caller.Leads.Extensions;
 using KL.Caller.Leads.Models;
 using KL.Caller.Leads.Models.Entities;
+using Microsoft.EntityFrameworkCore;
 
 namespace KL.Caller.Leads.Repositories;
 
 public class LeadRepository : ILeadRepository
 {
-    private readonly DialDbContext _context;
+    private readonly KlDbContext _context;
     private readonly ILogger<LeadRepository> _logger;
 
     public LeadRepository(
-        DialDbContext context,
+        KlDbContext context,
         ILogger<LeadRepository> logger)
     {
         _context = context;

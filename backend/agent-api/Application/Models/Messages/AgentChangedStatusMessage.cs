@@ -10,5 +10,5 @@ public record AgentChangedStatusMessage(
     CallInfo? CallInfo
     )
 {
-    public string Initiator => nameof(DialAgentApi);
+    public string Initiator => nameof(KL.Agent.API);
 }

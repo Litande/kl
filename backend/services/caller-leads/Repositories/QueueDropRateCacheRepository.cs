@@ -1,4 +1,7 @@
 ﻿using KL.Caller.Leads.Models;
+using Microsoft.EntityFrameworkCore;
+using Redis.OM;
+using Redis.OM.Searching;
 
 namespace KL.Caller.Leads.Repositories;
 
@@ -15,8 +18,7 @@ public class QueueDropRateCacheRepository : IQueueDropRateCacheRepository
         long clientId,
         CancellationToken ct = default)
     {
-        var items = await _queueCaches
-            .Where(r => r.ClientId == clientId)
+        var items = await Queryable.Where(_queueCaches, r => r.ClientId == clientId)
             .ToDictionaryAsync(r => r.QueueId, ct);
 
         return items;

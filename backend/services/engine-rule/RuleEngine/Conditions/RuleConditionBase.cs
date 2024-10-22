@@ -2,6 +2,7 @@
 using KL.Engine.Rule.Enums;
 using KL.Engine.Rule.Extensions;
 using KL.Engine.Rule.Models;
+using KL.Engine.Rule.Models.Entities;
 using KL.Engine.Rule.RuleEngine.Contracts;
 using KL.Engine.Rule.RuleEngine.Enums;
 using KL.Engine.Rule.RuleEngine.MicrosoftEngine;
@@ -29,7 +30,7 @@ public abstract class RuleConditionBase : IRuleCondition
         Description = description;
     }
 
-    public abstract Task<Rule> Prepare(RuleGroupData data);
+    public abstract Task<EngineRule> Prepare(RuleGroupData data);
 
     protected static string GenerateUniqueRuleName(string ruleName) =>
         ruleName + Guid.NewGuid();

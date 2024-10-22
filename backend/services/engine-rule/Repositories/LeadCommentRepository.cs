@@ -2,18 +2,11 @@
 
 namespace KL.Engine.Rule.Repositories;
 
-public class LeadCommentRepository : ILeadCommentRepository
+public class LeadCommentRepository(KlDbContext context) : ILeadCommentRepository
 {
-    private readonly DialDbContext _context;
-
-    public LeadCommentRepository(DialDbContext context)
-    {
-        _context = context;
-    }
-
     public async Task AddComment(LeadComment comment, CancellationToken ct = default)
     {
-        _context.LeadComments.Add(comment);
-        await _context.SaveChangesAsync(ct);
+        context.LeadComments.Add(comment);
+        await context.SaveChangesAsync(ct);
     }
 }

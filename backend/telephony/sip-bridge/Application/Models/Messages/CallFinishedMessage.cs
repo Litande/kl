@@ -24,5 +24,5 @@ public record CallFinishedMessage(
     bool AgentWasDropped
     )
 {
-    public string Initiator => nameof(DialSipBridge);
+    public string Initiator => nameof(KL.SIP.Bridge);
 }

@@ -35,7 +35,7 @@ public class CampaignLeadWeightIsCondition : RuleConditionBase
     )
     { }
 
-    public override Task<Rule> Prepare(RuleGroupData data)
+    public override Task<EngineRule> Prepare(RuleGroupData data)
     {
         ValidateFields(data);
         ValidateComparison(data);
@@ -55,6 +55,6 @@ public class CampaignLeadWeightIsCondition : RuleConditionBase
 
         var ruleName = GenerateUniqueRuleName(data.Name);
         var expression = $"{LeadParam}.Score {comparison} {param1Value}";
-        return Task.FromResult(new Rule { RuleName = ruleName, Expression = expression });
+        return Task.FromResult(new EngineRule { RuleName = ruleName, Expression = expression });
     }
 }

@@ -26,7 +26,7 @@ public class CampaignLeadAssignedToAgent : RuleConditionBase
     )
     { }
 
-    public override Task<Rule> Prepare(RuleGroupData data) //TODO check impl
+    public override Task<EngineRule> Prepare(RuleGroupData data) //TODO check impl
     {
         ValidateFields(data);
         ValidateComparison(data);
@@ -35,6 +35,6 @@ public class CampaignLeadAssignedToAgent : RuleConditionBase
         
         var expression = $"{LeadParam}.AssignedAgentId != null == {param1Value.ToString().ToLowerInvariant()}";
         var ruleName = GenerateUniqueRuleName(data.Name);
-        return Task.FromResult(new Rule { RuleName = ruleName, Expression = expression });
+        return Task.FromResult(new EngineRule { RuleName = ruleName, Expression = expression });
     }
 }

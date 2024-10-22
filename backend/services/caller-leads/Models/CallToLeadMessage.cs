@@ -18,5 +18,5 @@ public record CallToLeadMessage(
     bool IsTest,
     SipProviderInfo SipProvider)
 {
-    public string Initiator => nameof(DialLeadCaller);
+    public string Initiator => nameof(KL.Caller);
 }

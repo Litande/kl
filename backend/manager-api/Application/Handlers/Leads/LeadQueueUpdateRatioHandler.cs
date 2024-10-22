@@ -2,8 +2,8 @@
 using KL.Manager.API.Application.Models.Messages.LeadQueue;
 using KL.Manager.API.Persistent.Entities;
 using KL.Manager.API.Persistent.Repositories.Interfaces;
+using KL.Nats;
 using Microsoft.Extensions.Options;
-using Plat4me.Core.Nats;
 
 namespace KL.Manager.API.Application.Handlers.Leads;
 

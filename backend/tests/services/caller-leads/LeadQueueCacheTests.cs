@@ -3,6 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
+using KL.Caller.Leads.Enums;
+using KL.Caller.Leads.Models;
+using KL.Caller.Leads.Models.Entities;
+using KL.Caller.Leads.Repositories;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Caching.Memory;
 using Moq;
@@ -14,7 +18,7 @@ public class LeadQueueCacheTests
 {
     private readonly IMemoryCache _memoryCache = new MemoryCache(new MemoryCacheOptions());
     private readonly Mock<ILeadQueueRepository> _leadQueueRepository;
-    private readonly DbContextOptions<DialDbContext> _dbContextOptions;
+    private readonly DbContextOptions<KlDbContext> _dbContextOptions;
 
     private readonly List<LeadQueueAgents> _list = new()
     {
@@ -24,7 +28,7 @@ public class LeadQueueCacheTests
 
     public LeadQueueCacheTests()
     {
-        _dbContextOptions = new DbContextOptionsBuilder<DialDbContext>()
+        _dbContextOptions = new DbContextOptionsBuilder<KlDbContext>()
             .UseInMemoryDatabase(databaseName: "DialDbContextInMemory")
             .Options;
 
@@ -50,7 +54,7 @@ public class LeadQueueCacheTests
     {
         await FillRandomLeadQueues();
 
-        await using var context = new DialDbContext(_dbContextOptions);
+        await using var context = new KlDbContext(_dbContextOptions);
         var repo = new LeadQueueRepository(context);
         var leadQueues = await repo.GetAllWithAgentsOrdered();
 
@@ -90,7 +94,7 @@ public class LeadQueueCacheTests
 
     private async Task FillRandomLeadQueues(CancellationToken ct = default)
     {
-        await using var context = new DialDbContext(_dbContextOptions);
+        await using var context = new KlDbContext(_dbContextOptions);
         context.CallDetailRecords.RemoveRange(context.CallDetailRecords.ToArray());
 
         var rand = new Random();

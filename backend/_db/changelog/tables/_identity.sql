@@ -3,7 +3,7 @@
 
 -- dial.roles definition
 CREATE TABLE dial.role (
-`id` varchar(256) NOT NULL,
+`id` BIGINT UNSIGNED AUTO_INCREMENT NOT NULL,
 `name` varchar(256) DEFAULT NULL,
 `normalized_name` varchar(256) DEFAULT NULL,
 `concurrency_stamp` text,
@@ -13,7 +13,7 @@ UNIQUE KEY `role_name_index` (`normalized_name`)
 
 -- dial.users definition
 CREATE TABLE dial.user (
-`id` varchar(256) NOT NULL,
+`id` BIGINT UNSIGNED AUTO_INCREMENT NOT NULL,
 `user_name` varchar(256) DEFAULT NULL,
 `normalized_user_name` varchar(256) DEFAULT NULL,
 `email` varchar(256) DEFAULT NULL,
@@ -35,7 +35,7 @@ KEY `email_index` (`normalized_email`)
 
 -- dial.role_claims definition
 CREATE TABLE dial.role_claim (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `id` BIGINT UNSIGNED AUTO_INCREMENT NOT NULL,
   `role_id` varchar(256) NOT NULL,
   `claim_type` text,
   `claim_value` text,
@@ -46,7 +46,7 @@ CREATE TABLE dial.role_claim (
 
 -- dial.user_claims definition
 CREATE TABLE dial.user_claim (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `id` BIGINT UNSIGNED AUTO_INCREMENT NOT NULL,
   `user_id` varchar(256) NOT NULL,
   `claim_type` text,
   `claim_value` text,
@@ -60,7 +60,7 @@ CREATE TABLE dial.user_login (
 `login_provider` varchar(256) NOT NULL,
 `provider_key` varchar(256) NOT NULL,
 `provider_display_name` text,
-`user_id` varchar(256) NOT NULL,
+`user_id` BIGINT UNSIGNED NOT NULL,
 PRIMARY KEY (`login_provider`,`provider_key`),
 KEY `IX_user_login_user_id` (`user_id`),
 CONSTRAINT `FK_user_login_user_id` FOREIGN KEY (`user_id`) REFERENCES `user` (`id`) ON DELETE CASCADE
@@ -68,8 +68,8 @@ CONSTRAINT `FK_user_login_user_id` FOREIGN KEY (`user_id`) REFERENCES `user` (`i
 
 -- dial.user_role definition
 CREATE TABLE dial.user_role (
-`user_id` varchar(256) NOT NULL,
-`role_id` varchar(256) NOT NULL,
+`user_id` BIGINT UNSIGNED NOT NULL,
+`role_id` BIGINT UNSIGNED NOT NULL,
 PRIMARY KEY (`user_id`,`role_id`),
 KEY `IX_user_role_role_id` (`role_id`),
 CONSTRAINT `FK_user_role_role_id` FOREIGN KEY (`role_id`) REFERENCES `role` (`id`) ON DELETE CASCADE,
@@ -78,7 +78,7 @@ CONSTRAINT `FK_user_role_user_id` FOREIGN KEY (`user_id`) REFERENCES `user` (`id
 
 -- dial.user_token definition
 CREATE TABLE dial.user_token (
-`user_id` varchar(256) NOT NULL,
+`user_id` BIGINT UNSIGNED NOT NULL,
 `login_provider` varchar(256) NOT NULL,
 `name` varchar(256) NOT NULL,
 `value` text,

@@ -15,5 +15,5 @@ public record InviteAgentMessage(
     string AgentRtcUrl,
     long SipProviderId)
 {
-    public string Initiator => nameof(DialSipBridge);
+    public string Initiator => nameof(KL.SIP.Bridge);
 }

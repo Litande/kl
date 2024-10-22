@@ -2,9 +2,10 @@
 
   <PropertyGroup>
     <OutputType>Exe</OutputType>
-    <TargetFramework>net6.0</TargetFramework>
+    <TargetFramework>net8.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
+    <LangVersion>latestmajor</LangVersion>
   </PropertyGroup>
 
   <ItemGroup>
@@ -13,7 +14,10 @@
 
   <ItemGroup>
 	  <PackageReference Include="Moq" Version="4.18.2" />
-	  <ProjectReference Include="..\Plat4Me.DialRuleEngine.Application\Plat4Me.DialRuleEngine.Application.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\services\engine-rule\KL.Engine.Rule.csproj" />
   </ItemGroup>
 
 </Project>

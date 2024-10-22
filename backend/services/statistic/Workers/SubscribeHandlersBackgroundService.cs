@@ -1,11 +1,11 @@
 ﻿using System.Text.Json;
+using KL.Nats;
 using KL.Statistics.Application.Handlers;
 using KL.Statistics.Application.Handlers.Agent;
 using KL.Statistics.Application.Handlers.LeadStatistics;
 using KL.Statistics.Application.Models.Messages;
 using KL.Statistics.Configurations;
 using Microsoft.Extensions.Options;
-using Plat4me.Core.Nats;
 
 namespace KL.Statistics.Workers;
 

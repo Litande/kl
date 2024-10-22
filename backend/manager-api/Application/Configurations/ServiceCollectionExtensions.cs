@@ -6,10 +6,10 @@ using KL.Manager.API.Application.Handlers.LiveTracking;
 using KL.Manager.API.Application.Services;
 using KL.Manager.API.Application.Services.Interfaces;
 using KL.Manager.API.SignalR;
+using KL.Nats;
+using KL.Storage.Configuration;
 using Microsoft.Extensions.DependencyInjection.Extensions;
 using Microsoft.Extensions.Internal;
-using Plat4me.Core.Nats;
-using Plat4Me.Core.Storage.Configuration;
 
 namespace KL.Manager.API.Application.Configurations;
 

@@ -1,5 +1,7 @@
 ﻿using KL.Caller.Leads.Enums;
 using KL.Caller.Leads.Models;
+using Redis.OM;
+using Redis.OM.Searching;
 
 namespace KL.Caller.Leads.Repositories;
 

@@ -7,5 +7,5 @@ public record HangupCallMessage(
     CallFinishReasons? ReasonCode = null,
     string? ReasonDetails = null)
 {
-    public string Initiator { get; set; } = nameof(DialClientApi);
+    public string Initiator { get; set; } = nameof(KL.Manager.API);
 };

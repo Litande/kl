@@ -9,6 +9,7 @@ using KL.Caller.Leads.Models.LeadStatisticCache;
 using KL.Caller.Leads.Models.Messages;
 using KL.Caller.Leads.Repositories;
 using KL.Caller.Leads.Services.Contracts;
+using KL.Nats;
 using Microsoft.Extensions.Options;
 
 namespace KL.Caller.Leads.Services;

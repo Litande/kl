@@ -13,5 +13,5 @@ public record CallInitiatedMessage(
     string LeadPhone
     )
 {
-    public string Initiator => nameof(DialLeadCaller);
+    public string Initiator => nameof(KL.Caller);
 }

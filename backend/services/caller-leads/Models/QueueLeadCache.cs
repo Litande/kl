@@ -1,4 +1,5 @@
 ﻿using KL.Caller.Leads.Enums;
+using Redis.OM.Modeling;
 
 namespace KL.Caller.Leads.Models;
 

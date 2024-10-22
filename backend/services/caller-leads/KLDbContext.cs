@@ -1,23 +1,17 @@
+using KL.Auth.Persistence;
 using KL.Caller.Leads.EntityConfigurations;
 using KL.Caller.Leads.Models.Entities;
+using Microsoft.EntityFrameworkCore;
+using Role = KL.Caller.Leads.Models.Entities.Role;
 
 namespace KL.Caller.Leads;
 
-public class DialDbContext : DbContext
+public class KlDbContext(DbContextOptions<KlDbContext> options) : KlAuthDbContext<User, Role, long>(options)
 {
-    public DialDbContext()
-    {
-    }
-
-    public DialDbContext(DbContextOptions<DialDbContext> options)
-        : base(options)
-    {
-    }
     public virtual DbSet<Client> Clients { get; set; } = null!;
     public virtual DbSet<Lead> Leads { get; set; } = null!;
     public virtual DbSet<LeadHistory> LeadHistory { get; set; } = null!;
     public virtual DbSet<LeadQueue> LeadQueues { get; set; } = null!;
-    public virtual DbSet<User> Users { get; set; } = null!;
     public virtual DbSet<UserLeadQueue> UserLeadQueue { get; set; } = null!;
     public virtual DbSet<CallDetailRecord> CallDetailRecords { get; set; } = null!;
     public virtual DbSet<SettingsEntity> Settings { get; set; } = null!;

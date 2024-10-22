@@ -82,13 +82,19 @@ namespace SIPSorcery.app.Media.Codecs.G729Codec
             /* innovation energy */
             ener_code = 0.01f;
             for (i = 0; i < l_subfr; i++)
+            {
                 ener_code += code[i] * code[i];
+            }
+
             ener_code = 10.0f * (float)Math.Log10(ener_code / l_subfr);
 
             pred_code -= ener_code;
 
             /* predicted energy */
-            for (i = 0; i < 4; i++) pred_code += pred[i] * past_qua_en[i];
+            for (i = 0; i < 4; i++)
+            {
+                pred_code += pred[i] * past_qua_en[i];
+            }
 
             /* predicted codebook gain */
             gcode0 = pred_code;
@@ -113,7 +119,10 @@ namespace SIPSorcery.app.Media.Codecs.G729Codec
 
             /* update table of past quantized energies */
             for (i = 3; i > 0; i--)
+            {
                 past_qua_en[i] = past_qua_en[i - 1];
+            }
+
             past_qua_en[0] = 20.0f * (float)Math.Log10(g_code);
         }
 
@@ -139,12 +148,21 @@ namespace SIPSorcery.app.Media.Codecs.G729Codec
 
             av_pred_en = 0.0f;
             for (i = 0; i < 4; i++)
+            {
                 av_pred_en += past_qua_en[i];
+            }
+
             av_pred_en = av_pred_en * 0.25f - 4.0f;
-            if (av_pred_en < -14.0f) av_pred_en = -14.0f;
+            if (av_pred_en < -14.0f)
+            {
+                av_pred_en = -14.0f;
+            }
 
             for (i = 3; i > 0; i--)
+            {
                 past_qua_en[i] = past_qua_en[i - 1];
+            }
+
             past_qua_en[0] = av_pred_en;
         }
     }

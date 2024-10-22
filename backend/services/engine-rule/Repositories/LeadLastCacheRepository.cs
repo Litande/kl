@@ -1,4 +1,6 @@
 ﻿using KL.Engine.Rule.Models;
+using Redis.OM;
+using Redis.OM.Searching;
 
 namespace KL.Engine.Rule.Repositories;
 

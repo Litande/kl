@@ -1,4 +1,6 @@
 ﻿using KL.Caller.Leads.Models.Entities;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
 namespace KL.Caller.Leads.EntityConfigurations;
 

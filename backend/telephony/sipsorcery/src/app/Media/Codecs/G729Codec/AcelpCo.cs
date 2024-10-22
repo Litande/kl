@@ -92,8 +92,12 @@ namespace SIPSorcery.app.Media.Codecs.G729Codec
     *-----------------------------------------------------------------*/
 
             if (t0 < L_SUBFR)
+            {
                 for (i = t0; i < L_SUBFR; i++)
+                {
                     h[i] += pitch_sharp * h[i - t0];
+                }
+            }
 
             cor_h(h, rr);
 
@@ -114,8 +118,12 @@ namespace SIPSorcery.app.Media.Codecs.G729Codec
     *-------------------------------------------------------*/
 
             if (t0 < L_SUBFR)
+            {
                 for (i = t0; i < L_SUBFR; i++)
+                {
                     code[i] += pitch_sharp * code[i - t0];
+                }
+            }
 
             return index;
         }
@@ -566,13 +574,17 @@ namespace SIPSorcery.app.Media.Codecs.G729Codec
     * Reset max_time for 1st subframe.                                      *
     *-----------------------------------------------------------------------*
     */
-            if (i_subfr == 0) extra = 30;
+            if (i_subfr == 0)
+            {
+                extra = 30;
+            }
 
             /*----------------------------------------------------------------------*
     * Chose the signs of the impulses.                                      *
     *-----------------------------------------------------------------------*/
 
             for (i = 0; i < L_SUBFR; i++)
+            {
                 if (dn[i] >= 0.0f)
                 {
                     p_sign[i] = 1.0f;
@@ -582,6 +594,7 @@ namespace SIPSorcery.app.Media.Codecs.G729Codec
                     p_sign[i] = -1.0f;
                     dn[i] = -dn[i];
                 }
+            }
 
             /*-------------------------------------------------------------------*
      * - Compute the search threshold after three pulses                 *
@@ -594,9 +607,20 @@ namespace SIPSorcery.app.Media.Codecs.G729Codec
             for (i = 5; i < L_SUBFR; i += STEP)
             {
                 average += dn[i] + dn[i + 1] + dn[i + 2];
-                if (dn[i] > max0) max0 = dn[i];
-                if (dn[i + 1] > max1) max1 = dn[i + 1];
-                if (dn[i + 2] > max2) max2 = dn[i + 2];
+                if (dn[i] > max0)
+                {
+                    max0 = dn[i];
+                }
+
+                if (dn[i + 1] > max1)
+                {
+                    max1 = dn[i + 1];
+                }
+
+                if (dn[i + 2] > max2)
+                {
+                    max2 = dn[i + 2];
+                }
             }
 
             max0 += max1 + max2;
@@ -764,8 +788,10 @@ namespace SIPSorcery.app.Media.Codecs.G729Codec
                             ptr_ri1i4 -= NB_POS;
 
                             time--;
-                            if (time <= 0) goto end_search; /* Maximum time finish */
-
+                            if (time <= 0)
+                            {
+                                goto end_search; /* Maximum time finish */
+                            }
                         } /* end of if >thres */
                         else
                         {
@@ -793,7 +819,11 @@ namespace SIPSorcery.app.Media.Codecs.G729Codec
 
             /* Find the codeword corresponding to the selected positions */
 
-            for (i = 0; i < L_SUBFR; i++) cod[i] = 0.0f;
+            for (i = 0; i < L_SUBFR; i++)
+            {
+                cod[i] = 0.0f;
+            }
+
             cod[ip0] = p_sign[ip0];
             cod[ip1] = p_sign[ip1];
             cod[ip2] = p_sign[ip2];
@@ -801,43 +831,94 @@ namespace SIPSorcery.app.Media.Codecs.G729Codec
 
             /* find the filtered codeword */
 
-            for (i = 0; i < L_SUBFR; i++) y[i] = 0.0f;
+            for (i = 0; i < L_SUBFR; i++)
+            {
+                y[i] = 0.0f;
+            }
 
             if (p_sign[ip0] > 0.0f)
+            {
                 for (i = ip0, j = 0; i < L_SUBFR; i++, j++)
+                {
                     y[i] = h[j];
+                }
+            }
             else
+            {
                 for (i = ip0, j = 0; i < L_SUBFR; i++, j++)
+                {
                     y[i] = -h[j];
+                }
+            }
 
             if (p_sign[ip1] > 0.0f)
+            {
                 for (i = ip1, j = 0; i < L_SUBFR; i++, j++)
+                {
                     y[i] = y[i] + h[j];
+                }
+            }
             else
+            {
                 for (i = ip1, j = 0; i < L_SUBFR; i++, j++)
+                {
                     y[i] = y[i] - h[j];
+                }
+            }
 
             if (p_sign[ip2] > 0.0f)
+            {
                 for (i = ip2, j = 0; i < L_SUBFR; i++, j++)
+                {
                     y[i] = y[i] + h[j];
+                }
+            }
             else
+            {
                 for (i = ip2, j = 0; i < L_SUBFR; i++, j++)
+                {
                     y[i] = y[i] - h[j];
+                }
+            }
 
             if (p_sign[ip3] > 0.0f)
+            {
                 for (i = ip3, j = 0; i < L_SUBFR; i++, j++)
+                {
                     y[i] = y[i] + h[j];
+                }
+            }
             else
+            {
                 for (i = ip3, j = 0; i < L_SUBFR; i++, j++)
+                {
                     y[i] = y[i] - h[j];
+                }
+            }
 
             /* find codebook index;  4 bit signs + 13 bit positions */
 
             i = 0;
-            if (p_sign[ip0] > 0.0f) i += 1;
-            if (p_sign[ip1] > 0.0f) i += 2;
-            if (p_sign[ip2] > 0.0f) i += 4;
-            if (p_sign[ip3] > 0.0f) i += 8;
+            if (p_sign[ip0] > 0.0f)
+            {
+                i += 1;
+            }
+
+            if (p_sign[ip1] > 0.0f)
+            {
+                i += 2;
+            }
+
+            if (p_sign[ip2] > 0.0f)
+            {
+                i += 4;
+            }
+
+            if (p_sign[ip3] > 0.0f)
+            {
+                i += 8;
+            }
+
             signs.value = i;
 
             ip0 = ip0 / 5;

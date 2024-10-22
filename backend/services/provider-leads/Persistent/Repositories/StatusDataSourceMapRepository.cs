@@ -7,9 +7,9 @@ namespace KL.Provider.Leads.Persistent.Repositories;
 
 public class StatusDataSourceMapRepository : IStatusDataSourceMapRepository
 {
-    private readonly DialDbContext _context;
+    private readonly KlDbContext _context;
 
-    public StatusDataSourceMapRepository(DialDbContext context)
+    public StatusDataSourceMapRepository(KlDbContext context)
     {
         _context = context;
     }

@@ -26,7 +26,7 @@ public class PreviousStatusCondition : RuleConditionBase, IRuleCondition
     )
     { }
 
-    public override Task<Rule> Prepare(RuleGroupData data) //TODO check impl
+    public override Task<EngineRule> Prepare(RuleGroupData data) //TODO check impl
     {
         ValidateFields(data);
         ValidateComparison(data);
@@ -42,6 +42,6 @@ public class PreviousStatusCondition : RuleConditionBase, IRuleCondition
 
         var ruleName = GenerateUniqueRuleName(data.Name);
         var expression = $"{comparison}ConditionsHelper.IsPreviousStatus({LeadParam}, {(int)param1Value})";
-        return Task.FromResult(new Rule { RuleName = ruleName, Expression = expression });
+        return Task.FromResult(new EngineRule { RuleName = ruleName, Expression = expression });
     }
 }

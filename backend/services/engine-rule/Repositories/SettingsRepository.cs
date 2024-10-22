@@ -1,12 +1,13 @@
 ﻿using KL.Engine.Rule.Enums;
+using Microsoft.EntityFrameworkCore;
 
 namespace KL.Engine.Rule.Repositories;
 
 public class SettingsRepository : ISettingsRepository
 {
-    private readonly DialDbContext _context;
+    private readonly KlDbContext _context;
 
-    public SettingsRepository(DialDbContext context)
+    public SettingsRepository(KlDbContext context)
     {
         _context = context;
     }

@@ -3,6 +3,7 @@ using KL.Engine.Rule.Extensions;
 using KL.Engine.Rule.Models;
 using KL.Engine.Rule.RuleEngine.Contracts;
 using KL.Engine.Rule.RuleEngine.Enums;
+using RulesEngine.Models;
 
 namespace KL.Engine.Rule.RuleEngine.Conditions;
 
@@ -71,7 +72,7 @@ public class LeadField : RuleConditionBase
         _ => throw new ArgumentException("Unknown field type")
     };
 
-    public override Task<Rule> Prepare(RuleGroupData data)
+    public override Task<EngineRule> Prepare(RuleGroupData data)
     {
         ValidateFields(data);
         ValidateComparison(data);
@@ -88,7 +89,7 @@ public class LeadField : RuleConditionBase
     }
 
 
-    private Rule PrepareIndentifierExpression(RuleGroupData data, string ruleName)
+    private EngineRule PrepareIndentifierExpression(RuleGroupData data, string ruleName)
     {
         var comparison = data.ComparisonOperation switch
         {
@@ -97,14 +98,14 @@ public class LeadField : RuleConditionBase
             _ => throw new ArgumentException("Unknown leadfield's ComparisonOperation for identifier type")
         };
 
-        return new Rule
+        return new EngineRule
         {
             RuleName = ruleName,
             Expression = $"ConditionsHelper.MetaDataStringValueCmp({LeadParam}, \"{_fieldDescription.Name}\", {(int)comparison}, \"{data.Fields![0].Value}\")"
         };
     }
 
-    private Rule PrepareStringExpression(RuleGroupData data, string ruleName)
+    private EngineRule PrepareStringExpression(RuleGroupData data, string ruleName)
     {
         var comparison = data.ComparisonOperation switch
         {
@@ -115,24 +116,24 @@ public class LeadField : RuleConditionBase
             _ => throw new ArgumentException("Unknown leadfield's ComparisonOperation for string type")
         };
 
-        return new Rule
+        return new EngineRule
         {
             RuleName = ruleName,
             Expression = $"ConditionsHelper.MetaDataStringValueCmp({LeadParam}, \"{_fieldDescription.Name}\", {(int)comparison}, \"{data.Fields![0].Value}\")"
         };
     }
 
-    private Rule PrepareIntegerExpression(RuleGroupData data, string ruleName)
+    private EngineRule PrepareIntegerExpression(RuleGroupData data, string ruleName)
     {
         var param1Value = ParseInt(data.Fields![0], data.Name);
-        return new Rule
+        return new EngineRule
         {
             RuleName = ruleName,
             Expression = $"ConditionsHelper.MetaDataIntegerValueCmp({LeadParam}, \"{_fieldDescription.Name}\", {(int)data.ComparisonOperation!}, {param1Value})"
         };
     }
 
-    private Rule PrepareSetExpression(RuleGroupData data, string ruleName)
+    private EngineRule PrepareSetExpression(RuleGroupData data, string ruleName)
     {
         switch (_fieldDescription.SetElementType)
         {
@@ -140,7 +141,7 @@ public class LeadField : RuleConditionBase
                 {
                     var param1Values = ParseIntegerList(data.Fields![0], data.Name);
                     var localParam1 = string.Join(",", param1Values.Select(r => r.ToString()));
-                    return new Rule
+                    return new EngineRule
                     {
                         RuleName = ruleName,
                         Expression = $"ConditionsHelper.MetaDataIntegerSetValueCmp({LeadParam}, \"{_fieldDescription.Name}\", {(int)data.ComparisonOperation!}, localParam1)",
@@ -158,7 +159,7 @@ public class LeadField : RuleConditionBase
                 {
                     var param1Values = ParseStringList(data.Fields![0], data.Name);
                     var localParam1 = string.Join(",", param1Values.Select(r => $"\"{r}\""));
-                    return new Rule
+                    return new EngineRule
                     {
                         RuleName = ruleName,
                         Expression = $"ConditionsHelper.MetaDataStringSetValueCmp({LeadParam}, \"{_fieldDescription.Name}\", {(int)data.ComparisonOperation!}, localParam1)",

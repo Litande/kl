@@ -1,13 +1,14 @@
 ﻿using KL.Engine.Rule.Enums;
 using KL.Engine.Rule.Models.Entities;
+using Microsoft.EntityFrameworkCore;
 
 namespace KL.Engine.Rule.Repositories;
 
 public class CDRRepository : ICDRRepository
 {
-    private readonly DialDbContext _context;
+    private readonly KlDbContext _context;
 
-    public CDRRepository(DialDbContext context)
+    public CDRRepository(KlDbContext context)
     {
         _context = context;
     }

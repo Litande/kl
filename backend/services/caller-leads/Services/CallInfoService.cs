@@ -4,6 +4,7 @@ using KL.Caller.Leads.Models;
 using KL.Caller.Leads.Models.Messages;
 using KL.Caller.Leads.Repositories;
 using KL.Caller.Leads.Services.Contracts;
+using Medallion.Threading;
 
 namespace KL.Caller.Leads.Services;
 

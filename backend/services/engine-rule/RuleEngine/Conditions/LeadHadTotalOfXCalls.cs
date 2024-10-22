@@ -34,7 +34,7 @@ public class LeadHadTotalOfXCalls : RuleConditionBase
     )
     {  }
 
-    public override Task<Rule> Prepare(RuleGroupData data)
+    public override Task<EngineRule> Prepare(RuleGroupData data)
     {
         ValidateFields(data);
         ValidateComparison(data);
@@ -42,13 +42,13 @@ public class LeadHadTotalOfXCalls : RuleConditionBase
         return PrepareWithSingleParam(data.Name, data.Fields![0], data.ComparisonOperation!.Value);
     }
 
-    private static Task<Rule> PrepareWithSingleParam(string name, RuleValueData? param1, ComparisonOperation operation)
+    private static Task<EngineRule> PrepareWithSingleParam(string name, RuleValueData? param1, ComparisonOperation operation)
     {
         var param1Value = ParseInt(param1, name);
         var comparison = DefineComparison(operation);
         var ruleName = GenerateUniqueRuleName(name);
         var expression = $"ConditionsHelper.GetTotalCallsCount({LeadParam}, {CdrParam}) {comparison} {param1Value}";
 
-        return Task.FromResult(new Rule { RuleName = ruleName, Expression = expression });
+        return Task.FromResult(new EngineRule { RuleName = ruleName, Expression = expression });
     }
 }

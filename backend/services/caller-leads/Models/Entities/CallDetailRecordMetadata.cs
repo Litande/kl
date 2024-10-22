@@ -14,8 +14,8 @@ public record CallDetailRecordUser(
     string? UserName);
 
 public record CallDetailRecordDroppedInfo(
-        long AgentId,
-        long ManagerId,
-        DateTimeOffset DroppedAt,
-        string? Comment
-    );
+    long AgentId,
+    long ManagerId,
+    DateTimeOffset DroppedAt,
+    string? Comment
+);

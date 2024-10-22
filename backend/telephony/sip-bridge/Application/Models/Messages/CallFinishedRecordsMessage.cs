@@ -7,5 +7,5 @@ public record CallFinishedRecordsMessage(
     string[]? RecordUserFiles,
     string[]? RecordManagerFiles)
 {
-    public string Initiator => nameof(DialSipBridge);
+    public string Initiator => nameof(KL.SIP.Bridge);
 }

@@ -1,4 +1,5 @@
 using KL.Engine.Rule.Models;
+using Redis.OM;
 
 namespace KL.Engine.Rule;
 

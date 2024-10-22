@@ -1,4 +1,6 @@
-﻿namespace KL.Caller.Leads.Models.LeadStatisticCache;
+﻿using Redis.OM.Modeling;
+
+namespace KL.Caller.Leads.Models.LeadStatisticCache;
 
 [Document(StorageType = StorageType.Json, Prefixes = new[] { "LeadStatistic" })]
 public class LeadStatisticCache

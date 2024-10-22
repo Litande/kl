@@ -1,4 +1,6 @@
 using System.Text.Json.Serialization;
+using KL.Auth.Configurations;
+using KL.Nats;
 using KL.Statistics.Application.SignalR;
 using KL.Statistics.Authentication;
 using KL.Statistics.Configurations;
@@ -6,9 +8,7 @@ using KL.Statistics.DAL.Configurations;
 using KL.Statistics.Middlewares;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.OpenApi.Models;
-using Plat4Me.Authentication.Configurations;
 using Plat4Me.Core.HealthCheck;
-using Plat4me.Core.Nats;
 using Prometheus;
 using Serilog;
 
@@ -37,7 +37,7 @@ builder.Configuration
     .AddEnvironmentVariables();
 
 builder.Services
-    .AddPlatAuthentication<IdentityUser<long>, IdentityRole<long>, long, JwtTokenGeneratorDial>(builder.Configuration, "dial");
+    .AddAuthentication<IdentityUser<long>, IdentityRole<long>, long, JwtTokenGeneratorDial>(builder.Configuration, "kl");
 
 builder.Services
     .AddSignalR()
