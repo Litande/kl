@@ -10,15 +10,12 @@ using Microsoft.IdentityModel.Tokens;
 
 namespace KL.Auth.Services.Identity
 {
-    public class JwtTokenGenerator<TUser, TId> : IJwtTokenGenerator<TUser, TId>
-        where TUser : IdentityUser<TId> where TId : IEquatable<TId>
+    public class JwtTokenGenerator<TUser, TId>(IOptions<JwtConfigurations> jwtConfigurations)
+        : IJwtTokenGenerator<TUser, TId>
+        where TUser : IdentityUser<TId>
+        where TId : IEquatable<TId>
     {
-        private readonly JwtConfigurations _jwtConfigurations;
-
-        public JwtTokenGenerator(IOptions<JwtConfigurations> jwtConfigurations)
-        {
-            _jwtConfigurations = jwtConfigurations.Value;
-        }
+        private readonly JwtConfigurations _jwtConfigurations = jwtConfigurations.Value;
 
         public virtual string Generate(TUser user, IList<string> userRoles)
         {
@@ -35,7 +32,7 @@ namespace KL.Auth.Services.Identity
             var tokenDescriptor = new SecurityTokenDescriptor
             {
                 Subject = new ClaimsIdentity(claims),
-                Expires = DateTime.UtcNow.AddDays(_jwtConfigurations.ExpirationInDays),
+                Expires = DateTime.UtcNow.AddDays(_jwtConfigurations.ExpDays),
                 SigningCredentials = new SigningCredentials(new SymmetricSecurityKey(key), SecurityAlgorithms.HmacSha256Signature)
             };
             var token = tokenHandler.CreateToken(tokenDescriptor);
@@ -44,7 +41,7 @@ namespace KL.Auth.Services.Identity
 
         protected virtual Claim[] GetCustomCaliClaims(TUser user)
         {
-            return Array.Empty<Claim>();
+            return [];
         }
     }
 

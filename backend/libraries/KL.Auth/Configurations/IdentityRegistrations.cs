@@ -1,10 +1,10 @@
 using System;
 using System.Text;
 using System.Threading.Tasks;
-using KL.Auth.Options;
 using KL.Auth.Persistence;
 using KL.Auth.Services;
 using KL.Auth.Services.Identity;
+using KL.MySql;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
@@ -18,8 +18,9 @@ namespace KL.Auth.Configurations
     {
         private const string JwtSection = "Jwt";
 
-        // Used for development purposes.
-        public static IServiceCollection AddPlatAuthentication<TUser,TRole,TId>(
+        // ReSharper disable once UnusedMember.Global
+        // ReSharper disable once MemberCanBePrivate.Global
+        public static IServiceCollection AddAuthentication<TUser,TRole,TId>(
             this IServiceCollection services,
             IConfiguration configuration,
             string schema)
@@ -27,10 +28,12 @@ namespace KL.Auth.Configurations
             where TRole : IdentityRole<TId>
             where TId : IEquatable<TId>
         {
-            return services.AddPlatAuthentication<TUser, TRole, TId, AuthenticationDbContext<TUser, TRole, TId>, JwtTokenGenerator<TUser, TId>>(configuration, schema);
+            return services.AddAuthentication<TUser, TRole, TId, KLAuthDbContext<TUser, TRole, TId>, JwtTokenGenerator<TUser, TId>>(configuration, schema);
         }
 
-        public static IServiceCollection AddPlatAuthentication<TUser, TRole, TId, TJwtTokenGenerator>(
+        // ReSharper disable once UnusedMember.Global
+        // ReSharper disable once MemberCanBePrivate.Global
+        public static IServiceCollection AddAuthentication<TUser, TRole, TId, TJwtTokenGenerator>(
             this IServiceCollection services,
             IConfiguration configuration,
             string schema)
@@ -39,32 +42,30 @@ namespace KL.Auth.Configurations
             where TId : IEquatable<TId>
             where TJwtTokenGenerator : JwtTokenGenerator<TUser, TId>
         {
-            return services.AddPlatAuthentication<TUser, TRole, TId, AuthenticationDbContext<TUser, TRole, TId>, TJwtTokenGenerator>(configuration, schema);
+            return services.AddAuthentication<TUser, TRole, TId, KLAuthDbContext<TUser, TRole, TId>, TJwtTokenGenerator>(configuration, schema);
         }
 
-        public static IServiceCollection AddPlatAuthentication<TUser, TRole, TId, TAuthenticationDbContext, TJwtTokenGenerator>(
+        // ReSharper disable once UnusedMember.Global
+        // ReSharper disable once MemberCanBePrivate.Global
+        public static IServiceCollection AddAuthentication<TUser, TRole, TId, TAuthenticationDbContext, TJwtTokenGenerator>(
             this IServiceCollection services,
             IConfiguration configuration,
             string schema)
             where TUser : IdentityUser<TId>
             where TRole : IdentityRole<TId>
             where TId : IEquatable<TId>
-            where TAuthenticationDbContext: DbContext
+            where TAuthenticationDbContext: KLAuthDbContext<TUser, TRole, TId>
             where TJwtTokenGenerator : JwtTokenGenerator<TUser, TId>
         {
-            services.AddDbContext<TAuthenticationDbContext>(options =>
-            {
-                var mysqlOptions = new MysqlOptions();
-                configuration.Bind("CLIENTS:MYSQL", mysqlOptions);
-                var connectionString = mysqlOptions.GetUrl(schema);
-                options.UseMySql(connectionString, ServerVersion.AutoDetect(connectionString),
-                    opt => opt.EnableRetryOnFailure(mysqlOptions.ConnectRetry));
-            });
+
+            services.AddMysql<TAuthenticationDbContext>(configuration, schema);
 
             services.AddIdentity<TUser, TRole>()
                     .AddEntityFrameworkStores<TAuthenticationDbContext>()
                     .AddDefaultTokenProviders();
+            
             services.AddScoped<IAdminAuthenticationService, AdminAuthenticationService<TUser, TId>>();
+            
             services.AddSingleton<IJwtTokenGenerator<TUser, TId>, TJwtTokenGenerator>();
 
             services.Configure<IdentityOptions>(options =>
@@ -88,37 +89,38 @@ namespace KL.Auth.Configurations
             configuration.Bind(JwtSection, jwtConfigurations);
 
             var key = Encoding.ASCII.GetBytes(jwtConfigurations.Key);
-            services.AddAuthentication(x =>
-            {
-                x.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
-                x.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
-            })
-            .AddJwtBearer(x =>
-            {
-                x.RequireHttpsMetadata = false;
-                x.SaveToken = true;
-                x.TokenValidationParameters = new TokenValidationParameters
+            services
+                .AddAuthentication(x =>
                 {
-                    ValidateIssuerSigningKey = true,
-                    IssuerSigningKey = new SymmetricSecurityKey(key),
-                    ValidateIssuer = false,
-                    ValidateAudience = false
-                };
-                x.Events = new JwtBearerEvents
+                    x.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
+                    x.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
+                })
+                .AddJwtBearer(x =>
                 {
-                    OnMessageReceived = context =>
+                    x.RequireHttpsMetadata = false;
+                    x.SaveToken = true;
+                    x.TokenValidationParameters = new TokenValidationParameters
                     {
-                        var accessToken = context.Request.Query["access_token"];
-
-                        if (!string.IsNullOrEmpty(accessToken))
+                        ValidateIssuerSigningKey = true,
+                        IssuerSigningKey = new SymmetricSecurityKey(key),
+                        ValidateIssuer = false,
+                        ValidateAudience = false
+                    };
+                    x.Events = new JwtBearerEvents
+                    {
+                        OnMessageReceived = context =>
                         {
-                            // Read the token out of the query string
-                            context.Token = accessToken;
+                            var accessToken = context.Request.Query["access_token"];
+
+                            if (!string.IsNullOrEmpty(accessToken))
+                            {
+                                // Read the token out of the query string
+                                context.Token = accessToken;
+                            }
+                            return Task.CompletedTask;
                         }
-                        return Task.CompletedTask;
-                    }
-                };
-            });
+                    };
+                });
 
             return services;
         }

@@ -9,30 +9,16 @@ namespace KL.Auth.Controllers
     [ApiController]
     [Route("user")]
     [Authorize]
-    public class AccountController : ControllerBase
+    public abstract class AccountController(IAdminAuthenticationService adminAuthenticationService) : ControllerBase
     {
-        private readonly IAdminAuthenticationService _adminAuthenticationService;
-
-        public AccountController(IAdminAuthenticationService adminAuthenticationService)
-        {
-            _adminAuthenticationService = adminAuthenticationService;
-        }
-
         [HttpPost("login")]
         [AllowAnonymous]
         public virtual async Task<IActionResult> Login([FromBody] LoginInputModel request)
         {
-            return Ok(await _adminAuthenticationService.Login(request));
+            return Ok(await adminAuthenticationService.Login(request));
         }
-        
-        
+
         [HttpGet("me")]
-        public virtual async Task<IActionResult> Me()
-        {
-            return Ok(new
-            {
-                name = "Me Name"
-            });
-        }
+        public abstract Task<IActionResult> Me();
     }
 }

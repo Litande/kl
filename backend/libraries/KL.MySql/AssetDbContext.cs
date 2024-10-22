@@ -1,28 +1,39 @@
-using KL.MySql.Entities;
-using KL.MySql.EntityConfigs;
+using KL.MySql.Extensions;
 using Microsoft.EntityFrameworkCore;
 
 namespace KL.MySql;
 
-public class AssetDbContext: DbContext
+public class BaseDbContext(DbContextOptions<BaseDbContext> options) : DbContext(options)
 {
-    public AssetDbContext(DbContextOptions<AssetDbContext> options)
-        : base(options)
-    {
-    }
-
-    public DbSet<Feed> Feeds { get; set; }
-    public DbSet<Exchange> Exchanges { get; set; }
-    public DbSet<Category> Categories { get; set; }
-    public DbSet<Instrument> Instruments { get; set; }
-    
     protected override void OnModelCreating(ModelBuilder builder)
     {
         base.OnModelCreating(builder);
+        
+        foreach(var entity in builder.Model.GetEntityTypes())
+        {
+            // Replace table names
+            entity.SetTableName(entity.GetTableName().ToSnakeCase());
 
-        builder.ApplyConfiguration(new InstrumentConfigurations());
-        builder.ApplyConfiguration(new ExchangeConfigurations());
-        builder.ApplyConfiguration(new FeedConfigurations());
-        builder.ApplyConfiguration(new CategoryConfigurations());
+            // Replace column names            
+            foreach(var property in entity.GetProperties())
+            {
+                property.SetColumnName(property.Name.ToSnakeCase());
+            }
+
+            foreach(var key in entity.GetKeys())
+            {
+                key.SetName(key.GetName().ToSnakeCase());
+            }
+
+            foreach(var key in entity.GetForeignKeys())
+            {
+                key.SetConstraintName(key.GetConstraintName().ToSnakeCase());
+            }
+
+            foreach(var index in entity.GetIndexes())
+            {
+                index.SetDatabaseName(index.GetDatabaseName().ToSnakeCase());
+            }
+        }
     }
 }

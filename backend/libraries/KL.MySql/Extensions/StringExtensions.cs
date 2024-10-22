@@ -1,6 +1,6 @@
 ﻿using System.Text.RegularExpressions;
 
-namespace KL.Auth.Extensions;
+namespace KL.MySql.Extensions;
 
 public static class StringExtensions
 {

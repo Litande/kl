@@ -4,6 +4,6 @@ namespace KL.Auth.Services.Identity
     {
         public string Key { get; set; }
 
-        public int ExpirationInDays { get; set; }
+        public int ExpDays { get; set; }
     }
 }
