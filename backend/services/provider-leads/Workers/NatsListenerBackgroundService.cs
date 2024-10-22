@@ -1,9 +1,9 @@
 ﻿using System.Text.Json;
+using KL.Nats;
 using KL.Provider.Leads.Application.Configurations;
 using KL.Provider.Leads.Application.Handlers.Interfaces;
 using KL.Provider.Leads.Application.Models.Messages;
 using Microsoft.Extensions.Options;
-using Plat4me.Core.Nats;
 
 namespace KL.Provider.Leads.Workers;
 

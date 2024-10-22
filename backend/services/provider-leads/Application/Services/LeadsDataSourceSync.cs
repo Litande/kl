@@ -1,4 +1,5 @@
 ﻿using System.Text.Json;
+using KL.Nats;
 using KL.Provider.Leads.Application.Configurations;
 using KL.Provider.Leads.Application.Enums;
 using KL.Provider.Leads.Application.Extensions;
@@ -9,7 +10,6 @@ using KL.Provider.Leads.Persistent.Entities;
 using KL.Provider.Leads.Persistent.LeadProviderHttpClient;
 using KL.Provider.Leads.Persistent.Repositories.Interfaces;
 using Microsoft.Extensions.Options;
-using Plat4me.Core.Nats;
 
 namespace KL.Provider.Leads.Application.Services;
 

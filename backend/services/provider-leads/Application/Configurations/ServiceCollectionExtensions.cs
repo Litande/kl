@@ -1,9 +1,9 @@
-﻿using KL.Provider.Leads.Application.Handlers;
+﻿using KL.Nats;
+using KL.Provider.Leads.Application.Handlers;
 using KL.Provider.Leads.Application.Handlers.Interfaces;
 using KL.Provider.Leads.Application.Services;
 using KL.Provider.Leads.Application.Services.Interfaces;
 using KL.Provider.Leads.Workers;
-using Plat4me.Core.Nats;
 
 namespace KL.Provider.Leads.Application.Configurations;
 
