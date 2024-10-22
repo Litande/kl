@@ -17,13 +17,13 @@ namespace KL.Manager.API.Persistent.Repositories;
 
 public class LeadRepository : RepositoryBase, ILeadRepository
 {
-    private readonly DialDbContext _context;
+    private readonly KlDbContext _context;
     private readonly ILeadLastCacheRepository _leadLastCacheRepository;
     private readonly ILogger<LeadRepository> _logger;
     private readonly IDataSourceRepository _dataSourceRepository;
 
     public LeadRepository(
-        DialDbContext context,
+        KlDbContext context,
         ILeadLastCacheRepository leadLastCacheRepository,
         ILogger<LeadRepository> logger,
         IDataSourceRepository dataSourceRepository)
@@ -78,7 +78,7 @@ public class LeadRepository : RepositoryBase, ILeadRepository
                 .Where(r =>
                     //!r.DeletedAt.HasValue
                     //&& r.RoleType == RoleTypes.Agent &&
-                    r.UserId == assignedUserId)
+                    r.Id == assignedUserId)
                 .FirstOrDefaultAsync(ct);
 
             if (user is null)
@@ -232,7 +232,7 @@ public class LeadRepository : RepositoryBase, ILeadRepository
             AssignedAgent = r.LastCallAgent != null
                 ? new AssignedAgentProjection
                 {
-                    AgentId = r.LastCallAgent.UserId,
+                    AgentId = r.LastCallAgent.Id,
                     FirstName = r.LastCallAgent.FirstName,
                     LastName = r.LastCallAgent.LastName
                 }

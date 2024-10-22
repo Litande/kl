@@ -34,6 +34,14 @@ public class KlAuthDbContext<TUser, TRole, TId>
     {
         base.OnModelCreating(builder);
         
+        builder.Entity<TUser>().ToTable("user");
+        builder.Entity<TRole>().ToTable("role");
+        builder.Entity<IdentityUserRole<TId>>().ToTable("user_role");
+        builder.Entity<IdentityUserClaim<TId>>().ToTable("user_claim");
+        builder.Entity<IdentityUserLogin<TId>>().ToTable("user_login");
+        builder.Entity<IdentityRoleClaim<TId>>().ToTable("role_claim");
+        builder.Entity<IdentityUserToken<TId>>().ToTable("user_token");
+        
         foreach(var entity in builder.Model.GetEntityTypes())
         {
             // Replace table names

@@ -4,13 +4,13 @@ namespace KL.Agent.API.Persistent.Seed;
 
 public static class SeedClient
 {
-    public static long Seed(DialDbContext context)
+    public static long Seed(KlDbContext context)
     {
         var clientId = AddClientIfNeed(context);
         return clientId;
     }
 
-    private static long AddClientIfNeed(DialDbContext context)
+    private static long AddClientIfNeed(KlDbContext context)
     {
         const long defaultClientId = 1;
         var client = context.Clients

@@ -5,14 +5,14 @@ namespace KL.Manager.API.Persistent.Seed;
 
 public class SeedRuleGroup
 {
-    public static long Seed(DialDbContext context, string ruleGroupName, RuleGroupTypes groupType, long clientId)
+    public static long Seed(KlDbContext context, string ruleGroupName, RuleGroupTypes groupType, long clientId)
     {
         var ruleGroupId = AddRuleGroupsIfNeed(context, ruleGroupName, groupType, clientId);
         return ruleGroupId;
     }
 
     private static long AddRuleGroupsIfNeed(
-        DialDbContext context,
+        KlDbContext context,
         string ruleGroupName,
         RuleGroupTypes groupType,
         long clientId)

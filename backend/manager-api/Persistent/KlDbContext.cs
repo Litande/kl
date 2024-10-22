@@ -1,16 +1,12 @@
-﻿using KL.Manager.API.Persistent.Entities;
+﻿using KL.Auth.Persistence;
+using KL.Manager.API.Persistent.Entities;
 using KL.Manager.API.Persistent.EntityConfigurations;
 using Microsoft.EntityFrameworkCore;
 
 namespace KL.Manager.API.Persistent;
 
-public class DialDbContext : DbContext
+public class KlDbContext(DbContextOptions<KlDbContext> options) : KlAuthDbContext<User, Role, long>(options)
 {
-    public DialDbContext(DbContextOptions<DialDbContext> options)
-        : base(options)
-    {
-    }
-
     public virtual DbSet<Client> Clients { get; set; } = null!;
     public virtual DbSet<Lead> Leads { get; set; } = null!;
     public virtual DbSet<DataSource> DataSources { get; set; } = null!;
@@ -18,7 +14,6 @@ public class DialDbContext : DbContext
     public virtual DbSet<LeadQueue> LeadQueues { get; set; } = null!;
     public virtual DbSet<Rule> Rules { get; set; } = null!;
     public virtual DbSet<RuleGroup> GroupRules { get; set; } = null!;
-    public virtual DbSet<User> Users { get; set; } = null!;
     public virtual DbSet<SettingsEntity> Settings { get; set; } = null!;
     public virtual DbSet<StatusRule> StatusRules { get; set; } = null!;
     public virtual DbSet<Team> Teams { get; set; } = null!;
@@ -38,6 +33,7 @@ public class DialDbContext : DbContext
         builder.ApplyConfiguration(new RuleGroupEntityConfiguration());
         builder.ApplyConfiguration(new LeadQueueEntityConfiguration());
         builder.ApplyConfiguration(new UserEntityConfiguration());
+        builder.ApplyConfiguration(new RoleEntityConfiguration());
         builder.ApplyConfiguration(new UserLeadQueueEntityConfiguration());
         builder.ApplyConfiguration(new TeamEntityConfiguration());
         builder.ApplyConfiguration(new UserTeamEntityConfiguration());

@@ -1,7 +1,7 @@
 --liquibase formatted sql
 
 --changeset argent:settings
-create table `dial`.settings  (
+create table kl.settings  (
 	id	     bigint unsigned    not null,
     value    json,
 	primary key (id)

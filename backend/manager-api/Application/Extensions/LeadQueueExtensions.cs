@@ -19,7 +19,7 @@ public static class LeadQueueExtensions
     {
         LeadGroup Mapper(LeadQueue queue)
         {
-            var agentsCount = queue.Agents.Count(r => onlineAgentIds.Contains(r.UserId));
+            var agentsCount = queue.Agents.Count(r => onlineAgentIds.Contains(r.Id));
             var leadsCount = queueLeadsCaches.Count(i => i.QueueId == queue.Id);
             queueDropRateCaches.TryGetValue(queue.Id, out var queueCache);
 
@@ -54,7 +54,7 @@ public static class LeadQueueExtensions
     {
         LeadGroup Mapper(LeadQueue queue)
         {
-            var agentsCount = queue.Agents.Count(r => onlineAgentIds.Contains(r.UserId));
+            var agentsCount = queue.Agents.Count(r => onlineAgentIds.Contains(r.Id));
             var leadsCount = queueLeadsCaches.Count(i => i.QueueId == queue.Id);
             queueDropRateCaches.TryGetValue(queue.Id, out var queueCache);
 

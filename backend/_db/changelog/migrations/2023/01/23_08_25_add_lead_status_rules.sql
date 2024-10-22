@@ -1,7 +1,7 @@
 --liquibase formatted sql
 
 --changeset argent:lead_status_rules
-create table `dial`.lead_status_rules  (
+create table kl.lead_status_rules  (
 	status					bigint unsigned    not null,
 	allow_transit_status    bigint unsigned    not null,
     client_id    			bigint unsigned   not null,

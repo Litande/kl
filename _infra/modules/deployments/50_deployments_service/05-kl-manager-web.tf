@@ -86,7 +86,7 @@ resource "kubernetes_service" "web_dial_service" {
   }
   spec {
     selector = {
-      app = kubernetes_deployment.web_dial.spec.0.template.0.metadata[0].labels.app
+      app = kubernetes_deployment.web_kl.spec.0.template.0.metadata[0].labels.app
     }
     port {
       name        = "http"

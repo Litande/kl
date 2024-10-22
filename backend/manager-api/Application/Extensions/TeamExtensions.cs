@@ -22,7 +22,7 @@ public static class TeamExtensions
     {
         return agentCaches
             .Count(x => team.Agents
-                            .Any(y => y.UserId == x.Value.AgentId)
+                            .Any(y => y.Id == x.Value.AgentId)
                         && x.Value.AgentStatus != AgentInternalStatusTypes.Offline 
                         && x.Value.AgentDisplayStatus != AgentStatusTypes.Offline
                     );

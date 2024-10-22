@@ -1,5 +1,6 @@
 using KL.Agent.API.Application.Enums;
 using KL.Agent.API.Application.Models.Requests;
+using KL.Agent.API.Persistent.Entities;
 using Microsoft.AspNetCore.Identity;
 
 namespace KL.Agent.API.Application.Handlers;
@@ -7,11 +8,11 @@ namespace KL.Agent.API.Application.Handlers;
 public class AgentChangePasswordHandler : IAgentChangePasswordHandler
 {
     private readonly ILogger<AgentChangePasswordHandler> _logger;
-    private readonly UserManager<IdentityUser<long>> _userManager;
+    private readonly UserManager<User> _userManager;
 
     public AgentChangePasswordHandler(
         ILogger<AgentChangePasswordHandler> logger,
-        UserManager<IdentityUser<long>> userManager
+        UserManager<User> userManager
     )
     {
         _logger = logger;

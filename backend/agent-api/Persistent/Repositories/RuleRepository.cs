@@ -6,9 +6,9 @@ namespace KL.Agent.API.Persistent.Repositories;
 
 public class RuleRepository : IRuleRepository
 {
-    private readonly DialDbContext _context;
+    private readonly KlDbContext _context;
 
-    public RuleRepository(DialDbContext context)
+    public RuleRepository(KlDbContext context)
     {
         _context = context;
     }

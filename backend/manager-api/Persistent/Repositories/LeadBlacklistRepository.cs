@@ -9,9 +9,9 @@ namespace KL.Manager.API.Persistent.Repositories;
 
 public class LeadBlacklistRepository : RepositoryBase, ILeadBlacklistRepository
 {
-    private readonly DialDbContext _context;
+    private readonly KlDbContext _context;
 
-    public LeadBlacklistRepository(DialDbContext context)
+    public LeadBlacklistRepository(KlDbContext context)
     {
         _context = context;
     }

@@ -7,50 +7,36 @@ namespace KL.Manager.API.Persistent.Seed.Authentication;
 public static class AdminRegistration
 {
     public static void Seed(
-        RoleManager<IdentityRole<long>> rolesManager,
-        UserManager<IdentityUser<long>> userManager,
-        DialDbContext context,
+        RoleManager<Role> rolesManager,
+        UserManager<User> userManager,
+        KlDbContext context,
         long defaultClientId)
     {
-        var admin = userManager.FindByNameAsync("manager@plat4me.com").Result;
+        var admin = userManager.FindByNameAsync("manager@localhost.com").Result;
         if (admin == null)
         {
             // CREATE ADMIN USER
-            var user = new IdentityUser<long>
+            var user = new User()
             {
-                Email = "manager@plat4me.com",
+                Email = "manager@localhost.com",
                 EmailConfirmed = true,
-                UserName = "manager@plat4me.com",
-            };
-
-            var _ = userManager.CreateAsync(user, "gkHe1GJn").Result;
-            admin = user;
-        }
-
-        var adminUser = context.Users
-            .Where(r => r.UserId == admin.Id)
-            .FirstOrDefault();
-
-        if (adminUser is null)
-        {
-            adminUser = new User
-            {
-                UserId = admin.Id,
+                UserName = "manager@localhost.com",
                 ClientId = defaultClientId,
                 FirstName = "Main",
                 LastName = "Manager",
                 CreatedAt = DateTimeOffset.UtcNow,
                 RoleType = RoleTypes.Manager,
             };
-            context.Users.Add(adminUser);
-            context.SaveChanges();
+
+            var _ = userManager.CreateAsync(user, "gkHe1GJn").Result;
+            admin = user;
         }
 
         var managerRole = rolesManager.FindByNameAsync("Manager").Result;
         if (managerRole == null)
         {
             // CREATE ADMIN USER
-            var role = new IdentityRole<long>
+            var role = new Role
             {
                 Name = "Manager",
             };

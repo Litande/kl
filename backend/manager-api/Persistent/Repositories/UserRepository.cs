@@ -14,13 +14,13 @@ namespace KL.Manager.API.Persistent.Repositories;
 
 public class UserRepository : RepositoryBase, IUserRepository
 {
-    private readonly DialDbContext _context;
-    private readonly UserManager<IdentityUser<long>> _userManager;
+    private readonly KlDbContext _context;
+    private readonly UserManager<User> _userManager;
     private readonly IAgentCacheRepository _agentCacheRepository;
 
     public UserRepository(
-        DialDbContext context,
-        UserManager<IdentityUser<long>> userManager,
+        KlDbContext context,
+        UserManager<User> userManager,
         IAgentCacheRepository agentCacheRepository)
     {
         _context = context;
@@ -37,7 +37,7 @@ public class UserRepository : RepositoryBase, IUserRepository
             .ActiveAgents(clientId)
             .Select(r => new TeamAgentProjection
             {
-                Id = r.UserId,
+                Id = r.Id,
                 FirstName = r.FirstName,
                 LastName = r.LastName,
                 Name = r.FullName(),
@@ -93,7 +93,7 @@ public class UserRepository : RepositoryBase, IUserRepository
     {
         var user = await _context.Users
             .Where(r => r.ClientId == clientId
-                        && r.UserId == userId
+                        && r.Id == userId
                         && !r.DeletedAt.HasValue
                         && r.Status == UserStatusTypes.Active)
             .FirstOrDefaultAsync(ct);
@@ -109,7 +109,7 @@ public class UserRepository : RepositoryBase, IUserRepository
         var team = await _context.Teams
             .Where(r => r.ClientId == clientId
                         && r.Agents
-                            .Any(p => p.UserId == agentId))
+                            .Any(p => p.Id == agentId))
             .FirstOrDefaultAsync(ct);
 
         if (team is null)
@@ -119,7 +119,7 @@ public class UserRepository : RepositoryBase, IUserRepository
             .ActiveAgents(clientId, agentId)
             .Select(r => new AgentProjection
             {
-                AgentId = r.UserId,
+                AgentId = r.Id,
                 FirstName = r.FirstName,
                 LastName = r.LastName,
                 TeamIds = r.Teams.Select(p => p.Id),
@@ -168,6 +168,9 @@ public class UserRepository : RepositoryBase, IUserRepository
     {
         var agent = new User
         {
+            Email = request.Email,
+            UserName = request.Email,
+            EmailConfirmed = true,
             ClientId = clientId,
             FirstName = request.FirstName,
             LastName = request.LastName,
@@ -179,25 +182,13 @@ public class UserRepository : RepositoryBase, IUserRepository
         await SyncAgentLeadQueues(agent, request.LeadQueueIds, ct);
         await SyncAgentTags(agent, request.TagIds, ct);
 
-        var identityUser = new IdentityUser<long>
-        {
-            Email = request.Email,
-            UserName = request.Email,
-            EmailConfirmed = true,
-        };
-
-        var identityResult = await _userManager.CreateAsync(identityUser, request.Password);
+        var identityResult = await _userManager.CreateAsync(agent, request.Password);
         identityResult.ValidateIdentityResult();
 
-        var identityUserRoleResult = await _userManager.AddToRoleAsync(identityUser, "AGENT");
+        var identityUserRoleResult = await _userManager.AddToRoleAsync(agent, "AGENT");
         identityUserRoleResult.ValidateIdentityResult();
 
-        agent.UserId = identityUser.Id;
-
-        await _context.Users.AddAsync(agent, ct);
-        await _context.SaveChangesAsync(ct);
-
-        return await GetWithTeamsTagsAndQueues(clientId, agent.UserId, ct);
+        return await GetWithTeamsTagsAndQueues(clientId, agent.Id, ct);
     }
 
     public async Task<AgentProjection?> Update(
@@ -219,7 +210,7 @@ public class UserRepository : RepositoryBase, IUserRepository
         await SyncAgentLeadQueues(agent, request.LeadQueueIds, ct);
         await SyncAgentTags(agent, request.TagIds, ct);
 
-        var identityUser = await _userManager.FindByIdAsync(agent.UserId.ToString());
+        var identityUser = await _userManager.FindByIdAsync(agent.Id.ToString());
         if (identityUser is null) return null;
 
         var setUserNameIdentityResult = await _userManager.SetUserNameAsync(identityUser, request.UserName);
@@ -253,7 +244,7 @@ public class UserRepository : RepositoryBase, IUserRepository
 
         var rq = q.Select(r => new AgentTagsProjection
         {
-            Id = r.UserId,
+            Id = r.Id,
             FirstName = r.FirstName,
             LastName = r.LastName,
             TeamName = r.Teams.First().Name,
@@ -320,7 +311,7 @@ public class UserRepository : RepositoryBase, IUserRepository
             .Include(x => x.Teams)
             .Where(r => r.ClientId == clientId
                         && r.RoleType == RoleTypes.Agent
-                        && agentIds.Contains(r.UserId))
+                        && agentIds.Contains(r.Id))
             .SelectAgentInfoProjection()
             .ToArrayAsync(ct);
 
@@ -333,7 +324,7 @@ public class UserRepository : RepositoryBase, IUserRepository
            .Include(x => x.Teams)
            .Where(r => r.ClientId == clientId
                        && r.RoleType == RoleTypes.Agent
-                       && r.UserId == agentId)
+                       && r.Id == agentId)
            .SelectAgentInfoProjection()
            .FirstOrDefaultAsync(ct);
     }
@@ -474,7 +465,7 @@ internal static class UserRepositoryExtensions
                         && r.Status == UserStatusTypes.Active);
 
         if (userId.HasValue)
-            q = q.Where(r => r.UserId == userId);
+            q = q.Where(r => r.Id == userId);
 
         return q;
     }
@@ -548,7 +539,7 @@ internal static class UserRepositoryExtensions
     {
         return q.Select(r => new AgentInfoProjection
         {
-            AgentId = r.UserId,
+            AgentId = r.Id,
             FirstName = r.FirstName,
             LastName = r.LastName,
             //BrandName = r.Client.Name, // TODO get from client?

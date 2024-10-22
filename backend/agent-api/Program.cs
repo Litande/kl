@@ -1,7 +1,9 @@
 using KL.Agent.API.Application.Configurations;
 using KL.Agent.API.Configurations;
 using KL.Agent.API.Middlewares;
+using KL.Agent.API.Persistent;
 using KL.Agent.API.Persistent.Configurations;
+using KL.Agent.API.Persistent.Entities;
 using KL.Agent.API.Persistent.Seed.Authentication;
 using KL.Agent.API.SignalR;
 using KL.Auth.Configurations;
@@ -34,7 +36,8 @@ builder.Services
     .ForwardToPrometheus();
 
 builder.Services
-    .AddAuthentication<IdentityUser<long>, IdentityRole<long>, long, JwtTokenGeneratorDial>(builder.Configuration, "kl");
+    .AddAuthentication<User, Role, long, KlDbContext, JwtTokenGeneratorDial>(
+        builder.Configuration, "kl");
 
 builder.Services
     .AddHttpContextAccessor()

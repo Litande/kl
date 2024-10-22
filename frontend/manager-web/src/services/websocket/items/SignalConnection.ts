@@ -1,5 +1,5 @@
 import * as signalR from "@microsoft/signalr";
-import { createBaseURL, getToken } from "services/api";
+import { getToken } from "services/api";
 
 import {
   IMessageRequest,

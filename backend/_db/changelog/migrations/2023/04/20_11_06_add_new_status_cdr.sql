@@ -1,7 +1,7 @@
 --liquibase formatted sql
 
 --changeset argent:20_11_06_add_new_status_cdr
-ALTER TABLE dial.`call_detail_record`
+ALTER TABLE kl.`call_detail_record`
     MODIFY COLUMN `call_hangup_status` enum (
         'unknown','callfinishedbylead','callfinishedbyagent',
         'callfinishedbymanager','sessiontimeout','noavailableagents',

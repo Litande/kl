@@ -1,9 +1,9 @@
 ﻿using KL.Agent.API.Persistent.Repositories;
 using KL.Agent.API.Persistent.Repositories.Interfaces;
 using KL.Agent.API.Persistent.Seed;
+using KL.MySql;
 using Medallion.Threading;
 using Medallion.Threading.Redis;
-using Microsoft.EntityFrameworkCore;
 using Polly;
 using Polly.Caching;
 using Polly.Caching.Memory;
@@ -55,20 +55,8 @@ public static class ServiceCollectionExtensions
         this IServiceCollection services,
         IConfiguration configuration)
     {
-        var mysqlOptions = new MysqlOptions
-        {
-            Host = configuration.GetValue<string>("CLIENTS:MYSQL:HOST"),
-            Pass = configuration.GetValue<string>("CLIENTS:MYSQL:PASS"),
-            User = configuration.GetValue<string>("CLIENTS:MYSQL:USER"),
-            Port = configuration.GetValue<string>("CLIENTS:MYSQL:PORT"),
-        };
-
-        var connectionString = mysqlOptions.GetUrl("dial");
-
-        services.AddDbContextFactory<DialDbContext>(options => options.UseMySql(
-            connectionString, ServerVersion.AutoDetect(connectionString),
-            opt => opt.EnableRetryOnFailure(mysqlOptions.ConnectRetry)));
-
+        services.AddMysql<KlDbContext>(configuration, "kl");
+        
         return services;
     }
 

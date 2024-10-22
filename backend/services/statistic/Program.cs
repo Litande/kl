@@ -1,12 +1,14 @@
 using System.Text.Json.Serialization;
 using KL.Auth.Configurations;
+using KL.MySql;
 using KL.Nats;
+using KL.Statistics.Application.Models.Entities;
 using KL.Statistics.Application.SignalR;
 using KL.Statistics.Authentication;
 using KL.Statistics.Configurations;
+using KL.Statistics.DAL;
 using KL.Statistics.DAL.Configurations;
 using KL.Statistics.Middlewares;
-using Microsoft.AspNetCore.Identity;
 using Microsoft.OpenApi.Models;
 using Plat4Me.Core.HealthCheck;
 using Prometheus;
@@ -37,7 +39,9 @@ builder.Configuration
     .AddEnvironmentVariables();
 
 builder.Services
-    .AddAuthentication<IdentityUser<long>, IdentityRole<long>, long, JwtTokenGeneratorDial>(builder.Configuration, "kl");
+    .AddAuthentication<User, Role, long, KlDbContext, JwtTokenGeneratorDial>(builder.Configuration, "kl");
+
+builder.Services.AddMysql<KlDbContext>(builder.Configuration, "kl");
 
 builder.Services
     .AddSignalR()
@@ -94,6 +98,7 @@ builder.Services.AddRedisConfiguration(builder.Configuration);
 builder.Services.AddWorkers();
 
 builder.Services.AddScoped<IHubSender, HubSender>();
+
 builder.Services
     .AddRepositories(builder.Configuration);
 

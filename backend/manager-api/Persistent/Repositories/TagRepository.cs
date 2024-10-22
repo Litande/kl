@@ -9,9 +9,9 @@ namespace KL.Manager.API.Persistent.Repositories;
 
 public class TagRepository : ITagRepository
 {
-    private readonly DialDbContext _context;
+    private readonly KlDbContext _context;
 
-    public TagRepository(DialDbContext context)
+    public TagRepository(KlDbContext context)
     {
         _context = context;
     }

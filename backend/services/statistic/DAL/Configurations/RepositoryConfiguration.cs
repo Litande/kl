@@ -17,19 +17,6 @@ public static class RepositoryConfiguration
         services.AddTransient<IQueueDropRateCacheRepository, QueueDropRateCacheRepository>();
         services.AddTransient<ILeadStatisticCacheRepository, LeadStatisticCacheRepository>();
 
-        var mysqlOptions = new SqlOptions
-        {
-            Host = configuration.GetValue<string>("CLIENTS:MYSQL:HOST"),
-            Pass = configuration.GetValue<string>("CLIENTS:MYSQL:PASS"),
-            User = configuration.GetValue<string>("CLIENTS:MYSQL:USER"),
-            Port = configuration.GetValue<string>("CLIENTS:MYSQL:PORT"),
-        };
-
-        var connectionString = mysqlOptions.GetUrl("dial");
-        services.AddDbContextFactory<KlDbContext>(options => options.UseMySql(connectionString,
-            ServerVersion.AutoDetect(connectionString),
-            opt => opt.EnableRetryOnFailure(mysqlOptions.ConnectRetry)));
-
         return services;
     }
 }

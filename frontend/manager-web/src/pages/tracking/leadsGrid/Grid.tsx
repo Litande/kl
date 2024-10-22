@@ -17,6 +17,7 @@ import { ROUTES } from "router/enums";
 import { NavLink } from "react-router-dom";
 import { Layout } from "components/layoutButton/types";
 import { STATISTIC_WS } from "services/websocket/const";
+import dashboardApi from "../../../services/api/dashboard";
 
 type Props = {
   layout?: Layout;
@@ -35,8 +36,8 @@ const AgentsGrid: FC<Props> = ({ layout = Layout.Three }) => {
   };
 
   useEffect(() => {
-    trackingApi
-      .getLeadsStats()
+    dashboardApi
+      .getNewLeadsStats()
       .then(({ data }: AxiosResponse<IRow[]>) => {
         // Todo: remove data.result
         setData(data.result || data);

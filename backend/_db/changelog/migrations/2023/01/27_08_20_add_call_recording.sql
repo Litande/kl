@@ -1,7 +1,7 @@
 --liquibase formatted sql
 
 --changeset argent:27_08_20_add_call_recording
-create table `dial`.call_detail_record (
+create table kl.call_detail_record (
   id					bigint unsigned auto_increment			not null,
   session_id          varchar(36)                             not null,
   client_id           bigint unsigned                         null default null,
@@ -44,10 +44,9 @@ create table `dial`.call_detail_record (
   primary key (id),
   unique key `SessionIndex` (`session_id`),
 
-  constraint `cdr_client_id_FK` foreign key (client_id) references `client` (id) on delete set null,
-  constraint `cdr_lead_id_FK` foreign key (lead_id) references `lead` (id) on delete set null,
-  constraint `cdr_user_id_FK` foreign key (user_id) references `user` (user_id) on delete set null,
-  constraint `cdr_queue_id_FK` foreign key (queue_id) references `lead_queue` (id) on delete set null
-
+  constraint `cdr_client_id_FK` foreign key (client_id) references kl.`client` (id) on delete set null,
+  constraint `cdr_lead_id_FK` foreign key (lead_id) references kl.`lead` (id) on delete set null,
+  constraint `cdr_user_id_FK` foreign key (user_id) references kl.`user` (id) on delete set null,
+  constraint `cdr_queue_id_FK` foreign key (queue_id) references kl.`lead_queue` (id) on delete set null
 ) ENGINE=InnoDB default charset=utf8 collate=utf8_unicode_ci;
 --rollback SELECT 1 FROM DUAL;

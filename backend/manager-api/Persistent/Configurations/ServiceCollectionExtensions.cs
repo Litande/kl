@@ -3,6 +3,7 @@ using KL.Manager.API.Persistent.Clients;
 using KL.Manager.API.Persistent.Repositories;
 using KL.Manager.API.Persistent.Repositories.Interfaces;
 using KL.Manager.API.Persistent.Seed;
+using KL.MySql;
 using Microsoft.EntityFrameworkCore;
 using Polly;
 using Polly.Caching;
@@ -38,20 +39,9 @@ public static class ServiceCollectionExtensions
         this IServiceCollection services,
         IConfiguration configuration)
     {
-        var mysqlOptions = new MysqlOptions
-        {
-            Host = configuration.GetValue<string>("CLIENTS:MYSQL:HOST"),
-            Pass = configuration.GetValue<string>("CLIENTS:MYSQL:PASS"),
-            User = configuration.GetValue<string>("CLIENTS:MYSQL:USER"),
-            Port = configuration.GetValue<string>("CLIENTS:MYSQL:PORT"),
-        };
-
-        var connectionString = mysqlOptions.GetUrl("dial");
-
-        services.AddDbContextFactory<DialDbContext>(options => options.UseMySql(connectionString,
-            ServerVersion.AutoDetect(connectionString),
-            opt => opt.EnableRetryOnFailure(mysqlOptions.ConnectRetry)));
-
+        services.AddMysql<KlDbContext>(configuration, "kl");
+        
+        
         return services;
     }
 

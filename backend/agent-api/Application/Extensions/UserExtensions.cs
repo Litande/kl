@@ -7,7 +7,7 @@ public static class UserExtensions
 {
     public static MeResponse ToResponse(this User user, string[]? iceServers = null)
         => new(
-            user.UserId,
+            user.Id,
             user.FirstName,
             user.LastName,
             iceServers);

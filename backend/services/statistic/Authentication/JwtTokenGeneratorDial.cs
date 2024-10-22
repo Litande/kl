@@ -1,6 +1,7 @@
 ﻿using System.Security.Claims;
 using KL.Auth.Services.Identity;
 using KL.Statistics.Application.Common;
+using KL.Statistics.Application.Models.Entities;
 using KL.Statistics.DAL;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
@@ -10,13 +11,12 @@ namespace KL.Statistics.Authentication;
 
 public class JwtTokenGeneratorDial(
     IOptions<JwtConfigurations> jwtConfigurations,
-    IDbContextFactory<KlDbContext> dbContextFactory)
-    : JwtTokenGenerator<IdentityUser<long>, long>(jwtConfigurations)
+    KlDbContext dbContext)
+    : JwtTokenGenerator<User, long>(jwtConfigurations)
 {
-    protected override Claim[] GetCustomCaliClaims(IdentityUser<long> identityUser)
+    protected override Claim[] GetCustomCaliClaims(User identityUser)
     {
-        using var context = dbContextFactory.CreateDbContext();
-        var user = context.Users
+        var user = dbContext.Users
             .FirstOrDefault(r => r.Id == identityUser.Id);
 
         var baseClaims = base.GetCustomCaliClaims(identityUser);

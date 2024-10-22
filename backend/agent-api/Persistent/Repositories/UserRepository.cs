@@ -6,9 +6,9 @@ namespace KL.Agent.API.Persistent.Repositories;
 
 public class UserRepository : RepositoryBase, IUserRepository
 {
-    private readonly DialDbContext _context;
+    private readonly KlDbContext _context;
 
-    public UserRepository(DialDbContext context)
+    public UserRepository(KlDbContext context)
     {
         _context = context;
     }
@@ -17,7 +17,7 @@ public class UserRepository : RepositoryBase, IUserRepository
     {
         var entity = await _context.Users
             .Where(r => r.ClientId == clientId
-                        && r.UserId == userId)
+                        && r.Id == userId)
             .FirstOrDefaultAsync(ct);
 
         return entity;

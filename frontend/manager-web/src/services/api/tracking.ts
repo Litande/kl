@@ -1,15 +1,11 @@
 import apiService from "services/api/apiService";
 import { AxiosResponse } from "axios";
-import { createBaseURL } from "services/api/index";
-import { STATISTIC_WS } from "services/websocket/const";
+
 const { fetchApi, postApi, putApi, deleteApi } = apiService();
-const baseUrl = createBaseURL(STATISTIC_WS);
-const params = {
-  baseURL: baseUrl,
-};
+
 const trackingApi = {
   getGroups: () => fetchApi("/tracking/groups"),
-  getLeadsStats: () => fetchApi("/lead/new_leads_statistics", false, params),
+ 
   getLiveTracking: () => fetchApi("/tracking/live_tracking"),
   getLeadInfo: ({ id }) => fetchApi(`/leads/${id}/shortinfo`),
   getAgent: ({ id }) => fetchApi(`/agents/${id}`),

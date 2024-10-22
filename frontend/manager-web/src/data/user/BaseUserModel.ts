@@ -1,8 +1,7 @@
 import { ROLES } from "router/enums";
 import { User } from "./types";
 import ConnectionModel from "services/websocket/ConnectionModel";
-import { STATISTIC_WS, STATISTICS_ENDPOINT, TRACKING_WS } from "services/websocket/const";
-import { createBaseURL } from "services/api";
+import { STATISTICS_ENDPOINT, TRACKING_WS } from "services/websocket/const";
 import CallService from "services/callService/CallService";
 
 class BaseUserModel {
@@ -20,10 +19,10 @@ class BaseUserModel {
     console.warn("BaseUserModel initialized");
     CallService.getInstance().setStuns(this._iceServices);
 
-    this._trackingWS = new ConnectionModel(createBaseURL() + "/" + TRACKING_WS, this.onError);
+    this._trackingWS = new ConnectionModel(process.env.REACT_APP_API_URL + "/" + TRACKING_WS, this.onError);
     this._trackingWS.connect();
     this._statisticWS = new ConnectionModel(
-      createBaseURL(STATISTIC_WS) + "/" + STATISTICS_ENDPOINT,
+        process.env.REACT_APP_API_URL_STATS + "/statistics" ,
       this.onError
     );
     this._statisticWS.connect();

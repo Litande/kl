@@ -8,28 +8,11 @@ import { LOGOUT_EVENT } from "services/events/consts";
 import { ROUTES } from "router/enums";
 
 export const getToken = () => window.localStorage.getItem("token");
-export const createBaseURL = (url = null) => {
-  const isLocalhost = window.location.hostname === "localhost";
-
-  const DOMAIN_LENGTH = 2;
-  const API_PREFIX = "api";
-  const SEPARATOR = ".";
-  const origin = isLocalhost ? process.env.REACT_APP_API_URL : window.location.origin;
-
-  const hostParts = origin.split(SEPARATOR).filter(part => part !== API_PREFIX);
-  const domain = hostParts.slice(hostParts.length - DOMAIN_LENGTH);
-  const projectType = hostParts.slice(0, hostParts.length - DOMAIN_LENGTH);
-  const [envType] = projectType;
-  const ApiType = url ? [envType, url] : projectType;
-  const baseURL = [...ApiType, API_PREFIX, ...domain].join(SEPARATOR);
-  return baseURL;
-};
 
 const getBaseInstance = () => axios.create();
 
-export const makeInstance = () => {
+export const makeInstance = (baseUrl) => {
   const baseInstance = getBaseInstance();
-  const baseUrl = createBaseURL();
   baseInstance.interceptors.request.use(
     config => {
       config.baseURL = config.baseURL || baseUrl;
@@ -69,9 +52,13 @@ export const makeInstance = () => {
 
   return baseInstance;
 };
-const baseAxiosInstanse = makeInstance();
 
-export default baseAxiosInstanse;
+const axiosInstance = makeInstance(process.env.REACT_APP_API_URL);
+const statsAxiosInstance = makeInstance(process.env.REACT_APP_API_URL_STATS)
+
+export default axiosInstance;
+
+export const statsAxios = statsAxiosInstance;
 
 export const handlePromiseError = <Handler extends (params) => string>(
   response: Promise<AxiosResponse>,

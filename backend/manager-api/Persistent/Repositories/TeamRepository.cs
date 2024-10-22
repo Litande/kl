@@ -7,10 +7,10 @@ namespace KL.Manager.API.Persistent.Repositories;
 
 public class TeamRepository : ITeamRepository
 {
-    private readonly DialDbContext _context;
+    private readonly KlDbContext _context;
     private readonly IAgentCacheRepository _agentCacheRepository;
 
-    public TeamRepository(DialDbContext context, IAgentCacheRepository agentCacheRepository)
+    public TeamRepository(KlDbContext context, IAgentCacheRepository agentCacheRepository)
     {
         _context = context;
         _agentCacheRepository = agentCacheRepository;
@@ -42,7 +42,7 @@ public class TeamRepository : ITeamRepository
 
         var agentIds = entities
             .SelectMany(x => x.Agents)
-            .Select(x => x.UserId)
+            .Select(x => x.Id)
             .Distinct();
 
         var cachedAgents = await _agentCacheRepository.GetAgents(agentIds);

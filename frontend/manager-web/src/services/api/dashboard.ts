@@ -1,23 +1,17 @@
-import apiService from "./apiService";
-import { createBaseURL } from "services/api/index";
-import { STATISTIC_WS } from "services/websocket/const";
+import {statsApi} from "./apiService";
 
-const baseUrl = createBaseURL(STATISTIC_WS);
+const { fetchApi } = statsApi();
 
-const { fetchApi } = apiService();
-const params = {
-  baseURL: baseUrl,
-};
 const dashboardApi = {
-  getLeadsStats: ({ period }) => fetchApi(`/dashboard/call_analysis/${period}`, false, params),
-  getAgentsWorkMode: () => fetchApi(`/dashboard/agents_work_mode`, false, params),
+  getNewLeadsStats: () => fetchApi("/lead/new_leads_statistics", false),
+  getLeadsStats: ({ period }) => fetchApi(`/dashboard/call_analysis/${period}`, false),
+  getAgentsWorkMode: () => fetchApi(`/dashboard/agents_work_mode`, false),
   getPerfomanceStatistics: ({ type, from, to }) =>
-    fetchApi(`/dashboard/performance/${type}/statistics?from=${from}&to=${to}`, false, params),
+    fetchApi(`/dashboard/performance/${type}/statistics?from=${from}&to=${to}`, false),
   getPerformancePlot: ({ type, from, to, step }) =>
     fetchApi(
       `/dashboard/performance/${type}/plots?from=${from}&to=${to}&step=${step}`,
       false,
-      params
     ),
 };
 

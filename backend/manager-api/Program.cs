@@ -2,7 +2,9 @@ using KL.Auth.Configurations;
 using KL.Manager.API.Application.Configurations;
 using KL.Manager.API.Configurations;
 using KL.Manager.API.Middlewares;
+using KL.Manager.API.Persistent;
 using KL.Manager.API.Persistent.Configurations;
+using KL.Manager.API.Persistent.Entities;
 using KL.Manager.API.Persistent.Seed.Authentication;
 using KL.Manager.API.SignalR;
 using Microsoft.AspNetCore.Identity;
@@ -34,7 +36,7 @@ builder.Services
     .ForwardToPrometheus();
 
 builder.Services
-    .AddAuthentication<IdentityUser<long>, IdentityRole<long>, long, JwtTokenGeneratorDial>(builder.Configuration, "kl");
+    .AddAuthentication<User, Role, long, KlDbContext, JwtTokenGeneratorDial>(builder.Configuration, "kl");
 
 builder.Services
     .AddCustomControllers()

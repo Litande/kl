@@ -13,12 +13,12 @@ namespace KL.Agent.API.Persistent.Repositories;
 
 public class LeadRepository : RepositoryBase, ILeadRepository
 {
-    private readonly DialDbContext _context;
+    private readonly KlDbContext _context;
     private readonly ILeadCacheRepository _leadCacheRepository;
     private readonly ILogger<LeadRepository> _logger;
 
     public LeadRepository(
-        DialDbContext context,
+        KlDbContext context,
         ILogger<LeadRepository> logger,
         ILeadCacheRepository leadCacheRepository)
     {

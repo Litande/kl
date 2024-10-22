@@ -1,10 +1,10 @@
 ﻿using KL.Agent.API.Application.Enums;
+using Microsoft.AspNetCore.Identity;
 
 namespace KL.Agent.API.Persistent.Entities;
 
-public class User
+public class User: IdentityUser<long>
 {
-    public long UserId { get; set; }
     public long ClientId { get; set; }
     public RoleTypes RoleType { get; set; }
     public string FirstName { get; set; } = null!;

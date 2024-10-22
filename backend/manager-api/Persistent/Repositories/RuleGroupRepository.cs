@@ -7,9 +7,9 @@ namespace KL.Manager.API.Persistent.Repositories;
 
 public class RuleGroupRepository : IRuleGroupRepository
 {
-    private readonly DialDbContext _context;
+    private readonly KlDbContext _context;
 
-    public RuleGroupRepository(DialDbContext context)
+    public RuleGroupRepository(KlDbContext context)
     {
         _context = context;
     }

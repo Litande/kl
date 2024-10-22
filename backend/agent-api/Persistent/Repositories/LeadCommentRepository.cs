@@ -9,9 +9,9 @@ namespace KL.Agent.API.Persistent.Repositories;
 
 public class LeadCommentRepository : RepositoryBase, ILeadCommentRepository
 {
-    private readonly DialDbContext _context;
+    private readonly KlDbContext _context;
 
-    public LeadCommentRepository(DialDbContext context)
+    public LeadCommentRepository(KlDbContext context)
     {
         _context = context;
     }

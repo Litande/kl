@@ -10,9 +10,9 @@ namespace KL.Agent.API.Persistent.Repositories;
 
 public class CDRRepository : RepositoryBase, ICDRRepository
 {
-    private readonly DialDbContext _context;
+    private readonly KlDbContext _context;
 
-    public CDRRepository(DialDbContext context)
+    public CDRRepository(KlDbContext context)
     {
         _context = context;
     }

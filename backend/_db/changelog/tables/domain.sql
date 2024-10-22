@@ -1,39 +1,7 @@
 --liquibase formatted sql
 
---changeset argent:create_table_client
-create table `dial`.client (
-	id					 	bigint unsigned	auto_increment			 not null,
-	primary key (id)
-) ENGINE=InnoDB default charset=utf8 collate=utf8_unicode_ci;
---rollback SELECT 1 FROM DUAL;
-
---changeset argent:create_table_user
-create table `dial`.user (
-    id                       bigint unsigned auto_increment			 not null,
-	client_id                bigint unsigned						 not null,
-	role					 enum('agent','manager')				 not null,
-	first_name               varchar(191)							 not null,
-    last_name                varchar(191)							 not null,
-	username                 varchar(64)                             default null,
-    password                 varchar(191)							 not null,
-	remember_token           varchar(100)							 default null,
-	status					 enum('active','suspended','deleted')	 default 'active',
-	created_at               timestamp								 not null,
-	password_last_updated_at datetime                                null,
-	deleted_at               timestamp null							 default null,
-	timezone				 varchar(50)							 default null,
-	enable_two_fa            tinyint(1)								 default 0,
-	last_agent_status		 enum('WaitingForTheCall','InTheCall',
-	'FillingFeedback','Offline','Dialing') null						 default null,
-	last_agent_status_updated_at timestamp null						 default null,	
-	primary key (id),
-	constraint `user_client_id_FK` foreign key (client_id) references `client` (id),
-	index users_id_deleted_IDX (id, deleted_at)
-) ENGINE=InnoDB default charset=utf8 collate=utf8_unicode_ci;
---rollback SELECT 1 FROM DUAL;
-
 --changeset argent:create_table_data_source
-create table `dial`.data_source (
+create table kl.data_source (
 	id                       bigint unsigned auto_increment			 not null,
 	client_id                bigint unsigned 						 not null,
 	name					 varchar(100)							 not null,
@@ -49,7 +17,7 @@ create table `dial`.data_source (
 --rollback SELECT 1 FROM DUAL;
 
 --changeset argent:create_table_group
-create table `dial`.group (
+create table kl.group (
 	id	                	 bigint unsigned 						 not null,
 	name				 	 varchar(200)							 not null,
 	primary key (id)
@@ -57,7 +25,7 @@ create table `dial`.group (
 --rollback SELECT 1 FROM DUAL;
 
 --changeset argent:create_table_user_group
-create table `dial`.user_group (
+create table kl.user_group (
 	user_id                	 bigint unsigned 						 not null,
 	group_id				 bigint unsigned						 not null,
 	primary key (user_id, group_id),
@@ -67,7 +35,7 @@ create table `dial`.user_group (
 --rollback SELECT 1 FROM DUAL;
 
 --changeset argent:create_table_tag
-create table `dial`.tag (
+create table kl.tag (
 	id	                	 bigint unsigned 						 not null,
 	name				 	 varchar(200)							 not null,
 	value				 	 varchar(200)							 not null,
@@ -76,7 +44,7 @@ create table `dial`.tag (
 --rollback SELECT 1 FROM DUAL;
 
 --changeset argent:create_table_user_tag
-create table `dial`.user_tag (
+create table kl.user_tag (
 	user_id                	 bigint unsigned 						 not null,
 	tag_id				 	 bigint unsigned						 not null,
 	primary key (user_id, tag_id),
@@ -86,7 +54,7 @@ create table `dial`.user_tag (
 --rollback SELECT 1 FROM DUAL;
 
 --changeset argent:create_table_user_data_source_map
-create table `dial`.user_data_source_map (
+create table kl.user_data_source_map (
 	user_id                	 bigint unsigned 						 not null,
 	data_source_id			 bigint unsigned						 not null,
 	employee_id			 	 bigint unsigned						 not null,
@@ -97,7 +65,7 @@ create table `dial`.user_data_source_map (
 --rollback SELECT 1 FROM DUAL;
 
 --changeset argent:create_table_status_data_source_map
-create table `dial`.status_data_source_map (
+create table kl.status_data_source_map (
 	data_source_id			 bigint unsigned						 not null,
 	status					 enum('busy','callagainpersonal',
 	'callagaingeneral','cannottalk','checknumber','declinecap',
@@ -115,7 +83,7 @@ create table `dial`.status_data_source_map (
 --rollback SELECT 1 FROM DUAL;
 
 --changeset argent:create_table_lead_data_source_map
-create table `dial`.lead_data_source_map (
+create table kl.lead_data_source_map (
 	id                       bigint unsigned auto_increment			 not null,
 	data_source_id			 bigint unsigned						 not null,
 	destination_property	 enum('phone','firstName','lastName',
@@ -128,7 +96,7 @@ create table `dial`.lead_data_source_map (
 --rollback SELECT 1 FROM DUAL;
 
 --changeset argent:create_table_lead
-create table `dial`.lead (
+create table kl.lead (
 	id                       bigint unsigned auto_increment			 not null,
 	client_id                bigint unsigned 						 not null,
 	data_source_id			 bigint unsigned						 not null,
@@ -164,11 +132,11 @@ create table `dial`.lead (
 --rollback SELECT 1 FROM DUAL;
 
 --changeset argent:create_table_lead_index
-create index data_source_id_external_id_index on `dial`.lead (data_source_id,external_id);
+create index data_source_id_external_id_index on kl.lead (data_source_id,external_id);
 --rollback SELECT 1 FROM DUAL;
 
 --changeset argent:create_table_rule_group
-create table `dial`.rule_group (
+create table kl.rule_group (
 	id               	 	 bigint unsigned auto_increment 		 not null,
 	name					 varchar(200)							 not null,
 	status			 		 enum('enable','disable')				 not null default 'enable',
@@ -180,7 +148,7 @@ create table `dial`.rule_group (
 --rollback SELECT 1 FROM DUAL;
 
 --changeset argent:create_table_rule
-create table `dial`.rule (
+create table kl.rule (
 	id               	 	 bigint unsigned auto_increment 		 not null,
 	rule_group_id		     bigint unsigned					     not null,
 	name					 varchar(200)							 not null,
@@ -192,7 +160,7 @@ create table `dial`.rule (
 --rollback SELECT 1 FROM DUAL;
 
 --changeset argent:create_table_lead_queue
-create table `dial`.lead_queue (
+create table kl.lead_queue (
 	id               	 	 bigint unsigned auto_increment			 not null,
 	name					 varchar(200)							 not null,
 	status			 		 enum('enable','disable')				 not null default 'enable',
@@ -201,7 +169,7 @@ create table `dial`.lead_queue (
 --rollback SELECT 1 FROM DUAL;
 
 --changeset argent:create_table_forward_lead_queue_rule
-create table `dial`.forward_lead_queue_rule (
+create table kl.forward_lead_queue_rule (
 	queue_id               	 bigint unsigned						 not null,
 	rule_id					 bigint unsigned						 not null,
 	ordinal			 		 bigint unsigned						 not null default 0,
@@ -212,7 +180,7 @@ create table `dial`.forward_lead_queue_rule (
 --rollback SELECT 1 FROM DUAL;
 
 --changeset argent:create_table_score_lead_rule
-create table `dial`.score_lead_rule (
+create table kl.score_lead_rule (
 	id               	 	 bigint unsigned auto_increment			 not null,
 	queue_id               	 bigint unsigned null					 default null,
 	rule_id					 bigint unsigned						 not null,
@@ -224,7 +192,7 @@ create table `dial`.score_lead_rule (
 --rollback SELECT 1 FROM DUAL;
 
 --changeset argent:create_table_behaviour_lead_rule
-create table `dial`.behaviour_lead_rule (
+create table kl.behaviour_lead_rule (
 	id               	 	 bigint unsigned auto_increment			 not null,
 	queue_id               	 bigint unsigned null					 default null,
 	rule_id					 bigint unsigned						 not null,

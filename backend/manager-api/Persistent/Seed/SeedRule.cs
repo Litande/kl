@@ -5,12 +5,12 @@ namespace KL.Manager.API.Persistent.Seed;
 
 public static class SeedRule
 {
-    public static void Seed(DialDbContext context, string name, long ruleGroupId, string rule)
+    public static void Seed(KlDbContext context, string name, long ruleGroupId, string rule)
     {
         AddRuleIfNeed(context, name, ruleGroupId, rule);
     }
 
-    private static void AddRuleIfNeed(DialDbContext context, string name, long ruleGroupId, string rule)
+    private static void AddRuleIfNeed(KlDbContext context, string name, long ruleGroupId, string rule)
     {
         var entity = context.Rules
             .FirstOrDefault(r => r.Name == name

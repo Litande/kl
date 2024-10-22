@@ -1,6 +1,7 @@
 ﻿using KL.Manager.API.Application.Configurations;
 using KL.Manager.API.Application.Enums;
 using KL.Manager.API.Application.Models.Messages.Agents;
+using KL.Manager.API.Persistent.Entities;
 using KL.Manager.API.Persistent.Repositories.Interfaces;
 using KL.Nats;
 using Microsoft.AspNetCore.Identity;
@@ -10,13 +11,13 @@ namespace KL.Manager.API.Application.Handlers.Agents;
 
 public class BlockedAgentHandler : IBlockedAgentHandler
 {
-    private readonly UserManager<IdentityUser<long>> _userManager;
+    private readonly UserManager<User> _userManager;
     private readonly INatsPublisher _natsPublisher;
     private readonly NatsPubSubOptions _pubSubjects;
     private readonly IBlockedUserCacheRepository _blockedUserCacheRepository;
 
     public BlockedAgentHandler(
-        UserManager<IdentityUser<long>> userManager,
+        UserManager<User> userManager,
         INatsPublisher natsPublisher,
         IOptions<NatsPubSubOptions> natsOptions,
         IBlockedUserCacheRepository blockedUserCacheRepository)

@@ -57,16 +57,13 @@ namespace KL.Auth.Configurations
             where TAuthenticationDbContext: KlAuthDbContext<TUser, TRole, TId>
             where TJwtTokenGenerator : JwtTokenGenerator<TUser, TId>
         {
-
-            services.AddMysql<TAuthenticationDbContext>(configuration, schema);
-
             services.AddIdentity<TUser, TRole>()
-                    .AddEntityFrameworkStores<TAuthenticationDbContext>()
-                    .AddDefaultTokenProviders();
+                .AddEntityFrameworkStores<TAuthenticationDbContext>()
+                .AddDefaultTokenProviders();
             
             services.AddScoped<IAdminAuthenticationService, AdminAuthenticationService<TUser, TId>>();
             
-            services.AddSingleton<IJwtTokenGenerator<TUser, TId>, TJwtTokenGenerator>();
+            services.AddScoped<IJwtTokenGenerator<TUser, TId>, TJwtTokenGenerator>();
 
             services.Configure<IdentityOptions>(options =>
             {

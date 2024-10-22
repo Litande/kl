@@ -1,7 +1,7 @@
 --liquibase formatted sql
 
 --changeset argent:lead_history
-create table `dial`.lead_history (
+create table kl.lead_history (
 	id					bigint unsigned auto_increment			not null,
 	lead_id			    bigint unsigned							not null,
     action_type         enum('status','data')                   not null,
@@ -14,5 +14,5 @@ create table `dial`.lead_history (
 --rollback SELECT 1 FROM DUAL;
 
 --changeset argent:add_lead_history_index
-alter table `dial`.lead_history add index action_type_IDX (action_type);
+alter table kl.lead_history add index action_type_IDX (action_type);
 --rollback SELECT 1 FROM DUAL;

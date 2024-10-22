@@ -6,9 +6,9 @@ namespace KL.Manager.API.Persistent.Repositories;
 
 public class DataSourceRepository : IDataSourceRepository
 {
-    private readonly DialDbContext _context;
+    private readonly KlDbContext _context;
 
-    public DataSourceRepository(DialDbContext context)
+    public DataSourceRepository(KlDbContext context)
     {
         _context = context;
     }

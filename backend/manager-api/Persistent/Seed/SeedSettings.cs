@@ -7,13 +7,13 @@ namespace KL.Manager.API.Persistent.Seed;
 
 public static class SeedSettings
 {
-    public static void Seed(DialDbContext context, long clientId)
+    public static void Seed(KlDbContext context, long clientId)
     {
         AddLeadImportDefaultStatusIfNeed(context, clientId);
         AddLeadStatisticSettingIfNeed(context, clientId);
     }
 
-    private static void AddLeadImportDefaultStatusIfNeed(DialDbContext context, long clientId)
+    private static void AddLeadImportDefaultStatusIfNeed(KlDbContext context, long clientId)
     {
         var entity = context.Settings.FirstOrDefault(r =>
             r.Type == SettingTypes.LeadImportDefaultStatus && r.ClientId == clientId);
@@ -37,7 +37,7 @@ public static class SeedSettings
         context.SaveChanges();
     }
 
-    private static void AddLeadStatisticSettingIfNeed(DialDbContext context, long clientId)
+    private static void AddLeadStatisticSettingIfNeed(KlDbContext context, long clientId)
     {
         var entity =
             context.Settings.FirstOrDefault(r => r.Type == SettingTypes.LeadStatistic && r.ClientId == clientId);

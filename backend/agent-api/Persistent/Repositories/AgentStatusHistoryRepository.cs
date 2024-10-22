@@ -5,9 +5,9 @@ namespace KL.Agent.API.Persistent.Repositories;
 
 public class AgentStatusHistoryRepository : IAgentStatusHistoryRepository
 {
-    private readonly DialDbContext _context;
+    private readonly KlDbContext _context;
 
-    public AgentStatusHistoryRepository(DialDbContext context)
+    public AgentStatusHistoryRepository(KlDbContext context)
     {
         _context = context;
     }

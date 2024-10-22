@@ -6,9 +6,9 @@ namespace KL.Manager.API.Persistent.Repositories;
 
 public class ClientRepository : IClientRepository
 {
-    private readonly DialDbContext _context;
+    private readonly KlDbContext _context;
 
-    public ClientRepository(DialDbContext context)
+    public ClientRepository(KlDbContext context)
     {
         _context = context;
     }

@@ -10,12 +10,12 @@ namespace KL.Manager.API.Persistent.Repositories;
 
 public class LeadQueueRepository : ILeadQueueRepository
 {
-    private readonly DialDbContext _context;
+    private readonly KlDbContext _context;
 
     private IQueryable<LeadQueue> ActiveLeadQueues =>
         _context.LeadQueues.Where(x => x.Status == LeadQueueStatusTypes.Enable);
 
-    public LeadQueueRepository(DialDbContext context)
+    public LeadQueueRepository(KlDbContext context)
     {
         _context = context;
     }
@@ -62,7 +62,7 @@ public class LeadQueueRepository : ILeadQueueRepository
         var leadQueues = await ActiveLeadQueues
             .AsNoTracking()
             .Where(x => x.ClientId == clientId
-                        && x.Agents.Any(y => agentIds.Contains(y.UserId)))
+                        && x.Agents.Any(y => agentIds.Contains(y.Id)))
             .Include(r => r.Agents)
             .OrderBy(x => x.DisplayOrder)
             .ToArrayAsync(ct);
@@ -75,7 +75,7 @@ public class LeadQueueRepository : ILeadQueueRepository
         return await ActiveLeadQueues
             .AsNoTracking()
             .Where(x => x.ClientId == clientId
-                        && x.Agents.Any(y => y.UserId == agentId))
+                        && x.Agents.Any(y => y.Id == agentId))
             .Include(r => r.Agents)
             .FirstOrDefaultAsync(ct);
     }

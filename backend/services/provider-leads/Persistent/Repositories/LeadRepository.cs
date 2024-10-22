@@ -76,7 +76,7 @@ public class LeadRepository : ILeadRepository
         var email = new MySqlParameter("@email", updatedLead.Email);
         var timeZone = new MySqlParameter("@timeZone", updatedLead.Timezone);
 
-        var response = _context.Database.ExecuteSqlRaw(@$"Update dial.lead set
+        var response = _context.Database.ExecuteSqlRaw(@$"Update kl.lead set
                                       last_update_time=@lastUpdateTime,
                                       first_name=@firstName,
                                       last_name=@lastName,

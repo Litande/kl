@@ -25,14 +25,14 @@ public class AgentTestsFixture
     protected readonly IDistributedLockProvider DistributedLockProviderMock = new DistributedLockProviderMock();
     protected readonly IAgentCacheRepository AgentCacheRepository = new AgentCacheRepoTest();
     protected readonly CallInfoCacheRepoTest CallInfoCacheRepository = new();
-    protected DialDbContext Context;
+    protected KlDbContext Context;
 
-    private DialDbContext GetNewContext()
+    private KlDbContext GetNewContext()
     {
         _countDb++;
-        var options = new DbContextOptionsBuilder<DialDbContext>()
+        var options = new DbContextOptionsBuilder<KlDbContext>()
             .UseInMemoryDatabase($"kl-db-test-{_countDb}").Options;
-        return new DialDbContext(options);
+        return new KlDbContext(options);
     }
 
     protected readonly IOptions<NatsPubSubOptions> PubSubjectsOptions = Options.Create(new NatsPubSubOptions

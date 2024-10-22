@@ -1,7 +1,7 @@
 --liquibase formatted sql
 
 --changeset argent:12_16_30_add_timezone
-CREATE TABLE `dial`.`timezone` (
+CREATE TABLE kl.`timezone` (
   `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
   `city_name` varchar(255) NOT NULL,
   `city_name_en` varchar(255) NULL,

@@ -10,9 +10,9 @@ namespace KL.Manager.API.Persistent.Repositories;
 
 public class UserFilterPreferencesRepository : IUserFilterPreferencesRepository
 {
-    private readonly DialDbContext _context;
+    private readonly KlDbContext _context;
 
-    public UserFilterPreferencesRepository(DialDbContext context)
+    public UserFilterPreferencesRepository(KlDbContext context)
     {
         _context = context;
     }

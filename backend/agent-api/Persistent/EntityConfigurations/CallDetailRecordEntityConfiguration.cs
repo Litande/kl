@@ -49,6 +49,7 @@ public class CallDetailRecordEntityConfiguration : IEntityTypeConfiguration<Call
         builder.Property(e => e.RecordMixedFile).HasColumnName("record_mixed_file");
         builder.Property(e => e.IsReplacedUser).HasColumnName("is_replaced_user");
         builder.Property(e => e.CallDuration).HasColumnName("call_duration");
+        builder.Property(e => e.MetaData).HasColumnName("metadata");
 
         builder.HasKey(e => e.Id).HasName("PRIMARY");
     }

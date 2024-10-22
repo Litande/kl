@@ -8,12 +8,12 @@ namespace KL.Agent.API.Persistent.Seed;
 
 public static class SeedSettings
 {
-    public static void Seed(DialDbContext context, long clientId)
+    public static void Seed(KlDbContext context, long clientId)
     {
         FeedbackSettings(context, clientId);
     }
 
-    private static void FeedbackSettings(DialDbContext context, long clientId)
+    private static void FeedbackSettings(KlDbContext context, long clientId)
     {
         var entity = context.Settings.FirstOrDefault(r => r.Type == SettingTypes.Feedback && r.ClientId == clientId);
         if (entity is not null) return;
