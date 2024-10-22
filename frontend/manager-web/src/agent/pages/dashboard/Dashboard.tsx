@@ -16,7 +16,7 @@ const Dashboard = () => {
   };
 
   const connection = new signalR.HubConnectionBuilder()
-    .withUrl("https://qa.agent.api.aorta.ai/agent", {
+    .withUrl("https://qa.agent.api.kollink.ai/agent", {
       accessTokenFactory: () => value,
     })
     .build();

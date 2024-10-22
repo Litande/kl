@@ -58,7 +58,7 @@ class CallServiceMock {
         firstDepositTime: null,
         remindOn: null,
         webRtcEndpointUrl:
-          "wss://qa.sip.bridge.aorta.ai:443/ws?session=91896b5d-9202-46e3-89d0-922d7b8f035e&agent=1",
+          "wss://qa.sip.bridge.kollink.ai:443/ws?session=91896b5d-9202-46e3-89d0-922d7b8f035e&agent=1",
       };
       this._agent.setLead(this._lead);
       this.call();

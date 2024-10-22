@@ -5,7 +5,7 @@ export default defineConfig({
   video: false,
   screenshotOnRunFailure: false,
   e2e: {
-    baseUrl: "https://qa.agent.aorta.ai/",
+    baseUrl: "https://qa.agent.kollink.ai/",
 
     env: {
       login: "autotest@mailsac.com",
