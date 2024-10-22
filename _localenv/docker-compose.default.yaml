@@ -38,6 +38,33 @@ services:
       - REDIS_HOSTS=kl-redis
     ports:
       - "8081:8081"
+      -
+  kl-rabbitmq:
+    container_name: kl-rabbitmq
+    image: rabbitmq:3-management
+    restart: always
+    networks:
+      - kl
+    ports:
+      - 8080:15672
+      - 5672:5672
+    environment:
+      RABBITMQ_DEFAULT_USER: root
+      RABBITMQ_DEFAULT_PASS: masterkey
+    volumes:
+      - $HOME/data/kl-rabbitmq:/var/lib/rabbitmq/
+  
+  kl-nats:
+    container_name: kl-nats
+    restart: always
+    image: nats-streaming
+    networks:
+      - kl
+    ports:
+      - 4222:4222
+      - 6222:6222
+      - 8222:8222
+    command: [ "-cid", "kl-nats-cluster", "--max_channels", "0", "-m", "8222" ]
 
 networks:
   kl:
