@@ -149,6 +149,7 @@ const Header = styled.div`
   color: ${({ theme }) => theme.colors.btn.primary};
   ${({ theme }) => theme.typography.subtitle3};
 `;
+
 const Content = styled.div`
   display: flex;
   flex-direction: column;

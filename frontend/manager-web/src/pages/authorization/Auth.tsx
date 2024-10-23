@@ -36,7 +36,7 @@ export default function AuthPage() {
           <Logo src={mainLogo} alt="aorta" />
           <EnvContainer>
             <Side>Manager</Side>
-            <Env env={process.env.REACT_APP_ENV}>{process.env.REACT_APP_ENV}</Env>
+            {/*<Env env={process.env.REACT_APP_ENV}>{process.env.REACT_APP_ENV}</Env>*/}
           </EnvContainer>
         </LogoContainer>
         <AuthType>Login</AuthType>
@@ -211,7 +211,9 @@ const InputWrapper = styled.div`
   .icon-eye {
     font-size: 2rem;
     right: 0.4rem;
-    color: #5294c3;
+    :before {
+      color: ${({ theme }) => theme.colors.btn.secondary};
+    }
   }
   .icon-user,
   .icon-lock {

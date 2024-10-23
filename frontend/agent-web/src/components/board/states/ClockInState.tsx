@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import styled from "styled-components";
 
 import Button from "components/button/Button";
-import boardBg from "images/board_bg.png";
 import { useAgent } from "data/user/useAgent";
 import { PageWrapContent } from "components/layout/AgentLayout";
 import useAgentStatus from "hooks/useAgentStatus";
@@ -32,18 +31,18 @@ const ClockInState = () => {
 
   return (
     <PageWrapContent>
-      <Wrap imageUrl={boardBg}>
-        <GreetingWrap>
-          <h1>{`${agent.firstName} ${agent.lastName}`} Session</h1>
-          <ClockInButton
-            disabled={callType === CallType.Manual}
-            onClick={onClick}
-            data-testid="clock-in-button"
-          >
-            Clock In
-          </ClockInButton>
-        </GreetingWrap>
-      </Wrap>
+      {/*<Wrap imageUrl={boardBg}>*/}
+      <GreetingWrap>
+        <h1>{`${agent.firstName} ${agent.lastName}`} Session</h1>
+        <ClockInButton
+          disabled={callType === CallType.Manual}
+          onClick={onClick}
+          data-testid="clock-in-button"
+        >
+          Clock In
+        </ClockInButton>
+      </GreetingWrap>
+      {/*</Wrap>*/}
       {error && <ErrorNotification error={error} />}
     </PageWrapContent>
   );

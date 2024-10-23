@@ -45,7 +45,7 @@ const Header = () => {
         <Logo src={headerLogo} alt="aorta" />
         <EnvContainer>
           <Side>Agent</Side>
-          <Env env={process.env.REACT_APP_ENV}>{process.env.REACT_APP_ENV}</Env>
+          {/*<Env env={process.env.REACT_APP_ENV}>{process.env.REACT_APP_ENV}</Env>*/}
         </EnvContainer>
       </LeftBlock>
       <RightBlock>
@@ -65,6 +65,7 @@ export default Header;
 
 const Logo = styled.img`
   height: 100%;
+  max-height: 48px;
 `;
 
 const EnvContainer = styled.div`
@@ -73,7 +74,6 @@ const EnvContainer = styled.div`
 `;
 
 const Side = styled.div`
-  color: white;
   font-family: "Inter medium";
   font-size: 12px;
   line-height: 24px;
@@ -108,9 +108,9 @@ const Container = styled.div`
   box-sizing: border-box;
   height: 70px;
   padding: 9px 16px 9px 32px;
-  background: ${({ theme }) => theme.colors.bg.primary};
   ${({ theme }) => theme.typography.body1};
-  color: ${({ theme }) => theme.colors.bg.ternary};
+  background: ${({ theme }) => theme.colors.bg.primary};
+  color: ${({ theme }) => theme.colors.fg.secondary};
 `;
 
 const LeftBlock = styled.div`

@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import boardBg from "images/board_bg.png";
 import Button from "components/button/Button";
 import { useAgent } from "data/user/useAgent";
 import { PageWrapContent } from "components/layout/AgentLayout";
@@ -20,14 +19,12 @@ const ClockOutState = () => {
 
   return (
     <PageWrapContent>
-      <Wrap imageUrl={boardBg}>
-        <GreetingWrap>
-          <h1>{`${agent.firstName} ${agent.lastName}`} Session</h1>
-          <ClockOutButton disabled={isNextOffline} onClick={onClick} data-testid="clock-out-button">
-            Clock Out
-          </ClockOutButton>
-        </GreetingWrap>
-      </Wrap>
+      <GreetingWrap>
+        <h1>{`${agent.firstName} ${agent.lastName}`} Session</h1>
+        <ClockOutButton disabled={isNextOffline} onClick={onClick} data-testid="clock-out-button">
+          Clock Out
+        </ClockOutButton>
+      </GreetingWrap>
     </PageWrapContent>
   );
 };

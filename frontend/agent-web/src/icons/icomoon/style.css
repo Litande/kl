@@ -49,7 +49,6 @@
 }
 .icon-ic-breaks:before {
   content: "\e907";
-  color: #fff;
 }
 .icon-ic-calendar:before {
   content: "\e908";
@@ -73,7 +72,6 @@
 }
 .icon-ic-endCall:before {
   content: "\e90e";
-  color: #fff;
 }
 .icon-ic-eye:before {
   content: "\e90f";
@@ -93,11 +91,9 @@
 }
 .icon-ic-holdCall:before {
   content: "\e914";
-  color: #fff;
 }
 .icon-ic-import:before {
   content: "\e915";
-  color: #fff;
 }
 .icon-ic-lock:before {
   content: "\e916";
@@ -113,7 +109,6 @@
 }
 .icon-ic-note:before {
   content: "\e91a";
-  color: #fff;
 }
 .icon-ic-pause:before {
   content: "\e91b";

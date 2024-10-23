@@ -30,7 +30,7 @@ export default function AuthPage() {
           <Logo src={mainLogo} alt="aorta" />
           <EnvContainer>
             <Side>Agent</Side>
-            <Env env={process.env.REACT_APP_ENV}>{process.env.REACT_APP_ENV}</Env>
+            {/*<Env env={process.env.REACT_APP_ENV}>{process.env.REACT_APP_ENV}</Env>*/}
           </EnvContainer>
         </LogoContainer>
         <form onSubmit={handleSubmit(login)}>
@@ -73,7 +73,7 @@ export default function AuthPage() {
               <ErrorMessage>{errors.password && "Password is requeired field"}</ErrorMessage>
             </InputWrapper>
           </Label>
-          <StyledButton data-testid="login-button">Login</StyledButton>
+          <StyledButton>Login</StyledButton>
           <InputWrapper>
             <ErrorMessage>{authError}</ErrorMessage>
           </InputWrapper>
@@ -187,7 +187,9 @@ const InputWrapper = styled.div`
   .icon-ic-eye {
     font-size: 2rem;
     right: 0.4rem;
-    color: #5294c3;
+    :before {
+      color: ${({ theme }) => theme.colors.btn.secondary};
+    }
   }
   .icon-ic-user,
   .icon-ic-lock {

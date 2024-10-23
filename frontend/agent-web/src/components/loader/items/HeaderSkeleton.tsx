@@ -9,7 +9,7 @@ const HeaderSkeleton = () => {
         <Logo src={headerLogo} alt="aorta" />
         <EnvContainer>
           <Side>Agent</Side>
-          <Env env={process.env.REACT_APP_ENV}>{process.env.REACT_APP_ENV}</Env>
+          {/*<Env env={process.env.REACT_APP_ENV}>{process.env.REACT_APP_ENV}</Env>*/}
         </EnvContainer>
       </LeftBlock>
       <RightBlock>

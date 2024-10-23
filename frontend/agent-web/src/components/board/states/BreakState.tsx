@@ -1,6 +1,5 @@
 import styled from "styled-components";
 import Button from "components/button/Button";
-import boardBg from "images/board_bg.png";
 import { useAgent } from "data/user/useAgent";
 import { PageWrapContent } from "components/layout/AgentLayout";
 import useAgentStatus from "hooks/useAgentStatus";
@@ -22,16 +21,14 @@ const ClockInState = () => {
   if (!activeBreak)
     return (
       <PageWrapContent>
-        <Wrap imageUrl={boardBg}>
-          <GreetingWrap>
-            <BreakIsOut>
-              <h1>Break was finished, please Clock In</h1>
-            </BreakIsOut>
-            <ClockInButton disabled={callType === CallType.Manual} onClick={onClick}>
-              Clock Back In
-            </ClockInButton>
-          </GreetingWrap>
-        </Wrap>
+        <GreetingWrap>
+          <BreakIsOut>
+            <h1>Break was finished, please Clock In</h1>
+          </BreakIsOut>
+          <ClockInButton disabled={callType === CallType.Manual} onClick={onClick}>
+            Clock Back In
+          </ClockInButton>
+        </GreetingWrap>
       </PageWrapContent>
     );
 
@@ -40,18 +37,18 @@ const ClockInState = () => {
 
   return (
     <PageWrapContent>
-      <Wrap imageUrl={boardBg}>
-        <GreetingWrap>
-          <Title1>Your break has</Title1>
-          <Title2>Started</Title2>
-          <Title3>at</Title3>
-          <Time>{startDate.format("HH:mm")}</Time>
-          <TimeLeft isRed={timeLeft === 0}>You have {timeLeft} minutes left</TimeLeft>
-          <ClockInButton disabled={callType === CallType.Manual} onClick={onClick}>
-            Clock Back In
-          </ClockInButton>
-        </GreetingWrap>
-      </Wrap>
+      {/*<Wrap imageUrl={boardBg}>*/}
+      <GreetingWrap>
+        <Title1>Your break has</Title1>
+        <Title2>Started</Title2>
+        <Title3>at</Title3>
+        <Time>{startDate.format("HH:mm")}</Time>
+        <TimeLeft isRed={timeLeft === 0}>You have {timeLeft} minutes left</TimeLeft>
+        <ClockInButton disabled={callType === CallType.Manual} onClick={onClick}>
+          Clock Back In
+        </ClockInButton>
+      </GreetingWrap>
+      {/*</Wrap>*/}
     </PageWrapContent>
   );
 };

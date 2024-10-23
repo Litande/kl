@@ -105,7 +105,6 @@ const Header = styled.header`
   background-color: ${({ theme }) => theme.colors.bg.primary};
   ${({ theme }) => theme.typography.subtitle3};
   text-transform: uppercase;
-  color: #fff;
   border-radius: 4px;
   padding: 1rem;
 `;
